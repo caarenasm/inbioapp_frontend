@@ -1,0 +1,189 @@
+<ion-content class="ion-padding">
+
+  <ion-card class="card-padding-border">
+
+    <ion-card-header>
+      <ion-card-title class="card-titulo">¡Felicidades has completado el cuestionario!</ion-card-title>
+        <ion-card-subtitle class="card-sub-titulo">
+          Ahora hace falta que te registres y que nos brindes 
+          algunos datos necesarios para incorporar hábitos saludables y así alcanzar
+          juntos tu objetivo
+        </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+
+    <ion-list>
+
+      <ion-radio-group value="sexo">
+
+        <ion-item>
+          <ion-label class="card-input">Sexo (requerido)</ion-label>
+        </ion-item>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-item>
+              <ion-label class="card-input"><ion-icon name="male"></ion-icon> Masculino</ion-label>
+              <ion-radio slot="start" value="masculino"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="4">
+            <ion-item>
+              <ion-label class="card-input">Femenino</ion-label>
+              <ion-radio slot="start" value="femenino"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="4">
+            <ion-item>
+              <ion-label class="card-input">Otro</ion-label>
+              <ion-radio slot="start" value="otro"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+        </ion-row>
+      </ion-radio-group>
+
+      <ion-item-group>
+
+        <ion-item>
+          <ion-label class="card-input">Fecha de Nacimiento (requerido)</ion-label>
+        </ion-item>
+
+        <ion-row>
+          <ion-col size="3">
+            <ion-item>
+              <ion-label position="stacked" class="card-input-dos">Dia</ion-label>
+              <ion-input type="text" placeholder="DD"></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="3">
+            <ion-item>
+              <ion-label position="stacked" class="card-input-dos">Mes</ion-label>
+              <ion-input type="text" placeholder="MM"></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked" class="card-input-dos">Año</ion-label>
+              <ion-input type="text" placeholder="YYYY"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-item-group>
+
+        <ion-item>
+          <ion-label position="stacked" class="card-input-dos">
+            Nombre (requerido)
+          </ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" class="card-input-dos">
+            Apellido (requerido)
+          </ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" class="card-input-dos">
+            Correo electrónico (requerido)
+          </ion-label>
+          <ion-input type="mail"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-text> Acepto términos y condiciones de privacidad.</ion-text>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label class="card-input-dos">
+            Otros datos importantes
+          </ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Estatura (requerido)
+          </ion-label>
+          <ion-buttons>
+            <ion-button slot="icon-only" size="large">
+              <ion-icon name="remove-circle"></ion-icon>
+            </ion-button>
+            <span>
+              <ion-input type="number"></ion-input>
+            </span>
+            <ion-button slot="icon-only" size="large">
+              <ion-icon name="add-circle"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Peso actual (requerido)
+          </ion-label>
+          <ion-buttons>
+            <ion-button slot="icon-only" size="large">
+              <ion-icon name="remove-circle"></ion-icon>
+            </ion-button>
+            <span>
+              <ion-input type="number"></ion-input>
+            </span>
+            <ion-button slot="icon-only" size="large">
+              <ion-icon name="add-circle"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Peso deseado (requerido)
+          </ion-label>
+          <ion-buttons>
+            <ion-button slot="end" size="large">
+              <ion-icon name="remove-circle"></ion-icon>
+            </ion-button>
+            <span>
+              <ion-input type="number"></ion-input>
+            </span>
+            <ion-button slot="start" size="large">
+              <ion-icon name="add-circle"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+
+        <!--<ion-item>
+          <ion-label position="stacked">
+            Correo electrónico
+            <ion-note slot="end">(requerido)</ion-note>
+          </ion-label>
+          <ion-input></ion-input>
+        </ion-item>-->
+
+    </ion-list>
+
+
+  </ion-card-content>
+
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button size="small" color="primary" routerLink="/quiz" routerDirection="forward" data-desc="Aterior">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="primary" routerLink="/objetivo" routerDirection="forward" data-desc="Siguiente">
+      <ion-icon name="arrow-forward"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
