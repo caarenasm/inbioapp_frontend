@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'mis-datos',
     loadChildren: () => import('./pages/mis-datos/mis-datos.module').then( m => m.MisDatosPageModule)
   },
+  {
+    path: 'mis-datos-detalle',
+    loadChildren: () => import('./pages/mis-datos-detalle/mis-datos-detalle.module').then( m => m.MisDatosDetallePageModule)
+  },
 
 
 ];
