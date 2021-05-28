@@ -1,5 +1,5 @@
 <!--<app-header></app-header>-->
-
+<app-header></app-header>
 <ion-content class="ion-padding">
     <!--<app-menu></app-menu>-->
 
@@ -14,7 +14,7 @@
                         <ion-card-header>
                             <div style="display: flex; justify-content: space-between;">
                                 <ion-label>Género</ion-label>
-                                <ion-icon name="star" slot="end"></ion-icon>
+                                <ion-icon [name]="estrella" slot="end" (click)="favorito()"></ion-icon>
                             </div>
                             <ion-card-subtitle>{{ datos.genero }}</ion-card-subtitle>
                         </ion-card-header>
@@ -23,7 +23,7 @@
                         <ion-card-header>
                             <div style="display: flex; justify-content: space-between;">
                                 <ion-label>Fecha de Nacimiento</ion-label>
-                                <ion-icon name="star" slot="end"></ion-icon>
+                                <ion-icon [name]="estrella" slot="end" (click)="favorito()"></ion-icon>
                             </div>
                             <ion-card-subtitle>{{ datos.fechaNac }}</ion-card-subtitle>
                         </ion-card-header>
@@ -142,5 +142,5 @@
     </ion-card>
 
 </ion-content>
-
+<app-tab></app-tab>
 <!--<app-tab></app-tab>-->

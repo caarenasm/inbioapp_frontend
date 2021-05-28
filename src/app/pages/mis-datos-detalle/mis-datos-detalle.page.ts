@@ -1,6 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
+export interface Consulta {
+  descripcion: string; 
+  icon: string; 
+  respuesta: string; 
+  resultado: string[];
+}
+
 @Component({
   selector: 'app-mis-datos-detalle',
   templateUrl: './mis-datos-detalle.page.html',
@@ -8,7 +15,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class MisDatosDetallePage implements OnInit {
 
-  @Input() datos: any[];
+  @Input() datos: Consulta;
 
   constructor( private modalCtrl: ModalController ) { }
 
