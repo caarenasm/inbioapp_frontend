@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { Drivers } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     IonicStorageModule.forRoot({
       name: '__inbioapp',
       driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
-    })
+    }),
+    ComponentsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

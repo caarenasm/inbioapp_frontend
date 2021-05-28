@@ -22,6 +22,14 @@ const routes: Routes = [
     path: 'mis-datos-detalle',
     loadChildren: () => import('./pages/mis-datos-detalle/mis-datos-detalle.module').then( m => m.MisDatosDetallePageModule)
   },
+  {
+    path: 'receta',
+    loadChildren: () => import('./pages/receta/receta.module').then( m => m.RecetaPageModule)
+  },
+  {
+    path: 'receta-detalle',
+    loadChildren: () => import('./pages/receta-detalle/receta-detalle.module').then( m => m.RecetaDetallePageModule)
+  },
 
 
 ];
