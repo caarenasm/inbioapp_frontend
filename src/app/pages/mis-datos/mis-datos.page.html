@@ -3,143 +3,152 @@
 <ion-content class="ion-padding">
     <!--<app-menu></app-menu>-->
 
-    <ion-card class="card-padding-border">
+    <ion-list lines="none" class="ion-no-padding">
 
-        <ion-card-content>
+        <ion-item class="ion-no-padding">
+            <ion-fab vertical="top" horizontal="start">
+                <ion-label>Mis Datos: {{ datos.nombre }}</ion-label>
+            </ion-fab>
+        </ion-item>
 
+        <ion-item class="ion-no-padding">
+            <ion-card class="card-padding-border">
 
-            <ion-grid class="ion-no-padding">
-                <ion-row>
-                    <ion-col>
-                        <ion-card-header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <ion-label>Género</ion-label>
-                                <ion-icon [name]="estrella" slot="end" (click)="favorito()"></ion-icon>
-                            </div>
-                            <ion-card-subtitle>{{ datos.genero }}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                    <ion-col>
-                        <ion-card-header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <ion-label>Fecha de Nacimiento</ion-label>
-                                <ion-icon [name]="estrella" slot="end" (click)="favorito()"></ion-icon>
-                            </div>
-                            <ion-card-subtitle>{{ datos.fechaNac }}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                </ion-row>
+                <ion-card-content>
 
-                <ion-row>
-                    <ion-col>
-                        <ion-card-header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <ion-label>Estatura</ion-label>
-                                <ion-icon name="star" slot="end"></ion-icon>
-                            </div>
-                            <ion-card-subtitle>{{ datos.estatura }}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                    <ion-col>
-                        <ion-card-header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <ion-label>Mi Objetivo</ion-label>
-                                <ion-icon name="star" slot="end"></ion-icon>
-                            </div>
-                            <ion-card-subtitle>{{ datos.miObjetivo }}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                </ion-row>
+                    <ion-grid class="ion-no-padding">
+                        <ion-row>
+                            <ion-col>
+                                <ion-card-header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <ion-label>Género</ion-label>
+                                        <ion-icon [name]="estrella" slot="end" (click)="favorito()"></ion-icon>
+                                    </div>
+                                    <ion-card-subtitle>{{ datos.genero }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                            <ion-col>
+                                <ion-card-header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <ion-label>Fecha de Nacimiento</ion-label>
+                                        <ion-icon [name]="estrella" slot="end" (click)="favorito()"></ion-icon>
+                                    </div>
+                                    <ion-card-subtitle>{{ datos.fechaNac }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                        </ion-row>
 
-                <ion-row>
-                    <ion-col>
-                        <ion-card-header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <ion-label>Peso Actual</ion-label>
-                                <ion-icon name="star" slot="end"></ion-icon>
-                            </div>
-                            <ion-card-subtitle>{{ datos.pesoActual }}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                    <ion-col>
-                        <ion-card-header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <ion-label>Peso Deseado</ion-label>
-                                <ion-icon name="star" slot="end"></ion-icon>
-                            </div>
-                            <ion-card-subtitle>{{ datos.pesoDeseado }}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-card-header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <ion-label>Estatura</ion-label>
+                                        <ion-icon name="star" slot="end"></ion-icon>
+                                    </div>
+                                    <ion-card-subtitle>{{ datos.estatura }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                            <ion-col>
+                                <ion-card-header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <ion-label>Mi Objetivo</ion-label>
+                                        <ion-icon name="star" slot="end"></ion-icon>
+                                    </div>
+                                    <ion-card-subtitle>{{ datos.miObjetivo }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                        </ion-row>
 
-                <ion-row>
-                    <ion-col>
-                        <ion-card-header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <ion-label>IMC</ion-label>
-                                <ion-icon name="star" slot="end"></ion-icon>
-                            </div>
-                            <ion-card-subtitle>{{ datos.imc }}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                    <ion-col>
-                        <ion-card-header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <ion-label>TDEE</ion-label>
-                                <ion-icon name="star" slot="end"></ion-icon>
-                            </div>
-                            <ion-card-subtitle>{{ datos.tdee }}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-card-header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <ion-label>Peso Actual</ion-label>
+                                        <ion-icon name="star" slot="end"></ion-icon>
+                                    </div>
+                                    <ion-card-subtitle>{{ datos.pesoActual }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                            <ion-col>
+                                <ion-card-header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <ion-label>Peso Deseado</ion-label>
+                                        <ion-icon name="star" slot="end"></ion-icon>
+                                    </div>
+                                    <ion-card-subtitle>{{ datos.pesoDeseado }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                        </ion-row>
 
-                <ion-row>
-                    <ion-col>
-                        <ion-card-header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <ion-label>Proteinas/ Grasas/Carb</ion-label>
-                                <ion-icon name="star" slot="end"></ion-icon>
-                            </div>
-                            <ion-card-subtitle>{{ datos.pcg }}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                    <ion-col>
-                        <ion-card-header>
-                            <div style="display: flex; justify-content: space-between;">
-                                <ion-label>Mi Plan</ion-label>
-                                <ion-icon name="star" slot="end"></ion-icon>
-                            </div>
-                            <ion-card-subtitle>{{ datos.miPlan }}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-card-header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <ion-label>IMC</ion-label>
+                                        <ion-icon name="star" slot="end"></ion-icon>
+                                    </div>
+                                    <ion-card-subtitle>{{ datos.imc }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                            <ion-col>
+                                <ion-card-header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <ion-label>TDEE</ion-label>
+                                        <ion-icon name="star" slot="end"></ion-icon>
+                                    </div>
+                                    <ion-card-subtitle>{{ datos.tdee }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                        </ion-row>
 
-                <ion-row>
-                    <ion-col>
-                        <ion-card-header>
-                            <ion-card-title>Consulta tus Resultados</ion-card-title>
-                            <ion-card-subtitle>Tus respuestas hablan del estado de tu cuerpo, haz clic en las siguientes opciones para ver el resultado de cada una de ellas</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-col>
-                </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-card-header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <ion-label>Proteinas/ Grasas/Carb</ion-label>
+                                        <ion-icon name="star" slot="end"></ion-icon>
+                                    </div>
+                                    <ion-card-subtitle>{{ datos.pcg }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                            <ion-col>
+                                <ion-card-header>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <ion-label>Mi Plan</ion-label>
+                                        <ion-icon name="star" slot="end"></ion-icon>
+                                    </div>
+                                    <ion-card-subtitle>{{ datos.miPlan }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                        </ion-row>
 
-                <ion-row *ngFor="let consulta of consultas">
-                    <ion-col>
-                        <ion-chip outline color="dark" class="wide" (click)="mostrarDetalle( consulta)">
-                            <ion-label>{{ consulta.descripcion }}</ion-label>
-                            <ion-icon [name]="consulta.icon"></ion-icon>
-                        </ion-chip>
+                        <ion-row>
+                            <ion-col>
+                                <ion-card-header>
+                                    <ion-card-title>Consulta tus Resultados</ion-card-title>
+                                    <ion-card-subtitle>Tus respuestas hablan del estado de tu cuerpo, haz clic en las siguientes opciones para ver el resultado de cada una de ellas</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-col>
+                        </ion-row>
 
-                    </ion-col>
-                </ion-row>
+                        <ion-row *ngFor="let consulta of consultas">
+                            <ion-col>
+                                <ion-chip outline color="dark" class="wide" (click)="mostrarDetalle( consulta)">
+                                    <ion-label>{{ consulta.descripcion }}</ion-label>
+                                    <ion-icon [name]="consulta.icon"></ion-icon>
+                                </ion-chip>
 
+                            </ion-col>
+                        </ion-row>
 
-            </ion-grid>
+                    </ion-grid>
 
+                </ion-card-content>
+            </ion-card>
 
+        </ion-item>
 
-        </ion-card-content>
-    </ion-card>
+    </ion-list>
 
 </ion-content>
 <app-tab></app-tab>
