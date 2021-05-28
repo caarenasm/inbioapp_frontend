@@ -28,6 +28,7 @@ export interface Receta {
   composicion: Composicion[];
   ingrediente: Ingrediente[];
   preparacion: Preparacion[];
+  etiqueta: string[];
 }
 
 @Component({
@@ -73,6 +74,17 @@ export class RecetaPage implements OnInit {
         { descripcion: 'Descripción corta del paso', orden: 2 },
         { descripcion: 'Descripción corta del paso', orden: 3 },
         { descripcion: 'Descripción corta del paso', orden: 4 }
+      ],
+      etiqueta:[
+        'Etiqueta 1',
+        'Etiqueta 2',
+        'Etiqueta 3',
+        'Etiqueta 4',
+        'Etiqueta 5',
+        'Etiqueta 6',
+        'Etiqueta 7',
+        'Etiqueta 8',
+        'Etiqueta 9',
       ]
     },
     {
@@ -81,7 +93,18 @@ export class RecetaPage implements OnInit {
       descripcion: 'Receta Dos',
       composicion: [{ descripcion: 'Calorías', cantidad: '108', unidadMedida: 'g' }],
       ingrediente: [{ descripcion: 'Ingrediente 1', cantidad: '100', unidadMedida: 'g', inActivo: false }],
-      preparacion: [{ descripcion: 'Descripción corta del paso', orden: 1 }]
+      preparacion: [{ descripcion: 'Descripción corta del paso', orden: 1 }],
+      etiqueta:[
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+      ]
     },
     {
       img: 'assets/icon/favicon.png',
@@ -89,7 +112,18 @@ export class RecetaPage implements OnInit {
       descripcion: 'Receta Tres',
       composicion: [{ descripcion: 'Calorías', cantidad: '108', unidadMedida: 'g' }],
       ingrediente: [{ descripcion: 'Ingrediente 1', cantidad: '100', unidadMedida: 'g', inActivo: false }],
-      preparacion: [{ descripcion: 'Descripción corta del paso', orden: 1 }]
+      preparacion: [{ descripcion: 'Descripción corta del paso', orden: 1 }],
+      etiqueta:[
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+      ]
     }
   ];
 

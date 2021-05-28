@@ -1,8 +1,9 @@
 <app-header></app-header>
 
-<ion-content>
+<ion-content fullscreen class="ion-padding">
 
     <ion-card class="card-padding-border">
+
         <ion-card-content>
 
             <ion-item (click)="openPicker()">
@@ -11,15 +12,34 @@
             </ion-item>
 
             <ion-card *ngFor="let receta of recetas" class="card-padding-border">
-                <ion-img [src]="receta.img"></ion-img>
+
+                <ion-card-content>
+                    <ion-fab vertical="top" horizontal="start" slot="fixed">
+                        <ion-fab-button color="dark" class="main-button">
+                            <ion-icon name="heart"></ion-icon>
+                        </ion-fab-button>
+                        <ion-fab-button color="dark" class="main-button">
+                            <ion-icon name="share-social"></ion-icon>
+                        </ion-fab-button>
+                    </ion-fab>
+                </ion-card-content>
+
+                <ion-item lines="none">
+                    <ion-img [src]="receta.img"></ion-img>
+                </ion-item>
+
                 <ion-card-header>
                     <ion-card-title>{{ receta.fecha }}</ion-card-title>
                     <ion-card-subtitle>{{ receta.descripcion}}</ion-card-subtitle>
                 </ion-card-header>
 
-                <ion-card-content>
-                    <ion-button expand="block" (click)="mostrarDetalle(receta)" color="dark">Ver Detalles</ion-button>
-                </ion-card-content>
+                <ion-grid>
+                    <ion-row class="ion-align-items-center">
+                        <ion-col size="12" class="ion-text-center">
+                            <ion-button (click)="mostrarDetalle(receta)" color="dark" edge>Ver Detalles</ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
 
             </ion-card>
 
