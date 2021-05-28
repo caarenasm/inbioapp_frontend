@@ -1,0 +1,37 @@
+<ion-content class="ion-padding">
+
+    <ion-card class="card-padding-border">
+        <ion-item>
+            <ion-icon icon="body" slot="start"></ion-icon>
+            <ion-icon name="close-circle" slot="end" (click)="cerrar()"></ion-icon>
+        </ion-item>
+
+        <ion-card-content>
+            <!-- Item Dividers in a List -->
+            <ion-list>
+                <ion-item-divider>
+                    <ion-label>
+                        <h2>{{ datos.descripcion }}</h2>
+                    </ion-label>
+                </ion-item-divider>
+
+                <ion-item>
+                    <ion-text>{{ datos.respuesta }}</ion-text>
+                </ion-item>
+
+                <ion-item-divider>
+                    <ion-label>
+                        <h2>Tus Resultados:</h2>
+                    </ion-label>
+                </ion-item-divider>
+
+                <ion-item>
+                    <ion-text>{{ datos.resultado }}</ion-text>
+                </ion-item>
+
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>

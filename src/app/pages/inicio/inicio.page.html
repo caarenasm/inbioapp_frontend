@@ -15,7 +15,7 @@
           <h2>{{ slide.desc }}</h2>
         </ion-card-content>
 
-        <ion-button routerLink="/quiz"  *ngIf= "slide.entrar == true" color="primary">
+        <ion-button *ngIf= "slide.entrar == true" color="primary" shape="round">
           Empezar Ahora
         </ion-button>
 
@@ -23,11 +23,11 @@
         <br/>
         <br/>
         <br/>
-        <p *ngIf= "slide.entrar == true">Una App de:</p>
+        <p *ngIf= "slide.entrar == true"><b>Una App de:</b></p>
         <br/>
         <br/>
         <br/>
-        <img [src]="slide.img" class="slide-image" *ngIf= "slide.entrar == true" />
+        <img src="/assets/img/inbionova.png" class="slide-image" *ngIf= "slide.entrar == true" />
 
 
       </ion-card>
