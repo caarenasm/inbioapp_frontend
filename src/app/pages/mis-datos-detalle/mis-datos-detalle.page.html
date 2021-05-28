@@ -8,28 +8,35 @@
 
         <ion-card-content>
             <!-- Item Dividers in a List -->
-            <ion-list>
-                <ion-item-divider>
-                    <ion-label>
-                        <h2>{{ datos.descripcion }}</h2>
-                    </ion-label>
-                </ion-item-divider>
+            <section>
+                <ion-list>
+                    <ion-item-divider>
+                        <ion-label>
+                            <h2>{{ datos.descripcion }}</h2>
+                        </ion-label>
+                    </ion-item-divider>
 
-                <ion-item>
-                    <ion-text>{{ datos.respuesta }}</ion-text>
-                </ion-item>
+                    <ion-item>
+                        <ion-text>{{ datos.respuesta }}</ion-text>
+                    </ion-item>
 
-                <ion-item-divider>
-                    <ion-label>
-                        <h2>Tus Resultados:</h2>
-                    </ion-label>
-                </ion-item-divider>
+                    <ion-item-divider>
+                        <ion-label>
+                            <h2>Tus Resultados:</h2>
+                        </ion-label>
+                    </ion-item-divider>
 
-                <ion-item>
-                    <ion-text>{{ datos.resultado }}</ion-text>
-                </ion-item>
+                    <ion-item *ngFor="let item of datos.resultado; ; let i = index ">
+                        <ion-text>{{ item }}</ion-text>
+                    </ion-item>
 
-            </ion-list>
+                </ion-list>
+            </section>
+
+            <section>
+                <ion-button expand="block" (click)="cerrar()" color="dark">volver</ion-button>
+            </section>
+
         </ion-card-content>
     </ion-card>
 
