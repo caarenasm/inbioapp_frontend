@@ -26,6 +26,7 @@ export interface Receta {
   composicion: Composicion[];
   ingrediente: Ingrediente[];
   preparacion: Preparacion[];
+  etiqueta: string[];
 }
 
 @Component({
