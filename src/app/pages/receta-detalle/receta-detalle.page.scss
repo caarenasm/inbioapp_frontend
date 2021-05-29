@@ -1,9 +1,53 @@
-.card-padding-border {
-    /*padding-top: 5%;*/
-    padding-bottom: 20%;
-    border-radius: 30px;
-}
+//.card-padding-border {
 
+/*padding-top: 5%;*/
+
+
+/*padding-bottom: 20%;*/
+
+
+/*border-radius: 30px;*/
+
+//}
 .main-button {
     --box-shadow: none;
+}
+
+ion-list {
+    background-image: url('/assets/img/logo-header.png');
+    background-repeat: no-repeat;
+    --offset-bottom: 0px;
+    --offset-top: 0px;
+    --padding-bottom: 0px;
+    --padding-end: 0px;
+    --padding-start: 0px;
+    --padding-top: 0px;
+}
+
+ion-img {
+    height: 140px;
+    width: 100%;
+}
+
+ion-item {
+    --background: transparent;
+    --padding-bottom: 0px;
+    --padding-end: 0px;
+    --padding-top: 0px;
+}
+
+ion-card {
+    --background: #ffffff;
+    --color: #000000;
+    border-radius: 50px;
+    padding: 0px;
+    height: 100%;
+}
+
+ion-button {
+    --border-radius: 50px;
+    --padding-bottom: 4px;
+    --padding-end: 50px;
+    --padding-start: 50px;
+    --padding-top: 4px;
 }
