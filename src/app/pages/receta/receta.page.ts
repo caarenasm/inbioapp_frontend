@@ -47,7 +47,7 @@ export class RecetaPage implements OnInit {
 
   recetas: Receta[] = [
     {
-      img: 'assets/img/logo-header.png',
+      img: 'assets/img/producto.png',
       fecha: '23/04/2021',
       descripcion: 'Receta Uno',
       composicion: [
@@ -88,7 +88,7 @@ export class RecetaPage implements OnInit {
       ]
     },
     {
-      img: 'assets/icon/favicon.png',
+      img: 'assets/img/producto.png',
       fecha: '23/01/2021',
       descripcion: 'Receta Dos',
       composicion: [{ descripcion: 'Calorías', cantidad: '108', unidadMedida: 'g' }],
@@ -107,7 +107,7 @@ export class RecetaPage implements OnInit {
       ]
     },
     {
-      img: 'assets/icon/favicon.png',
+      img: 'assets/img/producto.png',
       fecha: '23/02/2020',
       descripcion: 'Receta Tres',
       composicion: [{ descripcion: 'Calorías', cantidad: '108', unidadMedida: 'g' }],

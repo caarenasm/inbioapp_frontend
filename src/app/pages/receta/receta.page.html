@@ -5,7 +5,7 @@
     <ion-list lines="none">
 
         <ion-item>
-            <ion-label>Recetas Inbionova</ion-label>
+            <ion-label color="light">Recetas Inbionova</ion-label>
         </ion-item>
 
         <ion-card>
@@ -30,9 +30,10 @@
                         </ion-fab>
                     </ion-card-content>
 
-                    <ion-item lines="none">
-                        <ion-img [src]="receta.img"></ion-img>
+                    <ion-item>
+                        <img [src]="receta.img">
                     </ion-item>
+
                     <ion-item lines="none">
                         <ion-card-header>
                             <ion-card-subtitle>{{ receta.descripcion}}</ion-card-subtitle>
