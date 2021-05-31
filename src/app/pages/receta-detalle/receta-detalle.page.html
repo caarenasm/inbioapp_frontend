@@ -4,21 +4,36 @@
 
         <ion-img [src]="datos.img"></ion-img>
 
+        <ion-fab horizontal="end" vertical="top" slot="fixed">
+            <ion-fab-button (click)="cerrar()" color="dark" size="small">
+                <ion-icon name="close"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+
         <ion-card>
 
             <ion-card-content>
 
-                <ion-item-divider>
-                    {{ datos.descripcion}}
-                </ion-item-divider>
+                <ion-fab horizontal="end" vertical="top" slot="fixed">
+                    <ion-fab-button color="dark" class="main-button" size="small">
+                        <ion-icon name="heart"></ion-icon>
+                    </ion-fab-button>
+                    <ion-fab-button color="dark" class="main-button" size="small">
+                        <ion-icon name="share-social"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+
+                <ion-card-header>
+                    <ion-card-title>{{ datos.descripcion}}</ion-card-title>
+                </ion-card-header>
 
                 <ion-item *ngFor="let item of datos.composicion" lines="none">
                     <ion-label>{{ item.descripcion}} {{ item.cantidad}} {{ item.unidadMedida}}</ion-label>
                 </ion-item>
 
-                <ion-item-divider>
-                    <ion-label>Ingredientes:</ion-label>
-                </ion-item-divider>
+                <ion-card-header>
+                    <ion-card-subtitle>Ingredientes:</ion-card-subtitle>
+                </ion-card-header>
 
                 <ion-item *ngFor="let item of datos.ingrediente" lines="none">
                     <ion-checkbox color="dark" slot="start" *ngIf="item.inActivo == false"></ion-checkbox>
@@ -26,9 +41,9 @@
                     <ion-label>{{ item.descripcion}} {{ item.cantidad}} {{ item.unidadMedida}}</ion-label>
                 </ion-item>
 
-                <ion-item-divider>
-                    <ion-label>Preparación:</ion-label>
-                </ion-item-divider>
+                <ion-card-header>
+                    <ion-card-subtitle>Preparación:</ion-card-subtitle>
+                </ion-card-header>
 
                 <ion-item *ngFor="let item of datos.preparacion; let i=index" lines="none">
                     <ion-label>{{ item.orden }}. {{ item.descripcion}}</ion-label>
@@ -43,18 +58,6 @@
             </ion-card-content>
 
         </ion-card>
-
-        <ion-fab horizontal="end" vertical="top" slot="fixed">
-            <ion-fab-button (click)="cerrar()" color="dark" size="small">
-                <ion-icon name="close"></ion-icon>
-            </ion-fab-button>
-            <ion-fab-button color="dark" class="main-button" size="small">
-                <ion-icon name="heart"></ion-icon>
-            </ion-fab-button>
-            <ion-fab-button color="dark" class="main-button" size="small">
-                <ion-icon name="share-social"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
 
     </ion-list>
 

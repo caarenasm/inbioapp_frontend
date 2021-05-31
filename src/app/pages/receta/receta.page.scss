@@ -5,7 +5,7 @@
 }
 
 ion-img {
-    height: 100px;
+    height: 100%;
     width: 100%;
 }
 
@@ -38,16 +38,31 @@ ion-card {
     --color: #000000;
     border-radius: 50px;
     padding: 0px;
+    padding-bottom: 20px;
+}
+
+ion-list>ion-card>ion-card-content>ion-card>ion-card-content {
+    padding: 0px;
 }
 
 ion-card.card-padding-border {
     border-radius: 15px;
 }
 
-ion-card.md.hydrated ion-card-content.md.card-content-md.hydrated ion-card.md.hydrated {
+ion-card ion-card-content.card-content-md ion-card {
     border-radius: 15px;
-    padding-bottom: 0px;
+    padding-bottom: 40px;
     padding-inline: 0px;
+    margin-top: 10px;
+    margin-bottom: -40px;
+}
+
+ion-card ion-card-content.card-content-ios ion-card {
+    border-radius: 15px;
+    padding-bottom: 40px;
+    padding-inline: 0px;
+    margin-top: 10px;
+    margin-bottom: -40px;
 }
 
 .item-interactive {
@@ -66,4 +81,6 @@ ion-button {
     --padding-end: 50px;
     --padding-start: 50px;
     --padding-top: 4px;
+    margin-top: 10px;
+    margin-bottom: -30px;
 }

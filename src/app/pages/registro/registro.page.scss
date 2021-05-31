@@ -42,7 +42,18 @@ ion-list {
     padding-top: 50px;
 }
 
+ion-list>ion-item {
+    border-radius: 50px;
+    width: 50px;
+}
+
 ion-fab-button {
+    --background: #ffffff;
+    --border-color: #000000;
+    --border-radius: 50px;
+    --border-style: solid;
+    --border-width: 0.5px;
+    margin-top: 20px;
     --box-shadow: none;
 }
 
@@ -51,6 +62,7 @@ ion-card {
     --color: #000000;
     border-radius: 50px;
     padding: 0px;
+    padding-top: 30px;
     padding-bottom: 50px;
 }
 
