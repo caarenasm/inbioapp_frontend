@@ -1,0 +1,40 @@
+<ion-content>
+
+  <ion-slides pager="ios" class="slide-full">
+
+    <ion-slide *ngFor="let slide of slides" [style]=slide.color>
+
+      <ion-card class="ion-no-border" style="background-color:transparent">
+        <img [src]="slide.img" class="slide-image" />
+
+        <ion-card-header>
+          <ion-card-subtitle>{{ slide.titulo }}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <h2>{{ slide.desc }}</h2>
+        </ion-card-content>
+
+        <ion-button routerLink="/quiz"  *ngIf= "slide.entrar == true" color="primary">
+          Empezar Ahora
+        </ion-button>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <p *ngIf= "slide.entrar == true">Una App de:</p>
+        <br/>
+        <br/>
+        <br/>
+        <img [src]="slide.img" class="slide-image" *ngIf= "slide.entrar == true" />
+
+
+      </ion-card>
+
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
+
