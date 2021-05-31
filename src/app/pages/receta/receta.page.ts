@@ -28,6 +28,7 @@ export interface Receta {
   composicion: Composicion[];
   ingrediente: Ingrediente[];
   preparacion: Preparacion[];
+  etiqueta: string[];
 }
 
 @Component({
@@ -46,7 +47,7 @@ export class RecetaPage implements OnInit {
 
   recetas: Receta[] = [
     {
-      img: 'assets/icon/favicon.png',
+      img: 'assets/img/producto.png',
       fecha: '23/04/2021',
       descripcion: 'Receta Uno',
       composicion: [
@@ -73,23 +74,56 @@ export class RecetaPage implements OnInit {
         { descripcion: 'Descripción corta del paso', orden: 2 },
         { descripcion: 'Descripción corta del paso', orden: 3 },
         { descripcion: 'Descripción corta del paso', orden: 4 }
+      ],
+      etiqueta:[
+        'Etiqueta 1',
+        'Etiqueta 2',
+        'Etiqueta 3',
+        'Etiqueta 4',
+        'Etiqueta 5',
+        'Etiqueta 6',
+        'Etiqueta 7',
+        'Etiqueta 8',
+        'Etiqueta 9',
       ]
     },
     {
-      img: 'assets/icon/favicon.png',
+      img: 'assets/img/producto.png',
       fecha: '23/01/2021',
       descripcion: 'Receta Dos',
       composicion: [{ descripcion: 'Calorías', cantidad: '108', unidadMedida: 'g' }],
       ingrediente: [{ descripcion: 'Ingrediente 1', cantidad: '100', unidadMedida: 'g', inActivo: false }],
-      preparacion: [{ descripcion: 'Descripción corta del paso', orden: 1 }]
+      preparacion: [{ descripcion: 'Descripción corta del paso', orden: 1 }],
+      etiqueta:[
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+      ]
     },
     {
-      img: 'assets/icon/favicon.png',
+      img: 'assets/img/producto.png',
       fecha: '23/02/2020',
       descripcion: 'Receta Tres',
       composicion: [{ descripcion: 'Calorías', cantidad: '108', unidadMedida: 'g' }],
       ingrediente: [{ descripcion: 'Ingrediente 1', cantidad: '100', unidadMedida: 'g', inActivo: false }],
-      preparacion: [{ descripcion: 'Descripción corta del paso', orden: 1 }]
+      preparacion: [{ descripcion: 'Descripción corta del paso', orden: 1 }],
+      etiqueta:[
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+        'Etiqueta 1',
+      ]
     }
   ];
 
@@ -104,6 +138,7 @@ export class RecetaPage implements OnInit {
   async openPicker(numColumns = 1, numOptions = 5, columnOptions = this.filtro){
     const picker = await this.pickerCtrl.create({
       columns: this.getColumns(numColumns, numOptions, columnOptions),
+      cssClass: 'picker',
       buttons: [
         {
           text: 'Cancel',

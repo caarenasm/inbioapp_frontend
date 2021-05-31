@@ -1,44 +1,64 @@
-<ion-content class="ion-padding">
+<ion-content>
+    <ion-list>
 
-    <ion-card class="card-padding-border">
-        <ion-item>
-            <ion-icon icon="body" slot="start"></ion-icon>
-            <ion-icon name="close-circle" slot="end" (click)="cerrar()"></ion-icon>
-        </ion-item>
 
-        <ion-card-content>
-            <!-- Item Dividers in a List -->
-            <section>
-                <ion-list>
-                    <ion-item-divider>
-                        <ion-label>
-                            <h2>{{ datos.descripcion }}</h2>
-                        </ion-label>
-                    </ion-item-divider>
 
-                    <ion-item>
-                        <ion-text>{{ datos.respuesta }}</ion-text>
-                    </ion-item>
+        <ion-card>
 
-                    <ion-item-divider>
-                        <ion-label>
-                            <h2>Tus Resultados:</h2>
-                        </ion-label>
-                    </ion-item-divider>
+            <ion-card-content>
 
-                    <ion-item *ngFor="let item of datos.resultado; ; let i = index ">
-                        <ion-text>{{ item }}</ion-text>
-                    </ion-item>
+                <ion-fab vertical="top" horizontal="start" slot="fixed">
+                    <ion-fab-button color="dark" class="main-button" size="small">
+                        <ion-icon name="fast-food-outline"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+                <ion-fab vertical="top" horizontal="end" slot="fixed">
+                    <ion-fab-button color="dark" class="main-button" size="small">
+                        <ion-icon name="close-outline" (click)="cerrar()"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
 
-                </ion-list>
-            </section>
+                <ion-item lines="none">
 
-            <section>
-                <ion-button expand="block" (click)="cerrar()" color="dark">volver</ion-button>
-            </section>
+                </ion-item>
 
-        </ion-card-content>
-    </ion-card>
+                <ion-item-divider>
+                    <ion-label>
+                        <h2>{{ datos.descripcion }}</h2>
+                    </ion-label>
+                </ion-item-divider>
 
+                <ion-item>
+                    <ion-text>{{ datos.respuesta }}</ion-text>
+                </ion-item>
+
+                <ion-item-divider>
+                    <ion-label>
+                        <h2>Tus Resultados:</h2>
+                    </ion-label>
+                </ion-item-divider>
+
+                <ion-item *ngFor="let item of datos.resultado; ; let i = index " lines="none">
+                    <ion-text>- {{ item }}</ion-text>
+                </ion-item>
+
+            </ion-card-content>
+
+            <!--<ion-item>
+                <ion-icon icon="body" slot="start"></ion-icon>
+                <ion-icon name="close-circle" slot="end" (click)="cerrar()"></ion-icon>
+            </ion-item>-->
+
+            <ion-grid>
+                <ion-row class="ion-align-items-center">
+                    <ion-col size="12" class="ion-text-center">
+                        <ion-button (click)="cerrar()" color="dark" edge>volver</ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-card>
+
+    </ion-list>
 
 </ion-content>

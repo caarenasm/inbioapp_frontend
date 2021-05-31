@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { MisDatosDetallePage } from '../mis-datos-detalle/mis-datos-detalle.page';
 
 export interface Datos {
+  nombre: string;
   genero: string;
   fechaNac: string;
   estatura: string;
@@ -32,6 +33,7 @@ export class MisDatosPage implements OnInit {
   estrella = 'star-outline';
 
   datos : Datos = {
+      nombre: 'Pedro Perez',
       genero: 'Masculino',
       fechaNac: '12.10.1978',
       estatura: '1.65',
