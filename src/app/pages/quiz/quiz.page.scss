@@ -1,0 +1,41 @@
+   
+.slide-full {
+    height: 100% !important;
+}
+
+ion-slides {
+    padding: 0px;
+    height: 100% !important;
+}
+
+ion-grid {
+    height: 100% !important;
+}
+
+ion-list {
+    background-image: url('/assets/img/fondo_uno.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    --offset-bottom: 0px;
+    --offset-top: 0px;
+    --padding-bottom: 0px;
+    --padding-end: 0px;
+    --padding-start: 0px;
+    padding-top: 50px;
+}
+
+ion-fab-button {
+    --background: #ffffff;
+    --border-color: #000000;
+    --border-radius: 50px;
+    --border-style: solid;
+    --border-width: 0.5px;
+    margin-top: 20px;
+    --box-shadow: none;
+}
+
+ion-card {
+    --background: #ffffff;
+    --color: #000000;
+    border-radius: 50px;
+}
