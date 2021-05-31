@@ -28,11 +28,11 @@ export class InicioPage implements OnInit {
       color: 'background-color:white'
     },
     {
-      img: '/assets/img/Intro_4.png',
-      titulo: 'Inbioapp',
+      img: '/assets/img/inbioapp.png',
+      titulo: '',
       entrar: true,
       color: 'background-color:black'
-    }
+    },
   ];
   
 
