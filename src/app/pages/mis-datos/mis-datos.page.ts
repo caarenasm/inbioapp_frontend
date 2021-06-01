@@ -35,7 +35,7 @@ export class MisDatosPage implements OnInit {
   datos : Datos = {
       nombre: 'Pedro Perez',
       genero: 'Masculino',
-      fechaNac: '12.10.1978',
+      fechaNac: '12/10/1978',
       estatura: '1.65',
       miObjetivo: 'Bajar de peso',
       pesoActual: '80 kg',
@@ -49,7 +49,7 @@ export class MisDatosPage implements OnInit {
   consultas: Consulta[] = [
     {
       descripcion: 'Estado del Sueño',
-      icon: 'add',
+      icon: 'add-circle',
       respuesta: 'Duermo muy bien y me levanto descansado',
       resultado: [
         'Bien por ti! Esto demuestra que la hormona del sueño está funcionando bien.',
@@ -60,49 +60,49 @@ export class MisDatosPage implements OnInit {
     },
     {
       descripcion: 'Antojos',
-      icon: 'add',
+      icon: 'add-circle',
       respuesta: 'Todos los días',
       resultado: ['Oh No! Muchos tipos de antojos están relacionados con la parte psicológica: las emociones y el deseo, por ejemplo para calmar el estrés y reducir la.']
     },
     {
       descripcion: 'Antojos más Comunes',
-      icon: 'add',
+      icon: 'add-circle',
       respuesta: 'Comidas con carbohidratos',
       resultado: ['Oh No!']
     },
     {
       descripcion: 'Actividades Físicas',
-      icon: 'add',
+      icon: 'add-circle',
       respuesta: 'Me siento cómodo(a) con las dos actividades físicas anteriores',
       resultado: ['Oh No!']
     },
     {
       descripcion: 'Enfermedades',
-      icon: 'add',
+      icon: 'add-circle',
       respuesta: 'Enfermedades cardiovasculares',
       resultado: ['Oh No!']
     },
     {
       descripcion: 'Dieta Especial',
-      icon: 'add',
+      icon: 'add-circle',
       respuesta: 'No, como casi de todo',
       resultado: ['Oh No!']
     },
     {
       descripcion: 'Desposiciones',
-      icon: 'add',
+      icon: 'add-circle',
       respuesta: '1 vez al día',
       resultado: ['Oh No!']
     },
     {
       descripcion: 'Consumo de Agua',
-      icon: 'add',
+      icon: 'add-circle',
       respuesta: 'De 1L a 2L',
       resultado: ['Oh No!']
     },
     {
       descripcion: 'Suplementos',
-      icon: 'add',
+      icon: 'add-circle',
       respuesta: 'Bioproductos Inbionova',
       resultado: ['Oh No!']
     }
