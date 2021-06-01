@@ -1,17 +1,15 @@
 <ion-content>
     <ion-list>
 
-
-
         <ion-card>
 
             <ion-card-content>
 
-                <ion-fab vertical="top" horizontal="start" slot="fixed">
+                <!--<ion-fab vertical="top" horizontal="start" slot="fixed">
                     <ion-fab-button color="dark" class="main-button" size="small">
                         <ion-icon name="fast-food-outline"></ion-icon>
                     </ion-fab-button>
-                </ion-fab>
+                </ion-fab>-->
                 <ion-fab vertical="top" horizontal="end" slot="fixed">
                     <ion-fab-button color="dark" class="main-button" size="small">
                         <ion-icon name="close-outline" (click)="cerrar()"></ion-icon>
@@ -49,16 +47,14 @@
                 <ion-icon name="close-circle" slot="end" (click)="cerrar()"></ion-icon>
             </ion-item>-->
 
-            <ion-grid>
-                <ion-row class="ion-align-items-center">
-                    <ion-col size="12" class="ion-text-center">
-                        <ion-button (click)="cerrar()" color="dark" edge>volver</ion-button>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-
         </ion-card>
 
     </ion-list>
 
 </ion-content>
+
+<ion-tab-bar slot="bottom">
+
+    <ion-button expand="block" (click)="cerrar()" color="dark">Volver</ion-button>
+
+</ion-tab-bar>
