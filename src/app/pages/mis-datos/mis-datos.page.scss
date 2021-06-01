@@ -22,9 +22,9 @@ ion-chip.wide {
 }
 
 ion-list {
-    /*background-image: url('/assets/img/fondo_dos.png');
+    background-image: url('/assets/img/fondo_mis_datos.png');
     background-repeat: no-repeat;
-    background-size: 100%;*/
+    background-size: 100%;
     --offset-bottom: 0px;
     --offset-top: 0px;
     --padding-bottom: 0px;
@@ -100,4 +100,10 @@ ion-col>ion-card>ion-grid>ion-row>ion-col {
     font-size: 14px;
     font-weight: normal;
     text-align: center;
+}
+
+.ion-titulo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
 }
