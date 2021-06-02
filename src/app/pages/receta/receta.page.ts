@@ -47,7 +47,7 @@ export class RecetaPage implements OnInit {
 
   recetas: Receta[] = [
     {
-      img: 'assets/icon/favicon.png',
+      img: 'assets/img/producto.png',
       fecha: '23/04/2021',
       descripcion: 'Receta Uno',
       composicion: [
@@ -88,7 +88,7 @@ export class RecetaPage implements OnInit {
       ]
     },
     {
-      img: 'assets/icon/favicon.png',
+      img: 'assets/img/producto.png',
       fecha: '23/01/2021',
       descripcion: 'Receta Dos',
       composicion: [{ descripcion: 'Calorías', cantidad: '108', unidadMedida: 'g' }],
@@ -107,7 +107,7 @@ export class RecetaPage implements OnInit {
       ]
     },
     {
-      img: 'assets/icon/favicon.png',
+      img: 'assets/img/producto.png',
       fecha: '23/02/2020',
       descripcion: 'Receta Tres',
       composicion: [{ descripcion: 'Calorías', cantidad: '108', unidadMedida: 'g' }],
@@ -138,6 +138,7 @@ export class RecetaPage implements OnInit {
   async openPicker(numColumns = 1, numOptions = 5, columnOptions = this.filtro){
     const picker = await this.pickerCtrl.create({
       columns: this.getColumns(numColumns, numOptions, columnOptions),
+      cssClass: 'picker',
       buttons: [
         {
           text: 'Cancel',
