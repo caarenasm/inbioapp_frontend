@@ -1,31 +1,133 @@
-.card-padding-border{
-    padding-top: 5%;
-    padding-bottom: 10%;
-    border-radius: 30px;
+.ion-list-principal {
+    background-image: url('/assets/img/fondo_mis_eventos.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
 }
 
-.card-titulo {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.card-sub-titulo {
-    font-size: 12px;
-    text-align: center;
-}
-
-.card-input {
-    font-size: 12px;
-    font-weight: bold;
+ion-card {
+    --background: #ffffff;
+    --color: #000000;
+    --border-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     padding: 0px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    margin-bottom: 0px;
 }
 
-.card-input-dos {
+.ion-fab-button-logo {
+    --background: #ffffff;
+    --border-color: #000000;
+    --border-radius: 50px;
+    //--border-style: solid;
+    //--border-width: 0.5px;
+    padding-left: 0%;
+    margin-top: 45px;
+    //--box-shadow: none;
+    width: 70px;
+    height: 70px;
+}
+
+.ion-fab-button-cantidad {
+    --background: #9d259d;
+    --border-color: #000000;
+    --border-radius: 50px;
+    //--border-style: solid;
+    //--border-width: 0.5px;
+    padding-left: 0%;
+    //--box-shadow: none;
+    width: 40px;
+    height: 40px;
+}
+
+.ion-icon-icono {
+    color: #9d259d;
+    font-size: 50px;
+}
+
+.titulo {
+    font-size: 20px;
+    font-style: bold;
+    text-align: center;
+}
+
+.sub-titulo {
+    font-size: 14px;
+    font-style: normal;
+    text-align: center;
+}
+
+.titulo-input {
     font-size: 16px;
-    font-weight: bold;
+    font-style: bold;
+    display: flex;
+    justify-content: space-between;
 }
 
-.radio > button {
-    width: 0;
-    }
+.label-sexo {
+    font-size: 14px;
+    font-style: bold;
+    text-align: left;
+}
+
+.ion-radio {
+    --border-radius: 25px;
+    --color: #fe8e0d;
+    --color-checked: #fe8e0d;
+    --inner-border-radius: 25px
+}
+
+.ion-checkbox {
+    background: #FFFFFF;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-radius: 4px;
+    border-color: #fe8e0d !important;
+    --height: 25px;
+    --width: 25px;
+    --checkmark-color: #FFFFFF;
+    --border-color: #FFFFFF;
+    --background-checked: #fe8e0d;
+    --border-color: #fe8e0d;
+    --border-color-checked: #fe8e0d;
+}
+
+.grid-card {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+ion-card-title {
+    font-size: 16px;
+    text-align: center;
+}
+
+ion-card-subtitle {
+    font-size: 14px;
+    text-align: center;
+}
+
+ion-datetime {
+    background: #f6f6f6;
+    border: #9e9e9e !important;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+ion-input {
+    border-radius: 25px;
+    border: #9e9e9e !important;
+    --background: #f6f6f6;
+    --placeholder-font-style: initial;
+    --placeholder-font-weight: initial;
+    --placeholder-opacity: 0.5;
+}
+
+textarea:focus,
+input:focus {
+    color: #9933CC !important;
+}
