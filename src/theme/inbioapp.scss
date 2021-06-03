@@ -1,0 +1,23 @@
+.alerta {
+    //--backdrop-opacity: 0.6;
+    //--background: linear-gradient(90deg, rgb(30, 0, 201) 1%, rgb(248, 255, 248) 100%);
+    .alert-title.sc-ion-alert-md,
+    .alert-title.sc-ion-alert-ios {
+        font-size: 16;
+        color: rgb(0, 0, 0);
+    }
+    .alert-message.sc-ion-alert-md,
+    .alert-message.sc-ion-alert-ios {
+        color: rgb(0, 0, 0);
+    }
+    .alert-button.sc-ion-alert-md,
+    .alert-button.sc-ion-alert-ios {
+        color: #ffffff;
+        background-color: #9933CC;
+        width: 100px;
+        border-radius: 25px;
+        border: 0.5px solid;
+        border-color: #000000;
+        text-align: center;
+    }
+}
