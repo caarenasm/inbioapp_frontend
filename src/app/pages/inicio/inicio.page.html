@@ -5,29 +5,52 @@
     <ion-slide *ngFor="let slide of slides" [style]=slide.color>
 
       <ion-card class="ion-no-border" style="background-color:transparent">
-        <img [src]="slide.img" class="slide-image" />
+
+        <ion-img [src]="slide.img" class="imagen"></ion-img>
 
         <ion-card-header>
-          <ion-card-subtitle>{{ slide.titulo }}</ion-card-subtitle>
+          <ion-card-title class="titulo">{{ slide.titulo }}</ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
           <h2>{{ slide.desc }}</h2>
         </ion-card-content>
 
-        <ion-button *ngIf= "slide.entrar == true" color="primary" shape="round">
+        <ion-button *ngIf= "slide.entrar == true" shape="round">
           Empezar Ahora
         </ion-button>
 
-        <br/>
-        <br/>
-        <br/>
-        <br/>
         <p *ngIf= "slide.entrar == true"><b>Una App de:</b></p>
-        <br/>
-        <br/>
-        <br/>
         <img src="/assets/img/inbionova.png" class="slide-image" *ngIf= "slide.entrar == true" />
+
+
+      </ion-card>
+
+    </ion-slide>
+
+    <ion-slide style="background-color:black">
+
+      <ion-card style="background-color:transparent">
+
+        <ion-card-header>
+          <ion-img src="/assets/img/inbioapp.png" class="imagen-final"></ion-img>
+        </ion-card-header>
+
+        <ion-card-content style="padding-top: 100px;">
+
+          <ion-button shape="round">
+            Empezar Ahora
+          </ion-button>
+
+          <ion-card-title style="padding-top: 100px;color:white">Una App de:</ion-card-title>
+
+          <ion-img src="/assets/img/inbionova.png" class="imagen-app"></ion-img>
+  
+        
+        </ion-card-content>
+
+
+
 
 
       </ion-card>
