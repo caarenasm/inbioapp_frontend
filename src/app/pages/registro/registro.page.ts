@@ -60,6 +60,7 @@ export class RegistroPage implements OnInit {
 
   async alerta() {
     const alert = await this.alertCtrl.create({
+      backdropDismiss: false,
       header: '¿Estas seguro que deseas continuar?',
       message: 'Ten en cuenta que los datos suministrados anteriormente no pueden ser cambiados o editados posteriormente.',
       cssClass:'alerta',
