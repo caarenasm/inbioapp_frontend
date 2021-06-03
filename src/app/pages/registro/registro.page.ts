@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro',
@@ -11,7 +12,7 @@ export class RegistroPage implements OnInit {
   pesoActual = 0;
   pesoDeseado = 0;
 
-  constructor() { }
+  constructor( private alertCtrl: AlertController ) { }
 
   ngOnInit() {
   }
@@ -55,6 +56,29 @@ export class RegistroPage implements OnInit {
 
   menosPesoDeseado() {
     this.pesoDeseado -= 1;
+  }
+
+  async alerta() {
+    const alert = await this.alertCtrl.create({
+      header: '¿Estas seguro que deseas continuar?',
+      message: 'Ten en cuenta que los datos suministrados anteriormente no pueden ser cambiados o editados posteriormente.',
+      cssClass:'alerta',
+      buttons: [
+        {
+          text: 'Volver',
+          role: 'cancel',
+          handler: () => {
+            console.log('click en ok!')
+          }
+        },
+        {
+          text: 'Continuar',
+          role: 'cancel',
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }
