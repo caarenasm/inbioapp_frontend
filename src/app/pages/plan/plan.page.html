@@ -1,67 +1,42 @@
 
+
 <ion-content>
 
-  <ion-card mode="ios">
-    <img>
-    <ion-card-header>
-      <ion-card-title>Plan Gratuito</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <b color="black">Beneficios:<br></b>
-      <ion-icon  name = "checkmark-outline"></ion-icon> Diario Nutricional<br><ion-icon  name = "checkmark-outline">       
-      </ion-icon> Recetas Mensuales Limitadas<br><ion-icon  name = "checkmark-outline">
-      </ion-icon> Acceso al contenido actual de Inbionova
-    </ion-card-content>
-    <ion-button>Quiero este plan</ion-button>
-  </ion-card>
+  <ion-list lines="none">
 
-  <ion-card mode="ios">
-    <ion-label class="ion-padding"><b>$100.000 x 3 meses</b><br>$380.000 anual</ion-label>
-    <ion-card-header>
-      <ion-card-title>Plan Básico</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <b color="black">Beneficios:<br></b>
-      <ion-icon  name = "checkmark-outline"></ion-icon> Diario Nutricional<br><ion-icon  name = "checkmark-outline"></ion-icon>      Recetas Mensuales Limitadas<br><ion-icon  name = "checkmark-outline"></ion-icon> Guía nutricional personalizada<br>
-      <ion-icon  name = "checkmark-outline"></ion-icon> Sugerencias de bioproductos<br><ion-icon  name = "checkmark-outline"></ion-icon> Control mensual con el coach<br>
-      <ion-icon  name = "checkmark-outline"></ion-icon> Descuentos en eventos<br><ion-icon  name = "checkmark-outline"> </ion-icon> Acceso al contenido actual Inbionova
-    </ion-card-content>
-    <ion-button>Quiero este plan</ion-button>
-  </ion-card>
+    <div *ngFor="let plans of plan">
 
-  <ion-card mode="ios">
-    <ion-label class="ion-padding"><b>$50.000 x 3 meses</b><br>$180.000 anual</ion-label>
-    <ion-card-header>
-      <ion-card-title>Plan Saludable:</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <b color="black">Beneficios:<br></b>
-      <ion-icon  name = "checkmark-outline"></ion-icon> Diario Nutricional<br><ion-icon  name = "checkmark-outline"></ion-icon> Recetas Mensuales Limitadas<br><ion-icon  name = "checkmark-outline"></ion-icon> Guía nutricional personalizada<br>
-      <ion-icon  name = "checkmark-outline"></ion-icon> Sugerencias de Bioproductos<br><ion-icon  name = "checkmark-outline"></ion-icon> Descuentos en productos Inbionova<br><ion-icon  name = "checkmark-outline"></ion-icon> Control mensual con el coach<br>
-      <ion-icon  name = "checkmark-outline"></ion-icon> Descuentos en eventos<br><ion-icon  name = "checkmark-outline"></ion-icon> Acceso al contenido actual Inbionova 
-    </ion-card-content>
-    <ion-button>Quiero este plan</ion-button>
-  </ion-card>
+      <ion-card>
+        
+        <ion-card-content>
 
-  <ion-card mode="ios">
-    <ion-label class="ion-padding"><b>$150.000 x 3 meses</b><br>$570.000 anual</ion-label>
-    <ion-card-header>
-      <ion-card-title>Plan Empoderado:</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <b color="black">Beneficios:<br></b>
-      <ion-icon  name = "checkmark-outline"></ion-icon> Diario Nutricional<br><ion-icon  name = "checkmark-outline"></ion-icon> Recetas Mensuales Limitadas<br><ion-icon  name = "checkmark-outline"></ion-icon> Guía nutricional personalizada<br>
-      <ion-icon  name = "checkmark-outline"></ion-icon> Sugerencias de Bioproductos<br><ion-icon  name = "checkmark-outline"></ion-icon> Descuentos en productos Inbionova<br><ion-icon  name = "checkmark-outline"></ion-icon> Control mensual con el coach<br>
-      <ion-icon  name = "checkmark-outline"></ion-icon> Acceso gratuito a eventos<br><ion-icon  name = "checkmark-outline"></ion-icon> Acceso al contenido actual Inbionova 
-  </ion-card-content>
-    <ion-button><ion-icon></ion-icon>Quiero este plan</ion-button>
-  </ion-card>
+          
 
-  
+          <ion-img [src]="plans.img"></ion-img>
 
+        </ion-card-content>
+
+        <ion-card-header>
+          <ion-card-title>{{ plans.titulo }}</ion-card-title>
+          <ion-card-subtitle>{{ plans.subtitulo }}</ion-card-subtitle>
+          <ion-card-subtitle>{{ plans.descripcion }}</ion-card-subtitle>
+          <ion-icon  name = "checkmark-outline"></ion-icon> Diario Nutricional<br>
+          <ion-icon  name = "checkmark-outline"></ion-icon> Recetas mensuales limitadas<br>
+          <ion-icon  name = "checkmark-outline"></ion-icon> Acceso al contenido actual de Inbionova<br>
+        </ion-card-header>
+
+      </ion-card>
+
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+            <ion-col size="12" class="ion-text-center">
+                <ion-button (click)="seleccionar(objetivo)" color="dark" edge>QUIERO ESTE PLAN</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    </div>
+    
+  </ion-list>
 
 </ion-content>
