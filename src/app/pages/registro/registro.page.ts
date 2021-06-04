@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
+import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -12,9 +14,48 @@ export class RegistroPage implements OnInit {
   pesoActual = 0;
   pesoDeseado = 0;
 
-  constructor( private alertCtrl: AlertController ) { }
+  todo : FormGroup;
+
+  constructor( 
+          private alertCtrl: AlertController,
+          private formBuilder: FormBuilder 
+        ) { 
+
+          this.crearFormulario();
+
+  }
 
   ngOnInit() {
+  }
+
+  get nombreNoValido() {
+    return this.todo.get('nombre').invalid && this.todo.get('nombre').touched;
+  }
+
+  get apellidoNoValido() {
+    return this.todo.get('apellido').invalid && this.todo.get('apellido').touched;
+  }
+
+  get correoNoValido() {
+    return this.todo.get('correo').invalid && this.todo.get('correo').touched;
+  }
+
+  get terminosNoValido() {
+    return this.todo.get('terminos').invalid && this.todo.get('terminos').touched;
+  }
+
+  crearFormulario() {
+
+    this.todo = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
+      correo: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ])],
+      terminos: [false, Validators.pattern('true')],
+    });
+
   }
 
   customPickerOptions = {
@@ -32,6 +73,10 @@ export class RegistroPage implements OnInit {
         }
       },
     ]
+  }
+
+  guardar(){
+    console.log(this.todo.value)
   }
 
   masEstatura() {
@@ -59,6 +104,40 @@ export class RegistroPage implements OnInit {
   }
 
   async alerta() {
+
+    if ( this.todo.controls.terminos.invalid ){
+
+      const alert = await this.alertCtrl.create({
+        backdropDismiss: false,
+        message: 'Debes aceptar los términos y condiciones de privacidad para completar tu registro',
+        cssClass:'alerta',
+        buttons: [
+          {
+            text: 'Aceptar',
+            role: 'cancel',
+          }
+        ]
+      });
+  
+      await alert.present();
+
+    }
+
+    if ( this.todo.invalid ) {
+
+      return Object.values( this.todo.controls ).forEach( control => {
+        
+        if ( control instanceof FormGroup ) {
+          Object.values( control.controls ).forEach( control => control.markAsTouched() );
+        } else {
+          control.markAsTouched();
+        }
+        
+        
+      });
+     
+    }
+
     const alert = await this.alertCtrl.create({
       backdropDismiss: false,
       header: '¿Estas seguro que deseas continuar?',
