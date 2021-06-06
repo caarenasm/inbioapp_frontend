@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { RegistroService } from 'src/app/services/registro.service';
 
 @Component({
   selector: 'app-registro',
@@ -18,7 +21,11 @@ export class RegistroPage implements OnInit {
 
   constructor( 
           private alertCtrl: AlertController,
-          private formBuilder: FormBuilder 
+          private formBuilder: FormBuilder,
+          private zone: NgZone,
+          private registroCtrl: RegistroService,
+          private loadingController: LoadingController,
+          private toastCtrl:ToastController
         ) { 
 
           this.crearFormulario();
@@ -36,12 +43,24 @@ export class RegistroPage implements OnInit {
     return this.todo.get('apellido').invalid && this.todo.get('apellido').touched;
   }
 
-  get correoNoValido() {
-    return this.todo.get('correo').invalid && this.todo.get('correo').touched;
+  get emailNoValido() {
+    return this.todo.get('email').invalid && this.todo.get('email').touched;
   }
 
   get terminosNoValido() {
     return this.todo.get('terminos').invalid && this.todo.get('terminos').touched;
+  }
+
+  get estaturaNoValido() {
+    return this.todo.get('estatura').invalid && this.todo.get('estatura').touched;
+  }
+
+  get pesoActualNoValido() {
+    return this.todo.get('peso_actual').invalid && this.todo.get('peso_actual').touched;
+  }
+
+  get pesoDeseadoNoValido() {
+    return this.todo.get('peso_deseado').invalid && this.todo.get('peso_deseado').touched;
   }
 
   crearFormulario() {
@@ -49,11 +68,14 @@ export class RegistroPage implements OnInit {
     this.todo = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
-      correo: ['', Validators.compose([
+      email: ['', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])],
       terminos: [false, Validators.pattern('true')],
+      estatura: ['', Validators.required],
+      peso_actual: ['', Validators.required],
+      peso_deseado: ['', Validators.required],
     });
 
   }
@@ -73,10 +95,6 @@ export class RegistroPage implements OnInit {
         }
       },
     ]
-  }
-
-  guardar(){
-    console.log(this.todo.value)
   }
 
   masEstatura() {
@@ -103,24 +121,73 @@ export class RegistroPage implements OnInit {
     this.pesoDeseado -= 1;
   }
 
-  async alerta() {
+  async presentToast(msg) {
+
+    let toast = await this.toastCtrl.create({
+      message: msg,
+      position: 'top',
+      duration: 2000
+    });
+
+    toast.present();
+  }
+
+  async alertaCheck() {
+
+    const alert = await this.alertCtrl.create({
+      backdropDismiss: false,
+      message: 'Debes aceptar los términos y condiciones de privacidad para completar tu registro',
+      cssClass:'alerta',
+      buttons: [
+        {
+          text: 'Aceptar',
+          role: 'cancel',
+        }
+      ]
+    });
+
+    await alert.present();
+
+  }
+
+  async confirmar() {
+
+    const alert = await this.alertCtrl.create({
+      backdropDismiss: false,
+      header: '¿Estas seguro que deseas continuar?',
+      message: 'Ten en cuenta que los datos suministrados anteriormente no pueden ser cambiados o editados posteriormente.',
+      cssClass:'alerta',
+      buttons: [
+        {
+          text: 'Volver',
+          role: 'cancel',
+        },
+        {
+          text: 'Continuar',
+          handler: () => {
+            console.log(this.todo.value)
+            this.postDatos();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Por Favor Espere...',
+      translucent: true,
+    });
+    return await loading.present();
+  }
+
+  guardar() {
 
     if ( this.todo.controls.terminos.invalid ){
-
-      const alert = await this.alertCtrl.create({
-        backdropDismiss: false,
-        message: 'Debes aceptar los términos y condiciones de privacidad para completar tu registro',
-        cssClass:'alerta',
-        buttons: [
-          {
-            text: 'Aceptar',
-            role: 'cancel',
-          }
-        ]
-      });
-  
-      await alert.present();
-
+      this.alertaCheck();
     }
 
     if ( this.todo.invalid ) {
@@ -133,32 +200,48 @@ export class RegistroPage implements OnInit {
           control.markAsTouched();
         }
         
-        
       });
-     
     }
 
-    const alert = await this.alertCtrl.create({
-      backdropDismiss: false,
-      header: '¿Estas seguro que deseas continuar?',
-      message: 'Ten en cuenta que los datos suministrados anteriormente no pueden ser cambiados o editados posteriormente.',
-      cssClass:'alerta',
-      buttons: [
-        {
-          text: 'Volver',
-          role: 'cancel',
-          handler: () => {
-            console.log('click en ok!')
-          }
-        },
-        {
-          text: 'Continuar',
-          role: 'cancel',
-        }
-      ]
-    });
+    this.confirmar();
 
-    await alert.present();
+  }
+
+  /*postDatos2() {
+    const datos = { nombre: 'Edu', email: 'edu.revilla.vaquero@gmail.com'};
+    const datos = this.todo.value;
+  
+    const options = {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    };
+  
+    const url = 'http://httpbin.org/post';
+  
+    return this.http.post(url, JSON.stringify(datos), options).toPromise();
+    return this.http.post(url, JSON.stringify(datos), options).toPromise();
+  }*/
+
+  postDatos() {
+
+    this.presentLoading();
+
+    this.registroCtrl.createUsuario(this.todo.value)
+      .subscribe((response) => {
+  
+        this.loadingController.dismiss();
+  
+        this.zone.run(() => {
+          //this.todo.reset();
+          //this.router.navigate(['/list']);
+        })
+      }, error => {
+          //console.error(error);
+          this.presentToast('error');
+      }
+    );
   }
 
 }

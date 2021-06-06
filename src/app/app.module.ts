@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { Drivers } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { ComponentsModule } from './components/components.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,8 @@ import { ComponentsModule } from './components/components.module';
       name: '__inbioapp',
       driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
     }),
-    ComponentsModule
+    ComponentsModule,
+    HttpClientModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

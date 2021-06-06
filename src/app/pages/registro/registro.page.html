@@ -118,8 +118,8 @@
 
                         <ion-row>
                             <ion-col size="12" class="grid-card">
-                                <ion-input type="mail" formControlName="correo" [class.is-invalid]="correoNoValido"></ion-input>
-                                <small *ngIf="correoNoValido" class="danger">
+                                <ion-input type="mail" formControlName="email" [class.is-invalid]="emailNoValido"></ion-input>
+                                <small *ngIf="emailNoValido" class="danger">
                                     Ingrese su correo
                             </small>
                             </ion-col>
@@ -160,7 +160,10 @@
 
                             </ion-col>
                             <ion-col size="4" class="grid-card">
-                                <ion-input type="number" min="0" [value]=estaturaActual></ion-input>
+                                <ion-input type="number" min="0" [value]=estaturaActual formControlName="estatura" [class.is-invalid]="estaturaNoValido"></ion-input>
+                                <small *ngIf="estaturaNoValido" class="danger">
+                                    Ingrese su Estatura
+                                </small>
                                 <p>
                                     <span>Centímetros</span>
                                 </p>
@@ -192,7 +195,10 @@
 
                             </ion-col>
                             <ion-col size="4" class="grid-card">
-                                <ion-input type="number" min="0" [value]=pesoActual></ion-input>
+                                <ion-input type="number" min="0" [value]=pesoActual formControlName="peso_actual" [class.is-invalid]="pesoActualNoValido"></ion-input>
+                                <small *ngIf="pesoActualNoValido" class="danger">
+                                    Ingrese su Peso actual
+                                </small>
                                 <p>
                                     <span>Kilogramos</span>
                                 </p>
@@ -226,7 +232,10 @@
 
                             </ion-col>
                             <ion-col size="4" class="grid-card">
-                                <ion-input type="number" min="0" [value]=pesoDeseado></ion-input>
+                                <ion-input type="number" min="0" [value]=pesoDeseado formControlName="peso_deseado" [class.is-invalid]="pesoDeseadoNoValido"></ion-input>
+                                <small *ngIf="pesoDeseadoNoValido" class="danger">
+                                    Ingrese su Peso deseado
+                                </small>
                                 <p>
                                     <span>Kilogramos</span>
                                 </p>
@@ -270,7 +279,7 @@
     </ion-fab>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button size="small" color="dark" (click)="alerta()">
+        <ion-fab-button size="small" color="dark" (click)="guardar()">
             <ion-icon name="arrow-forward"></ion-icon>
         </ion-fab-button>
     </ion-fab>
