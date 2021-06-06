@@ -192,6 +192,8 @@ export class RegistroPage implements OnInit {
 
     if ( this.todo.invalid ) {
 
+      this.presentToast('Por Favor, verifique datos del formulario!');
+
       return Object.values( this.todo.controls ).forEach( control => {
         
         if ( control instanceof FormGroup ) {
