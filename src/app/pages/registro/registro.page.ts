@@ -125,8 +125,10 @@ export class RegistroPage implements OnInit {
 
     let toast = await this.toastCtrl.create({
       message: msg,
-      position: 'top',
-      duration: 2000
+      position: 'bottom',
+      duration: 2000,
+      //color:'light',
+      cssClass: 'ion-toast'
     });
 
     toast.present();
@@ -165,7 +167,7 @@ export class RegistroPage implements OnInit {
         {
           text: 'Continuar',
           handler: () => {
-            console.log(this.todo.value)
+            //console.log(this.todo.value)
             this.postDatos();
           }
         }
