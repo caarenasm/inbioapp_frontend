@@ -27,12 +27,6 @@ export class InicioPage implements OnInit {
       entrar: false,
       color: 'background-color:white'
     },
-    {
-      img: '/assets/img/inbioapp.png',
-      titulo: '',
-      entrar: true,
-      color: 'background-color:black'
-    },
   ];
   
 

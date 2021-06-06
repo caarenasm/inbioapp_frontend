@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { IonLabel, NavController } from '@ionic/angular';
 
 export interface Respuesta {
   descripcion: string;
@@ -56,7 +56,7 @@ export class QuizPage implements OnInit {
       inInicio: false,
       nuOrden: 2,
       inComentario: true,
-      tipoRespuesta: 2,
+      tipoRespuesta: 1,
       respuesta: [
           {
             descripcion: 'A veces',
@@ -79,9 +79,9 @@ export class QuizPage implements OnInit {
       pregunta: '¿Por cuales tipos de comida sientes antojo?',
       descripcion: 'Al saber lo que nuestro cuerpo nos pide, habla de cómo se encuentra nuestro organismo',
       inInicio: true,
-      nuOrden: 2,
+      nuOrden: 3,
       inComentario: false,
-      tipoRespuesta: 1,
+      tipoRespuesta: 2,
       respuesta: [
           {
             descripcion: 'Comidas con carbohidratos?',
@@ -109,7 +109,7 @@ export class QuizPage implements OnInit {
             ayuda: ''
           },
           {
-            descripcion: 'Comidas rojas?',
+            descripcion: 'Carnes rojas?',
             inAyuda: false,
             ayuda: ''
           }
@@ -119,7 +119,7 @@ export class QuizPage implements OnInit {
       pregunta: '¿Cuales actividades físicas te son más cómodas de practicar?',
       descripcion: 'Estar físicamente activo reduce en gran manera nuestros problemas de salud',
       inInicio: false,
-      nuOrden: 1,
+      nuOrden: 4,
       inComentario: true,
       tipoRespuesta: 1,
       respuesta: [
@@ -156,7 +156,7 @@ export class QuizPage implements OnInit {
       inInicio: false,
       nuOrden: 5,
       inComentario: true,
-      tipoRespuesta: 1,
+      tipoRespuesta: 2,
       respuesta: [
           {
             descripcion: 'Diabetes tipo 1 o 2',
@@ -197,7 +197,17 @@ export class QuizPage implements OnInit {
             descripcion: 'Enfermedades neuropsicologícas?',
             inAyuda: false,
             ayuda: ''
-          },
+          }
+       ]
+     },
+     {
+      pregunta: '¿Padeces alguna de estas enfermedades?',
+      descripcion: 'Una dieta equilibrada previene y mejora enfermedades existentes en nuestro cuerpo',
+      inInicio: false,
+      nuOrden: 5,
+      inComentario: true,
+      tipoRespuesta: 2,
+      respuesta: [
           {
             descripcion: 'Otras',
             inAyuda: true,
@@ -291,7 +301,7 @@ export class QuizPage implements OnInit {
       inInicio: false,
       nuOrden: 8,
       inComentario: true,
-      tipoRespuesta: 2,
+      tipoRespuesta: 1,
       respuesta: [
           {
             descripcion: '3 veces por semana',
@@ -361,7 +371,7 @@ export class QuizPage implements OnInit {
       inInicio: false,
       nuOrden: 10,
       inComentario: true,
-      tipoRespuesta: 1,
+      tipoRespuesta: 2,
       respuesta: [
           {
             descripcion: 'Productos Inbionova?',
