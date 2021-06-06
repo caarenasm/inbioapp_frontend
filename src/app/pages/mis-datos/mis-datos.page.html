@@ -1,0 +1,155 @@
+<!--<app-header></app-header>-->
+<app-header></app-header>
+<ion-content>
+    <!--<app-menu></app-menu>-->
+
+    <ion-list lines="none">
+
+        <ion-item>
+            <ion-label class="ion-titulo">Mis Datos</ion-label>
+        </ion-item>
+
+        <ion-card>
+
+            <ion-grid class="ion-grid-principal">
+
+                <ion-row>
+                    <ion-col>
+                        <ion-item>
+                            <ion-avatar slot="start">
+                                <ion-img src="assets/img/producto.png"></ion-img>
+                            </ion-avatar>
+                            <ion-label class="ion-text-wrap">
+                                <h1><b>{{ datos.nombre }}</b></h1>
+                                <h3><b>Sexo</b></h3>
+                                <p>{{ datos.genero }}</p>
+                                <h3><b>Fecha de Nacimiento</b></h3>
+                                <p>{{ datos.fechaNac }}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class="ion-row-interno">
+                    <ion-col>
+                        <ion-item>
+                            <ion-label class="ion-text-wrap">
+                                <h3><b>Estatura</b></h3>
+                                <p>{{ datos.estatura }}</p>
+                            </ion-label>
+                        </ion-item>
+                        <!--<ion-card-header>
+                            <div style="display: flex; justify-content: space-between;">
+                                <ion-label>Estatura</ion-label>
+                                <ion-icon name="star" slot="end"></ion-icon>
+                            </div>
+                            <ion-card-subtitle>{{ datos.estatura }}</ion-card-subtitle>
+                        </ion-card-header>-->
+                    </ion-col>
+                    <ion-col class="ion-col-interno">
+                        <ion-item>
+                            <ion-label class="ion-text-wrap">
+                                <h3><b>Mi Objetivo</b></h3>
+                                <p>{{ datos.miObjetivo }}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class="ion-row-interno">
+                    <ion-col>
+                        <ion-item>
+                            <ion-label class="ion-text-wrap">
+                                <h3><b>Peso Actual</b></h3>
+                                <p>{{ datos.pesoActual }}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col class="ion-col-interno">
+                        <ion-item>
+                            <ion-label class="ion-text-wrap">
+                                <h3><b>Peso Deseado</b></h3>
+                                <p>{{ datos.pesoDeseado }}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class="ion-row-interno">
+                    <ion-col>
+                        <ion-item>
+                            <ion-label class="ion-text-wrap">
+                                <h3><b>IMC</b></h3>
+                                <p>{{ datos.imc }}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col class="ion-col-interno">
+                        <ion-item>
+                            <ion-label class="ion-text-wrap">
+                                <h3><b>TDEE</b></h3>
+                                <p>{{ datos.tdee }}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class="ion-row-interno">
+                    <ion-col size="6">
+                        <ion-item>
+                            <ion-label class="ion-text-wrap">
+                                <h3><b>Proteinas/Grasas/Carb</b></h3>
+                                <p>{{ datos.pcg }}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col size="6" class="ion-col-interno">
+                        <ion-item>
+                            <ion-label class="ion-text-wrap">
+                                <h3><b>Mi Plan</b></h3>
+                                <p>{{ datos.miPlan }}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+
+                    <ion-col>
+
+                        <ion-card class="ion-card-interno">
+
+                            <ion-card-header>
+                                <ion-card-title class="ion-card-titulo">Consulta tus Resultados</ion-card-title>
+                                <ion-card-subtitle class="ion-card-sub-titulo">Tus respuestas hablan del estado de tu cuerpo, haz clic en las siguientes opciones para ver el resultado de cada una de ellas</ion-card-subtitle>
+                            </ion-card-header>
+
+                            <ion-grid fixed>
+                                <ion-row *ngFor="let consulta of consultas">
+                                    <ion-col>
+                                        <ion-chip outline class="wide" (click)="mostrarDetalle( consulta)">
+                                            <ion-label>{{ consulta.descripcion }}</ion-label>
+                                            <ion-icon [name]="consulta.icon" color="warning"></ion-icon>
+                                        </ion-chip>
+
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+
+                        </ion-card>
+
+                    </ion-col>
+                </ion-row>
+
+
+
+            </ion-grid>
+
+
+        </ion-card>
+
+    </ion-list>
+
+</ion-content>
+<app-tab></app-tab>
+<!--<app-tab></app-tab>-->

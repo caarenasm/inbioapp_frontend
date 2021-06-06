@@ -1,0 +1,86 @@
+.card-padding-border {
+    /*padding-top: 5%;*/
+    /*padding-bottom: 10%;*/
+    border-radius: 30px;
+}
+
+ion-img {
+    height: 100%;
+    width: 100%;
+}
+
+.main-button {
+    --box-shadow: none;
+}
+
+ion-list {
+    background-image: url('/assets/img/fondo_dos.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    --offset-bottom: 0px;
+    --offset-top: 0px;
+    padding-bottom: 70px;
+    --padding-end: 0px;
+    --padding-start: 0px;
+    padding-top: 70px;
+}
+
+ion-item {
+    --background: transparent;
+    --padding-bottom: 0px;
+    --padding-end: 4px;
+    --padding-top: 0px;
+    font-weight: bold;
+}
+
+ion-card {
+    --background: #ffffff;
+    --color: #000000;
+    border-radius: 50px;
+    padding: 0px;
+    padding-bottom: 20px;
+}
+
+ion-list>ion-card>ion-card-content>ion-card>ion-card-content {
+    padding: 0px;
+}
+
+ion-card.card-padding-border {
+    border-radius: 15px;
+}
+
+ion-card ion-card-content.card-content-md ion-card {
+    border-radius: 15px;
+    padding-bottom: 40px;
+    padding-inline: 0px;
+    margin-top: 10px;
+    margin-bottom: -40px;
+}
+
+ion-card ion-card-content.card-content-ios ion-card {
+    border-radius: 15px;
+    padding-bottom: 40px;
+    padding-inline: 0px;
+    margin-top: 10px;
+    margin-bottom: -40px;
+}
+
+.item-interactive {
+    --border-color: #000000;
+    --border-radius: 25px;
+    --border-width: 0.5px;
+}
+
+.picker>ion-picker-column {
+    margin-left: 1px solid #eeeeee;
+}
+
+ion-button {
+    --border-radius: 50px;
+    --padding-bottom: 4px;
+    --padding-end: 50px;
+    --padding-start: 50px;
+    --padding-top: 4px;
+    margin-top: 10px;
+    margin-bottom: -30px;
+}

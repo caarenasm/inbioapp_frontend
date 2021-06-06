@@ -1,0 +1,60 @@
+<ion-content>
+    <ion-list>
+
+        <ion-card>
+
+            <ion-card-content>
+
+                <!--<ion-fab vertical="top" horizontal="start" slot="fixed">
+                    <ion-fab-button color="dark" class="main-button" size="small">
+                        <ion-icon name="fast-food-outline"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>-->
+                <ion-fab vertical="top" horizontal="end" slot="fixed">
+                    <ion-fab-button color="dark" class="main-button" size="small">
+                        <ion-icon name="close-outline" (click)="cerrar()"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+
+                <ion-item lines="none">
+
+                </ion-item>
+
+                <ion-item-divider>
+                    <ion-label>
+                        <h2>{{ datos.descripcion }}</h2>
+                    </ion-label>
+                </ion-item-divider>
+
+                <ion-item>
+                    <ion-text>{{ datos.respuesta }}</ion-text>
+                </ion-item>
+
+                <ion-item-divider>
+                    <ion-label>
+                        <h2>Tus Resultados:</h2>
+                    </ion-label>
+                </ion-item-divider>
+
+                <ion-item *ngFor="let item of datos.resultado; ; let i = index " lines="none">
+                    <ion-text>- {{ item }}</ion-text>
+                </ion-item>
+
+            </ion-card-content>
+
+            <!--<ion-item>
+                <ion-icon icon="body" slot="start"></ion-icon>
+                <ion-icon name="close-circle" slot="end" (click)="cerrar()"></ion-icon>
+            </ion-item>-->
+
+        </ion-card>
+
+    </ion-list>
+
+</ion-content>
+
+<ion-tab-bar slot="bottom">
+
+    <ion-button expand="block" (click)="cerrar()" color="dark">Volver</ion-button>
+
+</ion-tab-bar>
