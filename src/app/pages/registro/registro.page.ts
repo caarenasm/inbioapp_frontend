@@ -35,6 +35,22 @@ export class RegistroPage implements OnInit {
   ngOnInit() {
   }
 
+  get sexoNoValido() {
+    return this.todo.get('sexo').invalid && this.todo.get('sexo').touched;
+  }
+
+  get diaNoValido() {
+    return this.todo.get('dia').invalid && this.todo.get('dia').touched;
+  }
+
+  get mesNoValido() {
+    return this.todo.get('mes').invalid && this.todo.get('mes').touched;
+  }
+
+  get anioNoValido() {
+    return this.todo.get('anio').invalid && this.todo.get('anio').touched;
+  }
+
   get nombreNoValido() {
     return this.todo.get('nombre').invalid && this.todo.get('nombre').touched;
   }
@@ -66,6 +82,10 @@ export class RegistroPage implements OnInit {
   crearFormulario() {
 
     this.todo = this.formBuilder.group({
+      sexo: ['', Validators.required],
+      dia: ['', Validators.required],
+      mes: ['', Validators.required],
+      anio: ['', Validators.required],
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
       email: ['', Validators.compose([
