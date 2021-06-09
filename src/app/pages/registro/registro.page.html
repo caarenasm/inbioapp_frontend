@@ -2,11 +2,11 @@
 
     <form [formGroup]="todo" (ngSubmit)="guardar()">
 
-        <ion-list lines="none" class="ion-list-principal">
+        <ion-list lines="none" class="fondo-mis-eventos">
 
             <ion-fab vertical="top" horizontal="center" slot="fixed">
                 <ion-fab-button class="ion-fab-button-logo">
-                    <ion-icon name="person-outline" class="ion-icon-icono"></ion-icon>
+                    <ion-icon class="icon-usuario ion-icon-icono"></ion-icon>
                 </ion-fab-button>
             </ion-fab>
 
@@ -14,7 +14,7 @@
 
                 <ion-card-header>
                     <ion-card-title class="titulo">¡Felicidades has completado el cuestionario!</ion-card-title>
-                    <ion-card-subtitle class="sub-titulo">
+                    <ion-card-subtitle class="sub-titulo-2">
                         Ahora hace falta que te registres y que nos brindes algunos datos necesarios para incorporar hábitos saludables y así alcanzar juntos tu objetivo
                     </ion-card-subtitle>
                 </ion-card-header>
@@ -166,7 +166,7 @@
                             <ion-col size="4" class="grid-card">
                                 <ion-buttons>
                                     <ion-fab-button (click)="menosEstatura()" class="ion-fab-button-cantidad">
-                                        <ion-icon name="remove-outline"></ion-icon>
+                                        <ion-icon class="icon-menos"></ion-icon>
                                     </ion-fab-button>
                                 </ion-buttons>
 
@@ -183,7 +183,7 @@
                             <ion-col size="4" class="grid-card">
                                 <ion-buttons>
                                     <ion-fab-button (click)="masEstatura()" class="ion-fab-button-cantidad">
-                                        <ion-icon name="add-outline"></ion-icon>
+                                        <ion-icon class="icon-plus"></ion-icon>
                                     </ion-fab-button>
                                 </ion-buttons>
 
@@ -201,7 +201,7 @@
                             <ion-col size="4" class="grid-card">
                                 <ion-buttons>
                                     <ion-fab-button (click)="menosPeso()" class="ion-fab-button-cantidad">
-                                        <ion-icon name="remove-outline"></ion-icon>
+                                        <ion-icon class="icon-menos"></ion-icon>
                                     </ion-fab-button>
                                 </ion-buttons>
 
@@ -218,7 +218,7 @@
                             <ion-col size="4" class="grid-card">
                                 <ion-buttons>
                                     <ion-fab-button (click)="masPeso()" class="ion-fab-button-cantidad">
-                                        <ion-icon name="add-outline"></ion-icon>
+                                        <ion-icon class="icon-plus"></ion-icon>
                                     </ion-fab-button>
                                 </ion-buttons>
 
@@ -238,7 +238,7 @@
                                     <ion-icon name="remove-circle"></ion-icon>
                                 </ion-button>-->
                                     <ion-fab-button (click)="menosPesoDeseado()" class="ion-fab-button-cantidad">
-                                        <ion-icon name="remove-outline"></ion-icon>
+                                        <ion-icon class="icon-menos"></ion-icon>
                                     </ion-fab-button>
                                 </ion-buttons>
 
@@ -258,7 +258,7 @@
                                     <ion-icon name="add-circle"></ion-icon>
                                 </ion-button>-->
                                     <ion-fab-button (click)="masPesoDeseado()" class="ion-fab-button-cantidad">
-                                        <ion-icon name="add-outline"></ion-icon>
+                                        <ion-icon class="icon-plus"></ion-icon>
                                     </ion-fab-button>
                                 </ion-buttons>
 
@@ -286,13 +286,13 @@
 
     <ion-fab vertical="bottom" horizontal="start" slot="fixed">
         <ion-fab-button size="small" color="dark" routerLink="/quiz" routerDirection="forward" data-desc="Aterior">
-            <ion-icon name="arrow-back"></ion-icon>
+            <ion-icon class="icon-atrs"></ion-icon>
         </ion-fab-button>
     </ion-fab>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button size="small" color="dark" (click)="guardar()">
-            <ion-icon name="arrow-forward"></ion-icon>
+            <ion-icon class="icon-adelante"></ion-icon>
         </ion-fab-button>
     </ion-fab>
 

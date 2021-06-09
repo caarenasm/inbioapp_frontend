@@ -49,16 +49,26 @@ ion-card {
 }
 
 .titulo {
-    font-size: 20px;
-    font-style: bold;
     text-align: center;
 }
 
-.sub-titulo {
+.sub-titulo-2 {
+    text-align: center;
+}
+
+
+/*.titulo {
+    font-size: 20px;
+    font-style: bold;
+    text-align: center;
+}*/
+
+
+/*.sub-titulo {
     font-size: 14px;
     font-style: normal;
     text-align: center;
-}
+}*/
 
 .titulo-input {
     font-size: 16px;
@@ -101,15 +111,17 @@ ion-card {
     padding-left: 0px;
 }
 
-ion-card-title {
+
+/*ion-card-title {
     font-size: 16px;
     text-align: center;
-}
+}*/
 
-ion-card-subtitle {
+
+/*ion-card-subtitle {
     font-size: 14px;
     text-align: center;
-}
+}*/
 
 ion-datetime {
     background: #f6f6f6;
