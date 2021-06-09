@@ -16,8 +16,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/quiz/quiz.module').then( m => m.QuizPageModule)
   },
   {
-    path: 'objetivos',
-    loadChildren: () => import('./pages/objetivos/objetivos.module').then( m => m.ObjetivosPageModule)
+    path: 'objetivo',
+    loadChildren: () => import('./pages/objetivo/objetivo.module').then( m => m.ObjetivoPageModule)
   },
   {
     path: 'plan',
@@ -43,6 +43,7 @@ const routes: Routes = [
     path: 'receta-detalle',
     loadChildren: () => import('./pages/receta-detalle/receta-detalle.module').then( m => m.RecetaDetallePageModule)
   },
+
 
 ];
 
