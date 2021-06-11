@@ -1,0 +1,43 @@
+
+<app-header></app-header>
+
+<ion-content>
+  
+    <ion-label><b>Recetas Inbionova</b></ion-label>
+ 
+  <ion-list lines="none">
+
+    <div *ngFor="let blogs of blog">
+
+      <ion-card>
+        
+        <ion-card-content>
+
+          
+
+          <ion-img [src]="blogs.img"></ion-img>
+
+        </ion-card-content>
+
+        <ion-card-header>
+          <ion-card-subtitle>{{ blogs.fecha }}</ion-card-subtitle>
+          <ion-card-title>{{ blogs.titulo }}</ion-card-title>
+        </ion-card-header>
+
+      </ion-card>
+
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+            <ion-col size="12" class="ion-text-center">
+                <ion-button (click)="seleccionar()" color="dark" edge>LEER MÁS</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    </div>
+    
+  </ion-list>
+
+</ion-content>
+
+<app-tab></app-tab>

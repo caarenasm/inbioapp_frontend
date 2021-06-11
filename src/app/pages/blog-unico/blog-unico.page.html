@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-img src="assets/img/producto.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+<ion-list lines="none">
+
+  <div *ngFor="let blogs of blog">
+
+    <ion-card>
+
+      <ion-card-header>
+        <ion-card-title class="ion-align-items-center">{{ blogs.titulo }}</ion-card-title>
+        <ion-card-subtitle>{{ blogs.subtitulo }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+            <ion-col size="12" class="ion-text-center">
+                <ion-button (click)="seleccionar()" color="dark" edge>ETIQUETA 1</ion-button>
+                <ion-button (click)="seleccionar()" color="dark" edge>ETIQUETA 1</ion-button>
+                <ion-button (click)="seleccionar()" color="dark" edge>ETIQUETA 1</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-align-items-center">
+        <ion-col size="12" class="ion-text-center">
+          <ion-button (click)="seleccionar()" color="dark" edge>VOLVER</ion-button>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+    </ion-card>
+
+  </div>
+  
+</ion-list>
+
+</ion-content>
