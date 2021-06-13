@@ -1,3 +1,450 @@
+@font-face {
+    font-family: 'Poppins'; //This is what we are going to call
+    src: url('/assets/font/Poppins/POPPINS-REGULAR.TTF');
+}
+
+@font-face {
+    font-family: 'Roboto'; //This is what we are going to call  
+    src: url('/assets/font/Roboto/ROBOTO-REGULAR.TTF');
+}
+
+@font-face {
+    font-family: 'inbioapp';
+    src: url('/assets/font/inbioapp/inbioapp.eot?tes1d4');
+    src: url('/assets/font/inbioapp/inbioapp.eot?tes1d4#iefix') format('embedded-opentype'), url('/assets/font/inbioapp/inbioapp.ttf?tes1d4') format('truetype'), url('/assets/font/inbioapp/inbioapp.woff?tes1d4') format('woff'), url('/assets/font/inbioapp/inbioapp.svg?tes1d4#inbioapp') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'inbioapp' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-accidente:before {
+    content: "\e903";
+}
+
+.icon-actividad_fisica1:before {
+    content: "\e904";
+}
+
+.icon-adelante:before {
+    content: "\e905";
+}
+
+.icon-aerobicos:before {
+    content: "\e906";
+}
+
+.icon-agua:before {
+    content: "\e907";
+}
+
+.icon-agua_2:before {
+    content: "\e908";
+}
+
+.icon-alcohol:before {
+    content: "\e909";
+}
+
+.icon-alimento_alergia:before {
+    content: "\e90a";
+}
+
+.icon-antojos:before {
+    content: "\e90b";
+}
+
+.icon-atrs:before {
+    content: "\e90c";
+}
+
+.icon-blando:before {
+    content: "\e90d";
+}
+
+.icon-caminar:before {
+    content: "\e90e";
+}
+
+.icon-ciclismo:before {
+    content: "\e90f";
+}
+
+.icon-coach:before {
+    content: "\e910";
+}
+
+.icon-como_duermes:before {
+    content: "\e911";
+}
+
+.icon-correr:before {
+    content: "\e912";
+}
+
+.icon-deporte_equipo:before {
+    content: "\e913";
+}
+
+.icon-deposiciones:before {
+    content: "\e914";
+}
+
+.icon-dieta:before {
+    content: "\e915";
+}
+
+.icon-dolor_Cabeza:before {
+    content: "\e916";
+}
+
+.icon-duro:before {
+    content: "\e917";
+}
+
+.icon-duro_bolitas:before {
+    content: "\e918";
+}
+
+.icon-embarazo:before {
+    content: "\e919";
+}
+
+.icon-enfermedades:before {
+    content: "\e91a";
+}
+
+.icon-escalera:before {
+    content: "\e91b";
+}
+
+.icon-feliz:before {
+    content: "\e91c";
+}
+
+.icon-fumar:before {
+    content: "\e91d";
+}
+
+.icon-hospitalizacin:before {
+    content: "\e91e";
+}
+
+.icon-intervalos:before {
+    content: "\e91f";
+}
+
+.icon-jardineria:before {
+    content: "\e920";
+}
+
+.icon-liquido:before {
+    content: "\e921";
+}
+
+.icon-menos1:before {
+    content: "\e922";
+}
+
+.icon-nadar:before {
+    content: "\e923";
+}
+
+.icon-neutro:before {
+    content: "\e924";
+}
+
+.icon-patinaje:before {
+    content: "\e925";
+}
+
+.icon-pesas:before {
+    content: "\e926";
+}
+
+.icon-plus1:before {
+    content: "\e927";
+}
+
+.icon-reloj:before {
+    content: "\e928";
+}
+
+.icon-senderismo:before {
+    content: "\e929";
+}
+
+.icon-sin_forma:before {
+    content: "\e92a";
+}
+
+.icon-stress:before {
+    content: "\e92b";
+}
+
+.icon-suplementos:before {
+    content: "\e92c";
+}
+
+.icon-telefono:before {
+    content: "\e92d";
+}
+
+.icon-tipos_Antojo:before {
+    content: "\e92e";
+}
+
+.icon-usuario1:before {
+    content: "\e92f";
+}
+
+.icon-viaje:before {
+    content: "\e930";
+}
+
+.icon-whatsap2:before {
+    content: "\e931";
+}
+
+.icon-yoga:before {
+    content: "\e932";
+}
+
+.icon-menos:before {
+    content: "\e900";
+}
+
+.icon-plus:before {
+    content: "\e901";
+}
+
+.icon-usuario:before {
+    content: "\e902";
+}
+
+.titulo {
+    font-family: 'Poppins' !important;
+    font-size: 24px;
+    font-style: bold;
+    line-height: 24px;
+}
+
+.sub-titulo-1 {
+    font-family: 'Poppins' !important;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.sub-titulo-2 {
+    font-family: 'Poppins' !important;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.body {
+    font-family: 'Roboto' !important;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.body-2 {
+    font-family: 'Roboto' !important;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.texto-boton-1 {
+    font-family: 'Roboto' !important;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.texto-boton-2 {
+    font-family: 'Roboto' !important;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.enlace {
+    font-family: 'Roboto' !important;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.fondo-inactivo {
+    background-image: url('/assets/img/fondo_inactivo.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-aliados {
+    background-image: url('/assets/img/fondo_aliados.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-blog {
+    background-image: url('/assets/img/fondo_blog.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mi-diario-nutricional {
+    background-image: url('/assets/img/fondo_mi_diario_nutricional.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mi-dieta {
+    background-image: url('/assets/img/fondo_mi_dieta.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mi-guia-nutricional {
+    background-image: url('/assets/img/fondo_mi_guia_nutricional.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mi-lista-de-compras {
+    background-image: url('/assets/img/fondo_mi_lista_de_compras.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mis-bioproductos {
+    background-image: url('/assets/img/fondo_mis_bioproductos.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mis-controles {
+    background-image: url('/assets/img/fondo_mis_controles.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mis-datos {
+    background-image: url('/assets/img/fondo_mis_datos.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mis-estadisticas {
+    background-image: url('/assets/img/fondo_mis_estadisticas.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mis-eventos {
+    background-image: url('/assets/img/fondo_mis_eventos.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mis-favoritos {
+    background-image: url('/assets/img/fondo_mis_favoritos.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mis-logros {
+    background-image: url('/assets/img/fondo_mis_logros.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-mis-promociones {
+    background-image: url('/assets/img/fondo_mis_promociones.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.fondo-recetas {
+    background-image: url('/assets/img/fondo_recetas.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+}
+
+.tarjeta-formulario {
+    --background: #ffffff;
+    --color: #000000;
+    --border-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 0px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    margin-bottom: 0px;
+}
+
+.tarjeta-formulario-logo {
+    --background: #ffffff;
+    --border-color: #000000;
+    --border-radius: 50px;
+    //--border-style: solid;
+    //--border-width: 0.5px;
+    padding-left: 0%;
+    margin-top: 45px;
+    //--box-shadow: none;
+    width: 70px;
+    height: 70px;
+}
+
 .alerta {
     //--backdrop-opacity: 0.6;
     //--background: linear-gradient(90deg, rgb(30, 0, 201) 1%, rgb(248, 255, 248) 100%);
