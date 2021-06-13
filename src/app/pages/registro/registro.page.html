@@ -29,7 +29,7 @@
                         </ion-row>
                         <ion-row>
                             <ion-col size="12" class="grid-card">
-                                <ion-radio-group value="sexo">
+                                <ion-radio-group value="sexo" formControlName="sexo">
                                     <ion-grid fixed>
                                         <ion-row>
                                             <ion-col size="6" class="grid-card">
@@ -48,6 +48,9 @@
                                         </ion-row>
                                     </ion-grid>
                                 </ion-radio-group>
+                                <small *ngIf="sexoNoValido">
+                                    <ion-label color="danger">Seleccione su Sexo.</ion-label>
+                                </small>
                             </ion-col>
                         </ion-row>
                         <ion-row>
@@ -63,17 +66,26 @@
                                     <ion-row>
                                         <ion-col size="3" class="grid-card">
                                             <ion-label position="stacked">Dia</ion-label>
-                                            <ion-datetime display-format="DD"></ion-datetime>
+                                            <ion-datetime display-format="DD" formControlName="dia" [class.is-invalid]="diaNoValido"></ion-datetime>
+                                            <small *ngIf="diaNoValido">
+                                                <ion-label color="danger">Requerido.</ion-label>
+                                            </small>
                                         </ion-col>
 
                                         <ion-col size="3" class="grid-card">
                                             <ion-label position="stacked">Mes</ion-label>
-                                            <ion-datetime display-format="MMMM"></ion-datetime>
+                                            <ion-datetime display-format="MMMM" formControlName="mes" [class.is-invalid]="mesNoValido"></ion-datetime>
+                                            <small *ngIf="mesNoValido">
+                                                <ion-label color="danger">Requerido.</ion-label>
+                                            </small>
                                         </ion-col>
 
                                         <ion-col size="6" class="grid-card">
                                             <ion-label position="stacked">Año</ion-label>
-                                            <ion-datetime display-format="YYYY" min="1900" max="2050"></ion-datetime>
+                                            <ion-datetime display-format="YYYY" min="1900" max="2050" formControlName="anio" [class.is-invalid]="anioNoValido"></ion-datetime>
+                                            <small *ngIf="anioNoValido">
+                                                <ion-label color="danger">Requerido.</ion-label>
+                                            </small>
                                         </ion-col>
                                     </ion-row>
                                 </ion-grid>
@@ -89,8 +101,8 @@
                         <ion-row>
                             <ion-col size="12" class="grid-card">
                                 <ion-input type="text" formControlName="nombre" [class.is-invalid]="nombreNoValido"></ion-input>
-                                <small *ngIf="nombreNoValido" class="danger">
-                                    Ingrese su Nombre
+                                <small *ngIf="nombreNoValido">
+                                    <ion-label color="danger">Ingrese su Nombre.</ion-label>
                                 </small>
                             </ion-col>
                         </ion-row>
@@ -104,8 +116,8 @@
                         <ion-row>
                             <ion-col size="12" class="grid-card">
                                 <ion-input type="text" formControlName="apellido" [class.is-invalid]="apellidoNoValido"></ion-input>
-                                <small *ngIf="apellidoNoValido" class="danger">
-                                    Ingrese su apellido
+                                <small *ngIf="apellidoNoValido">
+                                    <ion-label color="danger">Ingrese su Apellido.</ion-label>
                                 </small>
                             </ion-col>
                         </ion-row>
@@ -118,10 +130,10 @@
 
                         <ion-row>
                             <ion-col size="12" class="grid-card">
-                                <ion-input type="mail" formControlName="correo" [class.is-invalid]="correoNoValido"></ion-input>
-                                <small *ngIf="correoNoValido" class="danger">
-                                    Ingrese su correo
-                            </small>
+                                <ion-input type="mail" formControlName="email" [class.is-invalid]="emailNoValido"></ion-input>
+                                <small *ngIf="emailNoValido">
+                                    <ion-label color="danger">Ingrese su Correo.</ion-label>
+                                </small>
                             </ion-col>
                         </ion-row>
 
@@ -132,9 +144,9 @@
                                     <ion-text> Acepto términos y condiciones de privacidad.</ion-text>
 
                                 </ion-item>
-                                <small *ngIf="terminosNoValido" class="danger">
-                                    Aceptar terminos
-                            </small>
+                                <small *ngIf="terminosNoValido">
+                                    <ion-label color="danger">Aceptar Terminos.</ion-label>
+                                </small>
                             </ion-col>
                         </ion-row>
 
@@ -160,7 +172,10 @@
 
                             </ion-col>
                             <ion-col size="4" class="grid-card">
-                                <ion-input type="number" min="0" [value]=estaturaActual></ion-input>
+                                <ion-input type="number" min="0" [value]=estaturaActual formControlName="estatura" [class.is-invalid]="estaturaNoValido"></ion-input>
+                                <small *ngIf="estaturaNoValido">
+                                    <ion-label color="danger">Ingrese su Estatura.</ion-label>
+                                </small>
                                 <p>
                                     <span>Centímetros</span>
                                 </p>
@@ -192,7 +207,10 @@
 
                             </ion-col>
                             <ion-col size="4" class="grid-card">
-                                <ion-input type="number" min="0" [value]=pesoActual></ion-input>
+                                <ion-input type="number" min="0" [value]=pesoActual formControlName="peso_actual" [class.is-invalid]="pesoActualNoValido"></ion-input>
+                                <small *ngIf="pesoActualNoValido">
+                                    <ion-label color="danger">Ingrese su Peso Actual.</ion-label>
+                                </small>
                                 <p>
                                     <span>Kilogramos</span>
                                 </p>
@@ -226,7 +244,10 @@
 
                             </ion-col>
                             <ion-col size="4" class="grid-card">
-                                <ion-input type="number" min="0" [value]=pesoDeseado></ion-input>
+                                <ion-input type="number" min="0" [value]=pesoDeseado formControlName="peso_deseado" [class.is-invalid]="pesoDeseadoNoValido"></ion-input>
+                                <small *ngIf="pesoDeseadoNoValido">
+                                    <ion-label color="danger">Ingrese su Peso Deseado.</ion-label>
+                                </small>
                                 <p>
                                     <span>Kilogramos</span>
                                 </p>
@@ -270,7 +291,7 @@
     </ion-fab>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button size="small" color="dark" (click)="alerta()">
+        <ion-fab-button size="small" color="dark" (click)="guardar()">
             <ion-icon name="arrow-forward"></ion-icon>
         </ion-fab-button>
     </ion-fab>

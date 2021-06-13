@@ -44,6 +44,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/receta-detalle/receta-detalle.module').then( m => m.RecetaDetallePageModule)
   },
 
+
 ];
 
 @NgModule({

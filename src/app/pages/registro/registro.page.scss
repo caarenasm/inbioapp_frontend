@@ -116,11 +116,15 @@ ion-datetime {
     border: #9e9e9e !important;
     border-radius: 25px;
     font-size: 14px;
+    border-width: 0.1px !important;
+    border-style: solid !important;
 }
 
 ion-input {
     border-radius: 25px;
     border: #9e9e9e !important;
+    border-width: 0.1px !important;
+    border-style: solid !important;
     --background: #f6f6f6;
     --placeholder-font-style: initial;
     --placeholder-font-weight: initial;
@@ -130,4 +134,10 @@ ion-input {
 textarea:focus,
 input:focus {
     color: #9933CC !important;
+}
+
+.is-invalid {
+    border: #ff0000 !important;
+    border-width: 0.1px !important;
+    border-style: solid !important;
 }
