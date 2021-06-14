@@ -33,11 +33,11 @@ ion-card {
 
 .ion-fab-button-cantidad {
     --background: #9d259d;
-    --border-color: #000000;
-    --border-radius: 50px;
+    //--border-color: #000000;
+    //--border-radius: 50px;
     //--border-style: solid;
     //--border-width: 0.5px;
-    padding-left: 0%;
+    //padding-left: 0%;
     //--box-shadow: none;
     width: 40px;
     height: 40px;
@@ -109,6 +109,7 @@ ion-card {
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 0px;
+    align-items: center;
 }
 
 

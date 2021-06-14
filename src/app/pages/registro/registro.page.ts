@@ -16,6 +16,9 @@ export class RegistroPage implements OnInit {
   estaturaActual = 0;
   pesoActual = 0;
   pesoDeseado = 0;
+  menosEstaturaDisabled = false;
+  menosPesoDisabled = false;
+  menosPesoDeseadoaDisabled = false;
 
   todo : FormGroup;
 
@@ -93,9 +96,9 @@ export class RegistroPage implements OnInit {
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])],
       terminos: [false, Validators.pattern('true')],
-      estatura: ['', Validators.required],
-      peso_actual: ['', Validators.required],
-      peso_deseado: ['', Validators.required],
+      estatura: ['0', Validators.required],
+      peso_actual: ['0', Validators.required],
+      peso_deseado: ['0', Validators.required],
     });
 
   }
@@ -118,26 +121,60 @@ export class RegistroPage implements OnInit {
   }
 
   masEstatura() {
+    if( this.estaturaActual >= 0){
+      this.menosEstaturaDisabled = false;
+    }
     this.estaturaActual += 1;
   }
 
   menosEstatura() {
+
+    if( this.estaturaActual < 1){
+      this.menosEstaturaDisabled = true;
+      return
+    }else{
+      this.menosEstaturaDisabled = false;
+    }
+
     this.estaturaActual -= 1;
+
   }
 
   masPeso() {
+    if( this.pesoActual >= 0){
+      this.menosPesoDisabled = false;
+    }
     this.pesoActual += 1;
   }
 
   menosPeso() {
+
+    if( this.pesoActual < 1){
+      this.menosPesoDisabled = true;
+      return
+    }else{
+      this.menosPesoDisabled = false;
+    }
+
     this.pesoActual -= 1;
   }
 
   masPesoDeseado() {
+    if( this.pesoDeseado >= 0){
+      this.menosPesoDeseadoaDisabled = false;
+    }
     this.pesoDeseado += 1;
   }
 
   menosPesoDeseado() {
+
+    if( this.pesoDeseado < 1){
+      this.menosPesoDeseadoaDisabled = true;
+      return
+    }else{
+      this.menosPesoDeseadoaDisabled = false;
+    }
+
     this.pesoDeseado -= 1;
   }
 
