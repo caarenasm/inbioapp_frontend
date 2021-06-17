@@ -1,45 +1,45 @@
-<ion-content>
+<ion-content fullscreen="true">
 
-    <ion-list lines="none">
-
-        <ion-img [src]="datos.img"></ion-img>
+    <ion-list lines="none" class="fondo-recetas" style="background-image: url('{{ datos.img }}');padding-top: 140px;">
 
         <ion-fab horizontal="end" vertical="top" slot="fixed">
-            <ion-fab-button (click)="cerrar()" color="dark" size="small">
+            <ion-fab-button (click)="cerrar()" class="boton-receta" size="small">
                 <ion-icon name="close"></ion-icon>
             </ion-fab-button>
         </ion-fab>
 
-        <ion-card>
+        <ion-card class="cuerpo-receta">
 
             <ion-card-content>
 
                 <ion-fab horizontal="end" vertical="top" slot="fixed">
-                    <ion-fab-button color="dark" class="main-button" size="small">
+                    <ion-fab-button class="boton-receta" size="small">
                         <ion-icon name="heart"></ion-icon>
                     </ion-fab-button>
-                    <ion-fab-button color="dark" class="main-button" size="small">
+                    <ion-fab-button class="boton-receta" size="small">
                         <ion-icon name="share-social"></ion-icon>
                     </ion-fab-button>
                 </ion-fab>
 
                 <ion-card-header>
-                    <ion-card-title>{{ datos.descripcion}}</ion-card-title>
+                    <ion-card-title class="titulo">{{ datos.descripcion}}</ion-card-title>
                 </ion-card-header>
 
-                <ion-item *ngFor="let item of datos.composicion" lines="none">
-                    <ion-label>{{ item.descripcion}} {{ item.cantidad}} {{ item.unidadMedida}}</ion-label>
+                <ion-item *ngFor="let item of datos.composicion" lines="none" class="items">
+                    <ion-label>{{ item.descripcion}} {{ item.cantidad}} | {{ item.unidadMedida}}</ion-label>
                 </ion-item>
 
                 <ion-card-header>
                     <ion-card-subtitle>Ingredientes:</ion-card-subtitle>
                 </ion-card-header>
 
-                <ion-item *ngFor="let item of datos.ingrediente" lines="none">
-                    <ion-checkbox color="dark" slot="start" *ngIf="item.inActivo == false"></ion-checkbox>
-                    <ion-checkbox color="dark" slot="start" *ngIf="item.inActivo == true" checked></ion-checkbox>
-                    <ion-label>{{ item.descripcion}} {{ item.cantidad}} {{ item.unidadMedida}}</ion-label>
-                </ion-item>
+                <div *ngFor="let item of datos.ingrediente; let i = index">
+                    <ion-item lines="none" [ngClass]="( i % 2 == 0 ) ? 'color-base': '' ">
+                        <ion-checkbox color="dark" slot="start" *ngIf="item.inActivo == false" class="seleccion"></ion-checkbox>
+                        <ion-checkbox color="dark" slot="start" *ngIf="item.inActivo == true" checked class="seleccion"></ion-checkbox>
+                        <ion-label>{{ item.descripcion}} {{ item.cantidad}} | {{ item.unidadMedida}}</ion-label>
+                    </ion-item>
+                </div>
 
                 <ion-card-header>
                     <ion-card-subtitle>Preparación:</ion-card-subtitle>
@@ -63,8 +63,8 @@
 
 </ion-content>
 
-<ion-tab-bar slot="bottom">
+<ion-tab-bar slot="bottom" class="footer-receta">
 
-    <ion-button expand="block" (click)="cerrar()" color="dark">Volver</ion-button>
+    <ion-button expand="block" (click)="cerrar()" class="boton-receta-volver">Volver</ion-button>
 
 </ion-tab-bar>

@@ -151,7 +151,7 @@
                         </ion-row>
 
                         <ion-row>
-                            <ion-col size="12">
+                            <ion-col size="12" style="text-align: center;">
                                 <ion-label class="titulo">Otros datos importantes</ion-label>
                             </ion-col>
                         </ion-row>
@@ -164,14 +164,13 @@
 
                         <ion-row>
                             <ion-col size="4" class="grid-card">
-                                <ion-buttons>
-                                    <ion-fab-button (click)="menosEstatura()" class="ion-fab-button-cantidad">
+                                <div style="float: right;">
+                                    <ion-fab-button (click)="menosEstatura()" class="ion-fab-button-cantidad" disabled={{menosEstaturaDisabled}}>
                                         <ion-icon class="icon-menos"></ion-icon>
                                     </ion-fab-button>
-                                </ion-buttons>
-
+                                </div>
                             </ion-col>
-                            <ion-col size="4" class="grid-card">
+                            <ion-col size="4" class="grid-card" style="text-align: center;">
                                 <ion-input type="number" min="0" [value]=estaturaActual formControlName="estatura" [class.is-invalid]="estaturaNoValido"></ion-input>
                                 <small *ngIf="estaturaNoValido">
                                     <ion-label color="danger">Ingrese su Estatura.</ion-label>
@@ -181,12 +180,11 @@
                                 </p>
                             </ion-col>
                             <ion-col size="4" class="grid-card">
-                                <ion-buttons>
+                                <div style="float: left;">
                                     <ion-fab-button (click)="masEstatura()" class="ion-fab-button-cantidad">
                                         <ion-icon class="icon-plus"></ion-icon>
                                     </ion-fab-button>
-                                </ion-buttons>
-
+                                </div>
                             </ion-col>
                         </ion-row>
 
@@ -199,14 +197,14 @@
 
                         <ion-row>
                             <ion-col size="4" class="grid-card">
-                                <ion-buttons>
-                                    <ion-fab-button (click)="menosPeso()" class="ion-fab-button-cantidad">
+                                <div style="float: right;">
+                                    <ion-fab-button (click)="menosPeso()" class="ion-fab-button-cantidad" disabled={{menosPesoDisabled}}>
                                         <ion-icon class="icon-menos"></ion-icon>
                                     </ion-fab-button>
-                                </ion-buttons>
+                                </div>
 
                             </ion-col>
-                            <ion-col size="4" class="grid-card">
+                            <ion-col size="4" class="grid-card" style="text-align: center;">
                                 <ion-input type="number" min="0" [value]=pesoActual formControlName="peso_actual" [class.is-invalid]="pesoActualNoValido"></ion-input>
                                 <small *ngIf="pesoActualNoValido">
                                     <ion-label color="danger">Ingrese su Peso Actual.</ion-label>
@@ -216,11 +214,11 @@
                                 </p>
                             </ion-col>
                             <ion-col size="4" class="grid-card">
-                                <ion-buttons>
+                                <div style="float: left;">
                                     <ion-fab-button (click)="masPeso()" class="ion-fab-button-cantidad">
                                         <ion-icon class="icon-plus"></ion-icon>
                                     </ion-fab-button>
-                                </ion-buttons>
+                                </div>
 
                             </ion-col>
                         </ion-row>
@@ -233,17 +231,17 @@
 
                         <ion-row>
                             <ion-col size="4" class="grid-card">
-                                <ion-buttons>
+                                <div style="float: right;">
                                     <!--<ion-button slot="end" size="large" (click)="menosPesoDeseado()">
                                     <ion-icon name="remove-circle"></ion-icon>
                                 </ion-button>-->
-                                    <ion-fab-button (click)="menosPesoDeseado()" class="ion-fab-button-cantidad">
+                                    <ion-fab-button (click)="menosPesoDeseado()" class="ion-fab-button-cantidad" disabled={{menosPesoDeseadoaDisabled}}>
                                         <ion-icon class="icon-menos"></ion-icon>
                                     </ion-fab-button>
-                                </ion-buttons>
+                                </div>
 
                             </ion-col>
-                            <ion-col size="4" class="grid-card">
+                            <ion-col size="4" class="grid-card" style="text-align: center;">
                                 <ion-input type="number" min="0" [value]=pesoDeseado formControlName="peso_deseado" [class.is-invalid]="pesoDeseadoNoValido"></ion-input>
                                 <small *ngIf="pesoDeseadoNoValido">
                                     <ion-label color="danger">Ingrese su Peso Deseado.</ion-label>
@@ -253,14 +251,14 @@
                                 </p>
                             </ion-col>
                             <ion-col size="4" class="grid-card">
-                                <ion-buttons>
+                                <div style="float: left;">
                                     <!--<ion-button slot="start" size="large" (click)="masPesoDeseado()">
                                     <ion-icon name="add-circle"></ion-icon>
                                 </ion-button>-->
                                     <ion-fab-button (click)="masPesoDeseado()" class="ion-fab-button-cantidad">
                                         <ion-icon class="icon-plus"></ion-icon>
                                     </ion-fab-button>
-                                </ion-buttons>
+                                </div>
 
                             </ion-col>
                         </ion-row>
@@ -286,7 +284,7 @@
 
     <ion-fab vertical="bottom" horizontal="start" slot="fixed">
         <ion-fab-button size="small" color="dark" routerLink="/quiz" routerDirection="forward" data-desc="Aterior">
-            <ion-icon class="icon-atrs"></ion-icon>
+            <ion-icon class="icon-atras"></ion-icon>
         </ion-fab-button>
     </ion-fab>
 

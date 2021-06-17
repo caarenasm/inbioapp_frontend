@@ -9,11 +9,13 @@
 /*border-radius: 30px;*/
 
 //}
-.main-button {
-    --box-shadow: none;
-}
 
-ion-list {
+/*.main-button {
+    --box-shadow: none;
+}*/
+
+
+/*ion-list {
     background-image: url('/assets/img/fondo_dos.png');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -37,20 +39,68 @@ ion-item {
     --padding-bottom: 0px;
     --padding-end: 0px;
     --padding-top: 0px;
-}
+}*/
 
-ion-card {
+
+/*ion-card {
     --background: #ffffff;
     --color: #000000;
     border-radius: 50px;
     padding: 0px;
     height: 100%;
-}
+}*/
 
-ion-button {
+
+/*ion-button {
     --border-radius: 50px;
     --padding-bottom: 4px;
     --padding-end: 50px;
     --padding-start: 50px;
     --padding-top: 4px;
+}*/
+
+.footer-receta {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    --color: #000000;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.boton-receta {
+    --background: #872a99;
+}
+
+.seleccion {
+    background: #FFFFFF;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-radius: 4px;
+    border-color: #fe8e0d !important;
+    --height: 25px;
+    --width: 25px;
+    --checkmark-color: #FFFFFF;
+    --border-color: #FFFFFF;
+    --background-checked: #fe8e0d;
+    --border-color: #fe8e0d;
+    --border-color-checked: #fe8e0d;
+}
+
+.items {
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.boton-receta-volver {
+    --background: #872a99;
+    --border-radius: 50px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.color-base {
+    --background: #f6f6f6 !important;
 }

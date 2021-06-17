@@ -11,6 +11,7 @@ export interface Blogs {
   templateUrl: './blog-general.page.html',
   styleUrls: ['./blog-general.page.scss'],
 })
+
 export class BlogGeneralPage implements OnInit {
 
   blog: Blogs[] = [
