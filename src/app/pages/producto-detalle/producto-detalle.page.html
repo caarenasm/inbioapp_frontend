@@ -1,6 +1,6 @@
 <ion-content>
 
-  <ion-list lines="none" class="fondo-mis-estadisticas">
+  <ion-list class="fondo-mis-estadisticas">
 
 
     <ion-img src="assets/img/producto.png"></ion-img>
@@ -11,26 +11,32 @@
       </ion-fab-button>
     </ion-fab>
     
+    <div *ngFor="let productos of producto">
 
     <ion-card class="cuerpo-producto">
 
       <ion-card-content>
-
+        <ion-fab horizontal="end" vertical="top" slot="fixed">
+          <ion-fab-button class="icono" size="small">
+              <ion-icon name="heart"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        
         <ion-card-header>
-          <ion-card-title class="titulo"><b>Bellasen Crema</b></ion-card-title>
-          <ion-card-title class="titulo">$31.000</ion-card-title>
-          <ion-card-title class="titulo">Crema de 30 g</ion-card-title>
-          <ion-card-subtitle>Crema de base 100% natural, hecha de<br>colágeno de origen vegetal y minerales.</ion-card-subtitle>
+          <ion-card-title class="titulo2">{{ productos.titulo }}</ion-card-title>
+          <ion-card-title class="titulo-1">{{ productos.precio }}</ion-card-title>
+          <ion-card-title class="titulo-1">{{ productos.titulo2 }}</ion-card-title>
+          <ion-card-subtitle class="sub-titulo-2-1" color="dark">{{ productos.subtitulo }}</ion-card-subtitle>
         </ion-card-header>
 
-        <ion-card class="sub-tarjeta">
+        <ion-card class="sub-tarjeta-1">
 
           <ion-card-header>
-            <ion-card-title class="titulo">Propiedades:</ion-card-title>
-            <ion-card-subtitle>1. Nutre y sella la piel para proteger y<br>recontruir ddddddddddddd</ion-card-subtitle>
-            <ion-card-subtitle>2. Ayuda a l regeneración muscular</ion-card-subtitle>
-            <ion-card-subtitle>3. Se la piel y la protege de agentes<br>externos bbbb vvv </ion-card-subtitle>
-            <ion-card-subtitle>4. Restaura la piel mientras se duerme</ion-card-subtitle>
+            <ion-card-title class="sub-titulo-1">{{ productos.titulo3 }}</ion-card-title>
+            <ion-card-subtitle class="sub-titulo-2-1" color="dark">{{ productos.subtitulo1 }}</ion-card-subtitle>
+            <ion-card-subtitle class="sub-titulo-2-1" color="dark">{{ productos.subtitulo2 }}</ion-card-subtitle>
+            <ion-card-subtitle class="sub-titulo-2-1" color="dark">{{ productos.subtitulo3 }}</ion-card-subtitle>
+            <ion-card-subtitle class="sub-titulo-2-1" color="dark">{{ productos.subtitulo4 }}</ion-card-subtitle>
           </ion-card-header>
           
           <ion-button expand="block" class="boton-detalle-volver">Quiero este Bioproducto</ion-button>
@@ -41,12 +47,14 @@
 
     </ion-card>
     
+  </div>
+    
   </ion-list>
 
 </ion-content>
 
-<ion-tab-bar slot="bottom" class="footer-detalle">
+<ion-tab-bar class="footer-detalle">
 
-  <ion-button expand="block" (click)="guardar()" class="boton-detalle-volver">Guardar</ion-button>
+  <ion-button (click)="guardar()" class="boton-detalle-volver">Guardar</ion-button>
 
 </ion-tab-bar>
