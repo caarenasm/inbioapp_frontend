@@ -12,4 +12,10 @@ export class ProductoDetallePage implements OnInit {
   ngOnInit() {
   }
 
+  guardar(){
+
+    alert('Guardar');
+
+  }
+
 }

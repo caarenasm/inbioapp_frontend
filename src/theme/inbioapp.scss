@@ -254,10 +254,6 @@
 
 .icono {
     --background: #872a99;
-    --border-radius: 50px;
-      font-weight: bold;
-      text-transform: capitalize;
-        
 }
 
 .titulo {
@@ -520,11 +516,6 @@
     .contenido {
         padding-bottom: 0px;
     }
-    .icono {
-        --background: #872a99;
-    }
-    
-}
     .pie {
         text-align: center !important;
         margin-top: -30px;
@@ -535,10 +526,7 @@
             --background: #872a99;
         }
     }
-
-
-
-
+}
 
 .tarjeta-receta {
     border-radius: 50px;
@@ -641,6 +629,38 @@
 
 .cuerpo-mis-datos-col-interno {
     border-left: 1px solid #9e9e9e;
+}
+
+.cuerpo-producto {
+    --background: #ffffff;
+    --color: #000000;
+    --border-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+
+    .sub-tarjeta {
+        background-color: #f6f6f6;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        padding-bottom: 30%;
+        margin-bottom: 0px;
+    }
+    .contenido {
+        padding-bottom: 0px;
+    }
+    .pie {
+        text-align: center !important;
+        margin-top: -30px;
+        .boton {
+            --border-radius: 50px;
+            font-weight: bold;
+            text-transform: capitalize;
+            --background: #872a99;
+        }
+    }
 }
 
 .alerta {
