@@ -30,7 +30,12 @@
         <ion-grid>
           <ion-row class="ion-align-items-center">
               <ion-col size="12" class="ion-text-center">
-                  <ion-button (click)="seleccionar(objetivo)" color="dark" edge>Este es mi objetivo</ion-button>
+
+                <app-boton titulo = 'Este es mi objetivo' colorBtn = 'negro' (click)="seleccionar(objetivo)"></app-boton>
+
+                  <!--<ion-button (click)="seleccionar(objetivo)" color="dark" edge>Este es mi objetivo</ion-button>-->
+
+
               </ion-col>
           </ion-row>
       </ion-grid>
