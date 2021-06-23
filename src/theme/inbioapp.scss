@@ -433,6 +433,15 @@
     background-color: #f6f6f6;
 }
 
+.fondo-productos-detalle {
+    background-image: url('/assets/img/Bellasen_crema_detalle.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+    background-color: #f6f6f6;
+}
+
 .fondo-mis-eventos {
     background-image: url('/assets/img/fondo_mis_eventos.png');
     background-repeat: no-repeat;
@@ -766,4 +775,12 @@
     --color: #000000;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.ion-padding-img {
+        padding: 20px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: -130px;
+        margin-top: -60px;
 }
