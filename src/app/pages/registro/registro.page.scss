@@ -31,13 +31,25 @@ ion-card {
     height: 70px;
 }*/
 
-.ion-fab-button-cantidad {
-    --background: #9d259d;
-    --border-color: #000000;
-    --border-radius: 50px;
+.ion-fab-button-cantidad-menos {
+    --background: #fe8e0d;
+    //--border-color: #000000;
+    //--border-radius: 50px;
     //--border-style: solid;
     //--border-width: 0.5px;
-    padding-left: 0%;
+    //padding-left: 0%;
+    //--box-shadow: none;
+    width: 40px;
+    height: 40px;
+}
+
+.ion-fab-button-cantidad-mas {
+    --background: #9d259d;
+    //--border-color: #000000;
+    //--border-radius: 50px;
+    //--border-style: solid;
+    //--border-width: 0.5px;
+    //padding-left: 0%;
     //--box-shadow: none;
     width: 40px;
     height: 40px;
@@ -45,14 +57,16 @@ ion-card {
 
 .ion-icon-icono {
     color: #9d259d;
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .titulo {
     text-align: center;
+    padding-bottom: 10px;
 }
 
 .sub-titulo-2 {
+    font-family: 'Roboto' !important;
     text-align: center;
 }
 
@@ -109,6 +123,7 @@ ion-card {
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 0px;
+    align-items: center;
 }
 
 

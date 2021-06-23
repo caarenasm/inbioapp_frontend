@@ -9,7 +9,8 @@
     border-radius: 25px;
 }
 
-ion-chip.wide {
+
+/*ion-chip.wide {
     width: 100%;
     background-color: #ffffff;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
@@ -19,9 +20,10 @@ ion-chip.wide {
     margin-right: 50px;
     display: flex;
     justify-content: space-between;
-}
+}*/
 
-ion-list {
+
+/*ion-list {
     background-image: url('/assets/img/fondo_mis_datos.png');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -36,9 +38,10 @@ ion-list {
 
 ion-list .ion-item {
     padding-top: 90px;
-}
+}*/
 
-ion-item {
+
+/*ion-item {
     --background: transparent;
     --padding-bottom: 0px;
     --padding-end: 4px;
@@ -47,18 +50,20 @@ ion-item {
     padding-top: 0px;
     font-weight: bold;
     font-size: 24px;
-}
+}*/
 
-ion-list>ion-item {
+
+/*ion-list>ion-item {
     padding-left: 24px;
 }
 
 ion-avatar {
     width: 100px;
     height: 100px;
-}
+}*/
 
-.ion-grid-principal {
+
+/*.ion-grid-principal {
     padding: 0px;
 }
 
@@ -70,15 +75,17 @@ ion-card {
 
 ion-col>ion-card>ion-grid>ion-row>ion-col {
     padding: 5px;
-}
+}*/
 
-.ion-card-interno {
+
+/*.ion-card-interno {
     margin-left: 0px;
     margin-right: 0px;
     background-color: #f7f7f7;
-}
+}*/
 
-.ion-row-interno {
+
+/*.ion-row-interno {
     border-radius: 25px;
     background-color: #f7f7f7;
     margin-left: 30px;
@@ -88,9 +95,10 @@ ion-col>ion-card>ion-grid>ion-row>ion-col {
 
 .ion-col-interno {
     border-left: 1px solid #9e9e9e;
-}
+}*/
 
-.ion-card-titulo {
+
+/*.ion-card-titulo {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -106,4 +114,14 @@ ion-col>ion-card>ion-grid>ion-row>ion-col {
     font-size: 24px;
     font-weight: bold;
     color: #ffffff;
+}*/
+
+.titulo {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.sub-titulo-2 {
+    font-family: 'Roboto' !important;
+    text-align: center;
 }
