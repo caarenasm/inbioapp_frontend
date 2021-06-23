@@ -11,7 +11,7 @@ export class InicioPage implements OnInit {
   slides: { img: string, titulo: string, entrar: boolean, color: string }[] = [
     {
       img: '/assets/img/Intro_1.png',
-      titulo: 'Empodérate de tu nutrición y la de tu familia',
+      titulo: 'Empodérate de tu nutrición y la de tu familia.',
       entrar: false,
       color: 'background-color:white'
     },

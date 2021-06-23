@@ -1,18 +1,61 @@
 <ion-content>
 
-  <ion-list lines="none" class="fondo-mis-estadisticas">
+  <ion-list class="fondo-mis-estadisticas">
+  
+    <ion-img class="ion-padding-img" src="assets/img/bellasen_crema_detalle.png"></ion-img>
 
     <ion-fab horizontal="end" vertical="top" slot="fixed">
-      <ion-fab-button (click)="cerrar()" class="boton-receta" size="small">
+      <ion-fab-button class="icono" size="small">
           <ion-icon name="close"></ion-icon>
       </ion-fab-button>
     </ion-fab>
+    
+    <div *ngFor="let productos of producto">
 
-    <ion-card class="cuerpo-receta">
+    <ion-card class="cuerpo-producto">
 
-      
+      <ion-card-content>
+        <ion-fab horizontal="end" vertical="top" slot="fixed">
+          <ion-fab-button class="icono" size="small">
+              <ion-icon name="heart"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        
+        <ion-card-header>
+          <ion-card-title class="titulo2">{{ productos.titulo }}</ion-card-title>
+          <ion-card-title class="titulo-1">{{ productos.precio }}</ion-card-title>
+          <ion-card-title class="titulo-1">{{ productos.titulo2 }}</ion-card-title>
+          <ion-card-subtitle class="sub-titulo-2-1" color="dark">{{ productos.subtitulo }}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card class="sub-tarjeta-1">
+
+          <ion-card-header>
+            <ion-card-title class="sub-titulo-1">{{ productos.titulo3 }}</ion-card-title>
+            <ion-card-subtitle class="sub-titulo-2-1" color="dark">{{ productos.subtitulo1 }}</ion-card-subtitle>
+            <ion-card-subtitle class="sub-titulo-2-1" color="dark">{{ productos.subtitulo2 }}</ion-card-subtitle>
+            <ion-card-subtitle class="sub-titulo-2-1" color="dark">{{ productos.subtitulo3 }}</ion-card-subtitle>
+            <ion-card-subtitle class="sub-titulo-2-1" color="dark">{{ productos.subtitulo4 }}</ion-card-subtitle>
+          </ion-card-header>
+          
+          <ion-button expand="block" class="boton-detalle-volver">Quiero este Bioproducto</ion-button>
+
+        </ion-card>
+        
+      </ion-card-content>
+
     </ion-card>
+    
+  </div>
     
   </ion-list>
 
 </ion-content>
+
+<ion-tab-bar class="footer-detalle">
+
+
+  <ion-button (click)="guardar()" class="boton-detalle-volver">Guardar</ion-button>
+
+
+</ion-tab-bar>

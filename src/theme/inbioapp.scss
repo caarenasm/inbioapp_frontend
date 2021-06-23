@@ -254,10 +254,19 @@
 
 .icono {
     --background: #872a99;
-    --border-radius: 50px;
-      font-weight: bold;
-      text-transform: capitalize;
-        
+}
+
+.icono-pro {
+    --background: #ffffff;
+}
+
+.titulo2 {
+    font-family: 'Poppins' !important;
+    font-size: 24px;
+    font-style: bold;
+    line-height: 24px;
+    text-align: left !important;
+    font-weight: bold; 
 }
 
 .titulo {
@@ -272,6 +281,7 @@
     font-size: 20px;
     font-style: normal;
     line-height: 24px;
+    padding-bottom: 10px;
 }
 
 .sub-titulo-2 {
@@ -279,6 +289,14 @@
     font-size: 16px;
     font-style: normal;
     line-height: 16px;
+}
+
+.sub-titulo-2-1 {
+    font-family: 'Poppins' !important;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+    text-align: left !important;
 }
 
 .body {
@@ -415,6 +433,15 @@
     background-color: #f6f6f6;
 }
 
+.fondo-productos-detalle {
+    background-image: url('/assets/img/Bellasen_crema_detalle.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+    background-color: #f6f6f6;
+}
+
 .fondo-mis-eventos {
     background-image: url('/assets/img/fondo_mis_eventos.png');
     background-repeat: no-repeat;
@@ -520,11 +547,6 @@
     .contenido {
         padding-bottom: 0px;
     }
-    .icono {
-        --background: #872a99;
-    }
-    
-}
     .pie {
         text-align: center !important;
         margin-top: -30px;
@@ -535,10 +557,7 @@
             --background: #872a99;
         }
     }
-
-
-
-
+}
 
 .tarjeta-receta {
     border-radius: 50px;
@@ -648,6 +667,51 @@
     border-left: 1px solid #9e9e9e;
 }
 
+.sub-tarjeta-1 {
+    background-color: #f6f6f6;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding-top: 10px;
+    padding-bottom: 70px;
+    margin-bottom: 0px;
+    width: 109%;
+    left: -7%;
+}
+
+.cuerpo-producto {
+    --background: #ffffff;
+    --color: #000000;
+    --border-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+
+    .sub-tarjeta {
+        background-color: #f6f6f6;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        padding-top: 0px;
+        padding-bottom: 20px;
+        margin-bottom: 0px;
+    }
+    .contenido {
+        padding-bottom: 0px;
+    }
+    .pie {
+        text-align: center !important;
+        margin-top: -30px;
+        .boton {
+            --border-radius: 50px;
+            font-weight: bold;
+            text-transform: capitalize;
+            --background: #872a99;
+        }
+    }
+}
+
+
 .alerta {
     //--backdrop-opacity: 0.6;
     //--background: linear-gradient(90deg, rgb(30, 0, 201) 1%, rgb(248, 255, 248) 100%);
@@ -716,4 +780,12 @@
     --color: #000000;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.ion-padding-img {
+        padding: 20px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: -130px;
+        margin-top: -60px;
 }
