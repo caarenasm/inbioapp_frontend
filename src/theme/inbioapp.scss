@@ -252,6 +252,14 @@
     content: "\e936";
 }
 
+.icono {
+    --background: #872a99;
+    --border-radius: 50px;
+      font-weight: bold;
+      text-transform: capitalize;
+        
+}
+
 .titulo {
     font-family: 'Poppins' !important;
     font-size: 24px;
@@ -512,6 +520,11 @@
     .contenido {
         padding-bottom: 0px;
     }
+    .icono {
+        --background: #872a99;
+    }
+    
+}
     .pie {
         text-align: center !important;
         margin-top: -30px;
@@ -522,7 +535,10 @@
             --background: #872a99;
         }
     }
-}
+
+
+
+
 
 .tarjeta-receta {
     border-radius: 50px;

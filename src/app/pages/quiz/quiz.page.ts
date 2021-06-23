@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IonLabel, NavController } from '@ionic/angular';
+import { IonLabel, NavController, PopoverController } from '@ionic/angular';
+import { InfoAyudaComponent } from '../../components/info-ayuda/info-ayuda.component';
 
 export interface Respuesta {
   descripcion: string;
@@ -24,6 +25,8 @@ export interface Quiz {
 })
 export class QuizPage implements OnInit {
 
+  progreso = 1;
+
   quiz: Quiz[] = [
     {
       pregunta: '¿Cómo duermes?',
@@ -40,7 +43,7 @@ export class QuizPage implements OnInit {
           },
           {
             descripcion: 'Me despierto una o más veces en la noche y me cuesta dormir de nuevo',
-            inAyuda: true,
+            inAyuda: false,
             ayuda: ''
           },
           {
@@ -60,7 +63,7 @@ export class QuizPage implements OnInit {
       respuesta: [
           {
             descripcion: 'A veces',
-            inAyuda: true,
+            inAyuda: false,
             ayuda: ''
           },
           {
@@ -70,7 +73,7 @@ export class QuizPage implements OnInit {
           },
           {
             descripcion: 'Todos los días',
-            inAyuda: true,
+            inAyuda: false,
             ayuda: ''
           }
       ]
@@ -86,7 +89,7 @@ export class QuizPage implements OnInit {
           {
             descripcion: 'Comidas con carbohidratos?',
             inAyuda: true,
-            ayuda: ''
+            ayuda: 'Texto de Ayuda'
           },
           {
             descripcion: 'Comidas dulces',
@@ -95,7 +98,7 @@ export class QuizPage implements OnInit {
           },
           {
             descripcion: 'Comidas saladas',
-            inAyuda: true,
+            inAyuda: false,
             ayuda: ''
           },
           {
@@ -105,13 +108,13 @@ export class QuizPage implements OnInit {
           },
           {
             descripcion: 'Comidas frías y heladas',
-            inAyuda: true,
+            inAyuda: false,
             ayuda: ''
           },
           {
             descripcion: 'Carnes rojas?',
-            inAyuda: false,
-            ayuda: ''
+            inAyuda: true,
+            ayuda: 'Texto de Ayuda'
           }
       ]
     },
@@ -126,26 +129,26 @@ export class QuizPage implements OnInit {
           {
             descripcion: 'Actividades de fuerza y poder?',
             inAyuda: true,
-            ayuda: ''
+            ayuda: 'Texto de Ayuda'
           },
           {
             descripcion: 'Actividades de resistencia y cardio?',
-            inAyuda: false,
-            ayuda: ''
+            inAyuda: true,
+            ayuda: 'Texto de Ayuda'
           },
           {
             descripcion: 'Me siento comodo(a) con las dos actividades físicas anteriores',
-            inAyuda: true,
+            inAyuda: false,
             ayuda: ''
           },
           {
             descripcion: 'Actividades de alto rendimiento?',
-            inAyuda: false,
-            ayuda: ''
+            inAyuda: true,
+            ayuda: 'Texto de Ayuda'
           },
           {
             descripcion: 'Ninguna, no practico deporte actualmente',
-            inAyuda: true,
+            inAyuda: false,
             ayuda: ''
           }
        ]
@@ -160,7 +163,7 @@ export class QuizPage implements OnInit {
       respuesta: [
           {
             descripcion: 'Diabetes tipo 1 o 2',
-            inAyuda: true,
+            inAyuda: false,
             ayuda: ''
           },
           {
@@ -171,245 +174,71 @@ export class QuizPage implements OnInit {
           {
             descripcion: 'Enfermedades alérgicas?',
             inAyuda: true,
-            ayuda: ''
+            ayuda: 'Texto de Ayuda'
           },
           {
             descripcion: 'Enfermedades cardiovasculares?',
-            inAyuda: false,
-            ayuda: ''
+            inAyuda: true,
+            ayuda: 'Texto de Ayuda'
           },
           {
             descripcion: 'Enfermedades respiratorias?',
             inAyuda: true,
-            ayuda: ''
+            ayuda: 'Texto de Ayuda'
           },
           {
             descripcion: 'Enfermedades autoinmunes?',
-            inAyuda: false,
-            ayuda: ''
+            inAyuda: true,
+            ayuda: 'Texto de Ayuda'
           },
           {
             descripcion: 'Enfermedades musculares, óseas y/o articulares?',
             inAyuda: true,
-            ayuda: ''
+            ayuda: 'Texto de Ayuda'
           },
           {
             descripcion: 'Enfermedades neuropsicologícas?',
-            inAyuda: false,
-            ayuda: ''
+            inAyuda: true,
+            ayuda: 'Texto de Ayuda'
           }
        ]
      },
-     {
-      pregunta: '¿Padeces alguna de estas enfermedades?',
-      descripcion: 'Una dieta equilibrada previene y mejora enfermedades existentes en nuestro cuerpo',
-      inInicio: false,
-      nuOrden: 5,
-      inComentario: true,
-      tipoRespuesta: 2,
-      respuesta: [
-          {
-            descripcion: 'Otras',
-            inAyuda: true,
-            ayuda: ''
-          }
-       ]
-     },
-     {
-      pregunta: '¿Tienes alguna dieta especial?',
-      descripcion: 'Una dieta saludable fortalece el sistema inmune, mejora nuestro sistema digestivo y nuestro estado de ánimo',
-      inInicio: false,
-      nuOrden: 6,
-      inComentario: true,
-      tipoRespuesta: 1,
-      respuesta: [
-          {
-            descripcion: 'Si, soy vegetariano(a)',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Si, soy vegano(a)',
-            inAyuda: false,
-            ayuda: ''
-          },
-          {
-            descripcion: 'No, como casi de todo',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Otra',
-            inAyuda: false,
-            ayuda: ''
-          }
-       ]
-     },
-     {
-      pregunta: '¿¿Qué alimentos o productos basados en ese tipo de comida te causan alergias?',
-      descripcion: 'Cambiar nuestra alimentación por comida órganica nos ayuda a entender de dónde proviene las alergias alimenticias',
-      inInicio: false,
-      nuOrden: 7,
-      inComentario: true,
-      tipoRespuesta: 2,
-      respuesta: [
-          {
-            descripcion: 'Alimentos que contienen gluten?',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Crustáceos?',
-            inAyuda: false,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Huevos?',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Pescado',
-            inAyuda: false,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Maní',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Soya',
-            inAyuda: false,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Lácteos?',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Frutos secos?',
-            inAyuda: false,
-            ayuda: ''
-          }
-       ]
-     },
-     {
-      pregunta: '¿Cuantas deposiciones haces al día?',
-      descripcion: 'La frecuencia, forma, color y olor de las heces nos ayudan a descubrir si tienes algún problema de salud',
-      inInicio: false,
-      nuOrden: 8,
-      inComentario: true,
-      tipoRespuesta: 1,
-      respuesta: [
-          {
-            descripcion: '3 veces por semana',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Día de por medio',
-            inAyuda: false,
-            ayuda: ''
-          },
-          {
-            descripcion: '1 vez al día',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: '2 veces al día',
-            inAyuda: false,
-            ayuda: ''
-          },
-          {
-            descripcion: '3 veces al día',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Más de 3 veces al día',
-            inAyuda: false,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Entre 5 y 10 veces al día',
-            inAyuda: true,
-            ayuda: ''
-          }
-       ]
-     },
-     {
-      pregunta: '¿Cuánta agua tomas al día?',
-      descripcion: 'Beber agua es fundamental para tener efectos positivos en nuestra salud',
-      inInicio: false,
-      nuOrden: 9,
-      inComentario: true,
-      tipoRespuesta: 1,
-      respuesta: [
-          {
-            descripcion: 'Menos de 1L',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'De 1L a 2L',
-            inAyuda: false,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Más de 2L',
-            inAyuda: true,
-            ayuda: ''
-          }
-       ]
-     },
-     {
-      pregunta: '¿Ingieres suplementos nutricionales?',
-      descripcion: 'Combinar una dieta equilibrada equilibrada con suplementos crea un estilo de vida saludable',
-      inInicio: false,
-      nuOrden: 10,
-      inComentario: true,
-      tipoRespuesta: 2,
-      respuesta: [
-          {
-            descripcion: 'Productos Inbionova?',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Minerales?',
-            inAyuda: false,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Vitaminas?',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Aminoácidos esenciales?',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Proteínas?',
-            inAyuda: true,
-            ayuda: ''
-          },
-          {
-            descripcion: 'Fermentos o microorganismos?',
-            inAyuda: true,
-            ayuda: ''
-          }         
-       ]
-     }
   ];
 
-  constructor( private navCtrl: NavController) { }
+  constructor( 
+    private navCtrl: NavController,
+    private popoverCtrl: PopoverController
+    ) { }
 
   ngOnInit() {
+    this.avanze();
+  }
+
+  async infoAyuda(ev: any, msg) {
+    
+    const popover = await this.popoverCtrl.create({
+      component: InfoAyudaComponent,
+      event: ev,
+      componentProps: {
+        msg: msg
+      },
+      translucent: true,
+      backdropDismiss: true
+    });
+
+    await popover.present();
+
+    const { data } = await popover.onWillDismiss();
+    console.log(data);
+
+  }
+
+  avanze(){
+
+    let conteo = this.progreso / 5;
+
+    this.progreso = conteo;
+
   }
 
 }
