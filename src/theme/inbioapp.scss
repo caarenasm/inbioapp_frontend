@@ -266,7 +266,7 @@
     font-style: bold;
     line-height: 24px;
     text-align: left !important;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .titulo {
@@ -687,7 +687,6 @@
     padding-top: 10px;
     padding-bottom: 0px;
     margin-bottom: 0px;
-
     .sub-tarjeta {
         background-color: #f6f6f6;
         border-top-left-radius: 50px;
@@ -711,13 +710,12 @@
     }
 }
 
-
 .alerta {
     //--backdrop-opacity: 0.6;
     //--background: linear-gradient(90deg, rgb(30, 0, 201) 1%, rgb(248, 255, 248) 100%);
     .alert-wrapper.sc-ion-alert-ios,
     .alert-wrapper.sc-ion-alert-md {
-        border-radius: 50px;
+        border-radius: 25px;
         -webkit-box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
         box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
         padding: 10px;
@@ -726,7 +724,7 @@
         .alert-head {
             &::before {
                 content: '';
-                background: url(../assets/img/logo-header.png) no-repeat;
+                background: url(../assets/img/advertencia.png) no-repeat;
                 background-size: contain;
                 height: 30px;
                 width: 30px;
@@ -743,12 +741,15 @@
         color: rgb(0, 0, 0);
         font-size: 14px;
         text-align: center;
+        text-transform: capitalize;
+        font-weight: bold;
     }
     .alert-message.sc-ion-alert-md,
     .alert-message.sc-ion-alert-ios {
         font-size: 12px;
         color: rgb(0, 0, 0);
         text-align: center;
+        text-transform: capitalize;
     }
     .alert-button.sc-ion-alert-md,
     .alert-button.sc-ion-alert-ios {
@@ -758,6 +759,12 @@
         border-radius: 25px;
         border: 0.5px;
         border-color: #000000;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    .alerta-boton-aceptar.sc-ion-alert-md,
+    .alerta-boton-aceptar.sc-ion-alert-ios {
+        background-color: #fe8e0d;
     }
     .alert-button-inner.sc-ion-alert-md,
     .alert-button-innersc-ion-alert-ios {
@@ -783,9 +790,9 @@
 }
 
 .ion-padding-img {
-        padding: 20px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        margin-bottom: -130px;
-        margin-top: -60px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: -130px;
+    margin-top: -60px;
 }
