@@ -219,6 +219,7 @@ export class RegistroPage implements OnInit {
       buttons: [
         {
           text: 'Volver',
+          cssClass:'alerta-boton-volver',
           role: 'cancel',
         },
         {
