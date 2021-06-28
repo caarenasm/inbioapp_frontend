@@ -219,10 +219,12 @@ export class RegistroPage implements OnInit {
       buttons: [
         {
           text: 'Volver',
+          cssClass:'alerta-boton-volver',
           role: 'cancel',
         },
         {
           text: 'Continuar',
+          cssClass:'alerta-boton-aceptar',
           handler: () => {
             //console.log(this.todo.value)
             this.postDatos();
