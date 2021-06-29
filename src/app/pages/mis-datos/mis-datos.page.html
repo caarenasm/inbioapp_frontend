@@ -17,14 +17,14 @@
                     <ion-col>
                         <ion-item>
                             <ion-avatar slot="start" class="avatar">
-                                <ion-img src="assets/img/producto.png"></ion-img>
+                                <ion-img [src]="datos.profile_photo_url"></ion-img>
                             </ion-avatar>
                             <ion-label>
                                 <h1><b>{{ datos.nombre }}</b></h1>
                                 <h3><b>Sexo</b></h3>
-                                <p>{{ datos.genero }}</p>
+                                <p>{{ datos.sexo_id }}</p>
                                 <h3><b>Fecha de Nacimiento</b></h3>
-                                <p>{{ datos.fechaNac }}</p>
+                                <p>{{ datos.fecha_nacimiento }}</p>
                             </ion-label>
                         </ion-item>
                     </ion-col>
@@ -50,7 +50,7 @@
                         <ion-item class="informacion">
                             <ion-label>
                                 <h3><b>Mi Objetivo</b></h3>
-                                <p>{{ datos.miObjetivo }}</p>
+                                <p>{{ datos.objetivo }}</p>
                             </ion-label>
                         </ion-item>
                     </ion-col>
@@ -61,7 +61,7 @@
                         <ion-item class="informacion">
                             <ion-label>
                                 <h3><b>Peso Actual</b></h3>
-                                <p>{{ datos.pesoActual }}</p>
+                                <p>{{ datos.peso_actual }}</p>
                             </ion-label>
                         </ion-item>
                     </ion-col>
@@ -69,7 +69,7 @@
                         <ion-item class="informacion">
                             <ion-label>
                                 <h3><b>Peso Deseado</b></h3>
-                                <p>{{ datos.pesoDeseado }}</p>
+                                <p>{{ datos.peso_deseado }}</p>
                             </ion-label>
                         </ion-item>
                     </ion-col>
@@ -99,7 +99,7 @@
                         <ion-item class="informacion">
                             <ion-label class="ion-text-wrap">
                                 <h3><b>Proteinas/Grasas/Carb</b></h3>
-                                <p>{{ datos.pcg }}</p>
+                                <p>{{ datos.pgc }}</p>
                             </ion-label>
                         </ion-item>
                     </ion-col>

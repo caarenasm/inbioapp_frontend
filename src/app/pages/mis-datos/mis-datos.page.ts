@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { MisDatosDetallePage } from '../mis-datos-detalle/mis-datos-detalle.page';
 
+import { UsuarioService } from "../../services/usuario.service";
+
 export interface Datos {
   nombre: string;
   genero: string;
@@ -32,7 +34,7 @@ export class MisDatosPage implements OnInit {
 
   estrella = 'star-outline';
 
-  datos : Datos = {
+  datoss : Datos = {
       nombre: 'Pedro Perez',
       genero: 'Masculino',
       fechaNac: '12/10/1978',
@@ -45,6 +47,9 @@ export class MisDatosPage implements OnInit {
       pcg: '40/40/20',
       miPlan: 'Plan Saludable'
   };
+
+  resp: any;
+  datos = '';
 
   consultas: Consulta[] = [
     {
@@ -108,9 +113,28 @@ export class MisDatosPage implements OnInit {
     }
   ];
 
-  constructor( private modalCtrl: ModalController ) { }
+  constructor( 
+    private modalCtrl: ModalController,
+    private usuarioServ: UsuarioService
+    ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+
+    console.log(this.datoss);
+
+    this.usuarioServ.getUsuario({ id_usuario: 2}).subscribe(
+      response => {
+        
+        this.resp = response;
+        this.datos = this.resp.data[0];
+
+        console.log(this.datos);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+
   }
 
   async mostrarDetalle( datos?) {

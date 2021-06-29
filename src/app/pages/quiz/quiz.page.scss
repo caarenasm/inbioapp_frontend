@@ -111,25 +111,33 @@ ion-grid {
 
 .icono-encabezado{
     --background: #ffffff;
-    --border-color: #000000;
     --border-radius: 50px;
     --border-style: solid;
     --border-width: 0.5px;
     margin-top: 40px;
-    --box-shadow: none;
     width: 80px !important;
     height: 80px !important;
+}
+
+.icono-ayuda {
+    --background: #b60aade3;
+    --border-radius: 50px;
+    --border-style: solid;
+    --border-width: 0.5px;
+    margin-top: 40px;
+    width: 60px !important;
+    height: 60px !important;
 }
 
 .ion-card-pregunta {
     --background: #ffffff;
     --color: #000000;
     border-radius: 50px;
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
 .ion-card-respuesta {
     --background: #ffffff;
     --color: #000000;
-    border-radius: 50px;
+    border-radius: 15px;
 }
