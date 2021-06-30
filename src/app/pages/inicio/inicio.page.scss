@@ -17,6 +17,11 @@ ion-button {
     --box-shadow: none;
 }
 
+.button {
+    position: relative;
+    top: 20px;
+}
+
 ion-card {
     overflow: unset !important;
     box-shadow:none !important;
@@ -52,12 +57,14 @@ ion-card-content {
 }
 
 .titulo{
-    font-size: 32px;
+    font-family: 'Poppins';
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     color: black;
     line-height: 40px;
 }
+
 
 .imagen{
     display: block;

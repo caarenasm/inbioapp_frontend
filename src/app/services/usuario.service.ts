@@ -13,7 +13,7 @@ import { Usuario } from "../interfaces/usuario";
 })
 export class UsuarioService {
 
-  endpoint = apiUlr + '/api/auth/usuario/datos';
+  endpoint = apiUlr + '/api/auth';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -24,10 +24,17 @@ export class UsuarioService {
   ) { }
 
   getUsuario(usuario): Observable<any[]> {
-      return this.httpClient.post<any>(this.endpoint, JSON.stringify(usuario), this.httpOptions)
+      return this.httpClient.post<any>(this.endpoint + '/usuario/datos', JSON.stringify(usuario), this.httpOptions)
       .pipe(
         catchError(this.handleError<Usuario>('Error occured'))
       );
+  }
+
+  getLogin(datos): Observable<any[]> {
+    return this.httpClient.post<any>(this.endpoint + '/login', JSON.stringify(datos), this.httpOptions)
+    .pipe(
+      catchError(this.handleError<Usuario>('Error occured'))
+    );
   }
   
   private handleError<T>(operation = 'operation', result?: T) {
