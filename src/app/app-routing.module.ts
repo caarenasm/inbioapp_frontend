@@ -52,11 +52,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/blog-unico/blog-unico.module').then( m => m.BlogUnicoPageModule)
   },
   {
-    path: 'producto',
-    loadChildren: () => import('./pages/producto/producto.module').then( m => m.ProductoPageModule)
-  },  {
     path: 'producto-detalle',
     loadChildren: () => import('./pages/producto-detalle/producto-detalle.module').then( m => m.ProductoDetallePageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
 
 
