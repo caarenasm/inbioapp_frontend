@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'objetivo',
-    loadChildren: () => import('./pages/objetivo/objetivo.module').then( m => m.ObjetivoPageModule)
+    loadChildren: () => import('./pages/objetivo/objetivo.module').then( m => m.ObjetivoPageModule),
+    //canActivate: [AuthGuard]
   },
   {
     path: 'plan',
@@ -29,7 +31,8 @@ const routes: Routes = [
   },
   {
     path: 'mis-datos',
-    loadChildren: () => import('./pages/mis-datos/mis-datos.module').then( m => m.MisDatosPageModule)
+    loadChildren: () => import('./pages/mis-datos/mis-datos.module').then( m => m.MisDatosPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'mis-datos-detalle',

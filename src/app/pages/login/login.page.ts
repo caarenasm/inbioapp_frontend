@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 import { Usuario } from '../../interfaces/usuario';
 
-import { UsuarioService } from "../../services/usuario.service";
+import { AuthService } from '../../services/auth.service';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -17,11 +19,13 @@ export class LoginPage implements OnInit {
   isLogged: boolean;
   resp: any;
 
-  datos : FormGroup;
+  datos: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private usuarioServ: UsuarioService
+    private authServ: AuthService,
+    private alertService: AlertService,
+    private navCtrl: NavController,
   ) {
 
     this.validar();
@@ -39,23 +43,20 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
 
-    
+
   }
 
   login(){
 
-    console.log(this.datos.value);
-
-    this.usuarioServ.getLogin( this.datos.value ).subscribe(
+    this.authServ.login( this.datos.value ).subscribe(
       response => {
-        
-        this.resp = response;
-        this.datos = this.resp.data[0];
-
-        console.log(this.datos);
+        this.alertService.presentToast(response["message"]);
       },
       error => {
         console.log(error);
+      },
+      () => {
+        this.navCtrl.navigateRoot('/mis-datos');
       }
     );
 

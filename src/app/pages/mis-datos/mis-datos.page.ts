@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { MisDatosDetallePage } from '../mis-datos-detalle/mis-datos-detalle.page';
 
-import { UsuarioService } from "../../services/usuario.service";
+import { AuthService } from 'src/app/services/auth.service';
+import { UsuarioService } from '../../services/usuario.service';
 
 export interface Datos {
   nombre: string;
@@ -19,9 +20,9 @@ export interface Datos {
 }
 
 export interface Consulta {
-  descripcion: string; 
-  icon: string; 
-  respuesta: string; 
+  descripcion: string;
+  icon: string;
+  respuesta: string;
   resultado: string[];
 }
 
@@ -33,21 +34,6 @@ export interface Consulta {
 export class MisDatosPage implements OnInit {
 
   estrella = 'star-outline';
-
-  datoss : Datos = {
-      nombre: 'Pedro Perez',
-      genero: 'Masculino',
-      fechaNac: '12/10/1978',
-      estatura: '1.65',
-      miObjetivo: 'Bajar de peso',
-      pesoActual: '80 kg',
-      pesoDeseado: '60 Kg',
-      imc: '53,64 - obesidad',
-      tdee: '1.824 Kcal',
-      pcg: '40/40/20',
-      miPlan: 'Plan Saludable'
-  };
-
   resp: any;
   datos = '';
 
@@ -113,18 +99,17 @@ export class MisDatosPage implements OnInit {
     }
   ];
 
-  constructor( 
+  constructor(
     private modalCtrl: ModalController,
-    private usuarioServ: UsuarioService
+    private usuarioServ: UsuarioService,
+    private authService: AuthService
     ) { }
 
   ngOnInit(): void {
 
-    console.log(this.datoss);
-
-    this.usuarioServ.getUsuario({ id_usuario: 2}).subscribe(
+    /*this.usuarioServ.getUsuario({ id_usuario: 2}).subscribe(
       response => {
-        
+
         this.resp = response;
         this.datos = this.resp.data[0];
 
@@ -133,21 +118,29 @@ export class MisDatosPage implements OnInit {
       error => {
         console.log(error);
       }
-    );
+    );*/
 
   }
 
-  async mostrarDetalle( datos?) {
+  ionViewWillEnter() {
+    this.authService.getUser().subscribe(
+      user => {
+        this.datos = user;
+      }
+    );
+  }
+
+  async mostrarDetalle( info?) {
 
     //console.log(datos);
 
     const modal = await this.modalCtrl.create({
       component: MisDatosDetallePage,
       componentProps: {
-        datos: datos
+        datos: info
       }
     });
-    
+
     await modal.present();
 
     // const { data } = await modal.onDidDismiss();
