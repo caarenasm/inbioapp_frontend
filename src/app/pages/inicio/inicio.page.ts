@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
+import { AuthService } from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -30,7 +32,10 @@ export class InicioPage implements OnInit {
   ];
   
 
-  constructor( private navCtrl: NavController ) { }
+  constructor(
+    private navCtrl: NavController,
+    private authService: AuthService
+     ) { }
 
   ngOnInit() {
   }
@@ -39,6 +44,14 @@ export class InicioPage implements OnInit {
 
     this.navCtrl.navigateBack('/');
 
+  }
+
+  ionViewWillEnter() {
+    this.authService.getToken().then(() => {
+      if(this.authService.isLoggedIn) {
+        this.navCtrl.navigateRoot('/mis-datos');
+      }
+    });
   }
 
   
