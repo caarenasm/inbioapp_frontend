@@ -53,7 +53,8 @@ export class LoginPage implements OnInit {
         this.alertService.presentToast(response["message"]);
       },
       error => {
-        console.log(error);
+        console.log(error.error);
+        this.alertService.presentToast('Error: Verifique sus datos!');
       },
       () => {
         this.navCtrl.navigateRoot('/mis-datos');

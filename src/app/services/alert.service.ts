@@ -10,12 +10,13 @@ export class AlertService {
     private toastController: ToastController
   ) { }
 
-  async presentToast(text: any) {
+  async presentToast(msg: any) {
     const toast = await this.toastController.create({
-      message: text,
+      message: msg,
       duration: 2000,
-      position: 'top',
-      color: 'dark'
+      position: 'bottom',
+      //color:'light',
+      cssClass: 'ion-toast'
     });
     toast.present();
   }
