@@ -7,8 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BotonAccionComponent implements OnInit {
 
-  @Input() icono: string;
-  @Input() texto: string;
+  @Input() text: string;
+  @Input() icon: string;
+  @Input() colorBtn: string;
+
 
   constructor() { }
 

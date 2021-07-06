@@ -54,6 +54,27 @@ ion-grid {
     background-color: #f7f7f7;
 }
 
+.ion-radio {
+    --border-radius: 25px;
+    --color: #fe8e0d;
+    --color-checked: #fe8e0d;
+    --inner-border-radius: 25px
+}
+
+.ion-checkbox {
+    background: #FFFFFF;
+    border-width: 0px !important;
+    border-style: solid !important;
+    border-radius: 4px;
+    border-color: #fe8e0d !important;
+    --height: 25px;
+    --width: 25px;
+    --checkmark-color: #FFFFFF;
+    --border-color: #FFFFFF;
+    --background-checked: #fe8e0d;
+    --border-color: #fe8e0d;
+    --border-color-checked: #fe8e0d;
+}
 /*ion-fab-button {
     --background: #ffffff;
     --border-color: #000000;
@@ -92,12 +113,28 @@ ion-grid {
 }
 
 .ion-fab-siguiente {
-    --background: #b60aade3;
+    --background: #ee771b;
     --border-radius: 50px;
     --border-style: solid;
     --border-width: 0.5px;
     margin-top: 20px;
     --box-shadow: none;
+}
+
+.texto-boton-siguiente {
+    font-family: 'Roboto' !important;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 24px;
+    color: #ee771b;
+}
+
+.texto-boton-atras {
+    font-family: 'Roboto' !important;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 24px;
+    color: #b60aade3;
 }
 
 .ion-fab-siguiente-c {
@@ -108,6 +145,7 @@ ion-grid {
     margin-top: 20px;
     --box-shadow: none;
 }
+
 
 .icono-encabezado{
     --background: #ffffff;
@@ -129,6 +167,17 @@ ion-grid {
     height: 60px !important;
 }
 
+.icono-ayudaa {
+    --background: #b60aade3;
+    --border-radius: 50px;
+    --border-style: solid;
+    --border-width: 0.5px;
+    margin-top: 10px;
+    width: 30px !important;
+    height: 30px !important;
+    color: #b60aade3;
+}
+
 .ion-card-pregunta {
     --background: #ffffff;
     --color: #000000;
@@ -141,3 +190,22 @@ ion-grid {
     --color: #000000;
     border-radius: 15px;
 }
+
+.color-atras {
+    --ion-color-atras: #e40fc0;
+    --ion-color-atras-rgb: 228,15,192;
+    --ion-color-atras-contrast: #ffffff;
+    --ion-color-atras-contrast-rgb: 255,255,255;
+    --ion-color-atras-shade: #c90da9;
+    --ion-color-atras-tint: #e727c6;
+  }
+  
+.color-adelante {
+    --ion-color-adelante: #ee771b;
+    --ion-color-adelante-rgb: 238,119,27;
+    --ion-color-adelante-contrast: #000000;
+    --ion-color-adelante-contrast-rgb: 0,0,0;
+    --ion-color-adelante-shade: #d16918;
+    --ion-color-adelante-tint: #f08532;
+  }
+  
