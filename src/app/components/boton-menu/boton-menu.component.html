@@ -1,9 +1,4 @@
-<ion-row class="ion-align-items-center">
-  <ion-col>
-    <ion-button fondo="blanco" class="boton_personalizado:hover">
-      <img src="assets/img/producto.png">
-      
-    </ion-button>
-
-  </ion-col>
-</ion-row>
+<ion-button class="item-menu {{ fondo }}">
+  <ion-icon class="icon-posicion {{ icono }}" slot="end"></ion-icon>
+  <ion-label class="texto-posicion">{{ texto }}</ion-label>
+</ion-button>

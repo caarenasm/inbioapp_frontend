@@ -1,0 +1,61 @@
+.menu{
+    margin-top: 70px;
+}
+
+.item-menu{
+    width: 175px;
+    height: 175px;
+    --border-radius: 25px;
+    --background: #00e1e6;
+    --box-shadow: 0px 0px;
+}
+
+.icon-posicion{
+    position: relative;
+    padding: 0px 0px 80px 10px;
+    font-size: 48px;
+}
+
+.texto-posicion{
+    position: relative;
+    padding: 100px 10px 0px 0px;
+    font-family: 'Roboto' !important;
+    font-size: 24px;
+    line-height: 24px;
+    font-style: bold;
+    text-transform: capitalize;
+    width: 60px;
+    margin-left: 0px;
+}
+
+.ion-icon {
+    background: #3880ff;
+    color: #ffffff;
+    font-size: 24px;
+    transform: rotate(90deg);
+}
+.ion-button {
+    --background: #3880ff;
+    --background-activated: #3880ff;
+    --background-activated-opacity: 1;
+    --background-focused: #3880ff;
+    --background-focused-opacity: 1;
+    --background-hover: #3880ff;
+    --background-hover-opacity: 1;
+    --border-color: #3880ff;
+    --border-radius: 8px;
+    --border-style: solid;
+    --border-width: 8px;
+    --box-shadow: 10px 10px;
+    --color: #ffffff;
+    --color-activated: #ffffff;
+    --color-focused: #ffffff;
+    --color-hover: #ffffff;
+    --opacity: 1;
+    --padding-bottom: 4px;
+    --padding-end: 4px;
+    --padding-start: 4px;
+    --padding-top: 4px;
+    --ripple-color: #1e1e1e;
+    --transition: background-color 15ms linear;
+}
