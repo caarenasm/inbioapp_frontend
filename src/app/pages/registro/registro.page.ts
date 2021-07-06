@@ -223,6 +223,7 @@ export class RegistroPage implements OnInit {
         },
         {
           text: 'Continuar',
+          cssClass:'alerta-boton-aceptar',
           handler: () => {
             //console.log(this.todo.value)
             this.postDatos();

@@ -27,9 +27,7 @@
               <ion-card-subtitle class="titulo">{{  item.pregunta }}</ion-card-subtitle>
             </ion-card-header>
         
-            <ion-card-content class="sub-titulo">
-              {{  item.descripcion }}
-            </ion-card-content>
+            <ion-card-content class="sub-titulo-2">{{  item.descripcion }}</ion-card-content>
         
           </ion-card>
 
@@ -39,18 +37,18 @@
             <ion-card *ngFor="let itemRespuesta of item.respuesta" class="ion-card-respuesta">
               <ion-item *ngIf="item.tipoRespuesta == 1">
                 <ion-item>
-                  <ion-label class="ion-text-wrap">{{  itemRespuesta.descripcion }}</ion-label>
-                  <ion-radio slot="start" [value]="itemRespuesta.descripcion"></ion-radio>
+                  <ion-label class="sub-titulo-2 ion-text-wrap">{{ itemRespuesta.descripcion }}</ion-label>
+                  <ion-radio slot="start" [value]="itemRespuesta.descripcion" class="ion-radio"></ion-radio>
                 </ion-item>
-                <ion-icon *ngIf="itemRespuesta.inAyuda" slot="end" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
+                <ion-icon *ngIf="itemRespuesta.inAyuda" slot="end" class="icono-ayudaa" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
               </ion-item>
 
               <ion-item *ngIf="item.tipoRespuesta == 2">
                 <ion-item>
-                  <ion-label class="ion-text-wrap">{{  itemRespuesta.descripcion }}</ion-label>
-                  <ion-checkbox slot="start" [value]="itemRespuesta.descripcion"></ion-checkbox>
+                  <ion-label class="sub-titulo-2 ion-text-wrap">{{  itemRespuesta.descripcion }}</ion-label>
+                  <ion-checkbox slot="start" [value]="itemRespuesta.descripcion" class="ion-checkbox"></ion-checkbox>
                 </ion-item>
-                <ion-icon *ngIf="itemRespuesta.inAyuda" slot="end" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
+                <ion-icon *ngIf="itemRespuesta.inAyuda" slot="end" class="icono-ayudaa" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
               </ion-item>
             </ion-card>
             
@@ -72,14 +70,14 @@
       <ion-fab-button size="small" class="ion-fab-atras" routerDirection="forward" data-desc="Aterior">
           <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-fab-button>
-      <ion-label>Anterior</ion-label>
+      <ion-label class="texto-boton-atras">Anterior</ion-label>
     </ion-fab>
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
       <ion-fab-button size="small" class="ion-fab-siguiente"  routerDirection="forward" data-desc="Siguiente">
           <ion-icon name="arrow-forward-outline"></ion-icon>
       </ion-fab-button>
-      <ion-label>Siguiente</ion-label>
+      <ion-label class="texto-boton-siguiente">Siguiente</ion-label>
     </ion-fab>
 
 

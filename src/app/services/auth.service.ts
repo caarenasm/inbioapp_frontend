@@ -1,5 +1,5 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Storage } from '@ionic/storage-angular';
@@ -7,17 +7,14 @@ import { environment } from '../../environments/environment';
 
 const apiUlr = environment.apiUlr;
 
-import { Usuario } from "../interfaces/usuario";
-
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
-
-  isLoggedIn = false;
-  token: any;
+export class AuthService {
 
   endpoint = apiUlr + '/api/auth';
+  isLoggedIn = false;
+  token: any;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -26,7 +23,7 @@ export class UsuarioService {
   constructor(
     private httpClient: HttpClient,
     private storage: Storage
-  ) { 
+  ) {
     this.init();
   }
 
@@ -36,14 +33,7 @@ export class UsuarioService {
     await this.storage.create();
   }
 
-  getUsuario(usuario): Observable<any[]> {
-      return this.httpClient.post<any>(this.endpoint + '/usuario/datos', JSON.stringify(usuario), this.httpOptions)
-      .pipe(
-        catchError(this.handleError<Usuario>('Error occured'))
-      );
-  }
-
-  getLogin(datos): Observable<any[]> {
+  login(datos): Observable<any[]> {
     return this.httpClient.post<any>(this.endpoint + '/login', JSON.stringify(datos), this.httpOptions)
     .pipe(
       //catchError(this.handleError<Usuario>('Error occured'))
@@ -68,28 +58,15 @@ export class UsuarioService {
       'Authorization': this.token["token_type"] + " " + this.token["access_token"]
     });
 
-    return this.httpClient.get(this.endpoint + '/logout', { headers: headers })
+    return this.httpClient.get(this.endpoint + '/logout', { headers })
     .pipe(
       tap(data => {
-        this.storage.remove("token");
+        this.storage.remove('token');
         this.isLoggedIn = false;
         delete this.token;
         return data;
       })
-    )
-  }
-
-  user() {
-    const headers = new HttpHeaders({
-      'Authorization': this.token["token_type"] + " " + this.token["access_token"]
-    });
-
-    return this.httpClient.get<any>(this.endpoint + '/user', { headers: headers })
-    .pipe(
-      tap(user => {
-        return user;
-      })
-    )
+    );
   }
 
   getToken() {
@@ -110,6 +87,18 @@ export class UsuarioService {
     );
   }
 
+  getUser() {
+
+    const headers = new HttpHeaders({
+      'Authorization': this.token["token_type"] + " " + this.token["access_token"]
+    });
+
+    return this.httpClient.get<any>(this.endpoint + '/datos', { headers })
+    .pipe(
+      tap(user => user)
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
@@ -117,4 +106,5 @@ export class UsuarioService {
       return of(result as T);
     };
   }
+
 }

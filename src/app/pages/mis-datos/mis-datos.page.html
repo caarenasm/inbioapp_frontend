@@ -16,8 +16,13 @@
                 <ion-row>
                     <ion-col>
                         <ion-item>
-                            <ion-avatar slot="start" class="avatar">
+                            <!-- Data to display after skeleton screen -->
+                            <ion-avatar slot="start" class="avatar" *ngIf="datos">
                                 <ion-img [src]="datos.profile_photo_url"></ion-img>
+                            </ion-avatar>
+                            <!-- Skeleton screen -->
+                            <ion-avatar slot="start" class="avatar" *ngIf="!datos">
+                                <ion-skeleton-text animated></ion-skeleton-text>
                             </ion-avatar>
                             <ion-label>
                                 <h1><b>{{ datos.nombre }}</b></h1>
@@ -115,7 +120,7 @@
 
                 <ion-row>
 
-                    <ion-col>
+                    <ion-col class="ion-no-padding">
 
                         <ion-card class="tabla-detalle">
 

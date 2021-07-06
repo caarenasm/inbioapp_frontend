@@ -47,10 +47,18 @@ ion-button {
 
 .titulo {
     text-align: center;
+    padding-bottom: 10px;
 }
 
 .sub-titulo-2 {
+    font-family: 'Roboto' !important;
     text-align: center;
+}
+
+.resultado {
+    font-family: 'Poppins' !important;
+    font-size: 20px;
+    font-style: bold;
 }
 
 .footer-mis-datos-detalle {
