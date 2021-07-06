@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<ion-content>
+
+  <ion-list class="menu">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">
+
+          <ion-button (click)="onClick()" class="item-menu">
+            <ion-icon class="icon-mi_guia_nutricional icon-posicion" slot="end"></ion-icon>
+            <ion-label class="texto-posicion">Mis Datos</ion-label>
+          </ion-button>
+
+        </ion-col>
+        <ion-col size="6">
+
+          <app-boton-menu texto = 'Mi Menu' fondo = 'plan-basico' icono= 'icon-mi_guia_nutricional'></app-boton-menu>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+
+
+
+        </ion-col>
+        <ion-col size="6">
+
+          <app-boton-menu texto = 'Mi Menu' fondo = 'plan-gratuito' icono= 'icon-mi_guia_nutricional'></app-boton-menu>
+
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-list>
+
+</ion-content>
+<app-tab></app-tab>
