@@ -13,7 +13,7 @@
 
 .texto-posicion{
     position: relative;
-    padding: 100px 10px 0px 0px;
+    padding: 110px 10px 0px 0px;
     font-family: 'Roboto' !important;
     font-size: 24px;
     line-height: 24px;
@@ -23,10 +23,62 @@
     margin-left: 0px;
 }
 
-.plan-basico{
+.mis-datos{
     --background: #00e1e6;
 }
 
-.plan-gratuito{
-    --background: #f1e91b;
+.mi-diario-nutricional{
+    --background: #1853f5;
+}
+
+.mi-guia-nutricional {
+    --background: #49dd04;
+}
+
+.mi-dieta {
+    --background: #ff7b00;
+}
+
+.mis-estadisticas {
+    --background: #ff0000;
+}
+
+.mis-bioproductos {
+    --background: #ea00ff;
+}
+
+.mis-controles {
+    --background: #3700ff;
+}
+
+.mis-promociones {
+    --background: #e4e706c9;
+}
+
+.mis-logros {
+    --background: #fa00a7c9;
+}
+
+.mis-eventos {
+    --background: #7f138d;
+}
+
+.mi-lista-compras {
+    --background: #ff0000;
+}
+
+.mis-favoritos {
+    --background: #00e1e6;
+}
+
+.aliados-inbionova {
+    --background: #ea00ff;
+}
+
+.recetas-inbionova {
+    --background: #88ff00;
+}
+
+.blog-inbionova {
+    --background: #589e09c5;
 }
