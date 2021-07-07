@@ -1,59 +1,58 @@
 <ion-content>
 
-  <ion-slides pager="ios" class="slide-full">
+    <ion-slides pager="ios" class="slide-full">
 
-    <ion-slide *ngFor="let slide of slides" [style]=slide.color>
+        <ion-slide *ngFor="let slide of slides" [style]=slide.color>
 
-      <ion-card class="ion-no-border" style="background-color:transparent">
+            <ion-card class="ion-no-border" style="background-color:transparent">
 
-        <ion-img [src]="slide.img" class="imagen"></ion-img>
+                <ion-img [src]="slide.img" class="imagen"></ion-img>
 
-        <ion-card-header>
-          <ion-card-title class="titulo">{{ slide.titulo }}</ion-card-title>
-        </ion-card-header>
+                <ion-card-header>
+                    <ion-card-title class="titulo">{{ slide.titulo }}</ion-card-title>
+                </ion-card-header>
 
-        <ion-card-content>
-          <h2>{{ slide.desc }}</h2>
-        </ion-card-content>
+                <ion-card-content>
+                    <h2>{{ slide.desc }}</h2>
+                </ion-card-content>
 
-        <ion-button class="button" *ngIf= "slide.entrar == true" shape="round">
-          Empezar Ahora
-        </ion-button>
+                <!--<ion-button class="button" *ngIf="slide.entrar == true" shape="round">
+                    Empezar Ahora
+                </ion-button>
 
-        <p *ngIf= "slide.entrar == true"><b>Una App de:</b></p>
-        <img src="/assets/img/inbionova.png" class="slide-image" *ngIf= "slide.entrar == true" />
+                <p *ngIf="slide.entrar == true"><b>Una app de:</b></p>
+                <img src="/assets/img/inbionova.png" class="slide-image" *ngIf="slide.entrar == true" />-->
 
 
-      </ion-card>
+            </ion-card>
 
-    </ion-slide>
+        </ion-slide>
 
-    <ion-slide style="background-color:black">
+        <ion-slide style="background-color:black">
 
-      <ion-card style="background-color:transparent">
+            <ion-card style="background-color:transparent">
 
-        <ion-card-header>
-          <ion-img src="/assets/img/inbioapp.png" class="imagen-final"></ion-img>
-        </ion-card-header>
+                <ion-card-header>
+                    <ion-img src="/assets/img/inbioapp.png" class="imagen-final"></ion-img>
+                </ion-card-header>
 
-        <ion-card-content>
+                <ion-card-content>
 
-          <ion-button shape="round">
-            Empezar Ahora
-          </ion-button>
+                    <ion-button class="btn-empezar" [routerLink]="['/login']">
+                        Empezar Ahora
+                    </ion-button>
 
-          <ion-card-title class="class-tittle" style="padding-top: 100px; color:white">Una App de:</ion-card-title>
+                    <ion-card-title class="class-tittle" style="padding-top: 100px; color:white">Una app de:</ion-card-title>
 
-          <ion-img src="/assets/img/inbionova.png" class="imagen-app"></ion-img>
-  
-        
-        </ion-card-content>
+                    <ion-img src="/assets/img/inbionova.png" class="imagen-app"></ion-img>
 
-      </ion-card>
 
-    </ion-slide>
+                </ion-card-content>
 
-  </ion-slides>
+            </ion-card>
+
+        </ion-slide>
+
+    </ion-slides>
 
 </ion-content>
-
