@@ -283,15 +283,17 @@
     </form>
 
     <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-        <ion-fab-button size="small" color="dark" routerLink="/quiz" routerDirection="forward" data-desc="Aterior">
+        <ion-fab-button size="small" class="ion-fab-atras" routerLink="/quiz" routerDirection="forward" data-desc="Aterior">
             <ion-icon class="icon-atras"></ion-icon>
         </ion-fab-button>
+        <ion-label class="texto-boton-atras">Anterior</ion-label>
     </ion-fab>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button size="small" color="dark" (click)="guardar()">
+        <ion-fab-button size="small" class="ion-fab-siguiente" (click)="guardar()">
             <ion-icon class="icon-adelante"></ion-icon>
         </ion-fab-button>
+        <ion-label class="texto-boton-siguiente">Siguiente</ion-label>
     </ion-fab>
 
 

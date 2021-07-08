@@ -1,6 +1,6 @@
 <ion-content>
 
-    <ion-slides>
+    <ion-slides style="height: auto" #miQuiz>
         <ion-slide *ngFor="let item of quiz; let i=index;">
 
             <ion-grid fixed class="ion-no-padding">
@@ -60,7 +60,6 @@
 
                             </ion-radio-group>
 
-
                             <ion-button shape="round" class="btn-saltar" *ngIf=" i == 0" [routerLink]="['/login']">
                                 Saltar Cuestionario
                             </ion-button>
@@ -72,23 +71,29 @@
                 </ion-row>
             </ion-grid>
 
-            <ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf=" i != 0">
-                <ion-fab-button size="small" class="ion-fab-atras" routerDirection="forward" data-desc="Aterior">
+            <!--<ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf=" i != 0">
+                <ion-fab-button size="small" class="ion-fab-atras" routerDirection="forward" data-desc="Aterior" (click)="slides.slidePrev()">
                     <ion-icon name="arrow-back-outline"></ion-icon>
                 </ion-fab-button>
                 <ion-label class="texto-boton-atras">Anterior</ion-label>
-            </ion-fab>
-
-            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-                <ion-fab-button size="small" class="ion-fab-siguiente" routerDirection="forward" data-desc="Siguiente">
-                    <ion-icon name="arrow-forward-outline"></ion-icon>
-                </ion-fab-button>
-                <ion-label class="texto-boton-siguiente">Siguiente</ion-label>
-            </ion-fab>
+            </ion-fab>-->
 
         </ion-slide>
     </ion-slides>
 
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+        <ion-fab-button size="small" class="ion-fab-atras" routerDirection="forward" data-desc="Aterior" (click)="slides.slidePrev()">
+            <ion-icon class="icon-atras"></ion-icon>
+        </ion-fab-button>
+        <ion-label class="texto-boton-atras">Anterior</ion-label>
+    </ion-fab>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button size="small" class="ion-fab-siguiente" routerDirection="forward" data-desc="Siguiente" (click)="slides.slideNext()">
+            <ion-icon class="icon-adelante"></ion-icon>
+        </ion-fab-button>
+        <ion-label class="texto-boton-siguiente">Siguiente</ion-label>
+    </ion-fab>
 
 
 </ion-content>
