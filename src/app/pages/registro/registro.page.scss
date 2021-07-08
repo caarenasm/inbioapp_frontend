@@ -175,6 +175,8 @@ input:focus {
     font-style: normal;
     line-height: 24px;
     color: #ee771b;
+    text-align: center;
+    padding: 0px;
 }
 
 .texto-boton-atras {
@@ -183,6 +185,8 @@ input:focus {
     font-style: normal;
     line-height: 24px;
     color: #b60aade3;
+    text-align: center;
+    padding: 0px;
 }
 
 .ion-fab-siguiente {
@@ -192,6 +196,7 @@ input:focus {
     --border-width: 0.5px;
     margin-top: 20px;
     --box-shadow: none;
+    padding: 0px;
 }
 
 .ion-fab-atras {
@@ -201,4 +206,5 @@ input:focus {
     --border-width: 0.5px;
     margin-top: 20px;
     --box-shadow: none;
+    padding: 0px;
 }
