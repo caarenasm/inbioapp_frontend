@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IonLabel, NavController, PopoverController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonLabel, IonSlides, NavController, PopoverController } from '@ionic/angular';
 import { InfoAyudaComponent } from '../../components/info-ayuda/info-ayuda.component';
 
 import { QuizService } from 'src/app/services/quiz.service';
@@ -43,6 +43,9 @@ export class QuizPage implements OnInit {
   ngOnInit() {
     //this.avanze();
   }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  @ViewChild('miQuiz') slides: IonSlides;
 
   ionViewWillEnter() {
     this.quizServ.getQuiz().subscribe(
