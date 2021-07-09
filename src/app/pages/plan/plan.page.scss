@@ -1,3 +1,92 @@
+.card-plan-basico {
+    margin-top: 60px;
+}
+
+.titulo-plan-basico {
+    margin-top: 5px;
+}
+
+.descripcion-basico {
+    margin-top: 10px;
+}
+
+.button {
+    --background: #91078ae3;
+    --border-radius: 50px;
+    --border-style: solid;
+    --border-width: 0.5px;
+    --box-shadow: none;
+}
+
+.titulo{
+    padding: 0px 0px 0px 20px;
+    margin-top: -60px;
+    font-family: 'Roboto' !important;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+}
+
+.sub-titulo{
+    padding: 0px 0px 0px 20px;
+    font-family: 'Roboto' !important;
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+}
+
+.sub-titulo-2{
+    padding: 0px 0px 0px 20px;
+    font-family: 'Roboto' !important;
+    font-size: 20px;
+    font-weight: normal;
+    color: black;
+}
+
+.contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.texto-encima{
+    position: absolute;
+    padding: 20px 0px 0px 20px;
+    top: 10px;
+    left: 10px;
+    font-family: 'Roboto' !important;
+    font-size: 22px;
+    line-height: 22px;
+    font-style: bold;
+    text-transform: capitalize;
+    color: white;
+}
+
+.texto-precio{
+    position: absolute;
+    padding: 45px 0px 0px 20px;
+    top: 10px;
+    left: 10px;
+    font-family: 'Roboto' !important;
+    font-size: 22px;
+    line-height: 22px;
+    font-style: bold;
+    text-transform: capitalize;
+    color: white;
+}
+
+.centrado{
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+    font-family: 'Roboto' !important;
+    font-size: 22px;
+    line-height: 22px;
+    font-style: bold;
+    text-transform: capitalize;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
 
 ion-img {
     height: 100%;
@@ -29,7 +118,7 @@ ion-item {
 }
 
 ion-card {
-    border-radius: 50px;
+    border-radius: 65px;
     padding-bottom: 40px;
     padding-inline: 0px;
     margin-top: 10px;
