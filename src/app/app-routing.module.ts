@@ -65,6 +65,10 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
   },
+  {
+    path: 'semaforo',
+    loadChildren: () => import('./pages/semaforo/semaforo.module').then( m => m.SemaforoPageModule)
+  },
 
 
 
