@@ -4,85 +4,84 @@
        background-color: #f7f7f7;
    }
    
-   ion-grid {
-       height: 100%;
-       background-color: #f7f7f7;
-   }
-   
-   .ion-grid-ion-row {
-       height: 100%;
-   }
-   
-   .titulo {
-       font-size: 20px;
-       font-weight: bold;
-       text-align: center;
-       color: black;
-   }
-   
-   .sub-titulo {
-       font-size: 14px;
-       font-weight: normal;
-       text-align: center;
-       color: black;
-   }
-   
-   .ion-list-slice {
-       width: 100%;
-   }
-   
-   .ion-list-checkbox {
-       background-image: url('/assets/img/fondo_mis_promociones.png');
-       background-repeat: no-repeat;
-       background-size: 100%;
-       --offset-bottom: 0px;
-       --offset-top: 0px;
-       --padding-bottom: 0px;
-       --padding-end: 0px;
-       --padding-start: 0px;
-       padding-top: 80px;
-       padding-bottom: 80px;
-       height: 100%;
-       background-color: #f7f7f7;
-   }
-   
-   .ion-list-radio {
-       background-image: url('/assets/img/fondo_mis_bioproductos.png');
-       background-repeat: no-repeat;
-       background-size: 100%;
-       --offset-bottom: 0px;
-       --offset-top: 0px;
-       --padding-bottom: 0px;
-       --padding-end: 0px;
-       --padding-start: 0px;
-       padding-top: 80px;
-       padding-bottom: 80px;
-       height: 100%;
-       background-color: #f7f7f7;
-   }
-   
-   .ion-radio {
-       --border-radius: 25px;
-       --color: #fe8e0d;
-       --color-checked: #fe8e0d;
-       --inner-border-radius: 25px
-   }
-   
-   .ion-checkbox {
-       background: #FFFFFF;
-       border-width: 0px !important;
-       border-style: solid !important;
-       border-radius: 4px;
-       border-color: #fe8e0d !important;
-       --height: 25px;
-       --width: 25px;
-       --checkmark-color: #FFFFFF;
-       --border-color: #FFFFFF;
-       --background-checked: #fe8e0d;
-       --border-color: #fe8e0d;
-       --border-color-checked: #fe8e0d;
-   }
-   /*ion-fab-button {
+ion-slides {
+    padding: 0px;
+    height: 100%;
+}
+
+ion-grid {
+    height: 100%;
+}
+
+.ion-grid-ion-row {
+    height: 100%;
+}
+
+.titulo{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+.sub-titulo{
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    color: black;
+}
+
+
+.ion-list-checkbox {
+    background-image: url('/assets/img/fondo_mis_promociones.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    --offset-bottom: 0px;
+    --offset-top: 0px;
+    --padding-bottom: 0px;
+    --padding-end: 0px;
+    --padding-start: 0px;
+    padding-top: 80px;
+    height: 100%;
+    background-color: #f7f7f7;
+}
+
+.ion-list-radio {
+    background-image: url('/assets/img/fondo_mis_bioproductos.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    --offset-bottom: 0px;
+    --offset-top: 0px;
+    --padding-bottom: 0px;
+    --padding-end: 0px;
+    --padding-start: 0px;
+    padding-top: 80px;
+    height: 100%;
+    background-color: #f7f7f7;
+}
+
+.ion-radio {
+    --border-radius: 25px;
+    --color: #fe8e0d;
+    --color-checked: #fe8e0d;
+    --inner-border-radius: 25px
+}
+
+.ion-checkbox {
+    background: #FFFFFF;
+    border-width: 0px !important;
+    border-style: solid !important;
+    border-radius: 4px;
+    border-color: #fe8e0d !important;
+    --height: 25px;
+    --width: 25px;
+    --checkmark-color: #FFFFFF;
+    --border-color: #FFFFFF;
+    --background-checked: #fe8e0d;
+    --border-color: #fe8e0d;
+    --border-color-checked: #fe8e0d;
+}
+/*ion-fab-button {
     --background: #ffffff;
     --border-color: #000000;
     --border-radius: 50px;

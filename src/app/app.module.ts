@@ -11,7 +11,6 @@ import { Drivers } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 
 @NgModule({
@@ -28,7 +27,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
     ComponentsModule,
     HttpClientModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, NativeStorage],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,22 +1,39 @@
+<app-header></app-header>
+
 
 <ion-content>
  
 
-  <ion-list lines="none">
+  <ion-list lines="none" class="card-plan-basico">
 
     <div *ngFor="let plans of plan">
 
-      <ion-card>
-        
-          <ion-img [src]="plans.img"></ion-img>
-
+      <ion-card>     
+          
+          <div class="contenedor">
+            <img [src]="plans.img"/>
+            <div class="texto-encima">{{ plans.texto }}</div>
+            <div class="texto-precio">{{ plans.texto2 }}</div>
+          </div>
 
         <ion-card-header>
           <ion-card-title class="titulo">{{ plans.titulo }}</ion-card-title>
-          <ion-card-subtitle class="sub-titulo-2">{{ plans.subtitulo }}</ion-card-subtitle>
-          <ion-icon  name = "checkmark-outline"></ion-icon> Diario Nutricional<br>
-          <ion-icon  name = "checkmark-outline"></ion-icon> Recetas mensuales limitadas<br>
-          <ion-icon  name = "checkmark-outline"></ion-icon> Acceso al contenido actual de Inbionova<br>
+          <ion-card-subtitle class="sub-titulo-2 titulo-plan-basico">{{ plans.subtitulo }}</ion-card-subtitle>
+          <ion-icon slot="start" name="add"></ion-icon>
+          <ion-icon name = "checkmark-outline" class="descripcion-basico sub-titulo"></ion-icon>
+          <label class="sub-titulo">Diario Nutricional<br></label>
+          <ion-icon class="titulo-plan-basico sub-titulo" name = "checkmark-outline"></ion-icon>
+          <label class="sub-titulo">Recetas mensuales limitadas<br></label>
+          <ion-icon class="titulo-plan-basico sub-titulo" name = "checkmark-outline"></ion-icon>
+          <label class="sub-titulo">Guía nutricional personalizada<br></label>
+          <ion-icon class="titulo-plan-basico sub-titulo" name = "checkmark-outline"></ion-icon>
+          <label class="sub-titulo">Sugerencias de Bioproductos<br></label>
+          <ion-icon class="titulo-plan-basico sub-titulo" name = "checkmark-outline"></ion-icon>
+          <label class="sub-titulo">Control mensual con el coach<br></label>
+          <ion-icon class="titulo-plan-basico sub-titulo" name = "checkmark-outline"></ion-icon>
+          <label class="sub-titulo">Descuentos en eventos<br></label>
+          <ion-icon class="titulo-plan-basico sub-titulo" name = "checkmark-outline"></ion-icon>
+          <label class="sub-titulo">Acceso al contenido actual de Inbionova<br></label>
         </ion-card-header>
 
       </ion-card>
@@ -24,7 +41,7 @@
       <ion-grid>
         <ion-row class="ion-align-items-center">
             <ion-col size="12" class="ion-text-center">
-                <ion-button (click)="seleccionar(objetivo)" color="dark" edge>QUIERO ESTE PLAN</ion-button>
+                <ion-button class="button" edge>QUIERO ESTE PLAN</ion-button>
             </ion-col>
         </ion-row>
     </ion-grid>
@@ -34,3 +51,5 @@
   </ion-list>
 
 </ion-content>
+
+<app-tab class="card-plan-basico"></app-tab>
