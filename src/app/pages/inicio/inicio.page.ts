@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  
+
   slides: { img: string, titulo: string, entrar: boolean, color: string }[] = [
     {
       img: '/assets/img/Intro_1.png',
@@ -46,13 +46,13 @@ export class InicioPage implements OnInit {
 
   }
 
-  ionViewWillEnter() {
+  /*ionViewWillEnter() {
     this.authService.getToken().then(() => {
       if(this.authService.isLoggedIn) {
         this.navCtrl.navigateRoot('/mis-datos');
       }
     });
-  }
+  }*/
 
-  
+
 }

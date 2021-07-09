@@ -3,7 +3,6 @@ import { ModalController } from '@ionic/angular';
 import { MisDatosDetallePage } from '../mis-datos-detalle/mis-datos-detalle.page';
 
 import { AuthService } from 'src/app/services/auth.service';
-import { UsuarioService } from '../../services/usuario.service';
 
 export interface Datos {
   nombre: string;
@@ -101,7 +100,6 @@ export class MisDatosPage implements OnInit {
 
   constructor(
     private modalCtrl: ModalController,
-    private usuarioServ: UsuarioService,
     private authService: AuthService
     ) { }
 

@@ -1,3 +1,8 @@
+   ion-slides {
+       padding: 0px;
+       height: 100%;
+       background-color: #f7f7f7;
+   }
    
 ion-slides {
     padding: 0px;
@@ -85,128 +90,126 @@ ion-grid {
     margin-top: 20px;
     --box-shadow: none;
 }*/
-
-.ion-button {
-    --background: #b60aade3;
-    --border-radius: 50px;
-    --border-style: solid;
-    --border-width: 0.5px;
-    margin-top: 20px;
-    --box-shadow: none;
-}
-
-.ion-fab-atras {
-    --background: #b60aade3;
-    --border-radius: 50px;
-    --border-style: solid;
-    --border-width: 0.5px;
-    margin-top: 20px;
-    --box-shadow: none;
-}
-
-.ion-fab-atras-c {
-    --background: #ece90de3;
-    --border-radius: 50px;
-    --border-style: solid;
-    --border-width: 0.5px;
-    margin-top: 20px;
-    --box-shadow: none;
-}
-
-.ion-fab-siguiente {
-    --background: #ee771b;
-    --border-radius: 50px;
-    --border-style: solid;
-    --border-width: 0.5px;
-    margin-top: 20px;
-    --box-shadow: none;
-}
-
-.texto-boton-siguiente {
-    font-family: 'Roboto' !important;
-    font-size: 12px;
-    font-style: normal;
-    line-height: 24px;
-    color: #ee771b;
-}
-
-.texto-boton-atras {
-    font-family: 'Roboto' !important;
-    font-size: 12px;
-    font-style: normal;
-    line-height: 24px;
-    color: #b60aade3;
-}
-
-.ion-fab-siguiente-c {
-    --background: #ece90de3;
-    --border-radius: 50px;
-    --border-style: solid;
-    --border-width: 0.5px;
-    margin-top: 20px;
-    --box-shadow: none;
-}
-
-
-.icono-encabezado{
-    --background: #ffffff;
-    --border-radius: 50px;
-    --border-style: solid;
-    --border-width: 0.5px;
-    margin-top: 40px;
-    width: 80px !important;
-    height: 80px !important;
-}
-
-.icono-ayuda {
-    --background: #b60aade3;
-    --border-radius: 50px;
-    --border-style: solid;
-    --border-width: 0.5px;
-    margin-top: 40px;
-    width: 60px !important;
-    height: 60px !important;
-}
-
-.icono-ayudaa {
-    --background: #b60aade3;
-    --border-radius: 50px;
-    --border-style: solid;
-    --border-width: 0.5px;
-    margin-top: 10px;
-    width: 30px !important;
-    height: 30px !important;
-    color: #b60aade3;
-}
-
-.ion-card-pregunta {
-    --background: #ffffff;
-    --color: #000000;
-    border-radius: 50px;
-    padding-top: 40px;
-}
-
-.ion-card-respuesta {
-    --background: #ffffff;
-    --color: #000000;
-    border-radius: 15px;
-}
-
-.color-atras {
-    --ion-color-atras: #e40fc0;
-    --ion-color-atras-rgb: 228,15,192;
-    --ion-color-atras-contrast: #ffffff;
-    --ion-color-atras-contrast-rgb: 255,255,255;
-    --ion-color-atras-shade: #c90da9;
-    --ion-color-atras-tint: #e727c6;
-  }
-  
-.color-adelante {
-    --ion-color-adelante: #ee771b;
-    --ion-color-adelante-rgb: 238,119,27;
-    --ion-color-adelante-contrast: #000000;
-    --ion-color-adelante-contrast-rgb: 0,0,0;
-    --ion-color-adelante-shade: #d16918;
-    --ion-color-adelante-tint: #f08532;
-  }
-  
+   
+   .btn-saltar {
+       --background: #9d259d;
+       --border-radius: 50px;
+       --border-style: solid;
+       --border-width: 0.5px;
+       margin-top: 20px;
+       --box-shadow: none;
+   }
+   
+   .ion-fab-atras {
+       --background: #9d259d;
+       --border-radius: 50px;
+       --border-style: solid;
+       --border-width: 0.5px;
+       margin-top: 20px;
+       --box-shadow: none;
+   }
+   
+   .ion-fab-atras-c {
+       --background: #ece90de3;
+       --border-radius: 50px;
+       --border-style: solid;
+       --border-width: 0.5px;
+       margin-top: 20px;
+       --box-shadow: none;
+   }
+   
+   .ion-fab-siguiente {
+       --background: #ee771b;
+       --border-radius: 50px;
+       --border-style: solid;
+       --border-width: 0.5px;
+       margin-top: 20px;
+       --box-shadow: none;
+   }
+   
+   .texto-boton-siguiente {
+       font-family: 'Roboto' !important;
+       font-size: 12px;
+       font-style: normal;
+       line-height: 24px;
+       color: #ee771b;
+   }
+   
+   .texto-boton-atras {
+       font-family: 'Roboto' !important;
+       font-size: 12px;
+       font-style: normal;
+       line-height: 24px;
+       color: #b60aade3;
+   }
+   
+   .ion-fab-siguiente-c {
+       --background: #ece90de3;
+       --border-radius: 50px;
+       --border-style: solid;
+       --border-width: 0.5px;
+       margin-top: 20px;
+       --box-shadow: none;
+   }
+   
+   .icono-encabezado {
+       --background: #ffffff;
+       --border-radius: 50px;
+       --border-style: solid;
+       --border-width: 0.5px;
+       margin-top: 40px;
+       width: 80px !important;
+       height: 80px !important;
+   }
+   
+   .icono-ayuda {
+       --background: #b60aade3;
+       --border-radius: 50px;
+       --border-style: solid;
+       --border-width: 0.5px;
+       margin-top: 40px;
+       width: 60px !important;
+       height: 60px !important;
+   }
+   
+   .icono-ayudaa {
+       --background: #b60aade3;
+       --border-radius: 50px;
+       --border-style: solid;
+       --border-width: 0.5px;
+       margin-top: 10px;
+       width: 30px !important;
+       height: 30px !important;
+       color: #b60aade3;
+   }
+   
+   .ion-card-pregunta {
+       --background: #ffffff;
+       --color: #000000;
+       border-radius: 50px;
+       padding-top: 40px;
+   }
+   
+   .ion-card-respuesta {
+       --background: #ffffff;
+       --color: #000000;
+       border-radius: 15px;
+   }
+   
+   .color-atras {
+       --ion-color-atras: #e40fc0;
+       --ion-color-atras-rgb: 228, 15, 192;
+       --ion-color-atras-contrast: #ffffff;
+       --ion-color-atras-contrast-rgb: 255, 255, 255;
+       --ion-color-atras-shade: #c90da9;
+       --ion-color-atras-tint: #e727c6;
+   }
+   
+   .color-adelante {
+       --ion-color-adelante: #ee771b;
+       --ion-color-adelante-rgb: 238, 119, 27;
+       --ion-color-adelante-contrast: #000000;
+       --ion-color-adelante-contrast-rgb: 0, 0, 0;
+       --ion-color-adelante-shade: #d16918;
+       --ion-color-adelante-tint: #f08532;
+   }

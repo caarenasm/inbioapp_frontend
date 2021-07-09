@@ -1,20 +1,22 @@
 ion-slides {
     height: 100%;
-    --bullet-background-active: rgba(196, 6, 148, 0.973);
+    --bullet-background-active: #9d259d;
 }
 
 .slide-full {
     height: 100% !important;
 }
 
-ion-button {
-    --background: #e40fc0;
-    --border-color: #e40fc0;
+.btn-empezar {
+    --background: #9d259d;
+    --border-color: #9d259d;
     --border-radius: 50px;
     --border-style: solid;
     --border-width: 0.5px;
     margin-top: 20px;
     --box-shadow: none;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
 .button {
@@ -24,17 +26,14 @@ ion-button {
 
 ion-card {
     overflow: unset !important;
-    box-shadow:none !important;
+    box-shadow: none !important;
 }
 
 .slide-image {
-
     text-align: center;
-
     display: block;
     margin-left: auto;
     margin-right: auto;
-
     position: relative;
     top: -50px;
 }
@@ -56,7 +55,7 @@ ion-card-content {
     margin-right: auto;
 }
 
-.titulo{
+.titulo {
     font-family: 'Poppins';
     font-size: 30px;
     font-weight: bold;
@@ -65,8 +64,7 @@ ion-card-content {
     line-height: 40px;
 }
 
-
-.imagen{
+.imagen {
     display: block;
     position: relative;
     margin-left: auto;
@@ -81,13 +79,13 @@ ion-card-content {
     top: 80px;
 }
 
-.imagen-final{
+.imagen-final {
     padding-top: 70%;
     width: 400px;
     height: 400px;
 }
 
-.imagen-app{
+.imagen-app {
     display: block;
     position: relative;
     margin-left: auto;
