@@ -1,140 +1,146 @@
 <ion-content>
 
-    <ion-slides style="height: auto;" #miQuiz class="swiper-no-swiping">
-        <ion-slide *ngFor="let item of quiz; let i=index;" class="animate__animated animate__fadeIn animate__faster">
+    <form [formGroup]="todo">
 
-            <ion-grid fixed class="ion-no-padding">
-                <ion-row class="ion-grid-ion-row">
-                    <ion-col size="12">
+        <ion-slides style="height: auto;" #miQuiz class="swiper-no-swiping">
 
-                        <ion-list lines="none" [ngClass]="( item.tipo_respuestas == 1 ) ? 'ion-list-checkbox': 'ion-list-radio' ">
+            <ion-slide *ngFor="let item of quiz; let i=index;" class="animate__animated animate__fadeIn animate__faster">
 
-                            <ion-fab vertical="top" horizontal="center" slot="fixed" class="ion-no-padding">
-                                <ion-fab-button class="icono-encabezado">
-                                    <ion-icon class="{{ item.icono }}" color="dark"></ion-icon>
-                                </ion-fab-button>
-                            </ion-fab>
+                <ion-grid fixed class="ion-no-padding">
+                    <ion-row class="ion-grid-ion-row">
+                        <ion-col size="12">
 
-                            <ion-card class="ion-card-pregunta">
+                            <ion-list lines="none" [ngClass]="( item.tipo_respuestas == 1 ) ? 'ion-list-checkbox': 'ion-list-radio' ">
 
-                                <ion-card-header>
-                                    <ion-card-title>{{ i + 1 | number }} / {{ total }}</ion-card-title>
-                                    <ion-card-title>
-                                        <ion-progress-bar [value]=avanze(i)></ion-progress-bar>
-                                    </ion-card-title>
+                                <ion-fab vertical="top" horizontal="center" slot="fixed" class="ion-no-padding">
+                                    <ion-fab-button class="icono-encabezado">
+                                        <ion-icon class="{{ item.icono }}" color="dark"></ion-icon>
+                                    </ion-fab-button>
+                                </ion-fab>
 
-                                    <ion-card-subtitle class="titulo">{{ item.pregunta }}</ion-card-subtitle>
-                                </ion-card-header>
+                                <ion-card class="ion-card-pregunta">
 
-                                <ion-card-content class="sub-titulo-2">
-                                    <!--{{ item.descripcion }}-->
-                                    <span [innerHTML]="item.descripcion"></span>
-                                </ion-card-content>
+                                    <ion-card-header>
+                                        <ion-card-title>{{ i + 1 | number }} / {{ total }}</ion-card-title>
+                                        <ion-card-title>
+                                            <ion-progress-bar [value]=avanze(i)></ion-progress-bar>
+                                        </ion-card-title>
 
-                            </ion-card>
+                                        <ion-card-subtitle class="titulo">{{ item.pregunta }}</ion-card-subtitle>
+                                    </ion-card-header>
 
-                            <ion-radio-group name="respuesta" value="respuesta">
-                                <ion-card *ngFor="let itemRespuesta of item.respuestas" class="ion-card-respuesta">
-                                    <ion-item *ngIf="item.tipo_respuestas == 1">
-                                        <ion-item>
-                                            <ion-label class="sub-titulo-2 ion-text-wrap">
-                                                <!--{{ itemRespuesta.respuesta }}-->
-                                                <span [innerHTML]="itemRespuesta.respuesta"></span>
-                                            </ion-label>
-                                            <ion-radio slot="start" [value]="itemRespuesta.id" class="ion-radio"></ion-radio>
-                                        </ion-item>
-                                        <ion-icon *ngIf="itemRespuesta.ayuda" slot="end" class="icono-ayudaa" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
-                                    </ion-item>
+                                    <ion-card-content class="sub-titulo-2">
+                                        <!--{{ item.descripcion }}-->
+                                        <span [innerHTML]="item.descripcion"></span>
+                                    </ion-card-content>
 
-                                    <ion-item *ngIf="item.tipo_respuestas == 2">
-                                        <ion-item>
-                                            <ion-label class="sub-titulo-2 ion-text-wrap">
-                                                <!--{{ itemRespuesta.respuesta }}-->
-                                                <span [innerHTML]="itemRespuesta.respuesta"></span>
-                                            </ion-label>
-                                            <ion-checkbox slot="start" [value]="itemRespuesta.id" class="ion-checkbox"></ion-checkbox>
-                                        </ion-item>
-                                        <ion-icon *ngIf="itemRespuesta.ayuda" slot="end" class="icono-ayudaa" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
-                                    </ion-item>
                                 </ion-card>
 
-                            </ion-radio-group>
+                                <ion-radio-group formControlName="simple">
+                                    <ion-card *ngFor="let itemRespuesta of item.respuestas; let j=index" class="ion-card-respuesta">
+                                        <ion-item *ngIf="item.tipo_respuestas == 1">
+                                            <ion-item>
+                                                <ion-label class="sub-titulo-2 ion-text-wrap">
+                                                    <!--{{ itemRespuesta.respuesta }}-->
+                                                    <span [innerHTML]="itemRespuesta.respuesta"></span>
+                                                </ion-label>
+                                                <ion-radio slot="start" [value]="itemRespuesta.id" class="ion-radio"></ion-radio>
+                                            </ion-item>
+                                            <ion-icon *ngIf="itemRespuesta.ayuda" slot="end" class="icono-ayudaa" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
+                                        </ion-item>
 
-                            <ion-button shape="round" class="btn-saltar" *ngIf=" i == 0" [routerLink]="['/login']">
-                                Saltar Cuestionario
-                            </ion-button>
+                                        <ion-item *ngIf="item.tipo_respuestas == 2">
+                                            <ion-item>
+                                                <ion-label class="sub-titulo-2 ion-text-wrap">
+                                                    <!--{{ itemRespuesta.respuesta }}-->
+                                                    <span [innerHTML]="itemRespuesta.respuesta"></span>
+                                                </ion-label>
+                                                <ion-checkbox (click)="onCheckboxChange($event)" slot="start" [value]="itemRespuesta.id" class="ion-checkbox"></ion-checkbox>
+                                            </ion-item>
+                                            <ion-icon *ngIf="itemRespuesta.ayuda" slot="end" class="icono-ayudaa" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
+                                        </ion-item>
+                                    </ion-card>
 
-                        </ion-list>
+                                </ion-radio-group>
 
-                    </ion-col>
+                                <ion-button shape="round" class="btn-saltar" *ngIf=" i == 0" [routerLink]="['/login']">
+                                    Saltar Cuestionario
+                                </ion-button>
 
-                </ion-row>
-            </ion-grid>
+                            </ion-list>
 
-            <!--<ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf=" i != 0">
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+
+                <!--<ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf=" i != 0">
                 <ion-fab-button size="small" class="ion-fab-atras" routerDirection="forward" data-desc="Aterior" (click)="slides.slidePrev()">
                     <ion-icon name="arrow-back-outline"></ion-icon>
                 </ion-fab-button>
                 <ion-label class="texto-boton-atras">Anterior</ion-label>
             </ion-fab>-->
 
-        </ion-slide>
+            </ion-slide>
 
-        <ion-slide *ngIf="!quiz">
-            <ion-grid fixed class="ion-no-padding">
-                <ion-row class="ion-grid-ion-row">
-                    <ion-col size="12">
 
-                        <ion-list lines="none" class="ion-list-checkbox">
+            <ion-slide *ngIf="!quiz">
+                <ion-grid fixed class="ion-no-padding">
+                    <ion-row class="ion-grid-ion-row">
+                        <ion-col size="12">
 
-                            <ion-fab vertical="top" horizontal="center" slot="fixed">
-                                <ion-fab-button class="icono-encabezado">
-                                    <ion-skeleton-text animated style="width: 50px; height: 50px"></ion-skeleton-text>
-                                </ion-fab-button>
-                            </ion-fab>
+                            <ion-list lines="none" class="ion-list-checkbox">
 
-                            <ion-card class="ion-card-pregunta">
+                                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                                    <ion-fab-button class="icono-encabezado">
+                                        <ion-skeleton-text animated style="width: 50px; height: 50px"></ion-skeleton-text>
+                                    </ion-fab-button>
+                                </ion-fab>
 
-                                <ion-card-header>
-                                    <ion-card-title>
-                                        <ion-skeleton-text animated></ion-skeleton-text>
-                                    </ion-card-title>
-                                    <ion-card-title>
-                                        <ion-progress-bar [value]=0></ion-progress-bar>
-                                    </ion-card-title>
+                                <ion-card class="ion-card-pregunta">
 
-                                    <ion-card-subtitle class="titulo">
-                                        <ion-skeleton-text animated></ion-skeleton-text>
-                                    </ion-card-subtitle>
-                                </ion-card-header>
+                                    <ion-card-header>
+                                        <ion-card-title>
+                                            <ion-skeleton-text animated></ion-skeleton-text>
+                                        </ion-card-title>
+                                        <ion-card-title>
+                                            <ion-progress-bar [value]=0></ion-progress-bar>
+                                        </ion-card-title>
 
-                                <ion-card-content class="sub-titulo-2">
-                                    <ion-skeleton-text animated style="height: 50px"></ion-skeleton-text>
-                                </ion-card-content>
+                                        <ion-card-subtitle class="titulo">
+                                            <ion-skeleton-text animated></ion-skeleton-text>
+                                        </ion-card-subtitle>
+                                    </ion-card-header>
 
-                            </ion-card>
+                                    <ion-card-content class="sub-titulo-2">
+                                        <ion-skeleton-text animated style="height: 50px"></ion-skeleton-text>
+                                    </ion-card-content>
 
-                            <ion-radio-group>
-                                <ion-card class="ion-card-respuesta" *ngFor="let item of [1,1,1,1,1,1]">
-                                    <ion-item>
-                                        <ion-item>
-                                            <ion-label class="sub-titulo-2 ion-text-wrap">
-                                                <ion-skeleton-text animated style="height: 25px"></ion-skeleton-text>
-                                            </ion-label>
-                                        </ion-item>
-                                        <ion-skeleton-text animated></ion-skeleton-text>
-                                    </ion-item>
                                 </ion-card>
-                            </ion-radio-group>
 
-                        </ion-list>
+                                <ion-radio-group>
+                                    <ion-card class="ion-card-respuesta" *ngFor="let item of [1,1,1,1,1,1]">
+                                        <ion-item>
+                                            <ion-item>
+                                                <ion-label class="sub-titulo-2 ion-text-wrap">
+                                                    <ion-skeleton-text animated style="height: 25px"></ion-skeleton-text>
+                                                </ion-label>
+                                            </ion-item>
+                                            <ion-skeleton-text animated></ion-skeleton-text>
+                                        </ion-item>
+                                    </ion-card>
+                                </ion-radio-group>
 
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </ion-slide>
+                            </ion-list>
 
-    </ion-slides>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-slide>
+
+        </ion-slides>
+
+    </form>
 
     <ion-fab vertical="bottom" horizontal="start" slot="fixed">
         <ion-fab-button size="small" class="ion-fab-atras" routerDirection="forward" data-desc="Aterior" (click)="slides.slidePrev()">
@@ -144,7 +150,7 @@
     </ion-fab>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button size="small" class="ion-fab-siguiente" routerDirection="forward" data-desc="Siguiente" (click)="slides.slideNext()">
+        <ion-fab-button size="small" class="ion-fab-siguiente" routerDirection="forward" data-desc="Siguiente" (click)="this.siguiente()">
             <ion-icon class="icon-adelante"></ion-icon>
         </ion-fab-button>
         <ion-label class="texto-boton-siguiente">Siguiente</ion-label>

@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonLabel, IonSlides, NavController, PopoverController } from '@ionic/angular';
+import { AlertController, IonLabel, IonSlides, NavController, PopoverController } from '@ionic/angular';
 import { InfoAyudaComponent } from '../../components/info-ayuda/info-ayuda.component';
+import {Validators, FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 
 import { QuizService } from 'src/app/services/quiz.service';
+import { AlertService } from '../../services/alert.service';
 
 export interface Respuesta {
   id: number;
@@ -34,11 +36,17 @@ export class QuizPage implements OnInit {
 
   quiz: Quiz[];
 
+  todo: FormGroup;
+
   constructor(
-    private navCtrl: NavController,
+    private alertCtrl: AlertController,
     private popoverCtrl: PopoverController,
-    private quizServ: QuizService
-    ) { }
+    private quizServ: QuizService,
+    private formBuilder: FormBuilder,
+    private alertServ: AlertService,
+    ) {
+      this.crearFormulario();
+     }
 
   ngOnInit() {
     //this.avanze();
@@ -54,17 +62,45 @@ export class QuizPage implements OnInit {
         this.resp = response;
         this.total = this.resp.total;
         this.quiz = this.resp.data;
+      }, (err) => {
+        console.log('err');
       }
     );
   }
 
-  async infoAyuda(ev: any, msg) {
+  crearFormulario() {
+
+    this.todo = this.formBuilder.group({
+      simple: ['', Validators.required],
+      multiple: this.formBuilder.array([])
+    });
+
+  }
+
+  onCheckboxChange(e) {
+    const checkArray: FormArray = this.todo.get('multiple') as FormArray;
+
+    if (e.target.checked === false) {
+      checkArray.push(new FormControl(e.target.value));
+    } else {
+      let i = 0;
+      checkArray.controls.forEach((item: FormControl) => {
+        if (item.value === e.target.value) {
+          checkArray.removeAt(i);
+          return;
+        }
+        i++;
+      });
+    }
+  }
+
+  async infoAyuda(ev: any, message) {
 
     const popover = await this.popoverCtrl.create({
       component: InfoAyudaComponent,
       event: ev,
       componentProps: {
-        msg: msg
+        msg: message
       },
       translucent: true,
       backdropDismiss: true
@@ -77,7 +113,7 @@ export class QuizPage implements OnInit {
 
   }
 
-  avanze( i ){
+  avanze( i: any ){
 
     this.progreso = i + 1;
 
@@ -85,6 +121,30 @@ export class QuizPage implements OnInit {
 
     return conteo;
 
+  }
+
+  siguiente() {
+
+    if ( this.todo.invalid ){
+
+      this.alertServ.presentAlert('Por Favor, seleccione una opcion del formulario!');
+
+      return Object.values( this.todo.controls ).forEach( control => {
+        if ( control instanceof FormGroup ) {
+          Object.values( control.controls ).forEach( control => control.markAsTouched() );
+        } else {
+          control.markAsTouched();
+        }
+      });
+    }
+
+    console.log(this.todo.value);
+
+    this.slides.slideNext();
+  }
+
+  checkValue(event: any) {
+    console.log(event.detail.value);
   }
 
 }
