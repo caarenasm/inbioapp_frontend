@@ -36,7 +36,7 @@
 
                                 </ion-card>
 
-                                <ion-radio-group formControlName="simple">
+                                <ion-radio-group *ngIf="item.tipo_respuestas == 1" formControlName="respuesta[{{i}}]">
                                     <ion-card *ngFor="let itemRespuesta of item.respuestas; let j=index" class="ion-card-respuesta">
                                         <ion-item *ngIf="item.tipo_respuestas == 1">
                                             <ion-item>
@@ -48,19 +48,22 @@
                                             </ion-item>
                                             <ion-icon *ngIf="itemRespuesta.ayuda" slot="end" class="icono-ayudaa" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
                                         </ion-item>
+                                    </ion-card>
+                                </ion-radio-group>
 
+                                <ion-radio-group *ngIf="item.tipo_respuestas == 2" formArrayName="respuesta[{{i}}]">
+                                    <ion-card *ngFor="let itemRespuesta of item.respuestas; let j=index" class="ion-card-respuesta">
                                         <ion-item *ngIf="item.tipo_respuestas == 2">
                                             <ion-item>
                                                 <ion-label class="sub-titulo-2 ion-text-wrap">
                                                     <!--{{ itemRespuesta.respuesta }}-->
                                                     <span [innerHTML]="itemRespuesta.respuesta"></span>
                                                 </ion-label>
-                                                <ion-checkbox (click)="onCheckboxChange($event)" slot="start" [value]="itemRespuesta.id" class="ion-checkbox"></ion-checkbox>
+                                                <ion-checkbox (click)="onCheckboxChange($event, i)" slot="start" [value]="itemRespuesta.id" class="ion-checkbox"></ion-checkbox>
                                             </ion-item>
                                             <ion-icon *ngIf="itemRespuesta.ayuda" slot="end" class="icono-ayudaa" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
                                         </ion-item>
                                     </ion-card>
-
                                 </ion-radio-group>
 
                                 <ion-button shape="round" class="btn-saltar" *ngIf=" i == 0" [routerLink]="['/login']">

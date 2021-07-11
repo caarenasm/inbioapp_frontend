@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlertController, IonLabel, IonSlides, NavController, PopoverController } from '@ionic/angular';
+import { IonSlides, PopoverController } from '@ionic/angular';
 import { InfoAyudaComponent } from '../../components/info-ayuda/info-ayuda.component';
 import {Validators, FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 
@@ -39,7 +39,6 @@ export class QuizPage implements OnInit {
   todo: FormGroup;
 
   constructor(
-    private alertCtrl: AlertController,
     private popoverCtrl: PopoverController,
     private quizServ: QuizService,
     private formBuilder: FormBuilder,
@@ -49,19 +48,30 @@ export class QuizPage implements OnInit {
      }
 
   ngOnInit() {
-    //this.avanze();
+    this.armarQuiz();
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('miQuiz') slides: IonSlides;
 
-  ionViewWillEnter() {
+  //onViewWillEnter() {
+  armarQuiz() {
     this.quizServ.getQuiz().subscribe(
       response => {
 
         this.resp = response;
         this.total = this.resp.total;
         this.quiz = this.resp.data;
+
+        for (let i = 0; i < this.quiz.length; i++) {
+          if (this.quiz[i].tipo_respuestas === 1) {
+            this.todo.addControl('respuesta[' + i + ']', new FormControl('', Validators.required));
+          }
+          if(this.quiz[i].tipo_respuestas === 2){
+            this.todo.addControl('respuesta[' + i + ']', new FormArray([], [Validators.required]));
+          }
+        }
+
       }, (err) => {
         console.log('err');
       }
@@ -71,14 +81,21 @@ export class QuizPage implements OnInit {
   crearFormulario() {
 
     this.todo = this.formBuilder.group({
-      simple: ['', Validators.required],
-      multiple: this.formBuilder.array([])
+      /*simple: ['', Validators.required],
+      multiple: this.formBuilder.array([], [Validators.required])*/
     });
+
+    // eslint-disable-next-line @typescript-eslint/prefer-for-of
+    /*for (let i = 0; i < 12; i++) {
+      this.todo.addControl('respuesta[' + i + ']', new FormControl('', Validators.required));
+    }*/
+    /*this.todo.addControl('respuesta[' + i + ']', new FormArray([], [Validators.required]));*/
 
   }
 
-  onCheckboxChange(e) {
-    const checkArray: FormArray = this.todo.get('multiple') as FormArray;
+  onCheckboxChange(e, i) {
+    //const checkArray: FormArray = this.todo.get('multiple') as FormArray;
+    const checkArray: FormArray = this.todo.get('respuesta[' + i + ']') as FormArray;
 
     if (e.target.checked === false) {
       checkArray.push(new FormControl(e.target.value));
@@ -116,7 +133,6 @@ export class QuizPage implements OnInit {
   avanze( i: any ){
 
     this.progreso = i + 1;
-
     const conteo = this.progreso / this.total;
 
     return conteo;
@@ -125,7 +141,15 @@ export class QuizPage implements OnInit {
 
   siguiente() {
 
-    if ( this.todo.invalid ){
+    this.slides.getActiveIndex().then(index => {
+      if ( this.todo.get('respuesta[' + index + ']').invalid ){
+        this.alertServ.presentAlert('Por Favor, seleccione una opcion del formulario!');
+      }else{
+        this.slides.slideNext();
+      }
+   });
+
+    /*if ( this.todo.invalid ){
 
       this.alertServ.presentAlert('Por Favor, seleccione una opcion del formulario!');
 
@@ -136,15 +160,11 @@ export class QuizPage implements OnInit {
           control.markAsTouched();
         }
       });
-    }
+    }*/
 
     console.log(this.todo.value);
 
-    this.slides.slideNext();
-  }
-
-  checkValue(event: any) {
-    console.log(event.detail.value);
+    //this.slides.slideNext();
   }
 
 }
