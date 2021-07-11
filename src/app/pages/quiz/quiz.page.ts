@@ -34,6 +34,9 @@ export class QuizPage implements OnInit {
   total = 0;
   progreso = 0;
   ocultar = [];
+  textoSiguente = 'Siguiente';
+  iconoSiguente = 'icon-adelante';
+  mostrarAnterior = false;
 
   quiz: Quiz[];
 
@@ -144,6 +147,29 @@ export class QuizPage implements OnInit {
     return conteo;
 
   }
+
+  slideChanged() {
+    const me = this;
+    me.slides.isEnd().then((istrue) => {
+      console.log(istrue);
+      if (istrue) {
+        me.textoSiguente = 'Finalizar';
+        me.iconoSiguente = 'icon-mi_diario_nutricional';
+      } else {
+        me.textoSiguente = 'Siguiente';
+        me.iconoSiguente = 'icon-adelante';
+      }
+    });
+
+    me.slides.isBeginning().then((istrue) => {
+      console.log(istrue);
+      if (istrue) {
+        me.mostrarAnterior = false;
+      } else {
+        me.mostrarAnterior = true;
+      }
+    });
+}
 
   siguiente() {
 
