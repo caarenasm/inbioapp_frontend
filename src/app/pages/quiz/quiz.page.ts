@@ -151,7 +151,7 @@ export class QuizPage implements OnInit {
   slideChanged() {
     const me = this;
     me.slides.isEnd().then((istrue) => {
-      console.log(istrue);
+      /*console.log(istrue);*/
       if (istrue) {
         me.textoSiguente = 'Finalizar';
         me.iconoSiguente = 'icon-mi_diario_nutricional';
@@ -162,7 +162,7 @@ export class QuizPage implements OnInit {
     });
 
     me.slides.isBeginning().then((istrue) => {
-      console.log(istrue);
+      /*console.log(istrue);*/
       if (istrue) {
         me.mostrarAnterior = false;
       } else {
