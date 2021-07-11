@@ -33,6 +33,7 @@ export class QuizPage implements OnInit {
   resp: any;
   total = 0;
   progreso = 0;
+  ocultar = [];
 
   quiz: Quiz[];
 
@@ -66,6 +67,11 @@ export class QuizPage implements OnInit {
         for (let i = 0; i < this.quiz.length; i++) {
           if (this.quiz[i].tipo_respuestas === 1) {
             this.todo.addControl('respuesta[' + i + ']', new FormControl('', Validators.required));
+            this.quiz[i].respuestas.forEach(element => {
+              if (element.otro) {
+                this.todo.addControl('otro[' + i + ']', new FormControl(''));
+              }
+            });
           }
           if(this.quiz[i].tipo_respuestas === 2){
             this.todo.addControl('respuesta[' + i + ']', new FormArray([], [Validators.required]));
@@ -165,6 +171,15 @@ export class QuizPage implements OnInit {
     console.log(this.todo.value);
 
     //this.slides.slideNext();
+  }
+
+  mostrar(i: any, otro: any) {
+
+    if (otro === 1) {
+      this.ocultar[i] = true;
+    }else{
+      this.ocultar[i] = false;
+    }
   }
 
 }

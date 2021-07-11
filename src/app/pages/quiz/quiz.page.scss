@@ -216,3 +216,17 @@ ion-grid {
     --ion-color-adelante-shade: #d16918;
     --ion-color-adelante-tint: #f08532;
 }
+
+.ion-otro {
+    --inner-border-radius: 25px;
+    --placeholder-color: #f08532;
+}
+
+.titulo-input {
+    --color: #000000;
+    justify-content: space-between;
+}
+
+.item-has-focus {
+    --highlight-background: #f08532;
+}
