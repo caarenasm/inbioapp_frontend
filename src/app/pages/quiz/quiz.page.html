@@ -44,9 +44,15 @@
                                                     <!--{{ itemRespuesta.respuesta }}-->
                                                     <span [innerHTML]="itemRespuesta.respuesta"></span>
                                                 </ion-label>
-                                                <ion-radio slot="start" [value]="itemRespuesta.id" class="ion-radio"></ion-radio>
+                                                <ion-radio slot="start" [value]="itemRespuesta.id" class="ion-radio" (click)="mostrar(i, itemRespuesta.otro)"></ion-radio>
                                             </ion-item>
                                             <ion-icon *ngIf="itemRespuesta.ayuda" slot="end" class="icono-ayudaa" name="help-circle" (click)="infoAyuda( $event, itemRespuesta.ayuda )"></ion-icon>
+                                        </ion-item>
+                                    </ion-card>
+                                    <ion-card *ngIf="ocultar[i]===true" class="ion-card-respuesta">
+                                        <ion-item class="item-has-focus">
+                                            <ion-label position="stacked" class="titulo-input">¿Cual?</ion-label>
+                                            <ion-textarea class="ion-otro" placeholder="Escribe aqui..." formControlName="otro[{{i}}]"></ion-textarea>
                                         </ion-item>
                                     </ion-card>
                                 </ion-radio-group>
