@@ -20,16 +20,16 @@ export class RegistroPage implements OnInit {
   menosPesoDisabled = false;
   menosPesoDeseadoaDisabled = false;
 
-  todo : FormGroup;
+  todo: FormGroup;
 
-  constructor( 
+  constructor(
           private alertCtrl: AlertController,
           private formBuilder: FormBuilder,
           private zone: NgZone,
           private registroCtrl: RegistroService,
           private loadingController: LoadingController,
-          private toastCtrl:ToastController
-        ) { 
+          private toastCtrl: ToastController
+        ) {
 
           this.crearFormulario();
 

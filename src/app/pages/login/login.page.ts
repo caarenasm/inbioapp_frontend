@@ -5,7 +5,7 @@ import { NavController } from '@ionic/angular';
 import { Usuario } from '../../interfaces/usuario';
 
 import { AuthService } from '../../services/auth.service';
-import { AlertService } from '../../services/alert.service';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authServ: AuthService,
-    private alertService: AlertService,
+    private toastServ: ToastService,
     private navCtrl: NavController,
   ) {
 
@@ -50,11 +50,11 @@ export class LoginPage implements OnInit {
 
     this.authServ.login( this.datos.value ).subscribe(
       response => {
-        this.alertService.presentToast(response["message"]);
+        this.toastServ.presentToast(response["message"]);
       },
       error => {
         console.log(error.error);
-        this.alertService.presentToast('Error: Verifique sus datos!');
+        this.toastServ.presentToast('Error: Verifique sus datos!');
       },
       () => {
         this.navCtrl.navigateRoot('/mis-datos');
