@@ -2,7 +2,7 @@
 
     <form [formGroup]="todo">
 
-        <ion-slides style="height: auto;" #miQuiz class="swiper-no-swiping">
+        <ion-slides style="height: auto;" #miQuiz class="swiper-no-swiping" (ionSlideWillChange)="slideChanged()">
 
             <ion-slide *ngFor="let item of quiz; let i=index;" class="animate__animated animate__fadeIn animate__faster">
 
@@ -151,7 +151,7 @@
 
     </form>
 
-    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf="mostrarAnterior">
         <ion-fab-button size="small" class="ion-fab-atras" routerDirection="forward" data-desc="Aterior" (click)="slides.slidePrev()">
             <ion-icon class="icon-atras"></ion-icon>
         </ion-fab-button>
@@ -160,9 +160,9 @@
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button size="small" class="ion-fab-siguiente" routerDirection="forward" data-desc="Siguiente" (click)="this.siguiente()">
-            <ion-icon class="icon-adelante"></ion-icon>
+            <ion-icon class="{{ iconoSiguente }}"></ion-icon>
         </ion-fab-button>
-        <ion-label class="texto-boton-siguiente">Siguiente</ion-label>
+        <ion-label class="texto-boton-siguiente">{{ textoSiguente }}</ion-label>
     </ion-fab>
 
 
