@@ -1053,6 +1053,13 @@
     }
 }
 
+.cargando {
+    .loading-wrapper.sc-ion-loading-md {
+        --spinner-color: #9933CC;
+        border-radius: 25px;
+    }
+}
+
 .ion-toast {
     --border-radius: 50px;
     text-align: center;
