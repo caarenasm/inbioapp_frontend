@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
@@ -6,6 +6,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { RegistroService } from 'src/app/services/registro.service';
 import { LoadingService } from 'src/app/services/loading.service';
+import { ValidarEmailService } from 'src/app/services/validar-email.service';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-registro',
@@ -48,27 +50,26 @@ export class RegistroPage implements OnInit {
 
   constructor(
           private alertCtrl: AlertController,
+          private alertServ: AlertService,
           private formBuilder: FormBuilder,
-          private zone: NgZone,
           private registroCtrl: RegistroService,
           private loadingController: LoadingController,
           private toastCtrl: ToastController,
           private route: ActivatedRoute,
           private router: Router,
-          private loadingServ: LoadingService
-        ) {
-
-          this.route.queryParams.subscribe(params => {
-            if (this.router.getCurrentNavigation().extras.state) {
-              this.quiz = this.router.getCurrentNavigation().extras.state.quiz;
-            }
-          });
-
-          this.crearFormulario();
-
-  }
+          private loadingServ: LoadingService,
+          private emailValidator: ValidarEmailService
+        ) { }
 
   ngOnInit() {
+
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.quiz = this.router.getCurrentNavigation().extras.state.quiz;
+      }
+    });
+
+    this.crearFormulario();
 
     if(!this.quiz){
       this.router.navigate(['quiz']);
@@ -131,12 +132,14 @@ export class RegistroPage implements OnInit {
       email: ['', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])],
+      ]),
+        [this.emailValidator.checkEmail.bind(this.emailValidator)]
+      ],
       terminos: [false, Validators.pattern('true')],
       estatura: ['0', Validators.required],
       peso_actual: ['0', Validators.required],
       peso_deseado: ['0', Validators.required],
-      quiz: [this.quiz],
+      respuestas: [this.quiz],
     });
 
   }
@@ -173,7 +176,7 @@ export class RegistroPage implements OnInit {
 
     if( this.estaturaActual < 1){
       this.menosEstaturaDisabled = true;
-      return
+      return;
     }else{
       this.menosEstaturaDisabled = false;
     }
@@ -297,13 +300,11 @@ export class RegistroPage implements OnInit {
       this.presentToast('Por Favor, verifique datos del formulario!');
 
       return Object.values( this.todo.controls ).forEach( control => {
-        
         if ( control instanceof FormGroup ) {
           Object.values( control.controls ).forEach( control => control.markAsTouched() );
         } else {
           control.markAsTouched();
         }
-        
       });
     }
 
@@ -329,22 +330,28 @@ export class RegistroPage implements OnInit {
   }*/
 
   postDatos() {
-
     /*console.log(this.todo.value);*/
     /*this.presentLoading();*/
+    /*this.loadingController.dismiss();*/
     this.loadingServ.cargando();
 
-    this.registroCtrl.createUsuario(this.todo.value)
-      .subscribe((response) => {
-        /*this.loadingController.dismiss();*/
-        this.loadingServ.dismissLoader();
-        this.zone.run(() => {
-          //this.todo.reset();
-          //this.router.navigate(['/login']);
-        });
-      }, error => {
-          //console.error(error);
-          this.presentToast('error');
+    this.registroCtrl.createUsuario(this.todo.value).subscribe(
+      response => {
+        if(response){
+          if(response.status === true){
+            this.todo.reset();
+            this.loadingServ.dismissLoader();
+            this.alertServ.presentAlert('Usuario Registrado con Exito!');
+            this.router.navigate(['/login']);
+          }else{
+            this.loadingServ.dismissLoader();
+            this.alertServ.presentAlert('Error al procesar datos, verifique el formulario!');
+          }
+        }else{
+          this.loadingServ.dismissLoader();
+          this.alertServ.presentAlert('Error al procesar datos, verifique el formulario!');
+        }
+
       }
     );
   }

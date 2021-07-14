@@ -2,8 +2,6 @@
 
     <form [formGroup]="todo" (ngSubmit)="guardar()">
 
-        <ion-input type="hidden" [value]=quiz formControlName="quiz"></ion-input>
-
         <ion-list lines="none" class="fondo-mis-bioproductos">
 
             <ion-fab vertical="top" horizontal="center" slot="fixed">
@@ -134,7 +132,10 @@
                             <ion-col size="12" class="grid-card">
                                 <ion-input type="mail" formControlName="email" [class.is-invalid]="emailNoValido"></ion-input>
                                 <small *ngIf="emailNoValido">
-                                    <ion-label color="danger">Ingrese su Correo.</ion-label>
+                                    <ion-label color="danger">Valide su Correo.</ion-label>
+                                </small>
+                                <small *ngIf="todo.get('email').hasError('email taken')">
+                                    <ion-label color="danger"> Correo electrónico ya se encuetra Registrado!</ion-label>
                                 </small>
                             </ion-col>
                         </ion-row>
@@ -284,12 +285,12 @@
 
     </form>
 
-    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <!--<ion-fab vertical="bottom" horizontal="start" slot="fixed">
         <ion-fab-button size="small" class="ion-fab-siguiente" [routerLink]="['/login']" routerDirection="forward" data-desc="Aterior">
             <ion-icon class="icon-atras"></ion-icon>
         </ion-fab-button>
         <ion-label class="texto-boton-siguiente">Regresar</ion-label>
-    </ion-fab>
+    </ion-fab>-->
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button size="small" class="ion-fab-atras" (click)="guardar()">

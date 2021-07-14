@@ -57,7 +57,7 @@ export class LoginPage implements OnInit {
         this.toastServ.presentToast('Error: Verifique sus datos!');
       },
       () => {
-        this.navCtrl.navigateRoot('/mis-datos');
+        this.navCtrl.navigateRoot('/menu');
       }
     );
 

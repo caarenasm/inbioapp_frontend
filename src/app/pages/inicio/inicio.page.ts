@@ -46,13 +46,13 @@ export class InicioPage implements OnInit {
 
   }
 
-  /*ionViewWillEnter() {
+  ionViewWillEnter() {
     this.authService.getToken().then(() => {
       if(this.authService.isLoggedIn) {
-        this.navCtrl.navigateRoot('/mis-datos');
+        this.navCtrl.navigateRoot('/menu');
       }
     });
-  }*/
+  }
 
 
 }
