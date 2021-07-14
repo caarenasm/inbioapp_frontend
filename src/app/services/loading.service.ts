@@ -46,7 +46,7 @@ export class LoadingService {
     cargando() {
       this.loadingCtrl.create({
         message: 'Por Favor Espere...',
-        spinner: 'bubbles',
+        /*spinner: 'bubbles',*/
         translucent: true,
         cssClass: 'cargando',
         backdropDismiss:false

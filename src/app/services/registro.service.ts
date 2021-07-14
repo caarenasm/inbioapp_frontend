@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { ToastService } from './toast.service';
 
 const apiUlr = environment.apiUlr;
 
@@ -32,7 +33,8 @@ export class RegistroService {
   };
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private toastServ: ToastService,
   ) { }
 
   createUsuario(usuario: Usuario): Observable<any> {
@@ -78,9 +80,18 @@ export class RegistroService {
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
-      console.log(`${operation} failed: ${error.message}`);
+      /*console.log(`${operation} failed: ${error.message}`);*/
+      this.log(`${operation} failed: ${error.message}`);
       return of(result as T);
     };
-  }  
+  }
+
+  // #docregion log
+  /** Log a HeroService message with the MessageService */
+  private log(message: string) {
+    /*this.toastServ.presentToast(`Error: ${message}`);*/
+    this.toastServ.presentToast('Error en Servidor!');
+  }
+  // #enddocregion log
 
 }

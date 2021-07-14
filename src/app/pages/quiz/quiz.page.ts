@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlertController, IonSlides, PopoverController } from '@ionic/angular';
+import { AlertController, IonSlides, NavController, PopoverController } from '@ionic/angular';
 import { InfoAyudaComponent } from '../../components/info-ayuda/info-ayuda.component';
 import { Validators, FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
 
 import { QuizService } from 'src/app/services/quiz.service';
 import { AlertService } from '../../services/alert.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 export interface Respuesta {
   id: number;
@@ -50,12 +51,22 @@ export class QuizPage implements OnInit {
     private alertServ: AlertService,
     private alertCtrl: AlertController,
     private router: Router,
+    private authService: AuthService,
+    private navCtrl: NavController,
     ) {
       this.crearFormulario();
      }
 
   ngOnInit() {
     this.armarQuiz();
+  }
+
+  ionViewWillEnter() {
+    this.authService.getToken().then(() => {
+      if(this.authService.isLoggedIn) {
+        this.navCtrl.navigateRoot('/menu');
+      }
+    });
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
