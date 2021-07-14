@@ -68,7 +68,7 @@
                                     <ion-row>
                                         <ion-col size="3" class="grid-card">
                                             <ion-label position="stacked">Dia</ion-label>
-                                            <ion-datetime display-format="DD" formControlName="dia" [class.is-invalid]="diaNoValido"></ion-datetime>
+                                            <ion-datetime [displayFormat]="'DD'" placeholder="DD" formControlName="dia" [class.is-invalid]="diaNoValido" cancelText="Cancelar" doneText="Hecho" (ionChange)="getDia($event)"></ion-datetime>
                                             <small *ngIf="diaNoValido">
                                                 <ion-label color="danger">Requerido.</ion-label>
                                             </small>
@@ -76,7 +76,7 @@
 
                                         <ion-col size="3" class="grid-card">
                                             <ion-label position="stacked">Mes</ion-label>
-                                            <ion-datetime display-format="MMMM" formControlName="mes" [class.is-invalid]="mesNoValido"></ion-datetime>
+                                            <ion-datetime display-format="MMMM" placeholder="MM" pickerFormat="MM" formControlName="mes" [class.is-invalid]="mesNoValido" cancelText="Cancelar" doneText="Hecho" (ionChange)="getMes($event)"></ion-datetime>
                                             <small *ngIf="mesNoValido">
                                                 <ion-label color="danger">Requerido.</ion-label>
                                             </small>
@@ -84,7 +84,7 @@
 
                                         <ion-col size="6" class="grid-card">
                                             <ion-label position="stacked">Año</ion-label>
-                                            <ion-datetime display-format="YYYY" min="1900" max="2050" formControlName="anio" [class.is-invalid]="anioNoValido"></ion-datetime>
+                                            <ion-datetime display-format="YYYY" placeholder="YYYY" pickerFormat="YYYY" min="1900" max="2050" formControlName="anio" [class.is-invalid]="anioNoValido" cancelText="Cancelar" doneText="Hecho" (ionChange)="getAnio($event)"></ion-datetime>
                                             <small *ngIf="anioNoValido">
                                                 <ion-label color="danger">Requerido.</ion-label>
                                             </small>
