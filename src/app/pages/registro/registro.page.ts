@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { RegistroService } from 'src/app/services/registro.service';
 
@@ -21,6 +21,7 @@ export class RegistroPage implements OnInit {
   menosPesoDeseadoaDisabled = false;
 
   todo: FormGroup;
+  quiz: any;
 
   constructor(
           private alertCtrl: AlertController,
@@ -28,15 +29,27 @@ export class RegistroPage implements OnInit {
           private zone: NgZone,
           private registroCtrl: RegistroService,
           private loadingController: LoadingController,
-          private toastCtrl: ToastController
+          private toastCtrl: ToastController,
+          private route: ActivatedRoute,
+          private router: Router
         ) {
+
+          this.route.queryParams.subscribe(params => {
+            if (this.router.getCurrentNavigation().extras.state) {
+              this.quiz = this.router.getCurrentNavigation().extras.state.quiz;
+            }
+          });
 
           this.crearFormulario();
 
   }
 
   ngOnInit() {
-  }
+
+    if(!this.quiz){
+      this.router.navigate(['quiz']);
+    }
+   }
 
   get sexoNoValido() {
     return this.todo.get('sexo').invalid && this.todo.get('sexo').touched;
@@ -85,6 +98,7 @@ export class RegistroPage implements OnInit {
   crearFormulario() {
 
     this.todo = this.formBuilder.group({
+      quiz: [this.quiz],
       sexo: ['', Validators.required],
       dia: ['', Validators.required],
       mes: ['', Validators.required],
@@ -287,6 +301,8 @@ export class RegistroPage implements OnInit {
   }*/
 
   postDatos() {
+
+    console.log(this.todo.value);
 
     this.presentLoading();
 

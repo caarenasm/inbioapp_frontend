@@ -2,6 +2,8 @@
 
     <form [formGroup]="todo" (ngSubmit)="guardar()">
 
+        <ion-input type="hidden" [value]=quiz formControlName="quiz"></ion-input>
+
         <ion-list lines="none" class="fondo-mis-bioproductos">
 
             <ion-fab vertical="top" horizontal="center" slot="fixed">
