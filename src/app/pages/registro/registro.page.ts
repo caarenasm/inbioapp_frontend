@@ -23,6 +23,28 @@ export class RegistroPage implements OnInit {
   todo: FormGroup;
   quiz: any;
 
+  customPickerOptions = {
+    buttons: [
+      {
+        text: 'Cancelar',
+        handler: () => {
+          console.log('Cancelar!');
+          return false;
+        }
+      },
+      {
+        text: 'Seleccionar',
+        handler: (time) => {
+          console.log('time', time);
+          /*const year: string = time.year.text;
+          const month: string = time.month.value < 10 ? '0' + time.month.value.toString(): time.month.value.toString();*/
+          const day: string = time.day.text;
+          return true;
+        }
+      },
+    ]
+  };
+
   constructor(
           private alertCtrl: AlertController,
           private formBuilder: FormBuilder,
@@ -98,7 +120,6 @@ export class RegistroPage implements OnInit {
   crearFormulario() {
 
     this.todo = this.formBuilder.group({
-      quiz: [this.quiz],
       sexo: ['', Validators.required],
       dia: ['', Validators.required],
       mes: ['', Validators.required],
@@ -113,25 +134,30 @@ export class RegistroPage implements OnInit {
       estatura: ['0', Validators.required],
       peso_actual: ['0', Validators.required],
       peso_deseado: ['0', Validators.required],
+      quiz: [this.quiz],
     });
 
   }
 
-  customPickerOptions = {
-    buttons: [
-      {
-        text: 'Seleccionar',
-        handler: ( event ) => {
-          console.log(event);
-        }
-      },
-      {
-        text: 'Cancelar',
-        handler: () => {
-          console.log('log!')
-        }
-      },
-    ]
+  getDia(e) {
+    const date = new Date(e.target.value).toISOString().substring(0, 10);
+    this.todo.get('dia').setValue(date, {
+       onlyself: true
+    });
+  }
+
+  getMes(e) {
+    const date = new Date(e.target.value).toISOString().substring(0, 10);
+    this.todo.get('mes').setValue(date, {
+       onlyself: true
+    });
+  }
+
+  getAnio(e) {
+    const date = new Date(e.target.value).toISOString().substring(0, 10);
+    this.todo.get('anio').setValue(date, {
+       onlyself: true
+    });
   }
 
   masEstatura() {
@@ -165,7 +191,7 @@ export class RegistroPage implements OnInit {
 
     if( this.pesoActual < 1){
       this.menosPesoDisabled = true;
-      return
+      return;
     }else{
       this.menosPesoDisabled = false;
     }
