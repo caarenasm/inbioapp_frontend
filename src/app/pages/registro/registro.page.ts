@@ -5,6 +5,7 @@ import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { RegistroService } from 'src/app/services/registro.service';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-registro',
@@ -53,7 +54,8 @@ export class RegistroPage implements OnInit {
           private loadingController: LoadingController,
           private toastCtrl: ToastController,
           private route: ActivatedRoute,
-          private router: Router
+          private router: Router,
+          private loadingServ: LoadingService
         ) {
 
           this.route.queryParams.subscribe(params => {
@@ -265,7 +267,6 @@ export class RegistroPage implements OnInit {
           text: 'Continuar',
           cssClass:'alerta-boton-aceptar',
           handler: () => {
-            //console.log(this.todo.value)
             this.postDatos();
           }
         }
@@ -280,6 +281,7 @@ export class RegistroPage implements OnInit {
     const loading = await this.loadingController.create({
       message: 'Por Favor Espere...',
       translucent: true,
+      cssClass: 'cargando',
     });
     return await loading.present();
   }
@@ -328,19 +330,18 @@ export class RegistroPage implements OnInit {
 
   postDatos() {
 
-    console.log(this.todo.value);
-
-    this.presentLoading();
+    /*console.log(this.todo.value);*/
+    /*this.presentLoading();*/
+    this.loadingServ.cargando();
 
     this.registroCtrl.createUsuario(this.todo.value)
       .subscribe((response) => {
-  
-        this.loadingController.dismiss();
-  
+        /*this.loadingController.dismiss();*/
+        this.loadingServ.dismissLoader();
         this.zone.run(() => {
           //this.todo.reset();
-          //this.router.navigate(['/list']);
-        })
+          //this.router.navigate(['/login']);
+        });
       }, error => {
           //console.error(error);
           this.presentToast('error');
