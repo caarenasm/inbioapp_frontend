@@ -1,0 +1,37 @@
+.guia-nutricional {
+    font-size: 16px;
+}
+
+.color-base {
+    --background: #f6f6f6 !important;
+}
+
+.cuerpo-receta {
+    height: 100%;
+    border-radius: 50px;
+}
+
+.fondo-semaforo {
+	padding-bottom: 100%;
+}
+
+.verde{
+    --background: #0eee51 !important;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+}
+
+.amarillo{
+    --background: #e0f006 !important;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+}
+
+.rojo{
+    --background: #ff0000 !important;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+}
