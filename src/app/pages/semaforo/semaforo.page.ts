@@ -27,11 +27,35 @@ export class SemaforoPage implements OnInit {
     },
     {
       descripcion: 'De maíz',
-      semaforo: 2
+      semaforo: 1
     },
     {
       descripcion: 'De centeno',
       semaforo: 3
+    },
+    {
+      descripcion: 'De tebada',
+      semaforo: 2
+    },
+    {
+      descripcion: 'De avena',
+      semaforo: 1
+    },
+    {
+      descripcion: 'De quinoa',
+      semaforo: 1
+    },
+    {
+      descripcion: 'De almendras',
+      semaforo: 1
+    },
+    {
+      descripcion: 'De espelta',
+      semaforo: 3
+    },
+    {
+      descripcion: 'De sorgo',
+      semaforo: 2
     },
   ];
 

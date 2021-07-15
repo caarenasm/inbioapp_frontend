@@ -70,7 +70,11 @@ const routes: Routes = [
   {
     path: 'semaforo',
     loadChildren: () => import('./pages/semaforo/semaforo.module').then( m => m.SemaforoPageModule)
+  },  {
+    path: 'dieta',
+    loadChildren: () => import('./pages/dieta/dieta.module').then( m => m.DietaPageModule)
   },
+
 
 
 
