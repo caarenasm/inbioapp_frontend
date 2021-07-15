@@ -1,5 +1,40 @@
-.guia-nutricional {
+
+.align-center{
+    padding-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
     font-size: 16px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    --webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.texto-ubicacion{
+    padding-bottom: -30px;
+    position: relative;
+    left: 50%;
+    --webkit-transform: translateX(-50%);
+    transform: translateX(-53%);
+    text-align: center;
+    font-size: 14px;       
+}
+
+.fuente {
+    font-size: 18px;
+    color: black;
+    font-family: 'Poppins' !important;
+    text-align: center;  
+}
+
+
+.center {
+    font-weight: bold;
+}
+
+.posicion {
+    padding-bottom: 20px;
 }
 
 .color-base {
@@ -18,20 +53,20 @@
 .verde{
     --background: #0eee51 !important;
     border-radius: 50px;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 .amarillo{
-    --background: #e0f006 !important;
+    --background: #da7e33 !important;
     border-radius: 50px;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 .rojo{
     --background: #ff0000 !important;
     border-radius: 50px;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
