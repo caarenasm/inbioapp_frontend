@@ -99,6 +99,12 @@ export class AuthService {
     );
   }
 
+  validateEmail(data){
+    return this.httpClient.post<any>(this.endpoint + '/email/', {email: data}).pipe(
+      tap(res => res)
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

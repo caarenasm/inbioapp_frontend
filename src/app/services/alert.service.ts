@@ -27,4 +27,27 @@ export class AlertService {
     await alert.present();
 
   }
+
+  async alertaConfirmar( msg: any) {
+
+    const alert = await this.alertCtrl.create({
+      backdropDismiss: false,
+      header: '¿Estas seguro que deseas continuar?',
+      message: msg,
+      cssClass:'alerta',
+      buttons: [
+        {
+          text: 'Volver',
+          role: 'cancel',
+        },
+        {
+          text: 'Continuar',
+          cssClass:'alerta-boton-aceptar'
+        }
+      ]
+    });
+
+    await alert.present();
+
+  }
 }
