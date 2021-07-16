@@ -540,6 +540,7 @@
     line-height: 24px;
     text-align: left !important;
     font-weight: bold;
+    color: black;
 }
 
 .titulo {
@@ -762,6 +763,15 @@
 
 .fondo-semaforo {
     background-image: url('/assets/img/fondo_semaforo.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+    background-color: #f6f6f6;
+}
+
+.fondo-dieta {
+    background-image: url('/assets/img/fondo_mi_dieta.png');
     background-repeat: no-repeat;
     background-size: 100%;
     padding-top: 80px;
