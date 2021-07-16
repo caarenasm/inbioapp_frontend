@@ -1,9 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+
+import { ObjetivoService } from 'src/app/services/objetivo.service';
+import { LoadingService } from 'src/app/services/loading.service';
+import { AlertService } from '../../services/alert.service';
+import { Router } from '@angular/router';
 
 export interface Objetivo {
-  img: string; 
-  titulo: string; 
-  descripcion: string; 
+  id: number;
+  nombre: string;
+  descripcion: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  imagen_url: string;
 }
 
 @Component({
@@ -13,27 +21,72 @@ export interface Objetivo {
 })
 export class ObjetivoPage implements OnInit {
 
-  objetivos: Objetivo[] = [
-    {
-      img: 'assets/img/producto.png',
-      titulo: 'Regular mi peso',
-      descripcion: 'Si quieres lograr con éxito el objetivo de bajar o subir de peso para mejorar tu estado de salud o apariencia fícisa.',
-    },
-    {
-      img: 'assets/img/producto.png',
-      titulo: 'Mejorar mi salud',
-      descripcion: 'Si tu propósito es mejorar los síntomas de tus enfermedades y poder sentirte bien cada día.',
-    },
-    {
-      img: 'assets/img/producto.png',
-      titulo: 'Mantener mi estilo de vida',
-      descripcion: 'Si ya haz hecho cambios en tu dieta y deseas mantenerte motivado para seguirla.',
-    },
-  ];
+  objetivos: Objetivo[];
 
-  constructor() { }
+  constructor(
+    private objetivoServ: ObjetivoService,
+    private alertCtrl: AlertController,
+    private loadingServ: LoadingService,
+    private alertServ: AlertService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+    this.objetivoServ.getLista().subscribe(
+      response => {
+        this.objetivos = response;
+      }
+    );
+  }
+
+  async confirmar(data) {
+
+    const alert = await this.alertCtrl.create({
+      backdropDismiss: false,
+      header: '¿Estas seguro que deseas continuar?',
+      // eslint-disable-next-line max-len
+        message: '<b>Mi opcion seleccionada:</b> ' + data.nombre + '<p>¿Esta seguro de su opcion?.</p>',
+      cssClass:'alerta',
+      buttons: [
+        {
+          text: 'Volver',
+          role: 'cancel',
+        },
+        {
+          text: 'Continuar',
+          cssClass:'alerta-boton-aceptar',
+          handler: () => {
+            this.postDatos(data);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+
+  }
+
+  postDatos(data) {
+    this.loadingServ.cargando();
+
+    this.objetivoServ.guardar(data).subscribe(
+      response => {
+        if(response){
+          if(response.status === true){
+            this.loadingServ.dismissLoader();
+            this.alertServ.presentAlert('Opcion Guardada con Exito!');
+            this.router.navigate(['/menu']);
+          }else{
+            this.loadingServ.dismissLoader();
+            this.alertServ.presentAlert('Error al procesar datos, verifique el formulario!');
+          }
+        }else{
+          this.loadingServ.dismissLoader();
+          this.alertServ.presentAlert('Error al procesar datos, verifique el formulario!');
+        }
+
+      }
+    );
   }
 
 }
