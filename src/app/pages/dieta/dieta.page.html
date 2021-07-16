@@ -1,9 +1,73 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>dieta</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
+<app-menu-inicio></app-menu-inicio>
 
 <ion-content>
 
+    <ion-list lines="none" class="fondo-dieta">
+
+        <ion-item class="titulo-cuerpo">
+            <ion-label class="texto">Mi dieta</ion-label>
+        </ion-item>
+        
+        <ion-card class="cuerpo-receta">
+            <ion-label class="fuente">Hemos hecho estas recetas saludables para ti</ion-label>
+            
+            <ion-card-content *ngFor="let grupo of dieta; let i = index" class="contenido">
+                <ion-card [ngClass]="( i % 2 == 0 ) ? 'tarjeta-fondo': 'tarjeta-fondo-nada' ">
+                    <ion-card-content>
+
+                        <ion-item style="--background: none">
+                            <ion-icon slot="start" class="{{ grupo.icono }}"></ion-icon>
+                            <ion-card-title class="sub-titulo-2">{{ grupo.descripcion }}</ion-card-title>
+                        </ion-item>
+
+                        <ion-slides #miDieta>
+                            <ion-slide *ngFor="let receta of grupo.receta" class="grupo-receta">
+        
+                                <ion-grid fixed class="ion-no-padding">
+                                    <ion-row class="ion-no-padding">
+                                        <ion-col size="12">
+                                            <ion-card class="tarjeta-receta">
+                                                <ion-card-content class="contenido">
+                                                    <ion-img [src]="receta.img" class="imagen"></ion-img>
+                                                </ion-card-content>
+                                                <ion-card-header class="informacion">
+                                                    <ion-card-subtitle class="titulo">{{ receta.titulo }}</ion-card-subtitle>
+                                                    <ion-card-title class="sub-titulo-2-1">{{ receta.descripcion }}</ion-card-title>
+                                                </ion-card-header>
+                                            </ion-card>
+                                        </ion-col>
+                                    </ion-row>
+                                    <ion-row class="ion-no-padding" style="margin-top: -20px;">
+                                        <ion-col size="12">
+                                            <ion-button (click)="mostrarDetalle(receta)" class="boton">Ver Receta</ion-button>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+        
+                            </ion-slide>
+                        </ion-slides>
+                        
+                    </ion-card-content>
+                </ion-card>
+
+                <ion-fab vertical="center" horizontal="start" slot="fixed" (click)="slides.slidePrev()">
+                    <ion-fab-button class="ion-fab-atras">
+                        <ion-icon class="icon-atras"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+                <ion-fab vertical="center" horizontal="end" slot="fixed" (click)="slides.slideNext()">
+                    <ion-fab-button class="ion-fab-adelante">
+                        <ion-icon class="icon-adelante"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+
+            </ion-card-content>
+        </ion-card>
+        
+
+    </ion-list>
+
 </ion-content>
+
+<app-tab></app-tab>
