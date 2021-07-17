@@ -6,6 +6,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { ToastService } from './toast.service';
 import { AuthService } from './auth.service';
+import { Storage } from '@ionic/storage-angular';
 
 const apiUlr = environment.apiUlr;
 
@@ -16,16 +17,23 @@ export class ObjetivoService {
 
   endpoint = apiUlr + '/api/auth';
   token = this.authServ.token;
+  /*token = this.authServ.getToken().then(() => this.authServ.token);*/
+  /*token = this.getStorage().then((result) => result);*/
 
   constructor(
     private httpClient: HttpClient,
     private toastServ: ToastService,
     private authServ: AuthService,
+    private storage: Storage
   ) { }
+
+  getStorage() {
+    return this.storage.get('token').then((result) => result);
+  }
 
   getLista(): Observable<any[]> {
 
-    const httpOptions = new HttpHeaders({ 
+    const httpOptions = new HttpHeaders({
       'Authorization': this.token["token_type"] + " " + this.token["access_token"] 
     });
 
