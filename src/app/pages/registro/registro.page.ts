@@ -4,9 +4,9 @@ import { AlertController, LoadingController, ToastController } from '@ionic/angu
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { RegistroService } from 'src/app/services/registro.service';
-import { LoadingService } from 'src/app/services/loading.service';
-import { ValidarEmailService } from 'src/app/services/validar-email.service';
+import { RegistroService } from '../../services/registro.service';
+import { LoadingService } from '../../services/loading.service';
+import { ValidarEmailService } from '../../services/validar-email.service';
 import { AlertService } from '../../services/alert.service';
 
 @Component({

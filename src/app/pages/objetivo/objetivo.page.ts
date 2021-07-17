@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 import { ObjetivoService } from 'src/app/services/objetivo.service';
 import { LoadingService } from 'src/app/services/loading.service';
@@ -29,6 +29,7 @@ export class ObjetivoPage implements OnInit {
     private loadingServ: LoadingService,
     private alertServ: AlertService,
     private router: Router,
+    private navCtrl: NavController,
   ) { }
 
   ngOnInit() {
@@ -75,7 +76,8 @@ export class ObjetivoPage implements OnInit {
           if(response.status === true){
             this.loadingServ.dismissLoader();
             this.alertServ.presentAlert('Opcion Guardada con Exito!');
-            this.router.navigate(['/menu']);
+            /*this.router.navigate(['/menu']);*/
+            this.navCtrl.navigateRoot('/menu');
           }else{
             this.loadingServ.dismissLoader();
             this.alertServ.presentAlert('Error al procesar datos, verifique el formulario!');
