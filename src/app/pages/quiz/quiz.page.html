@@ -72,7 +72,7 @@
                                     </ion-card>
                                 </ion-radio-group>
 
-                                <ion-button shape="round" class="btn-saltar" *ngIf=" i == 0" [routerLink]="['/login']">
+                                <ion-button shape="round" class="btn-saltar" *ngIf=" i == 0" (click)="saltar()">
                                     Saltar Cuestionario
                                 </ion-button>
 
