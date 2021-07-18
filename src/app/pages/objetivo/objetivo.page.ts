@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 
-import { ObjetivoService } from 'src/app/services/objetivo.service';
-import { LoadingService } from 'src/app/services/loading.service';
+import { ObjetivoService } from '../../services/objetivo.service';
+import { LoadingService } from '../../services/loading.service';
 import { AlertService } from '../../services/alert.service';
 import { Router } from '@angular/router';
 

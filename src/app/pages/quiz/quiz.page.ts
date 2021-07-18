@@ -4,9 +4,9 @@ import { InfoAyudaComponent } from '../../components/info-ayuda/info-ayuda.compo
 import { Validators, FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
 
-import { QuizService } from 'src/app/services/quiz.service';
+import { QuizService } from '../../services/quiz.service';
 import { AlertService } from '../../services/alert.service';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 export interface Respuesta {
   id: number;
@@ -67,6 +67,10 @@ export class QuizPage implements OnInit {
         this.navCtrl.navigateRoot('/menu');
       }
     });
+  }
+
+  saltar(){
+    this.navCtrl.navigateRoot('/login');
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering

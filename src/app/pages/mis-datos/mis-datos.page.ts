@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { MisDatosDetallePage } from '../mis-datos-detalle/mis-datos-detalle.page';
 
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 export interface Datos {
   nombre: string;
