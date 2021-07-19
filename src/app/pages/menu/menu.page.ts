@@ -10,6 +10,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class MenuPage implements OnInit {
 
+  
+
   constructor(
     private navCtrl: NavController,
     private authService: AuthService
