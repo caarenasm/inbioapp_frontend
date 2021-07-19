@@ -1,20 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, PickerController } from '@ionic/angular';
 
+import { RecetaService } from '../../services/receta.service';
 import { RecetaDetallePage } from '../receta-detalle/receta-detalle.page';
 
-export interface Composicion {
-  descripcion: string;
-  cantidad: string;
-  unidadMedida: string;
+export interface Ingrediente {
+  id: number;
+  porcion: string;
+  nombre: string;
 }
 
-
 export interface Receta {
-  img: string;
-  fecha: string; 
-  descripcion: string; 
-  
+  id: number;
+  titulo: string;
+  descripcion: string;
+  preparacion: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  fecha_publicacion: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  imagen_url: string;
+  ingredientes?: Ingrediente[];
 }
 
 @Component({
@@ -31,33 +36,20 @@ export class RecetaPage implements OnInit {
     ]
   ];
 
-  recetas: Receta[] = [
-    {
-      img: 'assets/img/producto.png',
-      fecha: '23/04/2021',
-      descripcion: 'Receta Uno',
-      
-    },
-    {
-      img: 'assets/img/producto.png',
-      fecha: '23/01/2021',
-      descripcion: 'Receta Dos',
-      
-    },
-    {
-      img: 'assets/img/producto.png',
-      fecha: '23/02/2020',
-      descripcion: 'Receta Tres',
-      
-    }
-  ];
+  recetas: Receta[];
 
-  constructor( 
+  constructor(
     private pickerCtrl: PickerController,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private recetaServ: RecetaService,
     ) { }
 
   ngOnInit() {
+    this.recetaServ.getLista().subscribe(
+      response => {
+        this.recetas = response;
+      }
+    );
   }
 
   async openPicker(numColumns = 1, numOptions = 5, columnOptions = this.filtro){

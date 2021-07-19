@@ -68,6 +68,7 @@ ion-item {
     height: 50px;
     --color: #000000;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    margin-top: 0px;
 }
 
 .boton-receta {
@@ -103,4 +104,9 @@ ion-item {
 
 .color-base {
     --background: #f6f6f6 !important;
+}
+
+.cuerpo-receta {
+    padding-bottom: 100%;
+    margin-bottom: 0px;
 }
