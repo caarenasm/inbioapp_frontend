@@ -10,6 +10,7 @@ export class BotonMenuComponent implements OnInit {
   @Input() icono: string;
   @Input() texto: string;
   @Input() fondo: string;
+  @Input() pagina: string;
 
   constructor() { }
 
