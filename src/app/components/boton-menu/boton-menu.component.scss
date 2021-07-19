@@ -1,84 +1,168 @@
-.item-menu{
+.item-menu {
     width: 175px;
     height: 175px;
+    padding: 0px;
+    margin: 0px;
     --border-radius: 25px;
+    --background: #00e1e6;
     --box-shadow: 0px 0px;
 }
 
-.icon-posicion{
-    position: relative;
-    padding: 0px 0px 80px 10px;
-    font-size: 48px;
+.icon-posicion {
+    position: absolute;
+    padding: 0px 0px 75px 95px;
+    font-size: 100px;
 }
 
-.texto-posicion{
-    position: relative;
-    padding: 110px 22px 0px 22px;
-    font-family: 'Roboto' !important;
+.texto-posicion {
+    position: absolute;
+    font-family: 'Poppins' !important;
     font-size: 22px;
-    line-height: 22px;
-    font-style: bold;
+    line-height: 20px;
+    font-weight: bold;
     text-transform: capitalize;
-    width: 60px;
-    margin-left: 0px;
+    padding-top: 100px;
+    width: 140px;
+    text-align: left;
+    white-space: normal !important;
 }
 
-.mis-datos{
-    --background: #00e1e6;
-}
-
-.mi-diario-nutricional{
+.mi-diario-nutricional {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #1853f5;
 }
 
 .mi-guia-nutricional {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #49dd04;
 }
 
 .mi-dieta {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #ff7b00;
 }
 
 .mis-estadisticas {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #ff0000;
 }
 
 .mis-bioproductos {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #ea00ff;
 }
 
 .mis-controles {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #3700ff;
 }
 
 .mis-promociones {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #e4e706c9;
 }
 
 .mis-logros {
-    --background: #fa00a7c9;
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
+    --background: #fd6787f3;
 }
 
 .mis-eventos {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #7f138d;
 }
 
 .mi-lista-compras {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #ff0000;
 }
 
 .mis-favoritos {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #00e1e6;
 }
 
 .aliados-inbionova {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #ea00ff;
 }
 
 .recetas-inbionova {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #88ff00;
 }
 
 .blog-inbionova {
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+    --border-radius: 25px;
+    --box-shadow: 0px 0px;
     --background: #589e09c5;
 }
