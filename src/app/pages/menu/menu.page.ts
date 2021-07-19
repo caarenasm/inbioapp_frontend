@@ -22,7 +22,7 @@ export class MenuPage implements OnInit {
       icono: 'icon-mis_datos',
       texto: 'Mis Datos',
       fondo: 'mis-datos',
-      pagina: 'mis-datos',
+      pagina: '/mis-datos',
     },
     {
       icono: 'icon-mis_diarios_nutricionales',
@@ -40,7 +40,7 @@ export class MenuPage implements OnInit {
       icono: 'icon-mis_dietas',
       texto: 'Mi Dieta',
       fondo: 'mi-dieta',
-      pagina: '',
+      pagina: '/dieta',
     },
     {
       icono: 'icon-mis_estadisticas',
@@ -100,7 +100,7 @@ export class MenuPage implements OnInit {
       icono: 'icon-recetas_inbionova',
       texto: 'Recetas Inbionova',
       fondo: 'recetas-inbionova',
-      pagina: '',
+      pagina: '/receta',
     },
     {
       icono: 'icon-blog_inbionova',
