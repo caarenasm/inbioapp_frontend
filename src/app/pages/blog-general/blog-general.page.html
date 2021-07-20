@@ -13,7 +13,7 @@
         <ion-card class="cuerpo-receta">
 
             <ion-card-header>
-                <ion-item (click)="openPicker()">
+                <ion-item>
                     <ion-input type="text" placeholder="Filtro"></ion-input>
                     <ion-icon name="caret-down-outline" slot="end" color="dark"></ion-icon>
                 </ion-item>
@@ -33,7 +33,7 @@
                             </ion-fab-button>
                         </ion-fab>
 
-                        <ion-img [src]="blogs.img" class="imagen"></ion-img>
+                        <ion-img [src]=blogs.img class="imagen"></ion-img>
 
                     </ion-card-content>
 

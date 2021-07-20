@@ -1,5 +1,5 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "app.oinic.inbioapp",
   "appName": "inbioapp",
   "bundledWebRuntime": false,
   "npmClient": "npm",

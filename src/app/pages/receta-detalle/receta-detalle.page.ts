@@ -8,10 +8,11 @@ export interface Composicion {
 }
 
 export interface Ingrediente {
-  descripcion: string;
-  cantidad: string;
-  unidadMedida: string;
-  inActivo: boolean;
+  id: number;
+  porcion: string;
+  nombre: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  in_activo?: boolean;
 }
 
 export interface Preparacion {
@@ -20,12 +21,15 @@ export interface Preparacion {
 }
 
 export interface Receta {
-  img: string;
-  fecha: string; 
-  descripcion: string; 
-  composicion: Composicion[];
-  ingrediente: Ingrediente[];
-  preparacion: Preparacion[];
+  id: string;
+  titulo: string;
+  descripcion: string;
+  ingredientes: Ingrediente[];
+  preparacion: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  fecha_publicacion: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  imagen_url: string;
   etiqueta: string[];
 }
 

@@ -2,20 +2,31 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { MisDatosDetallePage } from '../mis-datos-detalle/mis-datos-detalle.page';
 
-import { AuthService } from '../../services/auth.service';
+import { MisDatosService } from '../../services/mis-datos.service';
 
-export interface Datos {
+export interface Cuenta {
+  id: string;
+  name: string;
+  email: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  profile_photo_path: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  sexo_id: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  fecha_nacimiento: string;
   nombre: string;
-  genero: string;
-  fechaNac: string;
   estatura: string;
-  miObjetivo: string;
-  pesoActual: string;
-  pesoDeseado: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  peso_actual: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  peso_deseado: string;
   imc: string;
   tdee: string;
-  pcg: string;
-  miPlan: string;
+  pgc: string;
+  objetivo: string;
+  plan: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  profile_photo_url: string;
 }
 
 export interface Consulta {
@@ -34,7 +45,6 @@ export class MisDatosPage implements OnInit {
 
   estrella = 'star-outline';
   resp: any;
-  datos = '';
 
   consultas: Consulta[] = [
     {
@@ -98,12 +108,20 @@ export class MisDatosPage implements OnInit {
     }
   ];
 
+  datos: any;
+
   constructor(
     private modalCtrl: ModalController,
-    private authService: AuthService
+    private misDatosServ: MisDatosService
     ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.misDatosServ.getLista().subscribe(
+      response => {
+        this.datos = response;
+      }
+    );
 
     /*this.usuarioServ.getUsuario({ id_usuario: 2}).subscribe(
       response => {
@@ -118,14 +136,6 @@ export class MisDatosPage implements OnInit {
       }
     );*/
 
-  }
-
-  ionViewWillEnter() {
-    this.authService.getUser().subscribe(
-      user => {
-        this.datos = user;
-      }
-    );
   }
 
   async mostrarDetalle( info?) {
