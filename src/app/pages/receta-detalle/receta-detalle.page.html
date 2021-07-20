@@ -35,8 +35,8 @@
 
                 <div *ngFor="let item of datos.ingredientes; let i = index">
                     <ion-item lines="none" [ngClass]="( i % 2 == 0 ) ? 'color-base': '' ">
-                        <ion-checkbox color="dark" slot="start" *ngIf="item.inActivo == false" class="seleccion"></ion-checkbox>
-                        <ion-checkbox color="dark" slot="start" *ngIf="item.inActivo == true" checked class="seleccion"></ion-checkbox>
+                        <ion-checkbox color="dark" slot="start" *ngIf="item.in_activo == false" class="seleccion"></ion-checkbox>
+                        <ion-checkbox color="dark" slot="start" *ngIf="item.in_activo == true" checked class="seleccion"></ion-checkbox>
                         <ion-label>{{ item.nombre}} | {{ item.porcion}}</ion-label>
                     </ion-item>
                 </div>

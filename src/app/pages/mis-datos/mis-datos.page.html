@@ -11,21 +11,16 @@
 
         <ion-card class="cuerpo-mis-datos">
 
-            <ion-grid class="grid">
+            <ion-grid class="grid animate__animated animate__fadeIn animate__faster" *ngIf="datos">
 
                 <ion-row>
                     <ion-col>
                         <ion-item>
-                            <!-- Data to display after skeleton screen -->
-                            <ion-avatar slot="start" class="avatar" *ngIf="datos">
+                            <ion-avatar slot="start" class="avatar">
                                 <ion-img [src]="datos.profile_photo_url"></ion-img>
                             </ion-avatar>
-                            <!-- Skeleton screen -->
-                            <ion-avatar slot="start" class="avatar" *ngIf="!datos">
-                                <ion-skeleton-text animated></ion-skeleton-text>
-                            </ion-avatar>
                             <ion-label>
-                                <h1><b>{{ datos.nombre }}</b></h1>
+                                <h1><b>{{ datos.name }}</b></h1>
                                 <h3><b>Sexo</b></h3>
                                 <p>{{ datos.sexo_id }}</p>
                                 <h3><b>Fecha de Nacimiento</b></h3>
@@ -112,7 +107,7 @@
                         <ion-item class="informacion">
                             <ion-label>
                                 <h3><b>Mi Plan</b></h3>
-                                <p>{{ datos.miPlan }}</p>
+                                <p>{{ datos.plan }}</p>
                             </ion-label>
                         </ion-item>
                     </ion-col>
@@ -141,21 +136,142 @@
                                     </ion-col>
                                 </ion-row>
                             </ion-grid>
-
                         </ion-card>
-
                     </ion-col>
                 </ion-row>
 
-
-
             </ion-grid>
 
+            <!-- Data to display after skeleton screen -->
+            <ion-grid class="grid" *ngIf="!datos">
+                <ion-row>
+                    <ion-col>
+                        <ion-item>
+                            <ion-avatar slot="start" class="avatar">
+                                <ion-skeleton-text animated></ion-skeleton-text>
+                            </ion-avatar>
+                            <ion-label>
+                                <ion-skeleton-text animated></ion-skeleton-text>
+                                <h3><b>Sexo</b></h3>
+                                <ion-skeleton-text animated></ion-skeleton-text>
+                                <h3><b>Fecha de Nacimiento</b></h3>
+                                <ion-skeleton-text animated></ion-skeleton-text>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="tabla">
+                    <ion-col>
+                        <ion-item class="informacion">
+                            <ion-label>
+                                <h3><b>Estatura</b></h3>
+                                <p>
+                                    <ion-skeleton-text animated></ion-skeleton-text>
+                                </p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col class="cuerpo-mis-datos-col-interno">
+                        <ion-item class="informacion">
+                            <ion-label>
+                                <h3><b>Mi Objetivo</b></h3>
+                                <p>
+                                    <ion-skeleton-text animated></ion-skeleton-text>
+                                </p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="tabla">
+                    <ion-col>
+                        <ion-item class="informacion">
+                            <ion-label>
+                                <h3><b>Peso Actual</b></h3>
+                                <p>
+                                    <ion-skeleton-text animated></ion-skeleton-text>
+                                </p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col class="cuerpo-mis-datos-col-interno">
+                        <ion-item class="informacion">
+                            <ion-label>
+                                <h3><b>Peso Deseado</b></h3>
+                                <p>
+                                    <ion-skeleton-text animated></ion-skeleton-text>
+                                </p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="tabla">
+                    <ion-col>
+                        <ion-item class="informacion">
+                            <ion-label>
+                                <h3><b>IMC</b></h3>
+                                <p>
+                                    <ion-skeleton-text animated></ion-skeleton-text>
+                                </p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col class="cuerpo-mis-datos-col-interno">
+                        <ion-item class="informacion">
+                            <ion-label>
+                                <h3><b>TDEE</b></h3>
+                                <p>
+                                    <ion-skeleton-text animated></ion-skeleton-text>
+                                </p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="tabla">
+                    <ion-col size="6">
+                        <ion-item class="informacion">
+                            <ion-label class="ion-text-wrap">
+                                <h3><b>Proteinas/Grasas/Carb</b></h3>
+                                <p>
+                                    <ion-skeleton-text animated></ion-skeleton-text>
+                                </p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col size="6" class="cuerpo-mis-datos-col-interno">
+                        <ion-item class="informacion">
+                            <ion-label>
+                                <h3><b>Mi Plan</b></h3>
+                                <p>
+                                    <ion-skeleton-text animated></ion-skeleton-text>
+                                </p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="ion-no-padding">
+                        <ion-card class="tabla-detalle">
+                            <ion-card-header>
+                                <ion-card-title class="titulo">Consulta tus Resultados</ion-card-title>
+                                <ion-card-subtitle class="sub-titulo-2">Tus respuestas hablan del estado de tu cuerpo, haz clic en las siguientes opciones para ver el resultado de cada una de ellas</ion-card-subtitle>
+                            </ion-card-header>
+                            <ion-grid fixed>
+                                <ion-row *ngFor="let item of [1,1,1,1,1,1]">
+                                    <ion-col>
+                                        <ion-chip outline class="opcion">
+                                            <ion-skeleton-text animated></ion-skeleton-text>
+                                        </ion-chip>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!-- Skeleton screen -->
 
         </ion-card>
-
     </ion-list>
-
 </ion-content>
 <app-tab></app-tab>
 <!--<app-tab></app-tab>-->
