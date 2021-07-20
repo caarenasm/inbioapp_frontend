@@ -106,7 +106,7 @@ export class MenuPage implements OnInit {
       icono: 'icon-blog_inbionova',
       texto: 'Blog Inbionova',
       fondo: 'blog-inbionova',
-      pagina: '',
+      pagina: '/blog-general',
     }
   ];
 

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-boton-menu',
@@ -12,8 +13,14 @@ export class BotonMenuComponent implements OnInit {
   @Input() fondo: string;
   @Input() pagina: string;
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController,
+  ) { }
 
   ngOnInit() {}
+
+  navigateForward(vinculo){
+    this.navCtrl.navigateRoot(vinculo);
+  }
 
 }
