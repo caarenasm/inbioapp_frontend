@@ -75,11 +75,10 @@ const routes: Routes = [
     path: 'dieta',
     loadChildren: () => import('./pages/dieta/dieta.module').then( m => m.DietaPageModule)
   },
-
-
-
-
-
+  {
+    path: 'mi-diario-nutricional',
+    loadChildren: () => import('./pages/mi-diario-nutricional/mi-diario-nutricional.module').then( m => m.MiDiarioNutricionalPageModule)
+  },
 
 ];
 
