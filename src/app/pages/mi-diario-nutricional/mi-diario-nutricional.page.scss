@@ -1,0 +1,20 @@
+.align-center{
+    padding-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    --webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.texto-fechaini {
+    
+   padding-left: 50px;
+}
+
+.texto-fechafin {
+   padding-right: 50px;
+ }

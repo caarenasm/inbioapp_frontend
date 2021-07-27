@@ -1,0 +1,51 @@
+<app-header></app-header>
+<app-menu-inicio></app-menu-inicio>
+
+<ion-content>
+
+  <ion-list lines="none" class="fondo-mi-diario-nutricional">
+
+    <ion-item class="titulo-cuerpo">
+      <ion-label class="texto">Mi Diario Nutricional</ion-label>
+    </ion-item>
+
+    <ion-card class="cuerpo-receta">
+
+      <ion-card-header>
+        <ion-item>
+          <ion-label class="align-center texto-fecha"></ion-label>
+        </ion-item>
+
+        <ion-grid fixed class="">
+          <ion-row>
+            <ion-col size="6">
+              <ion-item class="align-center texto-fechaini">
+                <ion-label>Fecha inicio:</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item class="align-center texto-fechafin">
+                <ion-label>Fecha final:</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid> 
+        <ion-label class="align-center">Presiona sobre el calendario el día y a<br>continuación empieza a escribir tu diario.</ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        
+      </ion-card-content>
+     
+      <ion-calendar [(ngModel)]="date"
+      (onChange)="onChange($event)"
+      [type]="type"
+      [format]="'YYYY-MM-DD'">
+    </ion-calendar>
+
+      </ion-card>
+    
+  </ion-list>
+
+</ion-content>
+
+<app-tab class="menu"></app-tab>
