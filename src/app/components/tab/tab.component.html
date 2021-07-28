@@ -5,17 +5,17 @@
         <ion-label>Inicio</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="diario-nutricional">
+    <ion-tab-button tab="diario-nutricional" (click)="navigateForward('/mi-diario-nutricional')">
         <span class="talla icon-mi_diario_nutricional"></span>
         <ion-label>Mi Diario Nutricional</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="guia-nutricional">
+    <ion-tab-button tab="guia-nutricional" (click)="navigateForward('/semaforo')">
         <span class="talla icon-mi_guia_nutricional"></span>
         <ion-label>Mi Guia Nutricional</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="mi-dieta">
+    <ion-tab-button tab="mi-dieta" (click)="navigateForward('/dieta')">
         <span class="talla icon-mi_dieta"></span>
         <ion-label>Mi Dieta</ion-label>
     </ion-tab-button>

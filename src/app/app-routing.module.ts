@@ -78,10 +78,51 @@ const routes: Routes = [
   {
     path: 'mi-diario-nutricional',
     loadChildren: () => import('./pages/mi-diario-nutricional/mi-diario-nutricional.module').then( m => m.MiDiarioNutricionalPageModule)
-  },  {
+  },
+  {
     path: 'mi-diario-nutricional-detalles',
     loadChildren: () => import('./pages/mi-diario-nutricional-detalles/mi-diario-nutricional-detalles.module').then( m => m.MiDiarioNutricionalDetallesPageModule)
   },
+  {
+    path: 'blog-general',
+    loadChildren: () => import('./pages/blog-general/blog-general.module').then( m => m.BlogGeneralPageModule)
+  },
+  {
+    path: 'blog-unico',
+    loadChildren: () => import('./pages/blog-unico/blog-unico.module').then( m => m.BlogUnicoPageModule)
+  },
+  {
+    path: 'producto-detalle',
+    loadChildren: () => import('./pages/producto-detalle/producto-detalle.module').then( m => m.ProductoDetallePageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule),
+    /*canActivate: [AuthGuard]*/
+  },
+  {
+    path: 'semaforo',
+    loadChildren: () => import('./pages/semaforo/semaforo.module').then( m => m.SemaforoPageModule)
+  },
+  {
+    path: 'dieta',
+    loadChildren: () => import('./pages/dieta/dieta.module').then( m => m.DietaPageModule)
+  },
+  {
+    path: 'diario-sueno',
+    loadChildren: () => import('./pages/diario-sueno/diario-sueno.module').then( m => m.DiarioSuenoPageModule)
+  },
+  {
+    path: 'diario-deporte',
+    loadChildren: () => import('./pages/diario-deporte/diario-deporte.module').then( m => m.DiarioDeportePageModule)
+  },
+
+
+];
 
 
 ];
