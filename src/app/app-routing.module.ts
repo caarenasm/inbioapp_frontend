@@ -75,6 +75,15 @@ const routes: Routes = [
     path: 'dieta',
     loadChildren: () => import('./pages/dieta/dieta.module').then( m => m.DietaPageModule)
   },
+  {
+    path: 'diario-sueno',
+    loadChildren: () => import('./pages/diario-sueno/diario-sueno.module').then( m => m.DiarioSuenoPageModule)
+  },
+  {
+    path: 'diario-deporte',
+    loadChildren: () => import('./pages/diario-deporte/diario-deporte.module').then( m => m.DiarioDeportePageModule)
+  },
+
 
 
 
