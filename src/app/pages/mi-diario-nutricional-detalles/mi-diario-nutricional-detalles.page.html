@@ -49,7 +49,7 @@
           <ion-card-title class="texto-pregunta center">Cuéntanos acerca de tus hábitos el día de hoy</ion-card-title>
           <ion-card-title class="center posicion-descr">Haz clic en cada una de las siguientes opciones y rellena la información correspondiente al día señalado</ion-card-title>
           
-          <ion-item *ngFor="let item of diarios.habito; ; let i = index " lines="none" class="detalle posicion">
+          <ion-item *ngFor="let item of diarios.habito; ; let i = index " lines="none" class="detalle">
             <ion-icon slot="start" class="{{ item.icono }} icono" color="warning"></ion-icon>
             <ion-label class="ion-text-wrap">{{ item.descripcion }}</ion-label>
             <ion-icon slot="end" icon="{{ item.icono_estado }}" class="icono_estado"></ion-icon>
