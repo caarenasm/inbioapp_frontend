@@ -34,7 +34,7 @@ export class MenuPage implements OnInit {
       icono: 'icon-mis_guias_nutricionales',
       texto: 'Mi Guía Nutricional',
       fondo: 'mi-guia-nutricional',
-      pagina: '',
+      pagina: '/semaforo',
     },
     {
       icono: 'icon-mis_dietas',
