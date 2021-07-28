@@ -11,39 +11,76 @@
 
     <ion-card class="cuerpo-receta">
 
-      <ion-card-header>
-        <ion-item>
-          <ion-label class="align-center texto-fecha"></ion-label>
-        </ion-item>
+      <ion-card-content>    
 
-        <ion-grid fixed class="">
+        <ion-grid class="ion-no-padding">
           <ion-row>
-            <ion-col size="6">
-              <ion-item class="align-center texto-fechaini">
-                <ion-label>Fecha inicio:</ion-label>
-              </ion-item>
+            <ion-col size="6" class="texto-fechaini">
+              <ion-label>Fecha inicio:</ion-label>
             </ion-col>
-            <ion-col size="6">
-              <ion-item class="align-center texto-fechafin">
-                <ion-label>Fecha final:</ion-label>
+            <ion-col size="6" class="texto-fechafin">
+              <ion-label>Fecha final:</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6" class="centrar-ini">
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="centrar-fin">
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </ion-col>
+            <ion-label class="align-center">90 días de entrenamiento</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12">
+              <ion-label class="align-center">Presiona sobre el calendario el día y a<br>continuación empieza a escribir tu diario.</ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-fab vertical="start" horizontal="start" (click)="slides.slidePrev()" class="posicion-icono-atras">
+            <ion-fab-button class="ion-fab-atras">
+                <ion-icon class="icon-atras"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+
+          <ion-fab vertical="start" horizontal="end" (click)="slides.slideNext()" class="posicion-icono-adelante">
+            <ion-fab-button class="ion-fab-adelante">
+                <ion-icon class="icon-adelante"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+
+          <ion-row>
+            <ion-col size="12">
+              <ion-item class="align-center">
+                <ion-calendar [(ngModel)]="date"
+                (onChange)="onChange($event)"
+                [type]="type"
+                [format]="'YYYY-MM-DD'">
+                </ion-calendar>
               </ion-item>
             </ion-col>
           </ion-row>
-        </ion-grid> 
-        <ion-label class="align-center">Presiona sobre el calendario el día y a<br>continuación empieza a escribir tu diario.</ion-label>
-      </ion-card-header>
-      <ion-card-content>
-        
-      </ion-card-content>
-     
-      <ion-calendar [(ngModel)]="date"
-      (onChange)="onChange($event)"
-      [type]="type"
-      [format]="'YYYY-MM-DD'">
-    </ion-calendar>
 
+        </ion-grid>
+
+        <ion-item class="posicion">
+          <ion-icon class="borde-verde" slot="start" name="ellipse-outline"></ion-icon>
+          <ion-label class="texto-icon">Información completa</ion-label>
+        </ion-item>
+
+        <ion-item class="posicion-amarillo">
+          <ion-icon class="borde-amarillo" slot="start" name="ellipse-outline"></ion-icon>
+          <ion-label class="texto-icon">Falta información</ion-label>
+        </ion-item>
+
+        <ion-item class="posicion-rojo">
+          <ion-icon class="borde-rojo" slot="start" name="ellipse-outline"></ion-icon>
+          <ion-label class="texto-icon">No has llenado la información</ion-label>
+        </ion-item>
+        
+        </ion-card-content>
       </ion-card>
-    
   </ion-list>
 
 </ion-content>

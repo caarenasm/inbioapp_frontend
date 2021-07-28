@@ -78,7 +78,11 @@ const routes: Routes = [
   {
     path: 'mi-diario-nutricional',
     loadChildren: () => import('./pages/mi-diario-nutricional/mi-diario-nutricional.module').then( m => m.MiDiarioNutricionalPageModule)
+  },  {
+    path: 'mi-diario-nutricional-detalles',
+    loadChildren: () => import('./pages/mi-diario-nutricional-detalles/mi-diario-nutricional-detalles.module').then( m => m.MiDiarioNutricionalDetallesPageModule)
   },
+
 
 ];
 
