@@ -76,6 +76,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/dieta/dieta.module').then( m => m.DietaPageModule)
   },
   {
+    path: 'mi-diario-nutricional',
+    loadChildren: () => import('./pages/mi-diario-nutricional/mi-diario-nutricional.module').then( m => m.MiDiarioNutricionalPageModule)
+  },
+  {
     path: 'diario-sueno',
     loadChildren: () => import('./pages/diario-sueno/diario-sueno.module').then( m => m.DiarioSuenoPageModule)
   },
@@ -83,11 +87,6 @@ const routes: Routes = [
     path: 'diario-deporte',
     loadChildren: () => import('./pages/diario-deporte/diario-deporte.module').then( m => m.DiarioDeportePageModule)
   },
-
-
-
-
-
 
 
 ];
