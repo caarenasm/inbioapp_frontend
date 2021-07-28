@@ -64,27 +64,15 @@
 }
 
 .detalle{
+    margin-top: -25px;
     --border-radius: 20px;
     padding: 22px;
-    .borde{
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-        background: red;
-        .icono{
-            font-size: 40px;
-        }
-    }
     .icono{
         font-size: 40px;
     }
     .icono_estado{
         font-size: 50px;
     }
-}
-
-.posicion {
-    margin-top: -25px;
 }
 
 .posicion-descr {
