@@ -28,7 +28,7 @@ export class MenuPage implements OnInit {
       icono: 'icon-mis_diarios_nutricionales',
       texto: 'Mi Diario Nutricional',
       fondo: 'mi-diario-nutricional',
-      pagina: '',
+      pagina: '/mi-diario-nutricional',
     },
     {
       icono: 'icon-mis_guias_nutricionales',
