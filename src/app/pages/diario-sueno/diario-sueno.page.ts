@@ -49,11 +49,13 @@ export class DiarioSuenoPage implements OnInit {
   ) {
 
     this.datos = this.formBuilder.group({
+      tipo: [1, Validators.required],
       opcion: ['', Validators.required],
       // eslint-disable-next-line @typescript-eslint/naming-convention
       hora_ini: ['', Validators.required],
       // eslint-disable-next-line @typescript-eslint/naming-convention
       hora_fin: ['', Validators.required],
+      lectura: ['', ],
     });
 
   }
@@ -62,6 +64,20 @@ export class DiarioSuenoPage implements OnInit {
   @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit() {
+  }
+
+  getHoraIni(e) {
+    const date = new Date(e.target.value).toISOString();
+    this.datos.get('hora_ini').setValue(date, {
+       onlyself: true
+    });
+  }
+
+  getHoraFin(e) {
+    const date = new Date(e.target.value).toISOString();
+    this.datos.get('hora_fin').setValue(date, {
+       onlyself: true
+    });
   }
 
   guardar(){
@@ -95,7 +111,8 @@ export class DiarioSuenoPage implements OnInit {
           text: 'Continuar',
           cssClass:'alerta-boton-aceptar',
           handler: () => {
-
+            this.datos.get('lectura').setValue(JSON.stringify(this.datos.value));
+            console.log(this.datos.value);
           }
         }
       ]
