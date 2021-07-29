@@ -32,7 +32,7 @@
               <ion-label class="texto-estado"><br>Feliz</ion-label>
             </ion-col>
             <ion-col size="4" class="ion-text-center">
-              <ion-icon class="icon-usuario icono"></ion-icon>
+              <ion-icon class="icon-triste icono"></ion-icon>
               <ion-label class="texto-estado"><br>Triste</ion-label>
             </ion-col>
             <ion-col size="4" class="ion-text-center">
@@ -52,7 +52,12 @@
           <ion-item *ngFor="let item of diarios.habito; ; let i = index " lines="none" class="detalle">
             <ion-icon slot="start" class="{{ item.icono }} icono" color="warning"></ion-icon>
             <ion-label class="ion-text-wrap">{{ item.descripcion }}</ion-label>
-            <ion-icon slot="end" icon="{{ item.icono_estado }}" class="icono_estado"></ion-icon>
+            <span class="icon-base_17 icono_estado" *ngIf="item.estado == 1">
+              <span class="path1"></span>
+              <span class="path2"></span>
+            </span>
+            <span class="icon-base_18 icono_estado" *ngIf="item.estado == 2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+            <span class="icon-base_19 icono_estado" *ngIf="item.estado == 3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
           </ion-item>
 
         </ion-card-header>
