@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 export interface Habito {
   icono: string;
   descripcion: string;
-  icono_estado: string;
+  estado: number;
 }
 
 export interface Diarios {
@@ -25,19 +25,19 @@ export class MiDiarioNutricionalDetallesPage implements OnInit {
       nombre: 'Pedro',
       habito: [
         {
-          icono: 'icon-como_duermes',
+          icono: 'icon-mejorar_sueno_02',
           descripcion: '¿Como Dormiste?',
-          icono_estado: 'checkmark-circle'
+          estado: 1
         },
         {
-          icono: 'icon-reloj',
+          icono: 'icon-pesa',
           descripcion: '¿Cuanto pesaste?',
-          icono_estado: 'checkmark-circle'
+          estado: 2
         },
         {
-          icono: 'icon-actividad_fisica1',
+          icono: 'icon-actividad_fisica_2',
           descripcion: '¿Que actividad(es) físicas practicastes',
-          icono_estado: 'checkmark-circle'
+          estado: 3
         }
       ]
     }
