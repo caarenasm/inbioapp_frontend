@@ -49,7 +49,7 @@ export class DiarioSuenoPage implements OnInit {
   ) {
 
     this.datos = this.formBuilder.group({
-      tipo: [1, Validators.required],
+      tipo: [ 1, Validators.required],
       opcion: ['', Validators.required],
       // eslint-disable-next-line @typescript-eslint/naming-convention
       hora_ini: ['', Validators.required],
