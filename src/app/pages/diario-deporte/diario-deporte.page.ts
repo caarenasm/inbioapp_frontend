@@ -60,6 +60,7 @@ export class DiarioDeportePage implements OnInit {
     this.datos = this.formBuilder.group({
       tipo: [ 2, Validators.required],
       opcion: ['', Validators.required],
+      tiempo: ['', Validators.required],
       lectura: ['', ],
     });
   }
