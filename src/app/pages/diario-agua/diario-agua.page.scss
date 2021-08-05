@@ -1,5 +1,5 @@
 .fondo {
-    background-color: #e5e5e5 !important;
+    background-color: #e5e5e5;
     height: 100%;
 }
 
@@ -102,4 +102,36 @@ ion-datetime {
 .barra {
     background-color: #e5e5e5;
     border: none;
+}
+
+.posicion.izq {
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.texto {
+    position: relative;
+    font-family: 'Poppins' !important;
+    font-size: 15px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.fondo-2 {
+    background-color: transparent !important;
+}
+
+.posicion-max {
+    margin-right: 60px;
+    margin-top: 20px;
+}
+
+.posicion-menos {
+    margin-left: 90px;
+    margin-top: 20px;
+}
+
+.tamaño {
+    font-size: 50px;
 }

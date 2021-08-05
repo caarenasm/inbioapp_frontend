@@ -119,7 +119,27 @@ const routes: Routes = [
   {
     path: 'diario-deporte',
     loadChildren: () => import('./pages/diario-deporte/diario-deporte.module').then( m => m.DiarioDeportePageModule)
+  },  {
+    path: 'diario-agua',
+    loadChildren: () => import('./pages/diario-agua/diario-agua.module').then( m => m.DiarioAguaPageModule)
   },
+  {
+    path: 'diario-suplementos',
+    loadChildren: () => import('./pages/diario-suplementos/diario-suplementos.module').then( m => m.DiarioSuplementosPageModule)
+  },
+  {
+    path: 'diario-deposiciones',
+    loadChildren: () => import('./pages/diario-deposiciones/diario-deposiciones.module').then( m => m.DiarioDeposicionesPageModule)
+  },
+  {
+    path: 'diario-deposiciones-detalles',
+    loadChildren: () => import('./pages/diario-deposiciones-detalles/diario-deposiciones-detalles.module').then( m => m.DiarioDeposicionesDetallesPageModule)
+  },
+  {
+    path: 'diario-enfermedades-estacionales',
+    loadChildren: () => import('./pages/diario-enfermedades-estacionales/diario-enfermedades-estacionales.module').then( m => m.DiarioEnfermedadesEstacionalesPageModule)
+  },
+
 
 
 ];
