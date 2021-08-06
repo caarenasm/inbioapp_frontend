@@ -1,5 +1,5 @@
 .fondo {
-    background-color: #e5e5e5;
+    background-color: #f6f6f6;
     height: 100%;
 }
 
@@ -37,63 +37,20 @@
     }
 }
 
-.grupo {
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 30px;
-    margin-bottom: 0px;
-}
-
-.slide {
-    height: 350px;
-}
-
-.card {
-    --background: #f6f6f6 !important;
+.campo {
+    height: auto;
+    background: #f9e6fd;
+    border: #87299b !important;
+    border-width: 0.1px !important;
+    border-style: solid !important;
     border-radius: 25px;
-    padding: 0px;
-    margin: 0px;
-    width: 150px;
-    height: 150px;
-    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-}
-
-.tarjeta {
-    background: transparent;
-    border-radius: 25px;
-    width: 150px;
-    height: 150px;
-    padding: 10px;
-    margin: 0px;
-    /*.radio {
-        --color-checked: #fe8d0c;
-    }*/
-    .radio-checked {
-        --color-checked: #fe8d0c;
-    }
-    .texto {
-        position: absolute;
-        font-family: 'Poppins' !important;
-        font-size: 14px;
-        line-height: 14px;
-        font-weight: bold;
-        width: 130px;
-        white-space: normal !important;
-        text-align: left;
-        padding-top: 80px;
-    }
-    .icono {
-        position: absolute;
-        padding-top: 20px;
-        padding-left: 25px;
-        font-size: 50px;
-    }
+    box-shadow: none !important;
+    /*width: 100%;*/
+    padding-left: 9px;
 }
 
 .barra {
-    background-color: #e5e5e5;
+    background-color: #f6f6f6;
     border: none;
 }
 

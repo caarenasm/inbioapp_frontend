@@ -100,7 +100,7 @@ export class DiarioSuenoPage implements OnInit {
 
     const alert = await this.alertCtrl.create({
       backdropDismiss: false,
-      header: '¿Estas seguro que deseas Guardar?',
+      message: '¿Estas seguro que deseas Guardar?',
       cssClass:'alerta',
       buttons: [
         {
