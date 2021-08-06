@@ -1,5 +1,5 @@
 .fondo {
-    background-color: #f6f6f6;
+    background-color: #e5e5e5;
     height: 100%;
 }
 
@@ -46,16 +46,11 @@
     margin-bottom: 0px;
 }
 
-.card {
-    --background: #fcf3eb !important;
+.item-opcion {
+    --background: #f6f6f6 !important;
     border-radius: 25px;
     padding: 0px;
     margin: 0px;
-    width: 150px;
-    height: 150px;
-    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .tarjeta {
@@ -63,39 +58,28 @@
     border-radius: 25px;
     width: 150px;
     height: 150px;
-    padding: 10px;
-    margin: 0px;
-    /*.radio {
-        --color-checked: #fe8d0c;
-    }*/
-    .radio-checked {
-        --color-checked: #fe8d0c;
-    }
     .texto {
         position: absolute;
         font-family: 'Poppins' !important;
         font-size: 14px;
         line-height: 14px;
         font-weight: bold;
-        width: 130px;
+        width: 140px;
         white-space: normal !important;
         text-align: left;
-        padding-top: 80px;
+        padding-top: 50px;
     }
     .icono {
         position: absolute;
-        padding-top: 20px;
-        padding-left: 25px;
+        padding: 0px 0px 0px 40px;
         font-size: 50px;
     }
 }
 
 ion-datetime {
-    background: #f9e6fd;
-    border: #87299b !important;
-    border-width: 0.1px !important;
-    border-style: solid !important;
-    border-radius: 25px;
+    background: #cfcfcf;
+    border: #606060 !important;
+    border-radius: 10px;
     font-size: 14px;
 }
 
@@ -116,6 +100,38 @@ ion-datetime {
 }
 
 .barra {
-    background-color: #f6f6f6;
+    background-color: #e5e5e5;
     border: none;
+}
+
+.posicion.izq {
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.texto {
+    position: relative;
+    font-family: 'Poppins' !important;
+    font-size: 15px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.fondo-2 {
+    background-color: transparent !important;
+}
+
+.posicion-max {
+    margin-right: 60px;
+    margin-top: 20px;
+}
+
+.posicion-menos {
+    margin-left: 90px;
+    margin-top: 20px;
+}
+
+.tamaño {
+    font-size: 50px;
 }
