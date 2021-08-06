@@ -119,7 +119,15 @@ const routes: Routes = [
   {
     path: 'diario-deporte',
     loadChildren: () => import('./pages/diario-deporte/diario-deporte.module').then( m => m.DiarioDeportePageModule)
+  },  {
+    path: 'diario-medicamento',
+    loadChildren: () => import('./pages/diario-medicamento/diario-medicamento.module').then( m => m.DiarioMedicamentoPageModule)
   },
+  {
+    path: 'diario-enfermedad-detalle',
+    loadChildren: () => import('./pages/diario-enfermedad-detalle/diario-enfermedad-detalle.module').then( m => m.DiarioEnfermedadDetallePageModule)
+  },
+
 
 
 ];
