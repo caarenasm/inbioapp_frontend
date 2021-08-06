@@ -6,20 +6,119 @@
                 <ion-icon name="close-outline"></ion-icon>
             </ion-fab-button>
         </ion-fab>
+        <form [formGroup]=datos>
+            <ion-grid class="grupo">
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-item class="titulo-evento">
+                            <a class="icono">
+                                <i class="icon-actividad_fisica1"></i>
+                            </a>
+                            <ion-label class="texto">¿Que actividad(es) fisica(s) practicaste?</ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-radio-group name="auto" value="opcion" formControlName="opcion">
 
-        <ion-grid class="grupo">
-            <ion-row>
-                <ion-col size="12">
-                    <ion-item class="titulo-evento">
-                        <a class="icono">
-                            <i class="icon-actividad_fisica1"></i>
-                        </a>
-                        <ion-label class="texto">¿Que actividad(es) fisica(s) practicaste?</ion-label>
-                    </ion-item>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+                            <ion-slides #miOpcion [options]="slideOpts">
+                                <ion-slide class="slide" *ngFor="let item of evento; let i=index">
 
+                                    <!--<ion-item class="card">
+                                        <ion-row class="tarjeta">
+                                            <ion-radio class="radio" value="{{ item.id }}"></ion-radio>
+                                            <span class="{{ item.icon }} icono"></span>
+                                            <ion-label class="texto">{{ item.descripcion }}</ion-label>
+                                        </ion-row>
+                                    </ion-item>-->
+
+                                    <!--Lista de tarjetas multiopcion-->
+                                    <ion-grid>
+                                        <ion-row>
+                                            <ion-col size="12">
+                                                <ion-item class="card">
+                                                    <ion-row class="tarjeta">
+                                                        <ion-radio class="radio" value="{{ item.id }}"></ion-radio>
+                                                        <span class="{{ item.icon }} icono"></span>
+                                                        <ion-label class="texto">{{ item.descripcion }}</ion-label>
+                                                    </ion-row>
+                                                </ion-item>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col size="12">
+                                                <ion-item class="card">
+                                                    <ion-row class="tarjeta">
+                                                        <ion-radio class="radio" value="{{ item.id }}"></ion-radio>
+                                                        <span class="{{ item.icon }} icono"></span>
+                                                        <ion-label class="texto">{{ item.descripcion }}</ion-label>
+                                                    </ion-row>
+                                                </ion-item>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-grid>
+
+                                </ion-slide>
+                            </ion-slides>
+
+                            <ion-fab vertical="center" horizontal="start" slot="fixed" (click)="slides.slidePrev()">
+                                <ion-fab-button class="botones-flotantes" size="small">
+                                    <ion-icon class="icon-atras"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab>
+                            <ion-fab vertical="center" horizontal="end" slot="fixed" (click)="slides.slideNext()">
+                                <ion-fab-button class="botones-flotantes" size="small">
+                                    <ion-icon class="icon-adelante"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab>
+                        </ion-radio-group>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="6">
+                        <ion-label position="stacked">Dia</ion-label>
+                        <ion-datetime formControlName="tiempo" display-format="HH:mm" placeholder="00:00" cancelText="Cancelar" doneText="Hecho"></ion-datetime>
+                        <p>
+                            <span>Minutos</span>
+                        </p>
+                    </ion-col>
+                    <ion-col size="6">
+                        <ion-fab-button class="ion-fab-button-cantidad-menos">
+                            <ion-icon class="icon-menos"></ion-icon>
+                        </ion-fab-button>
+                        <ion-input type="number" min="0"></ion-input>
+                        <ion-fab-button class="ion-fab-button-cantidad-mas">
+                            <ion-icon class="icon-plus"></ion-icon>
+                        </ion-fab-button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-range min="20" max="80" step="2">
+                            <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+                            <ion-icon slot="end" name="sunny"></ion-icon>
+                        </ion-range>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-range min="20" max="80" step="2">
+                            <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+                            <ion-icon slot="end" name="sunny"></ion-icon>
+                        </ion-range>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-button class="guardar">
+                            Agregar Actividad
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </form>
     </ion-list>
 
 </ion-content>

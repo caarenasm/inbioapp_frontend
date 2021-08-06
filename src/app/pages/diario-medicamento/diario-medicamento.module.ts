@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DiarioSuenoPageRoutingModule } from './diario-sueno-routing.module';
+import { DiarioMedicamentoPageRoutingModule } from './diario-medicamento-routing.module';
 
-import { DiarioSuenoPage } from './diario-sueno.page';
+import { DiarioMedicamentoPage } from './diario-medicamento.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { DiarioSuenoPage } from './diario-sueno.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    DiarioSuenoPageRoutingModule
+    DiarioMedicamentoPageRoutingModule
   ],
-  declarations: [DiarioSuenoPage]
+  declarations: [DiarioMedicamentoPage]
 })
-export class DiarioSuenoPageModule {}
+export class DiarioMedicamentoPageModule {}
