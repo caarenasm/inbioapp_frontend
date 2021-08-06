@@ -1,5 +1,5 @@
 .fondo {
-    background-color: #e5e5e5;
+    background-color: #f6f6f6;
     height: 100%;
 }
 
@@ -39,18 +39,18 @@
 
 .campo {
     height: auto;
-    border: #9e9e9e !important;
+    background: #f9e6fd;
+    border: #87299b !important;
     border-width: 0.1px !important;
     border-style: solid !important;
-    border-radius: 15px;
+    border-radius: 25px;
     box-shadow: none !important;
     /*width: 100%;*/
-    background: #f6f6f6;
     padding-left: 9px;
 }
 
 .barra {
-    background-color: #e5e5e5;
+    background-color: #f6f6f6;
     border: none;
 }
 
