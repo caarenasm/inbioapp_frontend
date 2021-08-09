@@ -7,85 +7,117 @@
           </ion-fab-button>
       </ion-fab>
 
-      <ion-grid class="grupo">
-          <ion-row>
-              <ion-col size="12">
-                  <ion-item class="titulo-evento">
-                      <a class="icono">
-                          <i class="icon-enfermedades"></i>
-                      </a>
-                      <ion-label class="texto">¿Has tenido deposiciones?</ion-label>
-                  </ion-item>
-                  <ion-card-content>
-                    <ion-radio class="radio posicion" value="opcion">Si</ion-radio> 
-                    <ion-radio class="radio posicion" value="opcion">No</ion-radio> 
-                  </ion-card-content>
-                          
-                  <ion-item class="titulo-evento">
-                    <label class="texto">para mejorar mis deposiciones tomo</label>
-                  </ion-item>
-              </ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col size="12">
-                  <ion-radio-group name="auto" value="opcion">
+      <form [formGroup]=datos>
+        <ion-grid class="grupo">
+            <ion-row>
+                <ion-col size="12">
+                    <ion-item class="titulo-evento">
+                        <a class="icono">
+                            <i class="icon-enfermedades"></i>
+                        </a>
+                        <ion-label class="texto">¿Has tenido deposiciones?</ion-label>
+                    </ion-item>
+                    <ion-radio-group>
+                        <ion-grid fixed>
+                            <ion-row>
+                                <ion-col size="6" class="grid-card">
+                                    <ion-item class="titulo-evento posicion-radio-si">
+                                        <ion-label>Si</ion-label>
+                                        <ion-radio slot="start" value="1" class="ion-radio checkbox"></ion-radio>
+                                    </ion-item>
+                                </ion-col>
+    
+                                <ion-col size="6" class="grid-card">
+                                    <ion-item class="titulo-evento posicion-radio-no">
+                                        <ion-label>No</ion-label>
+                                        <ion-radio slot="start" value="2" class="ion-radio checkbox"></ion-radio>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-radio-group>
+                    <ion-item class="titulo-evento">
+                        <label class="texto">para mejorar mis deposiciones tomo</label>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-radio-group name="auto" value="opcion" formControlName="opcion">
 
-                      <ion-slides #miOpcion [options]="slideOpts">
-                          <ion-slide class="slide" *ngFor="let item of evento; let i=index">
+                        <ion-slides #miOpcion [options]="slideOpts">
+                            <ion-slide class="slide" *ngFor="let item of evento; let i=index">
 
-                              <ion-item class="item-opcion">
-                                  <ion-card class="tarjeta">
-                                      <ion-card-content>
-                                          <ion-radio class="radio posicion" value="{{ item.id }}"></ion-radio>
-                                          <span class="{{ item.icon }} icono"></span>
-                                          <ion-label class="check-box">{{ item.descripcion }}</ion-label>
-                                      </ion-card-content>
-                                  </ion-card>
-                              </ion-item>
+                                <ion-item class="card">
+                                    <ion-row class="tarjeta">
+                                        <ion-radio class="checkbox posicion" value="{{ item.id }}"></ion-radio>
+                                        <span class="{{ item.icon }} icono"></span>
+                                        <ion-label class="check-box">{{ item.descripcion }}</ion-label>
+                                    </ion-row>
+                                </ion-item>
 
-                          </ion-slide>
-                      </ion-slides>
+                            </ion-slide>
+                        </ion-slides>
+                        <ion-fab vertical="end" horizontal="start" slot="fixed" (click)="slides.slidePrev()">
+                            <ion-fab-button class="botones-flotantes" size="small">
+                                <ion-icon class="icon-atras"></ion-icon>
+                            </ion-fab-button>
+                        </ion-fab>
+                        <ion-fab vertical="end" horizontal="end" slot="fixed" (click)="slides.slideNext()">
+                            <ion-fab-button class="botones-flotantes" size="small">
+                                <ion-icon class="icon-adelante"></ion-icon>
+                            </ion-fab-button>
+                        </ion-fab>
+  
+                        <ion-tab-bar slot="bottom" class="barra">
+                          <ion-button expand="block" class="guardar">
+                              <ion-label class="texto">Ver producto</ion-label>
+                          </ion-button>
+                        </ion-tab-bar>
 
-                      <ion-fab vertical="center" horizontal="start" slot="fixed" (click)="slides.slidePrev()">
-                          <ion-fab-button class="botones-flotantes" size="small">
-                              <ion-icon class="icon-atras"></ion-icon>
-                          </ion-fab-button>
-                      </ion-fab>
-                      <ion-fab vertical="center" horizontal="end" slot="fixed" (click)="slides.slideNext()">
-                          <ion-fab-button class="botones-flotantes" size="small">
-                              <ion-icon class="icon-adelante"></ion-icon>
-                          </ion-fab-button>
-                      </ion-fab>
+                    </ion-radio-group>
+                </ion-col>
+                
+                <ion-col size="12">
+                    <ion-radio-group name="auto" value="opcion" formControlName="opcion">
 
-                      <ion-tab-bar slot="bottom" class="barra">
-                        <ion-button expand="block" class="guardar">
-                            <ion-label class="texto">Ver producto</ion-label>
-                        </ion-button>
-                      </ion-tab-bar>
+                        <ion-slides #miOpcion [options]="slideOpts">
+                            <ion-slide class="slide" *ngFor="let item of evento; let i=index">
 
-                      <ion-slides #miOpcion [options]="slideOpts">
-                        <ion-slide class="slide" *ngFor="let item of evento; let i=index">
-
-                            <ion-item class="item-opcion">
-                                <ion-card class="tarjeta">
-                                    <ion-card-content>
-                                      <ion-radio class="radio posicion" value="{{ item.id }}"></ion-radio>
+                                <ion-item class="card">
+                                    <ion-row class="tarjeta">
+                                        <ion-radio class="checkbox posicion" value="{{ item.id }}"></ion-radio>
                                         <span class="{{ item.icon }} icono"></span>
                                         <ion-label class="check-box">{{ item.descripcion_vita }}</ion-label>
-                                    </ion-card-content>
-                                </ion-card>
-                            </ion-item>
+                                    </ion-row>
+                                </ion-item>
+                            </ion-slide>
+                        </ion-slides>
+                        <ion-item class="titulo-evento">
+                            <label class="texto-2">Escribe en el campo de texto cuáles medicamentos tomas para mejorar tus disposiciones.</label>
+                        </ion-item>
+                        <ion-row>
+                            <ion-col size="12" style="padding-left: 10px;padding-right: 10px;text-align: right;">
+                                <ion-label>
+                                    <small>(Limite de 125 caracteres)</small>
+                                </ion-label>
+                                <ion-textarea style="text-align: left;" placeholder="Escribe aqui" rows="12" autofocus="true" mode="ios" maxlength="125" class="campo" autosize>
+                                </ion-textarea>
+                            </ion-col>
+                        </ion-row>
+                    </ion-radio-group>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="3"></ion-col>
+                <ion-col size="3"></ion-col>
+            </ion-row>
+            <ion-row>
+                
+            </ion-row>               
+        </ion-grid>
 
-                        </ion-slide>
-                    </ion-slides>
-                  </ion-radio-group>
-              </ion-col>
-              <ion-item class="titulo-evento">
-                <label class="texto-2">Escribe en el campo de texto cuáles medicamentos tomas para mejorar tus disposiciones.</label>
-              </ion-item>
-          </ion-row>                
-          
-      </ion-grid>
+    </form>
   </ion-list>
 
 </ion-content>

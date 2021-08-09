@@ -148,7 +148,10 @@ const routes: Routes = [
     path: 'diario-enfermedad-detalle',
     loadChildren: () => import('./pages/diario-enfermedad-detalle/diario-enfermedad-detalle.module').then( m => m.DiarioEnfermedadDetallePageModule)
   },
-
+  {
+    path: 'diario-menu-enfermedades',
+    loadChildren: () => import('./pages/diario-menu-enfermedades/diario-menu-enfermedades.module').then( m => m.DiarioMenuEnfermedadesPageModule)
+  },
 ];
 
 @NgModule({
