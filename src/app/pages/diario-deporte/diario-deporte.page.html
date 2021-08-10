@@ -23,6 +23,34 @@
                         <ion-radio-group name="auto" value="opcion" formControlName="opcion">
 
                             <ion-slides #miOpcion [options]="slideOpts">
+
+                                <div *ngFor="let item of evento; let i=index">
+                                  <ion-slide class="slide" *ngIf="i % 2 == 0">
+                                    <ion-grid>
+                                        <ion-row>
+                                          <ion-col>
+                                                    <ion-item class="card">
+                                                      <ion-row class="tarjeta">
+                                                        <ion-radio class="radio" value="{{ evento[i].id }}"></ion-radio>
+                                                        <span class="{{ evento[i].icon }} icono"></span>
+                                                        <ion-label class="texto">{{ evento[i].descripcion }}</ion-label>
+                                                      </ion-row>
+                                                    </ion-item>
+                                          </ion-col>
+                                        </ion-row>
+                                        <ion-row *ngIf="evento[i + 1]">
+                                          <ion-col>
+                                            <ion-item class="card">
+                                                      <ion-row class="tarjeta">
+                                                        <ion-radio class="radio" value="{{ evento[i+1].id }}"></ion-radio>
+                                                        <span class="{{ evento[i+1].icon }} icono"></span>
+                                                        <ion-label class="texto">{{ evento[i+1].descripcion }}</ion-label>
+                                                      </ion-row>
+                                              </ion-item>
+                                          </ion-col>
+                                        </ion-row>
+                                      </ion-grid>
+
                                 <ion-slide class="slide" *ngFor="let item of evento; let i=index">
 
                                     <!--<ion-item class="card">
@@ -59,7 +87,9 @@
                                         </ion-row>
                                     </ion-grid>
 
-                                </ion-slide>
+
+                                  </ion-slide>
+                                </div>
                             </ion-slides>
 
                             <ion-fab vertical="center" horizontal="start" slot="fixed" (click)="slides.slidePrev()">
