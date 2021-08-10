@@ -1,0 +1,80 @@
+.titulo-cuerpo{
+   --padding-bottom: 0px;
+   --margin-bottom: 0px;
+}
+
+.texto-pregunta {
+   font-family: 'Poppins' !important;
+   font-size: 23px;
+   font-weight: normal;
+   line-height: 20px;
+   color: #000000;
+   padding-left: 20px;
+}
+
+.sub-titulo-cuerpo{
+   --background: transparent;
+   --padding-top: 0px;
+   --padding-bottom: 0px;
+   --margin-top: 0px;
+   .texto {
+       font-family: 'Poppins' !important;
+       font-size: 20px;
+       font-weight: normal;
+       line-height: 20px;
+       color: #ffffff;
+       padding-left: 20px;
+   }
+}
+
+
+.sub-titulo-2 {
+   text-align: center;
+   font-weight: bold;
+   color: black;
+}
+
+.negrita {
+   text-align: center;
+   font-weight: bold;
+   color: black;
+}
+
+.texto-estado {
+   font-family: 'Poppins' !important;
+   font-size: 16px;
+   font-weight: normal;
+   text-align: center;
+   font-weight: bold;
+}
+
+.center {
+   text-align: center;
+}
+
+.grid {
+   padding-top: 20px;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 0px;
+}
+
+.icono{
+   font-size: 50px;
+}
+
+.detalle{
+   margin-top: -25px;
+   --border-radius: 20px;
+   padding: 22px;
+   .icono{
+       font-size: 40px;
+   }
+   .icono_estado{
+       font-size: 50px;
+   }
+}
+
+.posicion-descr {
+   margin-bottom: 20px;
+}

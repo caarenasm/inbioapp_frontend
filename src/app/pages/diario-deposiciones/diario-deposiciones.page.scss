@@ -173,3 +173,10 @@ ion-datetime {
     /*width: 100%;*/
     padding-left: 9px;
 }
+
+.ion-radio {
+    --border-radius: 25px;
+    --color: #fe8e0d;
+    --color-checked: #fe8e0d;
+    --inner-border-radius: 25px
+}

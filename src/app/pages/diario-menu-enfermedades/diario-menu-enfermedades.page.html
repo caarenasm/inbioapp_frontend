@@ -1,0 +1,49 @@
+<app-header></app-header>
+<app-menu-inicio></app-menu-inicio>
+
+<ion-content>
+
+  <ion-list lines="none" class="fondo-mi-diario-nutricional">
+
+    <ion-item class="sub-titulo-cuerpo">
+      <ion-label class="texto">Llenar mi diario nutricional</ion-label>
+    </ion-item>
+    
+    <div *ngFor="let diarios of diario">
+
+    <ion-card class="cuerpo-receta">
+
+      <ion-card class="sub-tarjeta-1">
+
+        <ion-card-header>
+          <ion-item class="texto-estado">
+            <ion-label class="texto">Cuéntanos acerca de tu(s) enfermedad(es)</ion-label>
+          </ion-item>
+        
+          <ion-item *ngFor="let item of diarios.habito; ; let i = index " lines="none" class="detalle">
+            <ion-icon slot="start" class="{{ item.icono }} icono" color="warning"></ion-icon>
+            <ion-label class="ion-text-wrap">{{ item.descripcion }}</ion-label>
+            <span class="icon-base_17 icono_estado" *ngIf="item.estado == 1"><span class="path1"></span><span class="path2"></span></span>
+            <span class="icon-base_17 icono_estado" *ngIf="item.estado == 2"><span class="path1"></span><span class="path2"></span></span>
+            <span class="icon-base_17 icono_estado" *ngIf="item.estado == 3"><span class="path1"></span><span class="path2"></span></span>
+            <span class="icon-base_17 icono_estado" *ngIf="item.estado == 4"><span class="path1"></span><span class="path2"></span></span>
+            <span class="icon-base_17 icono_estado" *ngIf="item.estado == 5"><span class="path1"></span><span class="path2"></span></span>
+            <span class="icon-base_17 icono_estado" *ngIf="item.estado == 6"><span class="path1"></span><span class="path2"></span></span>
+            <span class="icon-base_17 icono_estado" *ngIf="item.estado == 7"><span class="path1"></span><span class="path2"></span></span>
+            <span class="icon-base_17 icono_estado" *ngIf="item.estado == 8"><span class="path1"></span><span class="path2"></span></span>
+          </ion-item>
+            
+
+        </ion-card-header>
+
+      </ion-card>
+
+    </ion-card>
+
+  </div>
+    
+  </ion-list>
+
+</ion-content>
+
+<app-tab class="menu"></app-tab>
