@@ -1,5 +1,4 @@
 @import "./icono.css";
-
 @font-face {
     font-family: 'Poppins'; //This is what we are going to call
     src: url('/assets/font/Poppins/POPPINS-REGULAR.TTF');
@@ -503,14 +502,15 @@
                 content: '';
                 background: url(../assets/img/advertencia.png) no-repeat;
                 background-size: contain;
-                height: 30px;
-                width: 30px;
+                height: 50px;
+                width: 50px;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
                 top: 10px;
                 z-index: 20004;
             }
+            padding-bottom: 30px;
         }
     }
     .alert-title.sc-ion-alert-md,
@@ -523,10 +523,11 @@
     }
     .alert-message.sc-ion-alert-md,
     .alert-message.sc-ion-alert-ios {
-        font-size: 12px;
+        font-size: 14px;
         color: rgb(0, 0, 0);
         text-align: center;
         text-transform: capitalize;
+        font-weight: bold;
     }
     .alert-button.sc-ion-alert-md,
     .alert-button.sc-ion-alert-ios {

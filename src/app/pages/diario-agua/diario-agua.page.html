@@ -1,0 +1,76 @@
+<ion-content>
+  <ion-list lines="none" class="fondo">
+
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button class="botones-flotantes" size="small">
+            <ion-icon name="close-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+    <ion-grid class="grupo">
+        <ion-row>
+            <ion-col size="12">
+                <ion-item class="titulo-evento">
+                    <a class="icono">
+                        <i class="icon-enfermedades"></i>
+                    </a>
+                    <ion-label class="texto">¿Cuantos vasos de agua te<br><br>tomaste en el día?</ion-label>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12">
+                <ion-radio-group name="auto" value="opcion">
+                    <ion-fab vertical="end" horizontal="start" slot="fixed">
+                        <ion-fab-button class="botones-flotantes posicion-menos" size="small">
+                            <ion-icon class="icon-menos"></ion-icon>
+                        </ion-fab-button>
+                    </ion-fab>
+                    <ion-fab vertical="end" horizontal="end" slot="fixed">
+                        <ion-fab-button class="botones-flotantes posicion-max" size="small">
+                            <ion-icon class="icon-plus"></ion-icon>
+                        </ion-fab-button>
+                    </ion-fab>
+                </ion-radio-group>
+            </ion-col>
+        </ion-row>
+        
+        
+        <ion-row>
+            <ion-col size="5"></ion-col>
+            <ion-col size="3" class="ion-text-center">
+              <ion-button color='dark' expand="block" fill="outline" size='large' shape="round">
+                4
+              </ion-button>
+            </ion-col>
+            <ion-col size="3"></ion-col>
+            
+        </ion-row>
+        <div>
+          <ion-row class="tamaño">
+            <ion-col size="3.5"></ion-col>
+            <ion-icon class="icon-agua_2"></ion-icon>
+            <ion-icon class="icon-agua_2"></ion-icon>
+            <ion-icon class="icon-agua_2"></ion-icon>
+            <ion-icon class="icon-agua_2"></ion-icon>
+          </ion-row>
+        </div>
+    
+    </ion-grid>
+
+                <ion-item class="titulo-evento">
+                  <ion-label class="fondo texto">Activar alerta de consumo<br>de agua</ion-label>
+                  <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
+                </ion-item>
+        
+              
+  </ion-list>
+
+
+</ion-content>
+
+<ion-tab-bar slot="bottom" class="barra">
+  <ion-button expand="block" class="guardar">
+      <ion-label class="texto">Guardar</ion-label>
+  </ion-button>
+</ion-tab-bar>
