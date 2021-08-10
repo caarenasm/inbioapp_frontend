@@ -49,6 +49,11 @@ export class DiarioDeportePage implements OnInit {
       id: 5,
       descripcion: 'Yoga',
       icon: 'icon-yoga'
+    },
+    {
+      id: 6,
+      descripcion: 'Bicicleta',
+      icon: 'icon-yoga'
     }
   ];
 
