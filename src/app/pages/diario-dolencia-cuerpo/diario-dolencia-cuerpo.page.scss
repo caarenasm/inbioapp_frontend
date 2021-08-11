@@ -1,0 +1,135 @@
+.fondo {
+    --background: #f6f6f6;
+    --padding-bottom: 50px;
+}
+
+.botones-flotantes {
+    --background: #872a99;
+}
+
+.titulo-evento {
+    --background: transparent;
+    .icono {
+        font-size: 24px;
+        position: relative;
+        display: inline;
+        padding: 5px;
+        margin: 5px;
+        width: 40px;
+        height: 40px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        border: 0.5px solid rgb(0, 0, 0);
+        color: #000;
+        background: transparent;
+        text-align: center;
+    }
+    .texto {
+        position: relative;
+        font-family: 'Poppins' !important;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: bold;
+        padding: 10px;
+        white-space: normal !important;
+        padding-right: 20px;
+    }
+}
+
+.campo {
+    height: auto;
+    background: #f9e6fd;
+    border: #87299b !important;
+    border-width: 0.1px !important;
+    border-style: solid !important;
+    border-radius: 25px;
+    box-shadow: none !important;
+    /*width: 100%;*/
+    padding-left: 9px;
+}
+
+.checkbox {
+    --height: 25px;
+    --width: 25px;
+    --background-checked: #fe8e0d;
+    --border-color-checked: #fe8e0d;
+}
+
+.slide {
+    height: 200px;
+}
+
+.grupo {
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+}
+
+.card {
+    --background: #fcf3eb !important;
+    border-radius: 25px;
+    padding: 0px;
+    margin: 0px;
+    width: 150px;
+    height: 150px;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta {
+    background: transparent;
+    border-radius: 25px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    margin: 0px;
+    /*.radio {
+        --color-checked: #fe8d0c;
+    }*/
+    .radio-checked {
+        --color-checked: #fe8d0c;
+    }
+    .texto {
+        position: absolute;
+        font-family: 'Poppins' !important;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: bold;
+        width: 130px;
+        white-space: normal !important;
+        text-align: left;
+        padding-top: 80px;
+    }
+    .icono {
+        position: absolute;
+        padding-top: 20px;
+        padding-left: 25px;
+        font-size: 50px;
+    }
+}
+
+.barra {
+    background-color: #f6f6f6;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    z-index: 1;
+    margin-top: -50px;
+}
+
+.guardar {
+    --background: #872a99;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    --border-radius: 25px;
+    text-transform: capitalize;
+    .texto {
+        padding-left: 25px;
+        padding-right: 25px;
+        font-family: 'Poppins' !important;
+        font-size: 12px;
+    }
+}
