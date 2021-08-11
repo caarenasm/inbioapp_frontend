@@ -31,19 +31,19 @@ export class DiarioSuplementosPage implements OnInit {
       id: 1,
       descripcion: 'BELLASEN',
       descripcion_vita: 'VITAMINAS',
-      icon: 'producto.png'
+      icon: 'icon-usuario'
     },
     {
       id: 2,
       descripcion: 'BELLASEN',
       descripcion_vita: 'VITAMINAS',
-      icon: 'producto.png'
+      icon: 'icon-usuario'
     },
     {
       id: 3,
       descripcion: 'BELLASEN',
       descripcion_vita: 'VITAMINAS',
-      icon: 'producto.png'
+      icon: 'icon-usuario'
     }
   ];
 

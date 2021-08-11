@@ -30,19 +30,19 @@ export class DiarioDeposicionesPage implements OnInit {
       id: 1,
       descripcion: 'PURAFIB',
       descripcion_vita: 'Medicamentos',
-      icon: 'producto.png'
+      icon: 'icon-usuario'
     },
     {
       id: 2,
       descripcion: 'PURAFIB',
       descripcion_vita: 'Medicamentos',
-      icon: 'producto.png'
+      icon: 'icon-usuario'
     },
     {
       id: 3,
       descripcion: 'PURAFIB',
       descripcion_vita: 'Medicamentos',
-      icon: 'producto.png'
+      icon: 'icon-usuario'
     }
   ];
 
