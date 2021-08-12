@@ -105,9 +105,15 @@ export class DiarioDolenciaCuerpoPage implements OnInit {
   }
 
   agregar(){
-    console.log(this.checked);
+    const tipo = this.datos.get('opcion').value;
+    const filtro = this.evento.find(x => x.id = tipo);
     this.cantidad++;
-    this.arreglo.addControl('detalle' + this.cantidad, new FormControl('', Validators.required));
+    this.arreglo.addControl('detalle[' + tipo + ']', new FormControl( filtro.descripcion, Validators.required));
+  }
+
+  icono(tipo){
+    const filtro = this.evento.find(x => x.id = tipo);
+    return filtro.icon;
   }
 
   remover(control){
