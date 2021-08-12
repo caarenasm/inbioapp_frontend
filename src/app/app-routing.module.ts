@@ -133,10 +133,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/diario-deposiciones/diario-deposiciones.module').then( m => m.DiarioDeposicionesPageModule)
   },
   {
-    path: 'diario-deposiciones-detalles',
-    loadChildren: () => import('./pages/diario-deposiciones-detalles/diario-deposiciones-detalles.module').then( m => m.DiarioDeposicionesDetallesPageModule)
-  },
-  {
     path: 'diario-enfermedades-estacionales',
     loadChildren: () => import('./pages/diario-enfermedades-estacionales/diario-enfermedades-estacionales.module').then( m => m.DiarioEnfermedadesEstacionalesPageModule)
   },
@@ -151,7 +147,23 @@ const routes: Routes = [
   {
     path: 'diario-menu-enfermedades',
     loadChildren: () => import('./pages/diario-menu-enfermedades/diario-menu-enfermedades.module').then( m => m.DiarioMenuEnfermedadesPageModule)
+  },  {
+    path: 'diario-vision',
+    loadChildren: () => import('./pages/diario-vision/diario-vision.module').then( m => m.DiarioVisionPageModule)
   },
+  {
+    path: 'diario-gastricos',
+    loadChildren: () => import('./pages/diario-gastricos/diario-gastricos.module').then( m => m.DiarioGastricosPageModule)
+  },
+  {
+    path: 'diario-alergias',
+    loadChildren: () => import('./pages/diario-alergias/diario-alergias.module').then( m => m.DiarioAlergiasPageModule)
+  },
+  {
+    path: 'diario-senales-organismo',
+    loadChildren: () => import('./pages/diario-senales-organismo/diario-senales-organismo.module').then( m => m.DiarioSenalesOrganismoPageModule)
+  },
+
 ];
 
 @NgModule({
