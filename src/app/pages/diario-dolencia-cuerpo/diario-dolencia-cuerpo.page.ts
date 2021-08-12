@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AlertController, IonSlides } from '@ionic/angular';
 
 import { AlertService } from '../../services/alert.service';
@@ -18,7 +18,9 @@ export interface Evento {
 export class DiarioDolenciaCuerpoPage implements OnInit {
 
   datos: FormGroup;
+  arreglo: FormGroup;
   checked = [];
+  cantidad = 0;
 
   slideOpts = {
     slidesPerView: 2.3,
@@ -73,6 +75,7 @@ export class DiarioDolenciaCuerpoPage implements OnInit {
       opcion: ['', Validators.required],
       lectura: ['', ],
     });
+    this.arreglo = this.formBuilder.group({});
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -83,7 +86,7 @@ export class DiarioDolenciaCuerpoPage implements OnInit {
 
   //Adds the checkedbox to the array and check if you unchecked it
   addCheckbox(event, checkbox: number) {
-    if ( event.checked ) {
+    if ( event.detail.checked ) {
       this.checked.push(checkbox);
     } else {
       let index = this.removeCheckedFromArray(checkbox);
@@ -101,9 +104,14 @@ export class DiarioDolenciaCuerpoPage implements OnInit {
     this.checked = [];
   }
 
-  agregar() {
-    //Do whatever
+  agregar(){
     console.log(this.checked);
+    this.cantidad++;
+    this.arreglo.addControl('detalle' + this.cantidad, new FormControl('', Validators.required));
+  }
+
+  remover(control){
+    this.arreglo.removeControl(control.key);
   }
 
   guardar(){
