@@ -145,9 +145,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/diario-enfermedad-detalle/diario-enfermedad-detalle.module').then( m => m.DiarioEnfermedadDetallePageModule)
   },
   {
+    path: 'diario-dolencia-cuerpo',
+    loadChildren: () => import('./pages/diario-dolencia-cuerpo/diario-dolencia-cuerpo.module').then( m => m.DiarioDolenciaCuerpoPageModule)
+  },
+  {
     path: 'diario-menu-enfermedades',
     loadChildren: () => import('./pages/diario-menu-enfermedades/diario-menu-enfermedades.module').then( m => m.DiarioMenuEnfermedadesPageModule)
-  },  {
+  },
+  {
     path: 'diario-vision',
     loadChildren: () => import('./pages/diario-vision/diario-vision.module').then( m => m.DiarioVisionPageModule)
   },
@@ -163,7 +168,7 @@ const routes: Routes = [
     path: 'diario-senales-organismo',
     loadChildren: () => import('./pages/diario-senales-organismo/diario-senales-organismo.module').then( m => m.DiarioSenalesOrganismoPageModule)
   },
-
+  
 ];
 
 @NgModule({
