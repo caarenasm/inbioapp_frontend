@@ -17,12 +17,15 @@ export interface Evento {
 })
 export class DiarioDeportePage implements OnInit {
 
-  slideOpts = {
-    slidesPerView: 2,
+  slideOptsDos = {
+    slidesPerView: 4.6,
     freeMode: true
   };
 
   datos: FormGroup;
+  distancia = 0;
+  energia = 0;
+  fatiga = 0;
 
   evento: Evento[] = [
     {
@@ -74,6 +77,46 @@ export class DiarioDeportePage implements OnInit {
     @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit() {
+  }
+
+  masEnergia() {
+    if( this.energia <= 1){
+      const valor = 0.1;
+      this.energia = valor + this.energia;
+    }
+  }
+
+  menosEnergia() {
+    if( this.energia >= 0){
+      const valor: any = parseFloat('0.1').toFixed(2);
+      this.energia = this.energia - valor;
+    }
+  }
+
+  masFatiga() {
+    if( this.fatiga < 100){
+      const valor = 10;
+      this.fatiga = valor + this.fatiga;
+    }
+  }
+
+  menosFatiga() {
+    if( this.fatiga > 0){
+      const valor: any = 10;
+      this.fatiga = this.fatiga - valor;
+    }
+  }
+
+  masDistancia() {
+    const valor = 0.1;
+    this.distancia = valor + this.distancia;
+  }
+
+  menosDistancia() {
+    if( this.distancia >= 0){
+      const valor: any = parseFloat('0.1').toFixed(2);
+      this.distancia = this.distancia - valor;
+    }
   }
 
 }
