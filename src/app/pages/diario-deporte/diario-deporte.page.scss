@@ -1,6 +1,6 @@
 .fondo {
-    background-color: #e5e5e5;
-    height: 100%;
+    --background: #f6f6f6;
+    --padding-bottom: 50px;
 }
 
 .botones-flotantes {
@@ -49,7 +49,7 @@
 }
 
 .card {
-    --background: #f6f6f6 !important;
+    --background: #fcf3eb !important;
     border-radius: 25px;
     padding: 0px;
     margin: 0px;
@@ -92,9 +92,55 @@
     }
 }
 
+.input {
+    background: #f9e6fd;
+    border: #87299b !important;
+    border-width: 0.1px !important;
+    border-style: solid !important;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+.progreso {
+    --background: #d3d3d3;
+    --buffer-background: #f9e6fd;
+    --progress-background: #fe8d0c;
+    height: 30px;
+    border-radius: 9px;
+}
+
+.progress-outer {
+    width: 96%;
+    margin: 10px 2%;
+    padding: 0px;
+    text-align: center;
+    background-color: #f9e6fd;
+    color: #fff;
+    border-radius: 9px;
+}
+
+.fatiga-inner {
+    min-width: 0%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 9px;
+    background-color: #fe8d0c;
+}
+
+.texto-nivel {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Poppins' !important;
+    font-weight: bold;
+}
+
 .barra {
-    background-color: #e5e5e5;
-    border: none;
+    background-color: #f6f6f6;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    z-index: 1;
+    margin-top: -50px;
 }
 
 .guardar {
