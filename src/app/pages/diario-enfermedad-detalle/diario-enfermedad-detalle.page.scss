@@ -1,6 +1,6 @@
 .fondo {
-    background-color: #f6f6f6;
-    height: 100%;
+    --background: #f6f6f6;
+    --padding-bottom: 50px;
 }
 
 .botones-flotantes {
@@ -37,9 +37,56 @@
     }
 }
 
+.campo {
+    height: auto;
+    background: #f9e6fd;
+    border: #87299b !important;
+    border-width: 0.1px !important;
+    border-style: solid !important;
+    border-radius: 25px;
+    box-shadow: none !important;
+    /*width: 100%;*/
+    padding-left: 9px;
+    .icono {
+        padding-left: 9px;
+    }
+}
+
+.grupo {
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+}
+
+.divisor {
+    --background: transparent;
+    --inner-padding-bottom: 0px;
+    --inner-padding-end: 4px;
+    --inner-padding-start: 0px;
+    --inner-padding-top: 4px;
+    --padding-bottom: 0px;
+    --padding-end: 4px;
+    --padding-start: 0px;
+    --padding-top: 4px;
+    --color: #000;
+}
+
+.input {
+    background: #f9e6fd;
+    border: #87299b !important;
+    border-width: 0.1px !important;
+    border-style: solid !important;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
 .barra {
     background-color: #f6f6f6;
-    border: none;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    z-index: 1;
+    margin-top: -50px;
 }
 
 .guardar {

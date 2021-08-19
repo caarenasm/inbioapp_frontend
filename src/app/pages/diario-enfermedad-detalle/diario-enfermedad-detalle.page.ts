@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 
 import { AlertService } from '../../services/alert.service';
@@ -12,6 +12,7 @@ import { AlertService } from '../../services/alert.service';
 export class DiarioEnfermedadDetallePage implements OnInit {
 
   datos: FormGroup;
+  arreglo: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,9 +24,18 @@ export class DiarioEnfermedadDetallePage implements OnInit {
       medicamento: ['', Validators.required],
       lectura: ['', ],
     });
+    this.arreglo = this.formBuilder.group({});
   }
 
   ngOnInit() {
+  }
+
+  agregar(){
+    this.arreglo.addControl('detalle[1]', new FormControl( 'Glucosa', Validators.required));
+  }
+
+  remover(control){
+    this.arreglo.removeControl(control.key);
   }
 
   guardar(){
