@@ -30,8 +30,24 @@ export class DiarioEnfermedadDetallePage implements OnInit {
   ngOnInit() {
   }
 
-  agregar(){
-    this.arreglo.addControl('detalle[1]', new FormControl( 'Glucosa', Validators.required));
+  agregar(item){
+    let texto: string;
+    switch (item) {
+      case 1:
+          texto = 'Glucosa';
+        break;
+      case 2:
+          texto = 'Presion Arterial';
+        break;
+      case 3:
+          texto = 'Saturacion de Oxigeno';
+        break;
+      default:
+          texto = 'N/A';
+        break;
+    }
+
+    this.arreglo.addControl('detalle['+ item +']', new FormControl( texto, Validators.required));
   }
 
   remover(control){
