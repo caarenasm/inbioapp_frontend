@@ -3,8 +3,6 @@ import { PickerController } from '@ionic/angular';
 
 import { Semaforo, Tipo } from '../../interfaces/semaforo';
 
-
-
 @Component({
   selector: 'app-semaforo',
   templateUrl: './semaforo.page.html',
