@@ -3,6 +3,8 @@ import { NavController } from '@ionic/angular';
 
 import { AuthService } from '../../services/auth.service';
 
+import { Inicio } from '../../interfaces/inicio';
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -10,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class InicioPage implements OnInit {
 
-  slides: { img: string, titulo: string, entrar: boolean, color: string }[] = [
+  slides: Inicio[] = [
     {
       img: '/assets/img/Intro_1.png',
       titulo: 'Empodérate de tu nutrición y la de tu familia.',
