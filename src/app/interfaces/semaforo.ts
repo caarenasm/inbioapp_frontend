@@ -6,4 +6,4 @@ export interface Semaforo {
 export interface Tipo {
     value: number;
     text: string;
-  }
+}
