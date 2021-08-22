@@ -3,12 +3,7 @@ import { NavController } from '@ionic/angular';
 
 import { AuthService } from '../../services/auth.service';
 
-export interface Menu {
-  icono: string;
-  texto: string;
-  fondo: string;
-  pagina: string;
-}
+import { Menu } from '../../interfaces/menu';
 
 @Component({
   selector: 'app-menu',

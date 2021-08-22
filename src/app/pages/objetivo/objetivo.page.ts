@@ -6,13 +6,7 @@ import { LoadingService } from '../../services/loading.service';
 import { AlertService } from '../../services/alert.service';
 import { Router } from '@angular/router';
 
-export interface Objetivo {
-  id: number;
-  nombre: string;
-  descripcion: string;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  imagen_url: string;
-}
+import { Objetivo } from '../../interfaces/objetivo';
 
 @Component({
   selector: 'app-objetivo',
