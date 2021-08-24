@@ -22,6 +22,20 @@
                     <ion-label>Presiona el botón de la opción que deseas consultar o editar y los datos correspondientes se cargan a continuacion.</ion-label>
                 </ion-col>
             </ion-row>
+            <form [formGroup]=arreglo>
+                <ion-row *ngFor="let control of arreglo.controls | keyvalue">
+                    <ion-col size="9" style="padding-left: 20px;">
+                        <ion-input type="text" class="campo" formControlName="{{control.key}}" placeholder="Seleccione..." readonly>
+                            <ion-icon class="icon-nadar icono" item-right></ion-icon>
+                        </ion-input>
+                    </ion-col>
+                    <ion-col size="3" style="padding-right: 20px;">
+                        <ion-button class="guardar" (click)="remover(control)">
+                            <ion-icon slot="icon-only" name="trash"></ion-icon>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </form>
             <ion-row>
                 <ion-col size="12">
                     <ion-radio-group name="auto" value="opcion" formControlName="opcion">
@@ -33,7 +47,7 @@
                                         <ion-col>
                                             <ion-item class="card">
                                                 <ion-row class="tarjeta">
-                                                    <ion-radio class="radio" value="{{ evento[i].id }}"></ion-radio>
+                                                    <ion-radio class="radio" [value]=evento[i].id></ion-radio>
                                                     <span class="{{ evento[i].icon }} icono"></span>
                                                     <ion-label class="texto">{{ evento[i].descripcion }}</ion-label>
                                                 </ion-row>
@@ -44,7 +58,7 @@
                                         <ion-col>
                                             <ion-item class="card">
                                                 <ion-row class="tarjeta">
-                                                    <ion-radio class="radio" value="{{ evento[i+1].id }}"></ion-radio>
+                                                    <ion-radio class="radio" [value]=evento[i+1].id></ion-radio>
                                                     <span class="{{ evento[i+1].icon }} icono"></span>
                                                     <ion-label class="texto">{{ evento[i+1].descripcion }}</ion-label>
                                                 </ion-row>

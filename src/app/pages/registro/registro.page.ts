@@ -312,27 +312,7 @@ export class RegistroPage implements OnInit {
 
   }
 
-  /*postDatos2() {
-    const datos = { nombre: 'Edu', email: 'edu.revilla.vaquero@gmail.com'};
-    const datos = this.todo.value;
-  
-    const options = {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    };
-  
-    const url = 'http://httpbin.org/post';
-  
-    return this.http.post(url, JSON.stringify(datos), options).toPromise();
-    return this.http.post(url, JSON.stringify(datos), options).toPromise();
-  }*/
-
   postDatos() {
-    /*console.log(this.todo.value);*/
-    /*this.presentLoading();*/
-    /*this.loadingController.dismiss();*/
     this.loadingServ.cargando();
 
     this.registroCtrl.createUsuario(this.todo.value).subscribe(

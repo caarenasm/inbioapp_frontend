@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlertController, IonSlides } from '@ionic/angular';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 import { AlertService } from '../../services/alert.service';
 
@@ -23,6 +23,7 @@ export class DiarioDeportePage implements OnInit {
   };
 
   datos: FormGroup;
+  arreglo: FormGroup;
   distancia = 0;
   energia = 0;
   fatiga = 0;
@@ -64,13 +65,14 @@ export class DiarioDeportePage implements OnInit {
     private formBuilder: FormBuilder,
     private alertServ: AlertService,
     private alertCtrl: AlertController,
-  ) { 
+  ) {
     this.datos = this.formBuilder.group({
       tipo: [ 2, Validators.required],
       opcion: ['', Validators.required],
       tiempo: ['', Validators.required],
       lectura: ['', ],
     });
+    this.arreglo = this.formBuilder.group({});
   }
 
     // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -117,6 +119,21 @@ export class DiarioDeportePage implements OnInit {
       const valor: any = parseFloat('0.1').toFixed(2);
       this.distancia = this.distancia - valor;
     }
+  }
+
+  agregar(){
+    const tipo = this.datos.get('opcion').value;
+    const filtro = this.evento.find( datos => datos.id === tipo);
+    this.arreglo.addControl('detalle[' + tipo + ']', new FormControl( filtro.descripcion, Validators.required));
+  }
+
+  icono(tipo){
+    const filtro = this.evento.find( datos => datos.id === tipo);
+    return filtro.icon;
+  }
+
+  remover(control){
+    this.arreglo.removeControl(control.key);
   }
 
 }

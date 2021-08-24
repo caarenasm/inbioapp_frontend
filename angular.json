@@ -31,7 +31,10 @@
                             }
                         ],
                         "styles": ["src/theme/variables.scss", "src/global.scss", "src/theme/inbioapp.scss", "src/theme/animate.min.css"],
-                        "scripts": []
+                        "scripts": [],
+                        "allowedCommonJsDependencies": [
+                            "lodash"
+                        ]
                     },
                     "configurations": {
                         "production": {

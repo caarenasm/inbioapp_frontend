@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 
-export interface Alimento {
-  descripcion: string;
-  semaforo: number;
-}
+import { Semaforo, Tipo } from '../../interfaces/semaforo';
 
 @Component({
   selector: 'app-semaforo',
@@ -13,14 +10,18 @@ export interface Alimento {
 })
 export class SemaforoPage implements OnInit {
 
-  filtro = [
-    [
-      'Harina',
-      'Carne'
-    ]
+  filtro: Tipo[] = [
+    {
+      value: 1,
+      text: 'Harina'
+    },
+    {
+      value: 2,
+      text: 'Carne'
+    }
   ];
 
-  alimento: Alimento[] = [
+  alimento: Semaforo[] = [
     {
       descripcion: 'De trigo',
       semaforo: 1
@@ -68,18 +69,24 @@ export class SemaforoPage implements OnInit {
 
   async openPicker(numColumns = 1, numOptions = 5, columnOptions = this.filtro){
     const picker = await this.pickerCtrl.create({
-      columns: this.getColumns(numColumns, numOptions, columnOptions),
+      /*columns: this.getColumns(numColumns, numOptions, columnOptions),*/
       cssClass: 'picker',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           role: 'cancel'
         },
         {
-          text: 'Confirm',
+          text: 'Confirmar',
           handler: (value) => {
             console.log(`Got Value ${value}`);
           }
+        }
+      ],
+      columns: [
+        {
+          name: 'Tipo',
+          options: this.filtro
         }
       ]
     });
@@ -87,8 +94,8 @@ export class SemaforoPage implements OnInit {
     await picker.present();
   }
 
-  getColumns(numColumns, numOptions, columnOptions) {
-    let columns = [];
+  /*getColumns(numColumns, numOptions, columnOptions) {
+    const columns = [];
     for (let i = 0; i < numColumns; i++) {
       columns.push({
         name: `col-${i}`,
@@ -100,15 +107,15 @@ export class SemaforoPage implements OnInit {
   }
 
    getColumnOptions(columnIndex, numOptions, columnOptions) {
-    let options = [];
+    const options = [];
     for (let i = 0; i < numOptions; i++) {
       options.push({
         text: columnOptions[columnIndex][i % numOptions],
         value: i
-      })
+      });
     }
 
     return options;
-  }
+  }*/
 
 }
