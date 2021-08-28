@@ -15,19 +15,19 @@
 
                 <ion-grid class="ion-no-padding">
                     <ion-row>
-                        <ion-col size="6" class="texto-fechaini">
+                        <ion-col size="6" class="texto-fechaini ion-text-center">
                             <ion-label>Fecha inicio:</ion-label>
                         </ion-col>
-                        <ion-col size="6" class="texto-fechafin">
+                        <ion-col size="6" class="texto-fechafin ion-text-center">
                             <ion-label>Fecha final:</ion-label>
                         </ion-col>
                     </ion-row>
                     <ion-row>
                         <ion-col size="6" class="centrar-ini">
-                            <ion-input type="text" placeholder="Awesome Input"></ion-input>
+                            <ion-datetime display-format="DD/MM/YY" placeholder="00/00/00" cancelText="Cancelar" doneText="Hecho"></ion-datetime>
                         </ion-col>
                         <ion-col size="6" class="centrar-fin">
-                            <ion-input type="text" placeholder="Awesome Input"></ion-input>
+                            <ion-datetime display-format="DD/MM/YY" placeholder="00/00/00" cancelText="Cancelar" doneText="Hecho"></ion-datetime>
                         </ion-col>
                         <ion-label class="align-center">90 días de entrenamiento</ion-label>
                     </ion-row>
@@ -39,13 +39,13 @@
                     </ion-row>
 
                     <ion-fab vertical="start" horizontal="start" class="posicion-icono-atras">
-                        <ion-fab-button class="ion-fab-atras">
+                        <ion-fab-button class="ion-fab-atras" size="small">
                             <ion-icon class="icon-atras"></ion-icon>
                         </ion-fab-button>
                     </ion-fab>
 
                     <ion-fab vertical="start" horizontal="end" class="posicion-icono-adelante">
-                        <ion-fab-button class="ion-fab-adelante">
+                        <ion-fab-button class="ion-fab-adelante" size="small">
                             <ion-icon class="icon-adelante"></ion-icon>
                         </ion-fab-button>
                     </ion-fab>
@@ -53,7 +53,7 @@
                     <ion-row>
                         <ion-col size="12">
                             <ion-item class="align-center">
-                                <ion-calendar [format]="'YYYY-MM-DD'">
+                                <ion-calendar [format]="'YYYY-MM-DD'" [options]="optionsRange" (change)="onChange($event)">
                                 </ion-calendar>
                             </ion-item>
                         </ion-col>

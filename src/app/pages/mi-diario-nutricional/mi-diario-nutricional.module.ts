@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -20,6 +20,7 @@ import { ComponentsModule } from '../../components/components.module';
     ComponentsModule,
     CalendarModule
   ],
-  declarations: [MiDiarioNutricionalPage]
+  declarations: [MiDiarioNutricionalPage],
+  providers: [{ provide: LOCALE_ID, useValue: 'zh-CN' }]
 })
 export class MiDiarioNutricionalPageModule {}
