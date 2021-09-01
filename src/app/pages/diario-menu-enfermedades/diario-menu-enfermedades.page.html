@@ -11,14 +11,14 @@
     
     <div *ngFor="let diarios of diario">
 
-    <ion-card class="cuerpo-receta">
+    <ion-card class="cuerpo-receta color-subtarjeta">
 
       <ion-card class="sub-tarjeta-1">
 
         <ion-card-header>
-          <ion-item class="texto-estado">
-            <ion-label class="texto">Cuéntanos acerca de tu(s) enfermedad(es)</ion-label>
-          </ion-item>
+        
+            <ion-label class="texto-estado color-subtarjeta">Cuéntanos acerca de tu(s) enfermedad(es)</ion-label>
+        
         
           <ion-item *ngFor="let item of diarios.habito; ; let i = index " lines="none" class="detalle">
             <ion-icon slot="start" class="{{ item.icono }} icono" color="warning"></ion-icon>
