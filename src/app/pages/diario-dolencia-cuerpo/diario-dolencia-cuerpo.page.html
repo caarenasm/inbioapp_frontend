@@ -46,7 +46,7 @@
 
                                 <ion-item class="card">
                                     <ion-row class="tarjeta">
-                                        <ion-radio class="radio" value="{{ item.id }}"></ion-radio>
+                                        <ion-radio class="radio" [value]=item.id></ion-radio>
                                         <span class="{{ item.icon }} icono"></span>
                                         <ion-label class="texto">{{ item.descripcion }}</ion-label>
                                     </ion-row>
