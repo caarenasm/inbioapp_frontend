@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl, FormArray } from '@angular/forms';
 import { AlertController, IonSlides } from '@ionic/angular';
 
 import { AlertService } from '../../services/alert.service';
@@ -106,9 +106,16 @@ export class DiarioDolenciaCuerpoPage implements OnInit {
 
   agregar(){
     const tipo = this.datos.get('opcion').value;
-    const filtro = this.evento.find(x => x.id = tipo);
-    this.cantidad++;
-    this.arreglo.addControl('detalle[' + tipo + ']', new FormControl( filtro.descripcion, Validators.required));
+    const filtro = this.evento.find( datos => datos.id === tipo);
+    this.arreglo.addControl('detalle[' + tipo + ']',
+      new FormControl( filtro.descripcion, Validators.required)
+    );
+    /*console.log(this.checked);*/
+  }
+
+  get getPiecesArray() {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    return (<FormArray>this.datos.get('lectura'));
   }
 
   icono(tipo){
