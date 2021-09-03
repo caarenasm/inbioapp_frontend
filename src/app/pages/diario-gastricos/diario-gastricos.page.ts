@@ -1,14 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Validators, FormBuilder, FormGroup, FormControl, FormArray } from '@angular/forms';
 import { AlertController, IonSlides } from '@ionic/angular';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 import { AlertService } from '../../services/alert.service';
 
 export interface Evento {
+  idd: number;
   id: number;
   descripcion: string;
-  descripcion_vita: string;
+  descripcion_dos: string;
   icon: string;
+  icono: string;
 }
 
 @Component({
@@ -18,31 +20,69 @@ export interface Evento {
 })
 export class DiarioGastricosPage implements OnInit {
 
+  datos: FormGroup;
+  arreglo: FormGroup;
+  checked = [];
+  cantidad = 0;
+
   slideOpts = {
-    slidesPerView: 2,
+    slidesPerView: 2.3,
     freeMode: true
   };
 
-  datos: FormGroup;
+  slideOptsDos = {
+    slidesPerView: 4.6,
+    freeMode: true
+  };
 
   evento: Evento[] = [
     {
+      idd: 1,
       id: 1,
-      descripcion: 'Nauseas',
-      descripcion_vita: 'Gastritis',
-      icon: 'icon-neutro'
+      descripcion: 'Nauseas1',
+      descripcion_dos: 'Gastritis1',
+      icon: 'icon-neutro',
+      icono: 'icon-suplementos' 
     },
     {
+      idd: 2,
       id: 2,
-      descripcion: 'Nauseas',
-      descripcion_vita: 'Gastritis',
-      icon: 'icon-neutro'
+      descripcion: 'Nauseas2',
+      descripcion_dos: 'Gastritis2',
+      icon: 'icon-neutro',
+      icono: 'icon-suplementos'
     },
     {
+      idd: 3,
       id: 3,
-      descripcion: 'Nauseas',
-      descripcion_vita: 'Gastritis',
-      icon: 'icon-neutro'
+      descripcion: 'Nauseas3',
+      descripcion_dos: 'Gastritis3',
+      icon: 'icon-neutro',
+      icono: 'icon-suplementos'
+    },
+    {
+      idd: 4,
+      id: 4,
+      descripcion: 'Nauseas4',
+      descripcion_dos: 'Gastritis4',
+      icon: 'icon-neutro',
+      icono: 'icon-suplementos'
+    },
+    {
+      idd: 5,
+      id: 5,
+      descripcion: 'Nauseas5',
+      descripcion_dos: 'Gastritis5',
+      icon: 'icon-neutro',
+      icono: 'icon-suplementos'
+    },
+    {
+      idd: 6,
+      id: 6,
+      descripcion: 'Nauseas6',
+      descripcion_dos: 'Gastritis6',
+      icon: 'icon-neutro',
+      icono: 'icon-suplementos'
     }
   ];
 
@@ -50,22 +90,71 @@ export class DiarioGastricosPage implements OnInit {
     private formBuilder: FormBuilder,
     private alertServ: AlertService,
     private alertCtrl: AlertController,
-  ) { 
+  ) {
     this.datos = this.formBuilder.group({
-      tipo: [ 1, Validators.required],
+      tipo: [ 5, Validators.required],
       opcion: ['', Validators.required],
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      hora_ini: ['', Validators.required],
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      hora_fin: ['', Validators.required],
       lectura: ['', ],
     });
-
+    this.arreglo = this.formBuilder.group({});
   }
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit() {
+  }
+
+  //Adds the checkedbox to the array and check if you unchecked it
+  addCheckbox(event, checkbox: number) {
+    if ( event.detail.checked ) {
+      this.checked.push(checkbox);
+    } else {
+      let index = this.removeCheckedFromArray(checkbox);
+      this.checked.splice(index,1);
+    }
+  }
+
+  //Removes checkbox from array when you uncheck it
+  removeCheckedFromArray(checkbox: number) {
+    return this.checked.findIndex((category)=>category === checkbox);
+  }
+
+  //Empties array with checkedboxes
+  emptyCheckedArray() {
+    this.checked = [];
+  }
+
+  agregar(){
+    const tipo = this.datos.get('opcion').value;
+    const filtro = this.evento.find( datos => datos.id === tipo,);
+    this.arreglo.addControl('detalle[' + tipo + ']',
+      new FormControl( filtro.descripcion, Validators.required)
+    );
+    /*console.log(this.checked);*/
+  }
+
+  agregar_dos(){
+    const tipo = this.datos.get('opcion').value;
+    const filtro = this.evento.find( datos => datos.idd === tipo,);
+    this.arreglo.addControl('detalle[' + tipo + ']',
+      new FormControl( filtro.descripcion, Validators.required)
+    );
+    /*console.log(this.checked);*/
+  }
+
+  get getPiecesArray() {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    return (<FormArray>this.datos.get('lectura'));
+  }
+
+  icono(tipo){
+    const filtro = this.evento.find(x => x.id = tipo);
+    return filtro.icon;
+  }
+
+  remover(control){
+    this.arreglo.removeControl(control.key);
   }
 
   guardar(){
