@@ -1,6 +1,10 @@
 .fondo {
-    background-color: #f6f6f6;
-    height: 100%;
+    --background: #f6f6f6;
+    --padding-bottom: 50px;
+}
+
+.botones-flotantes {
+    --background: #872a99;
 }
 
 .titulo-evento {
@@ -25,14 +29,31 @@
         position: relative;
         font-family: 'Poppins' !important;
         font-size: 18px;
-        line-height: 14px;
+        line-height: 18px;
         font-weight: bold;
         padding: 10px;
+        white-space: normal !important;
+        padding-right: 20px;
     }
 }
 
-.botones-flotantes {
-    --background: #872a99;
+.campo {
+    height: auto;
+    background: #f9e6fd;
+    border: #87299b !important;
+    border-width: 0.1px !important;
+    border-style: solid !important;
+    border-radius: 25px;
+    box-shadow: none !important;
+    /*width: 100%;*/
+    padding-left: 9px;
+}
+
+.checkbox {
+    --height: 25px;
+    --width: 25px;
+    --background-checked: #fe8e0d;
+    --border-color-checked: #fe8e0d;
 }
 
 .slide {
@@ -90,13 +111,9 @@
     }
 }
 
-ion-datetime {
-    background: #f9e6fd;
-    border: #87299b !important;
-    border-width: 0.1px !important;
-    border-style: solid !important;
-    border-radius: 25px;
-    font-size: 14px;
+.barra {
+    background-color: #f6f6f6;
+    
 }
 
 .guardar {
@@ -104,7 +121,6 @@ ion-datetime {
     align-items: center;
     justify-content: center;
     margin: 0px;
-    --z-index: 1;
     --border-radius: 25px;
     text-transform: capitalize;
     .texto {
@@ -115,21 +131,33 @@ ion-datetime {
     }
 }
 
-.barra {
-    background-color: #f6f6f6;
-    border: none;
-}
-
-.texto-2 {
+.check-box {
+    position: relative;
     font-family: 'Poppins' !important;
     font-size: 15px;
-    font-style: normal;
-    line-height: 16px;
+    line-height: 14px;
+    font-weight: normal;
+    padding: 10px;
+    text-align: center;
+    padding-top: 50px;
 }
 
 .posicion {
     margin-left: 90px;
  }
+
+
+.checkbox {
+    --color-checked: #fe8d0c;
+    --background-color: #fe8d0c;
+}
+ 
+.ion-radio {
+    --border-radius: 25px;
+    --color: #fe8e0d;
+    --color-checked: #fe8e0d;
+    --inner-border-radius: 25px
+}
 
 .ion-checkbox {
     background: #FFFFFF;
@@ -146,11 +174,6 @@ ion-datetime {
     --border-color-checked: #fe8e0d;
 }
 
-.check-box {
-    position: relative;
-    font-family: 'Poppins' !important;
-    font-size: 15px;
-    font-weight: normal;
-    text-align: center;
-    padding: 35px;
+.posicion-flecha {
+    padding-top: 50px;
 }

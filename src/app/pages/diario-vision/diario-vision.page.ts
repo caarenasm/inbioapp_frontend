@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AlertController, IonSlides } from '@ionic/angular';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 import { AlertService } from '../../services/alert.service';
 
@@ -10,6 +10,7 @@ export interface Evento {
   icon: string;
 }
 
+
 @Component({
   selector: 'app-diario-vision',
   templateUrl: './diario-vision.page.html',
@@ -17,12 +18,20 @@ export interface Evento {
 })
 export class DiarioVisionPage implements OnInit {
 
+  datos: FormGroup;
+  arreglo: FormGroup;
+  checked = [];
+  cantidad = 0;
+
   slideOpts = {
-    slidesPerView: 2,
+    slidesPerView: 2.3,
     freeMode: true
   };
 
-  datos: FormGroup;
+  slideOptsDos = {
+    slidesPerView: 4.6,
+    freeMode: true
+  };
 
   evento: Evento[] = [
     {
@@ -39,6 +48,21 @@ export class DiarioVisionPage implements OnInit {
       id: 3,
       descripcion: 'Ojo irritado',
       icon: 'icon-usuario'
+    },
+    {
+      id: 4,
+      descripcion: 'Ojo irritado',
+      icon: 'icon-usuario'
+    },
+    {
+      id: 5,
+      descripcion: 'Ojo irritado',
+      icon: 'icon-usuario'
+    },
+    {
+      id: 6,
+      descripcion: 'Ojo irritado',
+      icon: 'icon-usuario'
     }
   ];
 
@@ -47,23 +71,54 @@ export class DiarioVisionPage implements OnInit {
     private alertServ: AlertService,
     private alertCtrl: AlertController,
   ) {
-
     this.datos = this.formBuilder.group({
-      tipo: [ 1, Validators.required],
+      tipo: [ 5, Validators.required],
       opcion: ['', Validators.required],
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      hora_ini: ['', Validators.required],
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      hora_fin: ['', Validators.required],
       lectura: ['', ],
     });
-
+    this.arreglo = this.formBuilder.group({});
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit() {
+  }
+
+  //Adds the checkedbox to the array and check if you unchecked it
+  addCheckbox(event, checkbox: number) {
+    if ( event.detail.checked ) {
+      this.checked.push(checkbox);
+    } else {
+      let index = this.removeCheckedFromArray(checkbox);
+      this.checked.splice(index,1);
+    }
+  }
+
+  //Removes checkbox from array when you uncheck it
+  removeCheckedFromArray(checkbox: number) {
+    return this.checked.findIndex((category)=>category === checkbox);
+  }
+
+  //Empties array with checkedboxes
+  emptyCheckedArray() {
+    this.checked = [];
+  }
+
+  agregar(){
+    const tipo = this.datos.get('opcion').value;
+    const filtro = this.evento.find(x => x.id = tipo);
+    this.cantidad++;
+    this.arreglo.addControl('detalle[' + tipo + ']', new FormControl( filtro.descripcion, Validators.required));
+  }
+
+  icono(tipo){
+    const filtro = this.evento.find(x => x.id = tipo);
+    return filtro.icon;
+  }
+
+  remover(control){
+    this.arreglo.removeControl(control.key);
   }
 
   guardar(){
