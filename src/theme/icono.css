@@ -1,471 +1,983 @@
 @font-face {
-  font-family: 'inbioapp';
-  src:  url('/assets/font/inbioapp/inbioapp.eot?46a7vy');
-  src:  url('/assets/font/inbioapp/inbioapp.eot?46a7vy#iefix') format('embedded-opentype'),
-    url('/assets/font/inbioapp/inbioapp.ttf?46a7vy') format('truetype'),
-    url('/assets/font/inbioapp/inbioapp.woff?46a7vy') format('woff'),
-    url('/assets/font/inbioapp/inbioapp.svg?46a7vy#inbioapp') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+    font-family: 'inbioapp';
+    src: url('/assets/font/inbioapp/inbioapp.eot?74m7gm');
+    src: url('/assets/font/inbioapp/inbioapp.eot?74m7gm#iefix') format('embedded-opentype'), url('/assets/font/inbioapp/inbioapp.ttf?74m7gm') format('truetype'), url('/assets/font/inbioapp/inbioapp.woff?74m7gm') format('woff'), url('/assets/font/inbioapp/inbioapp.svg?74m7gm#inbioapp') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'inbioapp' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'inbioapp' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-accidente:before {
-  content: "\e900";
+    content: "\e900";
 }
-.icon-actividad_fisica_2:before {
-  content: "\e901";
-}
+
 .icon-actividad_fisica1:before {
-  content: "\e902";
+    content: "\e901";
 }
+
 .icon-adelante:before {
-  content: "\e903";
+    content: "\e902";
 }
+
 .icon-aerobicos:before {
-  content: "\e904";
+    content: "\e903";
 }
+
 .icon-agua:before {
-  content: "\e905";
+    content: "\e904";
 }
+
 .icon-agua_2:before {
-  content: "\e906";
+    content: "\e905";
 }
+
 .icon-alcohol:before {
-  content: "\e907";
+    content: "\e906";
 }
-.icon-aliados_inbionova .path1:before {
-  content: "\e908";
-  color: rgb(67, 11, 86);
-}
-.icon-aliados_inbionova .path2:before {
-  content: "\e909";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
+
 .icon-alimento_alergia:before {
-  content: "\e90a";
+    content: "\e907";
 }
+
 .icon-antojos:before {
-  content: "\e90b";
+    content: "\e908";
 }
+
 .icon-atras:before {
-  content: "\e90c";
+    content: "\e909";
 }
-.icon-base_17 .path1:before {
-  content: "\e90d";
-  color: rgb(0, 184, 52);
-}
-.icon-base_17 .path2:before {
-  content: "\e90e";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-base_18 .path1:before {
-  content: "\e90f";
-  color: rgb(255, 142, 0);
-}
-.icon-base_18 .path2:before {
-  content: "\e910";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-base_18 .path3:before {
-  content: "\e911";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-base_19 .path1:before {
-  content: "\e912";
-  color: rgb(255, 23, 30);
-}
-.icon-base_19 .path2:before {
-  content: "\e913";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-base_19 .path3:before {
-  content: "\e914";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-base_19 .path4:before {
-  content: "\e915";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
+
 .icon-blando:before {
-  content: "\e916";
+    content: "\e90a";
 }
-.icon-blog_inbionova .path1:before {
-  content: "\e917";
-  color: rgb(85, 96, 50);
-}
-.icon-blog_inbionova .path2:before {
-  content: "\e918";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
+
 .icon-buscar:before {
-  content: "\e919";
+    content: "\e90b";
 }
+
 .icon-caminar:before {
-  content: "\e91a";
+    content: "\e90c";
 }
+
 .icon-ciclismo:before {
-  content: "\e91b";
+    content: "\e90d";
 }
+
 .icon-coach:before {
-  content: "\e91c";
+    content: "\e90e";
 }
+
 .icon-como_duermes:before {
-  content: "\e91d";
+    content: "\e90f";
 }
+
 .icon-correr:before {
-  content: "\e91e";
+    content: "\e910";
 }
+
 .icon-deporte_equipo:before {
-  content: "\e91f";
+    content: "\e911";
 }
+
 .icon-deposiciones:before {
-  content: "\e920";
+    content: "\e912";
 }
+
 .icon-dieta:before {
-  content: "\e921";
+    content: "\e913";
 }
-.icon-dolor_Cabeza:before {
-  content: "\e922";
+
+.icon-dolor_cabeza:before {
+    content: "\e914";
 }
+
 .icon-duro:before {
-  content: "\e923";
+    content: "\e915";
 }
+
 .icon-duro_bolitas:before {
-  content: "\e924";
+    content: "\e916";
 }
+
 .icon-embarazo:before {
-  content: "\e925";
+    content: "\e917";
 }
+
 .icon-enfermedades:before {
-  content: "\e926";
+    content: "\e918";
 }
+
 .icon-escalera:before {
-  content: "\e927";
+    content: "\e919";
 }
+
 .icon-feliz:before {
-  content: "\e928";
+    content: "\e91a";
 }
+
 .icon-fumar:before {
-  content: "\e929";
+    content: "\e91b";
 }
+
 .icon-hospitalizacion:before {
-  content: "\e92a";
+    content: "\e91c";
 }
+
 .icon-inicio:before {
-  content: "\e92b";
+    content: "\e91d";
 }
+
 .icon-intervalos:before {
-  content: "\e92c";
+    content: "\e91e";
 }
+
 .icon-jardineria:before {
-  content: "\e92d";
+    content: "\e91f";
 }
+
 .icon-liquido:before {
-  content: "\e92e";
+    content: "\e920";
 }
-.icon-mejorar_sueno_02:before {
-  content: "\e92f";
-}
+
 .icon-menos:before {
-  content: "\e930";
+    content: "\e921";
 }
+
 .icon-menu:before {
-  content: "\e931";
+    content: "\e922";
 }
+
 .icon-mi_diario_nutricional:before {
-  content: "\e932";
+    content: "\e923";
 }
+
 .icon-mi_dieta:before {
-  content: "\e933";
+    content: "\e924";
 }
+
 .icon-mi_guia_nutricional:before {
-  content: "\e934";
+    content: "\e925";
 }
-.icon-mi_lista_de_compras .path1:before {
-  content: "\e935";
-  color: rgb(255, 18, 2);
-}
-.icon-mi_lista_de_compras .path2:before {
-  content: "\e936";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mi_lista_de_compras .path3:before {
-  content: "\e937";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mi_lista_de_compras .path4:before {
-  content: "\e938";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_bioproductos .path1:before {
-  content: "\e939";
-  color: rgb(82, 3, 95);
-}
-.icon-mis_bioproductos .path2:before {
-  content: "\e93a";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_controles .path1:before {
-  content: "\e93b";
-  color: rgb(6, 5, 141);
-}
-.icon-mis_controles .path2:before {
-  content: "\e93c";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_controles .path3:before {
-  content: "\e93d";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_controles .path4:before {
-  content: "\e93e";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_controles .path5:before {
-  content: "\e93f";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_controles .path6:before {
-  content: "\e940";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_controles .path7:before {
-  content: "\e941";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_controles .path8:before {
-  content: "\e942";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_datos .path1:before {
-  content: "\e943";
-  color: rgb(1, 199, 208);
-}
-.icon-mis_datos .path2:before {
-  content: "\e944";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_datos .path3:before {
-  content: "\e945";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_diarios_nutricionales .path1:before {
-  content: "\e946";
-  color: rgb(19, 49, 253);
-}
-.icon-mis_diarios_nutricionales .path2:before {
-  content: "\e947";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_diarios_nutricionales .path3:before {
-  content: "\e948";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_dietas .path1:before {
-  content: "\e949";
-  color: rgb(255, 77, 5);
-}
-.icon-mis_dietas .path2:before {
-  content: "\e94a";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_estadisticas .path1:before {
-  content: "\e94b";
-  color: rgb(167, 5, 10);
-}
-.icon-mis_estadisticas .path2:before {
-  content: "\e94c";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_estadisticas .path3:before {
-  content: "\e94d";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_estadisticas .path4:before {
-  content: "\e94e";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_eventos .path1:before {
-  content: "\e94f";
-  color: rgb(45, 1, 54);
-}
-.icon-mis_eventos .path2:before {
-  content: "\e950";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_favoritos .path1:before {
-  content: "\e951";
-  color: rgb(1, 155, 169);
-}
-.icon-mis_favoritos .path2:before {
-  content: "\e952";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_guias_nutricionales .path1:before {
-  content: "\e953";
-  color: rgb(0, 133, 11);
-}
-.icon-mis_guias_nutricionales .path2:before {
-  content: "\e954";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_guias_nutricionales .path3:before {
-  content: "\e955";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_guias_nutricionales .path4:before {
-  content: "\e956";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_logros .path1:before {
-  content: "\e957";
-  color: rgb(255, 22, 105);
-}
-.icon-mis_logros .path2:before {
-  content: "\e958";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_promociones .path1:before {
-  content: "\e959";
-  color: rgb(228, 213, 23);
-}
-.icon-mis_promociones .path2:before {
-  content: "\e95a";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_promociones .path3:before {
-  content: "\e95b";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_promociones .path4:before {
-  content: "\e95c";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-mis_promociones .path5:before {
-  content: "\e95d";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
+
 .icon-nadar:before {
-  content: "\e95e";
+    content: "\e926";
 }
+
 .icon-neutro:before {
-  content: "\e95f";
+    content: "\e927";
 }
+
 .icon-notificaciones:before {
-  content: "\e960";
+    content: "\e928";
 }
+
 .icon-patinaje:before {
-  content: "\e961";
+    content: "\e929";
 }
-.icon-pesa:before {
-  content: "\e962";
-}
+
 .icon-pesas:before {
-  content: "\e963";
+    content: "\e92a";
 }
+
 .icon-plus:before {
-  content: "\e964";
+    content: "\e92b";
 }
-.icon-recetas_inbionova .path1:before {
-  content: "\e965";
-  color: rgb(144, 168, 4);
-}
-.icon-recetas_inbionova .path2:before {
-  content: "\e966";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-recetas_inbionova .path3:before {
-  content: "\e967";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
+
 .icon-reloj:before {
-  content: "\e968";
+    content: "\e92c";
 }
+
 .icon-senderismo:before {
-  content: "\e969";
+    content: "\e92d";
 }
+
 .icon-sin_forma:before {
-  content: "\e96a";
+    content: "\e92e";
 }
+
 .icon-stress:before {
-  content: "\e96b";
+    content: "\e92f";
 }
+
 .icon-suplementos:before {
-  content: "\e96c";
+    content: "\e930";
 }
+
 .icon-telefono:before {
-  content: "\e96d";
+    content: "\e931";
 }
+
 .icon-tipos_Antojo:before {
-  content: "\e96e";
+    content: "\e932";
 }
-.icon-triste:before {
-  content: "\e96f";
-}
+
 .icon-usuario:before {
-  content: "\e970";
+    content: "\e933";
 }
+
 .icon-viaje:before {
-  content: "\e971";
+    content: "\e934";
 }
+
 .icon-whatsap:before {
-  content: "\e972";
+    content: "\e935";
 }
+
 .icon-yoga:before {
-  content: "\e973";
+    content: "\e936";
+}
+
+.icon-mis_datos .path1:before {
+    content: "\e937";
+    color: rgb(1, 199, 208);
+}
+
+.icon-mis_datos .path2:before {
+    content: "\e938";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_datos .path3:before {
+    content: "\e939";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_diarios_nutricionales .path1:before {
+    content: "\e93a";
+    color: rgb(19, 49, 253);
+}
+
+.icon-mis_diarios_nutricionales .path2:before {
+    content: "\e93b";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_diarios_nutricionales .path3:before {
+    content: "\e93c";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_guias_nutricionales .path1:before {
+    content: "\e93d";
+    color: rgb(0, 133, 11);
+}
+
+.icon-mis_guias_nutricionales .path2:before {
+    content: "\e93e";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_guias_nutricionales .path3:before {
+    content: "\e93f";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_guias_nutricionales .path4:before {
+    content: "\e940";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_estadisticas .path1:before {
+    content: "\e941";
+    color: rgb(167, 5, 10);
+}
+
+.icon-mis_estadisticas .path2:before {
+    content: "\e942";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_estadisticas .path3:before {
+    content: "\e943";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_estadisticas .path4:before {
+    content: "\e944";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_bioproductos .path1:before {
+    content: "\e945";
+    color: rgb(82, 3, 95);
+}
+
+.icon-mis_bioproductos .path2:before {
+    content: "\e946";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_controles .path1:before {
+    content: "\e947";
+    color: rgb(6, 5, 141);
+}
+
+.icon-mis_controles .path2:before {
+    content: "\e948";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_controles .path3:before {
+    content: "\e949";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_controles .path4:before {
+    content: "\e94a";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_controles .path5:before {
+    content: "\e94b";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_controles .path6:before {
+    content: "\e94c";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_controles .path7:before {
+    content: "\e94d";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_controles .path8:before {
+    content: "\e94e";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_promociones .path1:before {
+    content: "\e94f";
+    color: rgb(228, 213, 23);
+}
+
+.icon-mis_promociones .path2:before {
+    content: "\e950";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_promociones .path3:before {
+    content: "\e951";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_promociones .path4:before {
+    content: "\e952";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_promociones .path5:before {
+    content: "\e953";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_logros .path1:before {
+    content: "\e954";
+    color: rgb(255, 22, 105);
+}
+
+.icon-mis_logros .path2:before {
+    content: "\e955";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_eventos .path1:before {
+    content: "\e956";
+    color: rgb(45, 1, 54);
+}
+
+.icon-mis_eventos .path2:before {
+    content: "\e957";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mi_lista_de_compras .path1:before {
+    content: "\e958";
+    color: rgb(255, 18, 2);
+}
+
+.icon-mi_lista_de_compras .path2:before {
+    content: "\e959";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mi_lista_de_compras .path3:before {
+    content: "\e95a";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mi_lista_de_compras .path4:before {
+    content: "\e95b";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_favoritos .path1:before {
+    content: "\e95c";
+    color: rgb(1, 155, 169);
+}
+
+.icon-mis_favoritos .path2:before {
+    content: "\e95d";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-aliados_inbionova .path1:before {
+    content: "\e95e";
+    color: rgb(67, 11, 86);
+}
+
+.icon-aliados_inbionova .path2:before {
+    content: "\e95f";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-recetas_inbionova .path1:before {
+    content: "\e960";
+    color: rgb(144, 168, 4);
+}
+
+.icon-recetas_inbionova .path2:before {
+    content: "\e961";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-recetas_inbionova .path3:before {
+    content: "\e962";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-blog_inbionova .path1:before {
+    content: "\e963";
+    color: rgb(85, 96, 50);
+}
+
+.icon-blog_inbionova .path2:before {
+    content: "\e964";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mis_dietas .path1:before {
+    content: "\e965";
+    color: rgb(255, 77, 5);
+}
+
+.icon-mis_dietas .path2:before {
+    content: "\e966";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-actividad_fisica_2:before {
+    content: "\e967";
+}
+
+.icon-base_17 .path1:before {
+    content: "\e968";
+    color: rgb(0, 184, 52);
+}
+
+.icon-base_17 .path2:before {
+    content: "\e969";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-base_18 .path1:before {
+    content: "\e96a";
+    color: rgb(255, 142, 0);
+}
+
+.icon-base_18 .path2:before {
+    content: "\e96b";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-base_18 .path3:before {
+    content: "\e96c";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-base_19 .path1:before {
+    content: "\e96d";
+    color: rgb(255, 23, 30);
+}
+
+.icon-base_19 .path2:before {
+    content: "\e96e";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-base_19 .path3:before {
+    content: "\e96f";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-base_19 .path4:before {
+    content: "\e970";
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+
+.icon-mejorar_sueno_02:before {
+    content: "\e971";
+}
+
+.icon-triste:before {
+    content: "\e972";
+}
+
+.icon-pesa:before {
+    content: "\e973";
+}
+
+.icon-sentimiento-15:before {
+    content: "\e974";
+}
+
+.icon-senales-13:before {
+    content: "\e975";
+}
+
+.icon-alergias-14:before {
+    content: "\e976";
+}
+
+.icon-dolencias-12:before {
+    content: "\e977";
+}
+
+.icon-gastrico-11:before {
+    content: "\e978";
+}
+
+.icon-vision-10:before {
+    content: "\e979";
+}
+
+.icon-regular-09:before {
+    content: "\e97a";
+}
+
+.icon-medicamentos-08:before {
+    content: "\e97b";
+}
+
+.icon-adicional-07:before {
+    content: "\e97c";
+}
+
+.icon-estacional-06:before {
+    content: "\e97d";
+}
+
+.icon-incomodidad-05:before {
+    content: "\e97e";
+}
+
+.icon-comida-04:before {
+    content: "\e97f";
+}
+
+.icon-deposiciones-03:before {
+    content: "\e980";
+}
+
+.icon-ojos_llorosos:before {
+    content: "\e981";
+}
+
+.icon-ojos_irritados:before {
+    content: "\e982";
+}
+
+.icon-vision_borrosa:before {
+    content: "\e983";
+}
+
+.icon-ceguera:before {
+    content: "\e984";
+}
+
+.icon-reflujo:before {
+    content: "\e985";
+}
+
+.icon-ulcera:before {
+    content: "\e986";
+}
+
+.icon-gastritis_1:before {
+    content: "\e987";
+}
+
+.icon-gastritis_2:before {
+    content: "\e988";
+}
+
+.icon-mal_aliento:before {
+    content: "\e989";
+}
+
+.icon-nauseas:before {
+    content: "\e98a";
+}
+
+.icon-vomito:before {
+    content: "\e98b";
+}
+
+.icon-diarrea:before {
+    content: "\e98c";
+}
+
+.icon-estrenimiento:before {
+    content: "\e98d";
+}
+
+.icon-inflamacion_estomacal:before {
+    content: "\e98e";
+}
+
+.icon-colon_irritable:before {
+    content: "\e98f";
+}
+
+.icon-pain:before {
+    content: "\e990";
+}
+
+.icon-ardor:before {
+    content: "\e991";
+}
+
+.icon-ardor_2:before {
+    content: "\e992";
+}
+
+.icon-perdida_sensibilidad:before {
+    content: "\e993";
+}
+
+.icon-herida_abierta:before {
+    content: "\e994";
+}
+
+.icon-mala_cicatrizacion:before {
+    content: "\e995";
+}
+
+.icon-manchas:before {
+    content: "\e996";
+}
+
+.icon-forinculo:before {
+    content: "\e997";
+}
+
+.icon-petequia:before {
+    content: "\e998";
+}
+
+.icon-acne:before {
+    content: "\e999";
+}
+
+.icon-sarpullido:before {
+    content: "\e99a";
+}
+
+.icon-hinchazon:before {
+    content: "\e99b";
+}
+
+.icon-picazon:before {
+    content: "\e99c";
+}
+
+.icon-urticaria:before {
+    content: "\e99d";
+}
+
+.icon-escamas:before {
+    content: "\e99e";
+}
+
+.icon-irritacion:before {
+    content: "\e99f";
+}
+
+.icon-masa:before {
+    content: "\e9a0";
+}
+
+.icon-inflamacion:before {
+    content: "\e9a1";
+}
+
+.icon-rigidez:before {
+    content: "\e9a2";
+}
+
+.icon-temblores:before {
+    content: "\e9a3";
+}
+
+.icon-espasmos:before {
+    content: "\e9a4";
+}
+
+.icon-contraciones:before {
+    content: "\e9a5";
+}
+
+.icon-lesion:before {
+    content: "\e9a6";
+}
+
+.icon-resequedad:before {
+    content: "\e9a7";
+}
+
+.icon-pigmentacion:before {
+    content: "\e9a8";
+}
+
+.icon-sensibilidad:before {
+    content: "\e9a9";
+}
+
+.icon-mareo:before {
+    content: "\e9aa";
+}
+
+.icon-desmayo:before {
+    content: "\e9ab";
+}
+
+.icon-perdida_libido:before {
+    content: "\e9ac";
+}
+
+.icon-vena_varice:before {
+    content: "\e9ad";
+}
+
+.icon-sed:before {
+    content: "\e9ae";
+}
+
+.icon-hambre:before {
+    content: "\e9af";
+}
+
+.icon-infeccion_urinaria:before {
+    content: "\e9b0";
+}
+
+.icon-infeccion_urinaria2:before {
+    content: "\e9b1";
+}
+
+.icon-hemorroides:before {
+    content: "\e9b2";
+}
+
+.icon-dificultad_respirar:before {
+    content: "\e9b3";
+}
+
+.icon-sudoracion_excesiva:before {
+    content: "\e9b4";
+}
+
+.icon-escalofrios:before {
+    content: "\e9b5";
+}
+
+.icon-fiebre:before {
+    content: "\e9b6";
+}
+
+.icon-inflamacion_ganglios:before {
+    content: "\e9b7";
+}
+
+.icon-polen:before {
+    content: "\e9b8";
+}
+
+.icon-sangradp:before {
+    content: "\e9b9";
+}
+
+.icon-falta_apetito:before {
+    content: "\e9ba";
+}
+
+.icon-perdida_peso:before {
+    content: "\e9bb";
+}
+
+.icon-aumentar-peso:before {
+    content: "\e9bc";
+}
+
+.icon-perdida_masa_muscular:before {
+    content: "\e9bd";
+}
+
+.icon-perdida_pelo:before {
+    content: "\e9be";
+}
+
+.icon-crecimiento_vello:before {
+    content: "\e9bf";
+}
+
+.icon-perdida_fuerza:before {
+    content: "\e9c0";
+}
+
+.icon-ira:before {
+    content: "\e9c1";
+}
+
+.icon-memory:before {
+    content: "\e9c2";
+}
+
+.icon-pensamientos-obsesivos:before {
+    content: "\e9c3";
+}
+
+.icon-mala_concentracion:before {
+    content: "\e9c4";
+}
+
+.icon-mal_equilibrio:before {
+    content: "\e9c5";
+}
+
+.icon-convulciones:before {
+    content: "\e9c6";
+}
+
+.icon-problema_habla:before {
+    content: "\e9c7";
+}
+
+.icon-hiperactividad:before {
+    content: "\e9c8";
+}
+
+.icon-culpa:before {
+    content: "\e9c9";
+}
+
+.icon-depresion:before {
+    content: "\e9ca";
+}
+
+.icon-letargo:before {
+    content: "\e9cb";
+}
+
+.icon-fatiga:before {
+    content: "\e9cc";
+}
+
+.icon-menstruacion_abundante:before {
+    content: "\e9cd";
+}
+
+.icon-infertilidad:before {
+    content: "\e9ce";
+}
+
+.icon-tos:before {
+    content: "\e9cf";
+}
+
+.icon-flemas:before {
+    content: "\e9d0";
+}
+
+.icon-rinitis:before {
+    content: "\e9d1";
+}
+
+.icon-anafilaxia:before {
+    content: "\e9d2";
+}
+
+.icon-irritable:before {
+    content: "\e9d3";
+}
+
+.icon-feliz_2:before {
+    content: "\e9d4";
+}
+
+.icon-energetico:before {
+    content: "\e9d5";
+}
+
+.icon-asustado:before {
+    content: "\e9d6";
+}
+
+.icon-triste_2:before {
+    content: "\e9d7";
 }
