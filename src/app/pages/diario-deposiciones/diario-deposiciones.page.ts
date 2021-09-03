@@ -4,6 +4,12 @@ import { AlertController, IonSlides } from '@ionic/angular';
 
 import { AlertService } from '../../services/alert.service';
 
+export interface TipoDeposicion {
+  id: number;
+  descripcion: string;
+  icon: string;
+}
+
 export interface Evento {
   id: number;
   descripcion: string;
@@ -26,6 +32,7 @@ export class DiarioDeposicionesPage implements OnInit {
   arreglo: FormGroup;
   checked = [];
   cantidad = 0;
+  tipo = false;
 
   slideOpts = {
     slidesPerView: 2.3,
@@ -37,10 +44,28 @@ export class DiarioDeposicionesPage implements OnInit {
     freeMode: true
   };
 
+  tipo_deposicion: TipoDeposicion[] = [
+    {
+      id: 1,
+      descripcion: 'Heces duras y separadas',
+      icon: 'icon-duro_bolitas',
+    },
+    {
+      id: 2,
+      descripcion: 'Heces duras',
+      icon: 'icon-duro_bolitas',
+    },
+    {
+      id: 3,
+      descripcion: 'Heces separadas',
+      icon: 'icon-duro_bolitas',
+    },
+  ];
+
   evento: Evento[] = [
     {
       id: 1,
-      descripcion: 'PURAFIB',
+      descripcion: 'PURAFIB 1',
       descripcion_vita: 'Medicamentos',
       descripcion_depo: 'Heces duras y separadas',
       icon: 'icon-usuario',
@@ -49,7 +74,7 @@ export class DiarioDeposicionesPage implements OnInit {
     },
     {
       id: 2,
-      descripcion: 'PURAFIB',
+      descripcion: 'PURAFIB 2',
       descripcion_vita: 'Medicamentos',
       descripcion_depo: 'Heces duras y separadas',
       icon: 'icon-usuario',
@@ -58,7 +83,7 @@ export class DiarioDeposicionesPage implements OnInit {
     },
     {
       id: 3,
-      descripcion: 'PURAFIB',
+      descripcion: 'PURAFIB 3',
       descripcion_vita: 'Medicamentos',
       descripcion_depo: 'Heces duras y separadas',
       icon: 'icon-usuario',
@@ -67,7 +92,7 @@ export class DiarioDeposicionesPage implements OnInit {
     },
     {
       id: 4,
-      descripcion: 'PURAFIB',
+      descripcion: 'PURAFIB 4',
       descripcion_vita: 'Medicamentos',
       descripcion_depo: 'Heces duras y separadas',
       icon: 'icon-usuario',
@@ -76,7 +101,7 @@ export class DiarioDeposicionesPage implements OnInit {
     },
     {
       id: 5,
-      descripcion: 'PURAFIB',
+      descripcion: 'PURAFIB 5',
       descripcion_vita: 'Medicamentos',
       descripcion_depo: 'Heces duras y separadas',
       icon: 'icon-usuario',
@@ -85,7 +110,7 @@ export class DiarioDeposicionesPage implements OnInit {
     },
     {
       id: 6,
-      descripcion: 'PURAFIB',
+      descripcion: 'PURAFIB 6',
       descripcion_vita: 'Medicamentos',
       descripcion_depo: 'Heces duras y separadas',
       icon: 'icon-usuario',
@@ -113,6 +138,15 @@ export class DiarioDeposicionesPage implements OnInit {
   ngOnInit() {
   }
 
+  tipoDepo(event) {
+    if(event.target.value == 1){
+      this.tipo = true;
+    }else{
+      this.tipo = false;
+    }
+    
+  }
+
   //Adds the checkedbox to the array and check if you unchecked it
   addCheckbox(event, checkbox: number) {
     if ( event.detail.checked ) {
@@ -135,7 +169,7 @@ export class DiarioDeposicionesPage implements OnInit {
 
   agregar(){
     const tipo = this.datos.get('opcion').value;
-    const filtro = this.evento.find(x => x.id = tipo);
+    const filtro = this.evento.find(x => x.id == tipo);
     this.cantidad++;
     this.arreglo.addControl('detalle[' + tipo + ']', new FormControl( filtro.descripcion, Validators.required));
   }
