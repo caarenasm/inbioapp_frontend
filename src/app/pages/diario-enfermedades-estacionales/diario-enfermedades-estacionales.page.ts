@@ -1,14 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Validators, FormBuilder, FormGroup, FormControl, FormArray } from '@angular/forms';
 import { AlertController, IonSlides } from '@ionic/angular';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 import { AlertService } from '../../services/alert.service';
 
 export interface Evento {
+  idd: number;
   id: number;
   descripcion: string;
-  descripcion_vita: string;
+  descripcion_dos: string;
   icon: string;
+  icono: string;
 }
 
 @Component({
@@ -18,33 +20,69 @@ export interface Evento {
 })
 export class DiarioEnfermedadesEstacionalesPage implements OnInit {
 
-
+  datos: FormGroup;
+  arreglo: FormGroup;
+  checked = [];
+  cantidad = 0;
 
   slideOpts = {
-    slidesPerView: 2,
+    slidesPerView: 2.3,
     freeMode: true
   };
 
-  datos: FormGroup;
+  slideOptsDos = {
+    slidesPerView: 4.6,
+    freeMode: true
+  };
 
   evento: Evento[] = [
     {
+      idd: 1,
       id: 1,
-      descripcion: 'Dolor Abdominal',
-      descripcion_vita: 'Dolor de Cabeza',
-      icon: 'icon-usuario'
+      descripcion: 'Dolor Abdominal1',
+      descripcion_dos: 'Dolor de Cabeza1',
+      icon: 'icon-usuario',
+      icono: 'icon-suplementos' 
     },
     {
+      idd: 2,
       id: 2,
-      descripcion: 'Dolor Abdominal',
-      descripcion_vita: 'Dolor de Cabeza',
-      icon: 'icon-usuario'
+      descripcion: 'Dolor Abdominal2',
+      descripcion_dos: 'Dolor de Cabeza2',
+      icon: 'icon-usuario',
+      icono: 'icon-suplementos'
     },
     {
+      idd: 3,
       id: 3,
-      descripcion: 'Dolor Abdominal',
-      descripcion_vita: 'Dolor de Cabeza',
-      icon: 'icon-usuario'
+      descripcion: 'Dolor Abdominal3',
+      descripcion_dos: 'Dolor de Cabeza3',
+      icon: 'icon-usuario',
+      icono: 'icon-suplementos'
+    },
+    {
+      idd: 4,
+      id: 4,
+      descripcion: 'Dolor Abdominal4',
+      descripcion_dos: 'Dolor de Cabeza4',
+      icon: 'icon-usuario',
+      icono: 'icon-suplementos'
+    },
+    {
+      idd: 5,
+      id: 5,
+      descripcion: 'Dolor Abdominal5',
+      descripcion_dos: 'Dolor de Cabeza5',
+      icon: 'icon-usuario',
+      icono: 'icon-suplementos'
+    },
+    {
+      idd: 6,
+      id: 6,
+      descripcion: 'Dolor Abdominal6',
+      descripcion_dos: 'Dolor de Cabeza6',
+      icon: 'icon-usuario',
+      icono: 'icon-suplementos'
     }
   ];
 
@@ -52,36 +90,71 @@ export class DiarioEnfermedadesEstacionalesPage implements OnInit {
     private formBuilder: FormBuilder,
     private alertServ: AlertService,
     private alertCtrl: AlertController,
-  ) { 
+  ) {
     this.datos = this.formBuilder.group({
-      tipo: [ 1, Validators.required],
+      tipo: [ 5, Validators.required],
       opcion: ['', Validators.required],
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      hora_ini: ['', Validators.required],
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      hora_fin: ['', Validators.required],
       lectura: ['', ],
     });
-
+    this.arreglo = this.formBuilder.group({});
   }
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit() {
   }
 
-  getHoraIni(e) {
-    const date = new Date(e.target.value).toISOString();
-    this.datos.get('hora_ini').setValue(date, {
-       onlyself: true
-    });
+  //Adds the checkedbox to the array and check if you unchecked it
+  addCheckbox(event, checkbox: number) {
+    if ( event.detail.checked ) {
+      this.checked.push(checkbox);
+    } else {
+      let index = this.removeCheckedFromArray(checkbox);
+      this.checked.splice(index,1);
+    }
   }
 
-  getHoraFin(e) {
-    const date = new Date(e.target.value).toISOString();
-    this.datos.get('hora_fin').setValue(date, {
-       onlyself: true
-    });
+  //Removes checkbox from array when you uncheck it
+  removeCheckedFromArray(checkbox: number) {
+    return this.checked.findIndex((category)=>category === checkbox);
+  }
+
+  //Empties array with checkedboxes
+  emptyCheckedArray() {
+    this.checked = [];
+  }
+
+  agregar(){
+    const tipo = this.datos.get('opcion').value;
+    const filtro = this.evento.find( datos => datos.id === tipo,);
+    this.arreglo.addControl('detalle[' + tipo + ']',
+      new FormControl( filtro.descripcion, Validators.required)
+    );
+    /*console.log(this.checked);*/
+  }
+
+  agregar_dos(){
+    const tipo = this.datos.get('opcion').value;
+    const filtro = this.evento.find( datos => datos.idd === tipo,);
+    this.arreglo.addControl('detalle[' + tipo + ']',
+      new FormControl( filtro.descripcion, Validators.required)
+    );
+    /*console.log(this.checked);*/
+  }
+
+  get getPiecesArray() {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    return (<FormArray>this.datos.get('lectura'));
+  }
+
+  icono(tipo){
+    const filtro = this.evento.find(x => x.id = tipo);
+    return filtro.icon;
+  }
+
+  remover(control){
+    this.arreglo.removeControl(control.key);
   }
 
   guardar(){
