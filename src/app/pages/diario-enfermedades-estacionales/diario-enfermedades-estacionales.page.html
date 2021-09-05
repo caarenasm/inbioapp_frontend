@@ -74,22 +74,18 @@
                             </ion-slide>
                         </ion-slides>
 
-                        <ion-fab vertical="end" horizontal="start" slot="fixed" (click)="slides.slidePrev()">
-                            <ion-fab-button class="botones-flotantes" size="small">
+                        <ion-fab vertical="center" horizontal="start" slot="fixed" (click)="slides.slidePrev()">
+                            <ion-fab-button class="botones-flotantes posicion-flecha" size="small">
                                 <ion-icon class="icon-atras"></ion-icon>
                             </ion-fab-button>
                         </ion-fab>
-                        <ion-fab vertical="end" horizontal="end" slot="fixed" (click)="slides.slideNext()">
-                            <ion-fab-button class="botones-flotantes" size="small">
+                        <ion-fab vertical="center" horizontal="end" slot="fixed" (click)="slides.slideNext()">
+                            <ion-fab-button class="botones-flotantes posicion-flecha" size="small">
                                 <ion-icon class="icon-adelante"></ion-icon>
                             </ion-fab-button>
                         </ion-fab>
-  
-                        <ion-tab-bar slot="bottom" class="barra">
-                            <ion-button expand="block" class="guardar">
-                                <ion-label class="texto">Ver producto</ion-label>
-                            </ion-button>
-                          </ion-tab-bar>
+
+
                     </ion-radio-group>
                 </ion-col>
             </ion-row>
