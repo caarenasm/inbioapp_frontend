@@ -47,19 +47,30 @@ export class DiarioDeposicionesPage implements OnInit {
   tipo_deposicion: TipoDeposicion[] = [
     {
       id: 1,
-      descripcion: 'Heces duras y separadas',
-      icon: 'icon-duro_bolitas',
+      descripcion: 'Líquido',
+      icon: 'icon-liquido',
     },
     {
       id: 2,
-      descripcion: 'Heces duras',
-      icon: 'icon-duro_bolitas',
+      descripcion: 'Sin forma',
+      icon: 'icon-sin_forma',
     },
     {
       id: 3,
-      descripcion: 'Heces separadas',
+      descripcion: 'Blando con Forma',
+      icon: 'icon-blando',
+    },
+    {
+      id: 4,
+      descripcion: 'Duro con Forma',
+      icon: 'icon-duro',
+    },
+    {
+      id: 4,
+      descripcion: 'Bolitas duras',
       icon: 'icon-duro_bolitas',
     },
+    
   ];
 
   evento: Evento[] = [
