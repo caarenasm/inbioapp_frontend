@@ -53,16 +53,6 @@ export class DiarioVisionPage implements OnInit {
       id: 4,
       descripcion: 'Ojo ciego',
       icon: 'icon-ceguera'
-    },
-    {
-      id: 5,
-      descripcion: 'Ojo irritado',
-      icon: 'icon-ojos_irritados'
-    },
-    {
-      id: 6,
-      descripcion: 'Ojo irritado',
-      icon: 'icon-ojos_irritados'
     }
   ];
 
