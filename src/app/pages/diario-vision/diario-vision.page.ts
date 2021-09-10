@@ -37,32 +37,22 @@ export class DiarioVisionPage implements OnInit {
     {
       id: 1,
       descripcion: 'Ojo irritado',
-      icon: 'icon-usuario'
+      icon: 'icon-ojos_irritados'
     },
     {
       id: 2,
-      descripcion: 'Ojo irritado',
-      icon: 'icon-usuario'
+      descripcion: 'Ojos llorosos',
+      icon: 'icon-ojos_llorosos'
     },
     {
       id: 3,
-      descripcion: 'Ojo irritado',
-      icon: 'icon-usuario'
+      descripcion: 'Ojo borroso',
+      icon: 'icon-vision_borrosa'
     },
     {
       id: 4,
-      descripcion: 'Ojo irritado',
-      icon: 'icon-usuario'
-    },
-    {
-      id: 5,
-      descripcion: 'Ojo irritado',
-      icon: 'icon-usuario'
-    },
-    {
-      id: 6,
-      descripcion: 'Ojo irritado',
-      icon: 'icon-usuario'
+      descripcion: 'Ojo ciego',
+      icon: 'icon-ceguera'
     }
   ];
 

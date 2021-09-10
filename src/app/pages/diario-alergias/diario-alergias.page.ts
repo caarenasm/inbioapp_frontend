@@ -41,12 +41,12 @@ export class DiarioAlergiasPage implements OnInit {
     },
     {
       id: 2,
-      descripcion: 'Tos',
+      descripcion: 'flemas',
       icon: 'icon-neutro'
     },
     {
       id: 3,
-      descripcion: 'Tos',
+      descripcion: 'nauseas',
       icon: 'icon-neutro'
     },
     {
