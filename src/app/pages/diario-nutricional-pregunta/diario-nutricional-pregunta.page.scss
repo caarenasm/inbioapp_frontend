@@ -5,7 +5,7 @@
 
 .texto-pregunta {
     font-family: 'Poppins' !important;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: normal;
     line-height: 20px;
     color: #000000;
@@ -59,21 +59,32 @@
 }
 
 .icono {
-    font-size: 50px;
+    font-size: 44px;
 }
 
 .detalle {
     margin-top: -25px;
-    --border-radius: 20px;
-    padding: 22px;
+    --border-radius: 15px;
+    padding: 20px;
     .icono {
-        font-size: 40px;
+        font-size: 44px;
     }
     .icono_estado {
-        font-size: 50px;
+        font-size: 44px;
     }
 }
 
 .posicion-descr {
     margin-bottom: 20px;
+}
+
+.sub-tarjeta {
+    background-color: #f6f6f6;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    margin-bottom: 0px;
+    margin-left: 0;
+    margin-right: 0;
 }
