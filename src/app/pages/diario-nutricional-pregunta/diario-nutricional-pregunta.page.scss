@@ -39,6 +39,16 @@
     color: black;
 }
 
+.opcion {
+    padding: 0px;
+    margin: 0px;
+    border-radius: 25px;
+    --text-align: center;
+    .radio-checked {
+        --color-checked: #fe8d0c;
+    }
+}
+
 .texto-estado {
     font-family: 'Poppins' !important;
     font-size: 14px;
@@ -76,6 +86,11 @@
 
 .posicion-descr {
     margin-bottom: 20px;
+}
+
+.cuerpo-receta {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 .sub-tarjeta {
