@@ -16,12 +16,12 @@
 
             <ion-card-header>
                 <ion-card-subtitle class="sub-titulo-2">DD / MM / YY</ion-card-subtitle>
-                <ion-card-subtitle class="sub-titulo-2"> {{ fecha }} </ion-card-subtitle>
+                <ion-card-subtitle class="sub-titulo-2">{{ fecha | date: 'dd/MM/yy' }}</ion-card-subtitle>
 
             </ion-card-header>
             <ion-card-content>
-                <ion-card-title class="titulo-1 negrita"> !Hola Fulano! </ion-card-title>
-                <ion-card-title class="titulo-1 negrita"> ¿Como te sientes hoy?</ion-card-title>
+                <ion-card-title class="titulo-1 negrita">!Hola Fulano!</ion-card-title>
+                <ion-card-title class="titulo-1 negrita">¿Como te sientes hoy?</ion-card-title>
 
                 <ion-grid class="grid">
                     <ion-row>
@@ -41,7 +41,7 @@
                 </ion-grid>
             </ion-card-content>
 
-            <ion-card class="sub-tarjeta-1">
+            <ion-card class="sub-tarjeta">
 
                 <ion-card-header>
                     <ion-card-title class="texto-pregunta center">Cuéntanos acerca de tus hábitos el día de hoy</ion-card-title>
@@ -51,7 +51,7 @@
                         <ion-icon slot="start" class="{{ item.icono }} icono" color="warning"></ion-icon>
                         <ion-label class="ion-text-wrap">{{ item.descripcion }}</ion-label>
                         <span class="icon-base_17 icono_estado" *ngIf="item.estado == 1">
-              <span class="path1"></span>
+                        <span class="path1"></span>
                         <span class="path2"></span>
                         </span>
                         <span class="icon-base_18 icono_estado" *ngIf="item.estado == 2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
