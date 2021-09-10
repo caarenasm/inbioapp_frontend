@@ -76,22 +76,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/dieta/dieta.module').then( m => m.DietaPageModule)
   },
   {
-    path: 'mi-diario-nutricional',
-    loadChildren: () => import('./pages/mi-diario-nutricional/mi-diario-nutricional.module').then( m => m.MiDiarioNutricionalPageModule)
-  },
-  {
-    path: 'mi-diario-nutricional-detalles',
-    loadChildren: () => import('./pages/mi-diario-nutricional-detalles/mi-diario-nutricional-detalles.module').then( m => m.MiDiarioNutricionalDetallesPageModule)
-  },
-  {
-    path: 'blog-general',
-    loadChildren: () => import('./pages/blog-general/blog-general.module').then( m => m.BlogGeneralPageModule)
-  },
-  {
-    path: 'blog-unico',
-    loadChildren: () => import('./pages/blog-unico/blog-unico.module').then( m => m.BlogUnicoPageModule)
-  },
-  {
     path: 'producto-detalle',
     loadChildren: () => import('./pages/producto-detalle/producto-detalle.module').then( m => m.ProductoDetallePageModule)
   },
@@ -167,6 +151,14 @@ const routes: Routes = [
   {
     path: 'diario-senales-organismo',
     loadChildren: () => import('./pages/diario-senales-organismo/diario-senales-organismo.module').then( m => m.DiarioSenalesOrganismoPageModule)
+  },
+  {
+    path: 'diario-nutricional',
+    loadChildren: () => import('./pages/diario-nutricional/diario-nutricional.module').then( m => m.DiarioNutricionalPageModule)
+  },
+  {
+    path: 'diario-nutricional-pregunta',
+    loadChildren: () => import('./pages/diario-nutricional-pregunta/diario-nutricional-pregunta.module').then( m => m.DiarioNutricionalPreguntaPageModule)
   },
   
 ];
