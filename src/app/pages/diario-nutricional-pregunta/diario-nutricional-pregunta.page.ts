@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
+import { DiarioSuenoPage } from '../diario-sueno/diario-sueno.page';
+
 export interface Habitos {
   id: number;
   tipo: number;
@@ -161,6 +163,13 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
 
     const navigationExtras: NavigationExtras = { state: { datos: info } };
     this.router.navigate([ruta], navigationExtras);
+
+    /*const modal = await this.modalCtrl.create({
+      component: DiarioSuenoPage,
+      componentProps: {}
+    });
+
+    return await modal.present();*/
 
   }
 
