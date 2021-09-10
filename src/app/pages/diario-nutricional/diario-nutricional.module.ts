@@ -6,9 +6,9 @@ import { IonicModule } from '@ionic/angular';
 // Calendar UI Module
 import { CalendarModule } from 'ion2-calendar';
 
-import { MiDiarioNutricionalPageRoutingModule } from './mi-diario-nutricional-routing.module';
+import { DiarioNutricionalPageRoutingModule } from './diario-nutricional-routing.module';
 
-import { MiDiarioNutricionalPage } from './mi-diario-nutricional.page';
+import { DiarioNutricionalPage } from './diario-nutricional.page';
 import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
@@ -16,11 +16,11 @@ import { ComponentsModule } from '../../components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    MiDiarioNutricionalPageRoutingModule,
+    DiarioNutricionalPageRoutingModule,
     ComponentsModule,
     CalendarModule
   ],
-  declarations: [MiDiarioNutricionalPage],
+  declarations: [DiarioNutricionalPage],
   providers: [{ provide: LOCALE_ID, useValue: 'zh-CN' }]
 })
-export class MiDiarioNutricionalPageModule {}
+export class DiarioNutricionalPageModule {}
