@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlertController, IonSlides } from '@ionic/angular';
+import { AlertController, IonSlides, ModalController } from '@ionic/angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Location } from '@angular/common';
 
 import { AlertService } from '../../services/alert.service';
 
@@ -46,6 +47,8 @@ export class DiarioSuenoPage implements OnInit {
     private formBuilder: FormBuilder,
     private alertServ: AlertService,
     private alertCtrl: AlertController,
+    private modalCtrl: ModalController,
+    private location: Location
   ) {
 
     this.datos = this.formBuilder.group({
@@ -120,6 +123,11 @@ export class DiarioSuenoPage implements OnInit {
 
     await alert.present();
 
+  }
+
+  cerrar() {
+    //this.modalCtrl.dismiss();
+    this.location.back();
   }
 
 }
