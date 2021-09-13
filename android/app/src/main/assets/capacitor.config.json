@@ -1,0 +1,13 @@
+{
+  "appId": "app.oinic.inbioapp",
+  "appName": "inbioapp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
