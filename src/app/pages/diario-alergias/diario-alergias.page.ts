@@ -37,32 +37,22 @@ export class DiarioAlergiasPage implements OnInit {
     {
       id: 1,
       descripcion: 'Tos',
-      icon: 'icon-neutro'
+      icon: 'icon-tos'
     },
     {
       id: 2,
-      descripcion: 'flemas',
-      icon: 'icon-neutro'
+      descripcion: 'Flemas',
+      icon: 'icon-flemas'
     },
     {
       id: 3,
-      descripcion: 'nauseas',
-      icon: 'icon-neutro'
+      descripcion: 'Rinitis',
+      icon: 'icon-rinitis'
     },
     {
       id: 4,
-      descripcion: 'Tos',
-      icon: 'icon-neutro'
-    },
-    {
-      id: 5,
-      descripcion: 'Tos',
-      icon: 'icon-neutro'
-    },
-    {
-      id: 6,
-      descripcion: 'Tos',
-      icon: 'icon-neutro'
+      descripcion: 'Anafilaxia',
+      icon: 'icon-anafilaxia'
     }
   ];
 

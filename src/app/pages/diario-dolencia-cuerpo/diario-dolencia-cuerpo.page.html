@@ -12,7 +12,7 @@
                 <ion-col size="12">
                     <ion-item class="titulo-evento">
                         <a class="icono">
-                            <i class="icon-enfermedades"></i>
+                            <i class="icon-dolencias-12"></i>
                         </a>
                         <ion-label class="texto">¿Presentas dolencias en tu cuerpo?</ion-label>
                     </ion-item>
@@ -46,7 +46,7 @@
 
                                 <ion-item class="card">
                                     <ion-row class="tarjeta">
-                                        <ion-radio class="radio" [value]=item.id></ion-radio>
+                                        <ion-radio class="radio posicion ion-radio" [value]=item.id></ion-radio>
                                         <span class="{{ item.icon }} icono"></span>
                                         <ion-label class="texto">{{ item.descripcion }}</ion-label>
                                     </ion-row>
@@ -82,7 +82,7 @@
                                     <ion-col>
                                         <ion-item class="card">
                                             <ion-row class="tarjeta">
-                                                <ion-checkbox class="checkbox" value="{{ evento[i].id }}" (ionChange)="addCheckbox($event,evento[i].id)"></ion-checkbox>
+                                                <ion-checkbox class="ion-checkbox checkbox" value="{{ evento[i].id }}" (ionChange)="addCheckbox($event,evento[i].id)"></ion-checkbox>
                                                 <span class="{{ evento[i].icon }} icono"></span>
                                                 <ion-label class="texto">{{ evento[i].descripcion }}</ion-label>
                                             </ion-row>
@@ -93,7 +93,7 @@
                                     <ion-col>
                                         <ion-item class="card">
                                             <ion-row class="tarjeta">
-                                                <ion-checkbox class="checkbox" value="{{ evento[i+1].id }}" (ionChange)="addCheckbox($event,evento[i+1].id)"></ion-checkbox>
+                                                <ion-checkbox class="ion-checkbox checkbox" value="{{ evento[i+1].id }}" (ionChange)="addCheckbox($event,evento[i+1].id)"></ion-checkbox>
                                                 <span class="{{ evento[i+1].icon }} icono"></span>
                                                 <ion-label class="texto">{{ evento[i+1].descripcion }}</ion-label>
                                             </ion-row>

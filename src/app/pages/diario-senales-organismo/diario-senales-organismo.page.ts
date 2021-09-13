@@ -5,12 +5,9 @@ import { AlertController, IonSlides } from '@ionic/angular';
 import { AlertService } from '../../services/alert.service';
 
 export interface Evento {
-  idd: number;
   id: number;
   descripcion: string;
-  descripcion_dos: string;
   icon: string;
-  icono: string;
 }
 
 @Component({
@@ -37,52 +34,84 @@ export class DiarioSenalesOrganismoPage implements OnInit {
 
   evento: Evento[] = [
     {
-      idd: 1,
       id: 1,
-      descripcion: 'Sudoración excesiva1',
-      descripcion_dos: 'Escalofrios1',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos' 
+      descripcion: 'Mareo',
+      icon: 'icon-mareo'
     },
     {
-      idd: 2,
       id: 2,
-      descripcion: 'Sudoración excesiva2',
-      descripcion_dos: 'Escalofrios2',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos'
+      descripcion: 'Desmayo',
+      icon: 'icon-desmayo'
     },
     {
-      idd: 3,
       id: 3,
-      descripcion: 'Sudoración excesiva3',
-      descripcion_dos: 'Escalofrios3',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos'
+      descripcion: 'Perdida de libido',
+      icon: 'icon-perdida_libido'
     },
     {
-      idd: 4,
       id: 4,
-      descripcion: 'Sudoración excesiva4',
-      descripcion_dos: 'Escalofrios4',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos'
+      descripcion: 'Vena Varice',
+      icon: 'icon-vena_varice'
     },
     {
-      idd: 5,
       id: 5,
-      descripcion: 'Sudoración excesiva5',
-      descripcion_dos: 'Escalofrios5',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos'
+      descripcion: 'Sed',
+      icon: 'icon-sed'
     },
     {
-      idd: 6,
       id: 6,
-      descripcion: 'Sudoración excesiva6',
-      descripcion_dos: 'Escalofrios6',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos'
+      descripcion: 'Hambre',
+      icon: 'icon-hambre'
+    },
+    {
+      id: 7,
+      descripcion: 'Infeccion urinaria',
+      icon: 'icon-infeccion_urinaria'
+    },
+    {
+      id: 8,
+      descripcion: 'Hemorroides',
+      icon: 'icon-hemorroides'
+    },
+    {
+      id: 9,
+      descripcion: 'Dificultad para respirar',
+      icon: 'icon-dificultad_respirar'
+    },
+    {
+      id: 10,
+      descripcion: 'Sudoracion exesiva',
+      icon: 'icon-sudoracion_excesiva'
+    },
+    {
+      id: 11,
+      descripcion: 'Escalofrios',
+      icon: 'icon-escalofrios'
+    },
+    {
+      id: 12,
+      descripcion: 'Fiebre',
+      icon: 'icon-fiebre'
+    },
+    {
+      id: 13,
+      descripcion: 'Inflamacion en los ganglios',
+      icon: 'icon-inflamacion_ganglios'
+    },
+    {
+      id: 14,
+      descripcion: 'Exposicion a gases/contaminacion/polvo/polen',
+      icon: 'icon-polen'
+    },
+    {
+      id: 15,
+      descripcion: 'Sangrado',
+      icon: 'icon-sangradp'
+    },
+    {
+      id: 16,
+      descripcion: 'Falta de apetito',
+      icon: ' icon-falta_apetito'
     }
   ];
 
@@ -134,14 +163,7 @@ export class DiarioSenalesOrganismoPage implements OnInit {
     /*console.log(this.checked);*/
   }
 
-  agregar_dos(){
-    const tipo = this.datos.get('opcion').value;
-    const filtro = this.evento.find( datos => datos.idd === tipo,);
-    this.arreglo.addControl('detalle[' + tipo + ']',
-      new FormControl( filtro.descripcion, Validators.required)
-    );
-    /*console.log(this.checked);*/
-  }
+
 
   get getPiecesArray() {
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
