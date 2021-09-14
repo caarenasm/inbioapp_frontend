@@ -40,6 +40,62 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       descripcion: '¿Que actividad(es) físicas practicastes',
       estado: 3,
       url: 'diario-sueno'
+    },
+    {
+      id: 4,
+      icono: 'icon-medicamentos-08',
+      descripcion: '¿Qué medicamentos tomas?',
+      estado: 3,
+      url: 'diario-sueno'
+    },
+    {
+      id: 5,
+      icono: 'icon-regular-09',
+      descripcion: '¿Cómo regulas tu enfermedad?',
+      estado: 3,
+      url: 'diario-sueno'
+    },
+    {
+      id: 6,
+      icono: 'icon-vision-10',
+      descripcion: '¿Tienes problemas con la visión?',
+      estado: 3,
+      url: 'diario-sueno'
+    },
+    {
+      id: 7,
+      icono: 'icon-gastrico-11',
+      descripcion: '¿Tienes problemas gástricos?',
+      estado: 3,
+      url: 'diario-sueno'
+    },
+    {
+      id: 8,
+      icono: 'icon-dolencias-12',
+      descripcion: '¿Presentas dolencias en tu cuerpo?',
+      estado: 3,
+      url: 'diario-sueno'
+    },
+    {
+      id: 9,
+      icono: 'icon-senales-13',
+      descripcion: '¿Qué otras señales presentas en tu organismo?',
+      estado: 3,
+      url: 'diario-sueno'
+    },
+    {
+      id: 10,
+      icono: 'icon-alergias-14',
+      descripcion: '¿Tienes alergias?',
+      estado: 3,
+      url: 'diario-sueno'
+    },
+    {
+      id: 11,
+      icono: 'icon-sentimiento-15',
+      descripcion: '¿Qué sentimientos a nivel psíquico?',
+      estado: 3,
+      url: 'diario-sueno'
     }
   ];
 
