@@ -111,7 +111,87 @@ export class DiarioSenalesOrganismoPage implements OnInit {
     {
       id: 16,
       descripcion: 'Falta de apetito',
-      icon: ' icon-falta_apetito'
+      icon: 'icon-falta_apetito'
+    },
+    {
+      id: 17,
+      descripcion: 'Perdida de peso',
+      icon: 'icon-perdida_peso'
+    },
+    {
+      id: 18,
+      descripcion: 'Aumento de peso',
+      icon: 'icon-aumentar-peso'
+    },
+    {
+      id: 19,
+      descripcion: 'Perdida de masa muscular',
+      icon: 'icon-perdida_masa_muscular'
+    },
+    {
+      id: 20,
+      descripcion: 'Caida del pelo',
+      icon: 'icon-perdida_pelo'
+    },
+    {
+      id: 21,
+      descripcion: 'Crecimiento de vello',
+      icon: 'icon-crecimiento_vello'
+    },
+    {
+      id: 22,
+      descripcion: 'Perdida de fuerza',
+      icon: 'icon-perdida_fuerza'
+    },
+    {
+      id: 23,
+      descripcion: 'Mala memoria',
+      icon: 'icon-memory'
+    },
+    {
+      id: 24,
+      descripcion: 'Mala concentracion',
+      icon: 'icon-mala_concentracion'
+    },
+    {
+      id: 25,
+      descripcion: 'Mal equilibrio',
+      icon: 'icon-mal_equilibrio'
+    },
+    {
+      id: 26,
+      descripcion: 'Convulciones',
+      icon: 'icon-convulciones'
+    },
+    {
+      id: 27,
+      descripcion: 'Problema de habla',
+      icon: 'icon-problema_habla'
+    },
+    {
+      id: 28,
+      descripcion: 'Hiperactividad',
+      icon: 'icon-hiperactividad'
+    },
+    {
+      id: 29,
+      descripcion: 'Letardo',
+      icon: 'icon-letargo'
+    },
+    {
+      id: 30,
+      descripcion: 'Fatiga',
+      icon: 'icon-fatiga'
+    },
+    {
+      id: 31,
+      descripcion: 'Menstruacion abundante',
+      icon: 'icon-menstruacion_abundante'
+    },
+    {
+      id: 32,
+      descripcion: 'Infertilidad',
+      icon: ' icon-infertilidad'
     }
   ];
 
