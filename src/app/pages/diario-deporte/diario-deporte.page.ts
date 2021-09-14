@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlertController, IonSlides } from '@ionic/angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Location } from '@angular/common';
 
 import { AlertService } from '../../services/alert.service';
 
@@ -65,6 +66,7 @@ export class DiarioDeportePage implements OnInit {
     private formBuilder: FormBuilder,
     private alertServ: AlertService,
     private alertCtrl: AlertController,
+    private location: Location
   ) {
     this.datos = this.formBuilder.group({
       tipo: [ 2, Validators.required],
@@ -134,6 +136,10 @@ export class DiarioDeportePage implements OnInit {
 
   remover(control){
     this.arreglo.removeControl(control.key);
+  }
+
+  cerrar() {
+    this.location.back();
   }
 
 }
