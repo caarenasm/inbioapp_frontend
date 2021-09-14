@@ -36,32 +36,32 @@ export class DiarioDolenciaCuerpoPage implements OnInit {
     {
       id: 1,
       descripcion: 'Cabeza',
-      icon: 'icon-nadar'
+      icon: 'icon-dolor_Cabeza'
     },
     {
       id: 2,
       descripcion: 'Cuello',
-      icon: 'icon-correr'
+      icon: 'icon-sudoracion_excesiva'
     },
     {
       id: 3,
       descripcion: 'Pies',
-      icon: 'icon-pesas'
+      icon: 'icon-rigidez'
     },
     {
       id: 4,
       descripcion: 'Brazos',
-      icon: 'icon-aerobicos'
+      icon: 'icon-perdida_masa_muscular'
     },
     {
       id: 5,
       descripcion: 'Pecho',
-      icon: 'icon-yoga'
+      icon: 'icon-perdida_peso'
     },
     {
       id: 6,
       descripcion: 'Espalda',
-      icon: 'icon-yoga'
+      icon: 'icon-urticaria'
     }
   ];
 

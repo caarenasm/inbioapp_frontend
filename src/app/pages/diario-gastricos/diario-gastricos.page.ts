@@ -5,12 +5,10 @@ import { AlertController, IonSlides } from '@ionic/angular';
 import { AlertService } from '../../services/alert.service';
 
 export interface Evento {
-  idd: number;
   id: number;
   descripcion: string;
-  descripcion_dos: string;
   icon: string;
-  icono: string;
+
 }
 
 @Component({
@@ -37,52 +35,54 @@ export class DiarioGastricosPage implements OnInit {
 
   evento: Evento[] = [
     {
-      idd: 1,
       id: 1,
-      descripcion: 'Nauseas1',
-      descripcion_dos: 'Gastritis1',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos' 
+      descripcion: 'Reflujo',
+      icon: 'icon-reflujo'
     },
     {
-      idd: 2,
       id: 2,
-      descripcion: 'Nauseas2',
-      descripcion_dos: 'Gastritis2',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos'
+      descripcion: 'Ulcera',
+      icon: 'icon-ulcera'
     },
     {
-      idd: 3,
       id: 3,
-      descripcion: 'Nauseas3',
-      descripcion_dos: 'Gastritis3',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos'
+      descripcion: 'Gastritis',
+      icon: 'icon-gastritis_1'
     },
     {
-      idd: 4,
       id: 4,
-      descripcion: 'Nauseas4',
-      descripcion_dos: 'Gastritis4',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos'
+      descripcion: 'Mal aliento',
+      icon: 'icon-mal_aliento'
     },
     {
-      idd: 5,
       id: 5,
-      descripcion: 'Nauseas5',
-      descripcion_dos: 'Gastritis5',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos'
+      descripcion: 'Nauseas',
+      icon: 'icon-nauseas'
     },
     {
-      idd: 6,
       id: 6,
-      descripcion: 'Nauseas6',
-      descripcion_dos: 'Gastritis6',
-      icon: 'icon-neutro',
-      icono: 'icon-suplementos'
+      descripcion: 'Vómito',
+      icon: 'icon-vomito'
+    },
+    {
+      id: 7,
+      descripcion: 'Diarrea',
+      icon: 'icon-diarrea'
+    },
+    {
+      id: 8,
+      descripcion: 'Estrenimiento',
+      icon: 'icon-estrenimiento'
+    },
+    {
+      id: 9,
+      descripcion: 'Inflamacion estomacal',
+      icon: 'icon-inflamacion_estomacal'
+    },
+    {
+      id: 10,
+      descripcion: 'Colon irritable',
+      icon: 'icon-colon_irritable'
     }
   ];
 
@@ -128,15 +128,6 @@ export class DiarioGastricosPage implements OnInit {
   agregar(){
     const tipo = this.datos.get('opcion').value;
     const filtro = this.evento.find( datos => datos.id === tipo,);
-    this.arreglo.addControl('detalle[' + tipo + ']',
-      new FormControl( filtro.descripcion, Validators.required)
-    );
-    /*console.log(this.checked);*/
-  }
-
-  agregar_dos(){
-    const tipo = this.datos.get('opcion').value;
-    const filtro = this.evento.find( datos => datos.idd === tipo,);
     this.arreglo.addControl('detalle[' + tipo + ']',
       new FormControl( filtro.descripcion, Validators.required)
     );

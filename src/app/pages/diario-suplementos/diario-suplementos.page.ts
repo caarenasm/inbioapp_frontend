@@ -1,16 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Validators, FormBuilder, FormGroup, FormControl, FormArray } from '@angular/forms';
 import { AlertController, IonSlides } from '@ionic/angular';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 import { AlertService } from '../../services/alert.service';
 
 export interface Evento {
-  idd: number;
   id: number;
   descripcion: string;
-  descripcion_dos: string;
-  icon: string;
-  icono: string;
+  img: string;
 }
 
 @Component({
@@ -20,69 +17,74 @@ export interface Evento {
 })
 export class DiarioSuplementosPage implements OnInit {
 
-  datos: FormGroup;
-  arreglo: FormGroup;
-  checked = [];
-  cantidad = 0;
-
-  slideOpts = {
-    slidesPerView: 2.3,
-    freeMode: true
-  };
-
   slideOptsDos = {
     slidesPerView: 4.6,
     freeMode: true
   };
 
+  datos: FormGroup;
+  arreglo: FormGroup;
+
   evento: Evento[] = [
     {
-      idd: 1,
       id: 1,
-      descripcion: 'BELLASEN1',
-      descripcion_dos: 'Vitaminas1',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos' 
+      descripcion: 'Bellasen',
+      img: 'Bellasen.jpg'
     },
     {
-      idd: 2,
       id: 2,
-      descripcion: 'BELLASEN2',
-      descripcion_dos: 'Vitaminas2',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos'
+      descripcion: 'Bellasen crema',
+      img: 'bellasen_crema_2.jpg'
     },
     {
-      idd: 3,
       id: 3,
-      descripcion: 'BELLASEN3',
-      descripcion_dos: 'Vitaminas3',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos'
+      descripcion: 'Bioremix mana especial',
+      img: 'Bioremix_mana_especial.jpg'
     },
     {
-      idd: 4,
       id: 4,
-      descripcion: 'BELLASEN4',
-      descripcion_dos: 'Vitaminas4',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos'
+      descripcion: 'Bioremix mana',
+      img: 'Bioremix_mana.jpg'
     },
     {
-      idd: 5,
       id: 5,
-      descripcion: 'BELLASEN5',
-      descripcion_dos: 'Vitaminas5',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos'
+      descripcion: 'Bioremix',
+      img: 'Bioremix.jpg'
     },
     {
-      idd: 6,
       id: 6,
-      descripcion: 'BELLASEN6',
-      descripcion_dos: 'Vitaminas6',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos'
+      descripcion: 'Dolfin',
+      img: 'Dolfin.jpg'
+    },
+    {
+      id: 7,
+      descripcion: 'Purafib',
+      img: 'Purafib.jpg'
+    },
+    {
+      id: 8,
+      descripcion: 'Aminoacidos esenciales',
+      img: 'aminoacidos_esenciales.jpg'
+    },
+    {
+      id: 9,
+      descripcion: 'Proteínas',
+      img: 'proteina.jpg'
+    },
+    {
+      id: 10,
+      descripcion: 'Fermentos o microgornaismos',
+      img: 'fermentos_microorganismo.jpg'
+    },
+    {
+      id: 11,
+      descripcion: 'Minerales',
+      img: 'Minerales.jpg'
+    },
+    {
+      id: 12,
+      descripcion: 'Aceites esenciales',
+      img: 'aceites_esenciales.jpg'
     }
   ];
 
@@ -92,111 +94,28 @@ export class DiarioSuplementosPage implements OnInit {
     private alertCtrl: AlertController,
   ) {
     this.datos = this.formBuilder.group({
-      tipo: [ 5, Validators.required],
+      tipo: [ 2, Validators.required],
       opcion: ['', Validators.required],
+      tiempo: ['', Validators.required],
       lectura: ['', ],
     });
     this.arreglo = this.formBuilder.group({});
   }
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
-  @ViewChild('miOpcion') slides: IonSlides;
+    // eslint-disable-next-line @typescript-eslint/member-ordering
+    @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit() {
   }
 
-  //Adds the checkedbox to the array and check if you unchecked it
-  addCheckbox(event, checkbox: number) {
-    if ( event.detail.checked ) {
-      this.checked.push(checkbox);
-    } else {
-      let index = this.removeCheckedFromArray(checkbox);
-      this.checked.splice(index,1);
-    }
-  }
-
-  //Removes checkbox from array when you uncheck it
-  removeCheckedFromArray(checkbox: number) {
-    return this.checked.findIndex((category)=>category === checkbox);
-  }
-
-  //Empties array with checkedboxes
-  emptyCheckedArray() {
-    this.checked = [];
-  }
-
   agregar(){
     const tipo = this.datos.get('opcion').value;
-    const filtro = this.evento.find( datos => datos.id === tipo,);
-    this.arreglo.addControl('detalle[' + tipo + ']',
-      new FormControl( filtro.descripcion, Validators.required)
-    );
-    /*console.log(this.checked);*/
-  }
-
-  agregar_dos(){
-    const tipo = this.datos.get('opcion').value;
-    const filtro = this.evento.find( datos => datos.idd === tipo,);
-    this.arreglo.addControl('detalle[' + tipo + ']',
-      new FormControl( filtro.descripcion, Validators.required)
-    );
-    /*console.log(this.checked);*/
-  }
-
-  get getPiecesArray() {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-    return (<FormArray>this.datos.get('lectura'));
-  }
-
-  icono(tipo){
-    const filtro = this.evento.find(x => x.id = tipo);
-    return filtro.icon;
+    const filtro = this.evento.find( datos => datos.id === tipo);
+    this.arreglo.addControl('detalle[' + tipo + ']', new FormControl( filtro.descripcion, Validators.required));
   }
 
   remover(control){
     this.arreglo.removeControl(control.key);
-  }
-
-  guardar(){
-    if ( this.datos.invalid ){
-      this.alertServ.presentAlert('Datos Requeridos, verifique el formulario!');
-
-      return Object.values( this.datos.controls ).forEach( control => {
-        if ( control instanceof FormGroup ) {
-          Object.values( control.controls ).forEach( control => control.markAsTouched() );
-        } else {
-          control.markAsTouched();
-        }
-      });
-
-    }
-    this.confirmar();
-  }
-
-  async confirmar() {
-
-    const alert = await this.alertCtrl.create({
-      backdropDismiss: false,
-      message: '¿Estas seguro que deseas Guardar?',
-      cssClass:'alerta',
-      buttons: [
-        {
-          text: 'Volver',
-          role: 'cancel',
-        },
-        {
-          text: 'Continuar',
-          cssClass:'alerta-boton-aceptar',
-          handler: () => {
-            this.datos.get('lectura').setValue(JSON.stringify(this.datos.value));
-            console.log(this.datos.value);
-          }
-        }
-      ]
-    });
-
-    await alert.present();
-
   }
 
 }

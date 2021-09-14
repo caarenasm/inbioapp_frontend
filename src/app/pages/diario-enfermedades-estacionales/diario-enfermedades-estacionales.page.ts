@@ -5,12 +5,9 @@ import { AlertController, IonSlides } from '@ionic/angular';
 import { AlertService } from '../../services/alert.service';
 
 export interface Evento {
-  idd: number;
   id: number;
   descripcion: string;
-  descripcion_dos: string;
   icon: string;
-  icono: string;
 }
 
 @Component({
@@ -37,52 +34,34 @@ export class DiarioEnfermedadesEstacionalesPage implements OnInit {
 
   evento: Evento[] = [
     {
-      idd: 1,
       id: 1,
-      descripcion: 'Dolor Abdominal1',
-      descripcion_dos: 'Dolor de Cabeza1',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos' 
+      descripcion: 'Dolor Abdominal',
+      icon: 'icon-inflamacion_estomacal'
     },
     {
-      idd: 2,
       id: 2,
-      descripcion: 'Dolor Abdominal2',
-      descripcion_dos: 'Dolor de Cabeza2',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos'
+      descripcion: 'Dolor de cabeza',
+      icon: 'icon-dolor_Cabeza'
     },
     {
-      idd: 3,
       id: 3,
-      descripcion: 'Dolor Abdominal3',
-      descripcion_dos: 'Dolor de Cabeza3',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos'
+      descripcion: 'Escalofrios',
+      icon: ' icon-escalofrios'
     },
     {
-      idd: 4,
       id: 4,
-      descripcion: 'Dolor Abdominal4',
-      descripcion_dos: 'Dolor de Cabeza4',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos'
+      descripcion: 'Espasmos',
+      icon: 'icon-espasmos'
     },
     {
-      idd: 5,
       id: 5,
-      descripcion: 'Dolor Abdominal5',
-      descripcion_dos: 'Dolor de Cabeza5',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos'
+      descripcion: 'Fatiga',
+      icon: 'icon-fatiga'
     },
     {
-      idd: 6,
       id: 6,
-      descripcion: 'Dolor Abdominal6',
-      descripcion_dos: 'Dolor de Cabeza6',
-      icon: 'icon-usuario',
-      icono: 'icon-suplementos'
+      descripcion: 'Fiebre',
+      icon: 'icon-fiebre'
     }
   ];
 
@@ -133,15 +112,7 @@ export class DiarioEnfermedadesEstacionalesPage implements OnInit {
     );
     /*console.log(this.checked);*/
   }
-
-  agregar_dos(){
-    const tipo = this.datos.get('opcion').value;
-    const filtro = this.evento.find( datos => datos.idd === tipo,);
-    this.arreglo.addControl('detalle[' + tipo + ']',
-      new FormControl( filtro.descripcion, Validators.required)
-    );
-    /*console.log(this.checked);*/
-  }
+  
 
   get getPiecesArray() {
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
