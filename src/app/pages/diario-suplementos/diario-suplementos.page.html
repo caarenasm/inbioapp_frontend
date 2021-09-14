@@ -45,24 +45,21 @@
                                 <ion-grid *ngIf="i % 2 == 0" style="padding-left: 90px;">
                                     <ion-row>
                                         <ion-col>
-                                            <ion-card class="card">
-                                                <img src="/assets/img/medicamentos/{{ evento[i].img }}" alt="">
-                                                <ion-radio class="radio posicion ion-radio" [value]=evento[i].id></ion-radio>
-                                                <ion-label class="texto">{{ evento[i].descripcion }}</ion-label>
-                                                <ion-row class="tarjeta">                                                 
-                                                        
-                                                        
-                                                        
+                                            <ion-item class="card">
+                                                <ion-row class="tarjeta">
+                                                    <img src="/assets/img/medicamentos/{{ evento[i].img }}" />
+                                                    <ion-radio class="radio posicion ion-radio" [value]=evento[i].id></ion-radio>
+                                                    <ion-label class="texto">{{ evento[i].descripcion }}</ion-label>
                                                 </ion-row>
-                                            </ion-card>
+                                            </ion-item>
                                         </ion-col>
                                     </ion-row>
                                     <ion-row *ngIf="evento[i + 1]">
                                         <ion-col>
                                             <ion-item class="card">
                                                 <ion-row class="tarjeta">
+                                                    <img src="/assets/img/medicamentos/{{ evento[i+1].img }}" />
                                                     <ion-radio class="radio posicion ion-radio" [value]=evento[i+1].id></ion-radio>
-                                                    <img class="imagen" src="/assets/img/medicamentos/{{ evento[i+1].img }}" alt="">
                                                     <ion-label class="texto">{{ evento[i+1].descripcion }}</ion-label>
                                                 </ion-row>
                                             </ion-item>

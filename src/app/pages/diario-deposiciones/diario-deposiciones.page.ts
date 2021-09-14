@@ -13,11 +13,7 @@ export interface TipoDeposicion {
 export interface Evento {
   id: number;
   descripcion: string;
-  descripcion_vita: string;
-  descripcion_depo: string;
   icon: string;
-  icono: string;
-  estilo_depo: string;
 }
 
 
@@ -77,56 +73,32 @@ export class DiarioDeposicionesPage implements OnInit {
     {
       id: 1,
       descripcion: 'PURAFIB 1',
-      descripcion_vita: 'Medicamentos',
-      descripcion_depo: 'Heces duras y separadas',
-      icon: 'icon-usuario',
-      icono: 'icon-duro_bolitas',
-      estilo_depo: 'icon-mis_estadisticas'
+      icon: 'icon-usuario'
     },
     {
       id: 2,
       descripcion: 'PURAFIB 2',
-      descripcion_vita: 'Medicamentos',
-      descripcion_depo: 'Heces duras y separadas',
-      icon: 'icon-usuario',
-      icono: 'icon-duro_bolitas',
-      estilo_depo: 'icon-mis_estadisticas'
+      icon: 'icon-usuario'
     },
     {
       id: 3,
       descripcion: 'PURAFIB 3',
-      descripcion_vita: 'Medicamentos',
-      descripcion_depo: 'Heces duras y separadas',
-      icon: 'icon-usuario',
-      icono: 'icon-duro_bolitas',
-      estilo_depo: 'icon-mis_estadisticas'
+      icon: 'icon-usuario'
     },
     {
       id: 4,
       descripcion: 'PURAFIB 4',
-      descripcion_vita: 'Medicamentos',
-      descripcion_depo: 'Heces duras y separadas',
-      icon: 'icon-usuario',
-      icono: 'icon-duro_bolitas',
-      estilo_depo: 'icon-mis_estadisticas'
+      icon: 'icon-usuario'
     },
     {
       id: 5,
       descripcion: 'PURAFIB 5',
-      descripcion_vita: 'Medicamentos',
-      descripcion_depo: 'Heces duras y separadas',
-      icon: 'icon-usuario',
-      icono: 'icon-duro_bolitas',
-      estilo_depo: 'icon-mis_estadisticas'
+      icon: 'icon-usuario'
     },
     {
       id: 6,
       descripcion: 'PURAFIB 6',
-      descripcion_vita: 'Medicamentos',
-      descripcion_depo: 'Heces duras y separadas',
-      icon: 'icon-usuario',
-      icono: 'icon-duro_bolitas',
-      estilo_depo: 'icon-mis_estadisticas'
+      icon: 'icon-usuario'
     }
   ];
 
