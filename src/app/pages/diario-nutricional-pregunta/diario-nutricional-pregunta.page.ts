@@ -119,7 +119,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     {
       id: 5,
       tipo: 1,
-      icono: 'icon-alimento_alergia',
+      icono: 'icon-incomodidad-05',
       descripcion: '¿Te causo incomodidad algun alimento ingerido?',
       estado: 3,
       url: ''
