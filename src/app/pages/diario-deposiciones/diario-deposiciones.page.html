@@ -129,8 +129,8 @@
             <form [formGroup]=arreglo>
                 <ion-row *ngFor="let control of arreglo.controls | keyvalue">
                     <ion-col size="9" style="padding-left: 20px;">
-                        <ion-input type="text" class="campo" formControlName="{{control.key}}" placeholder="Seleccione...">
-                            <ion-icon class="icon-usuario" item-right></ion-icon>
+                        <ion-input type="text" class="campo" formControlName="{{control.key}}" placeholder="Seleccione..." readonly>
+                            <ion-icon class="icon-nadar icono" item-right></ion-icon>
                         </ion-input>
                     </ion-col>
                     <ion-col size="3" style="padding-right: 20px;">
@@ -144,70 +144,66 @@
                 <ion-col size="12">
                     <ion-radio-group name="auto" value="opcion" formControlName="opcion">
 
-                        <ion-slides #miOpcion [options]="slideOpts">
-                            <ion-slide class="slide" *ngFor="let item of evento; let i=index">
-
-                                <ion-item class="card">
-                                    <ion-row class="tarjeta">
-                                        <ion-radio class="radio posicion ion-radio" value="{{ item.id }}"></ion-radio>
-                                        <span class="{{ item.icon }} icono"></span>
-                                        <ion-label class="texto">{{ item.descripcion }}</ion-label>
+                        <ion-slides #miOpcion [options]="slideOptsDos">
+                            <ion-slide style="height: 350px;" *ngFor="let item of evento; let i=index">
+                                <ion-grid *ngIf="i % 2 == 0" style="padding-left: 90px;">
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item class="card">
+                                                <ion-row class="tarjeta">
+                                                    <img src="/assets/img/medicamentos/{{ evento[i].img }}" />
+                                                    <ion-radio class="radio posicion ion-radio" [value]=evento[i].id></ion-radio>
+                                                    <ion-label class="texto">{{ evento[i].descripcion }}</ion-label>
+                                                </ion-row>
+                                            </ion-item>
+                                        </ion-col>
                                     </ion-row>
-                                </ion-item>
+                                    <ion-row *ngIf="evento[i + 1]">
+                                        <ion-col>
+                                            <ion-item class="card">
+                                                <ion-row class="tarjeta">
+                                                    <img src="/assets/img/medicamentos/{{ evento[i+1].img }}" />
+                                                    <ion-radio class="radio posicion ion-radio" [value]=evento[i+1].id></ion-radio>
+                                                    <ion-label class="texto">{{ evento[i+1].descripcion }}</ion-label>
+                                                </ion-row>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
                             </ion-slide>
                         </ion-slides>
 
-                        <ion-fab vertical="end" horizontal="start" slot="fixed" (click)="slides.slidePrev()">
+                        <ion-fab vertical="center" horizontal="start" slot="fixed" (click)="slides.slidePrev()">
                             <ion-fab-button class="botones-flotantes" size="small">
                                 <ion-icon class="icon-atras"></ion-icon>
                             </ion-fab-button>
                         </ion-fab>
-                        <ion-fab vertical="end" horizontal="end" slot="fixed" (click)="slides.slideNext()">
+                        <ion-fab vertical="center" horizontal="start" slot="fixed" class="posicion-boton" (click)="slides.slidePrev()">
+                            <ion-button expand="block" class="guardar botones-flotantes" size="small">
+                                <ion-label class="texto">Ver producto</ion-label>
+                            </ion-button>
+                        </ion-fab>
+                        <ion-fab vertical="center" horizontal="end" slot="fixed" (click)="slides.slideNext()">
                             <ion-fab-button class="botones-flotantes" size="small">
                                 <ion-icon class="icon-adelante"></ion-icon>
                             </ion-fab-button>
                         </ion-fab>
-  
-                        <ion-tab-bar slot="bottom" class="barra">
-                          <ion-button expand="block" class="guardar">
-                              <ion-label class="texto">Ver producto</ion-label>
-                          </ion-button>
-                        </ion-tab-bar>
-
                     </ion-radio-group>
                 </ion-col>
             </ion-row>
             <ion-row>
-                <ion-col size="12">
-                    <ion-radio-group name="auto" value="opcion" formControlName="opcion">
-
-                        <ion-slides #miOpcion [options]="slideOpts">
-                            <ion-slide class="slide" *ngFor="let item of evento; let i=index">
-
-                                <ion-item class="card">
-                                    <ion-row class="tarjeta">
-                                        <ion-radio class="radio posicion ion-radio" value="{{ item.id }}"></ion-radio>
-                                        <span class="{{ item.icon }} icono"></span>
-                                        <ion-label class="texto">{{ item.descripcion_vita }}</ion-label>
-                                    </ion-row>
-                                </ion-item>
-                            </ion-slide>
-                        </ion-slides>
-                        <ion-item class="titulo-evento">
-                            <label class="texto-2">Escribe en el campo de texto cuáles medicamentos tomas para mejorar tus disposiciones.</label>
-                        </ion-item>
-                        <ion-row>
-                            <ion-col size="12" style="padding-left: 10px;padding-right: 10px;text-align: right;">
-                                <ion-label>
-                                    <small>(Limite de 125 caracteres)</small>
-                                </ion-label>
-                                <ion-textarea style="text-align: left;" placeholder="Escribe aqui" rows="12" autofocus="true" mode="ios" maxlength="125" class="campo" autosize>
-                                </ion-textarea>
-                            </ion-col>
-                        </ion-row>
-
-                    </ion-radio-group>
-                </ion-col>
+                <ion-item class="titulo-evento">
+                    <label class="texto-2">Escribe en el campo de texto cuáles medicamentos tomas para mejorar tus disposiciones.</label>
+                </ion-item>
+                <ion-row>
+                    <ion-col size="20" style="padding-left: 10px;padding-right: 10px;text-align: right;">
+                        <ion-label>
+                            <small>(Limite de 125 caracteres)</small>
+                        </ion-label>
+                        <ion-textarea style="text-align: left;" placeholder="Escribe aqui" rows="12" autofocus="true" mode="ios" maxlength="125" class="campo" autosize>
+                        </ion-textarea>
+                    </ion-col>
+                </ion-row>
             </ion-row>
             <ion-row>
                 <ion-col size="4"></ion-col>
