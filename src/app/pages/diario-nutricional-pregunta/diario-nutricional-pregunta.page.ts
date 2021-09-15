@@ -135,7 +135,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     {
       id: 7,
       tipo: 1,
-      icono: 'icon-suplementos',
+      icono: 'icon-preguntas-16',
       descripcion: '¿Ingeriste suplementos?',
       estado: 3,
       url: 'diario-suplementos'
