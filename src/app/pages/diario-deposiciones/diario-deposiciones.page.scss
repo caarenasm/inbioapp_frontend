@@ -113,6 +113,10 @@
     
 }
 
+.none {
+    border: none;
+}
+
 .guardar {
     --background: #872a99;
     align-items: center;
@@ -169,10 +173,6 @@
     --border-color-checked: #fe8e0d;
 }
 
-.barra {
-    background-color: #f6f6f6;
-    border: none;
-}
 
 .texto-2 {
     position: relative;

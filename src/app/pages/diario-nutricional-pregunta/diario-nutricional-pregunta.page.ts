@@ -226,7 +226,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       icono: 'icon-sentimiento-15',
       descripcion: '¿Qué sentimientos a nivel psíquico?',
       estado: 3,
-      url: 'diario-deporte'
+      url: ''
     }
   ];
 

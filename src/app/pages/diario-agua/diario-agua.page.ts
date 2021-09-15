@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides } from '@ionic/angular';3
+import { Location } from '@angular/common';
 
 export interface Evento {
   id: number;
@@ -35,12 +36,18 @@ evento: Evento[] = [
   }
 ];
 
-constructor() { }
+constructor(
+  private location: Location
+) { }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit() {
+  }
+
+  cerrar() {
+    this.location.back();
   }
 
 }
