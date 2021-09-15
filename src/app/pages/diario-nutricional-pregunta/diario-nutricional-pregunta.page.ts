@@ -166,7 +166,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 11,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-medicamentos-08',
       descripcion: '¿Que medicamentos tomaste?',
       estado: 3,
@@ -174,7 +174,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 12,
-      tipo: 1,
+      tipo: 2,
       icono: ' icon-regular-09',
       descripcion: '¿Como regulas tu enfermedad?',
       estado: 3,
@@ -182,7 +182,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 13,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-vision-10',
       descripcion: '¿Tienes problemas con la visión?',
       estado: 3,
@@ -190,7 +190,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 14,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-gastrico-11',
       descripcion: '¿Tienes problemas gástricos?',
       estado: 3,
@@ -198,7 +198,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 15,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-dolencias-12',
       descripcion: '¿Presentas dolencias en tu cuerpo?',
       estado: 3,
@@ -206,7 +206,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 17,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-senales-13',
       descripcion: '¿Qué otras señales presentas en tu organismo?',
       estado: 3,
@@ -214,7 +214,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 12,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-alergias-14',
       descripcion: '¿Tienes alergias?',
       estado: 3,
@@ -222,7 +222,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 12,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-sentimiento-15',
       descripcion: '¿Qué sentimientos a nivel psíquico?',
       estado: 3,

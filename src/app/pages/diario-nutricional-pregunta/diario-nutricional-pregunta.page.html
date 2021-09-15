@@ -79,7 +79,7 @@
                     <ng-container *ngFor="let item of habito; ; let i = index">
                         <ion-row *ngIf="item.tipo == 2">
                             <ion-col size="12">
-                                <ion-item class="detalle">
+                                <ion-item class="detalle" (click)="mostrarPregunta( item.url, item)">
                                     <ion-icon slot="start" class="{{ item.icono }} icono" color="warning"></ion-icon>
                                     <ion-label class="ion-text-wrap">{{ item.descripcion }}</ion-label>
                                     <span class="icon-base_17 icono_estado" *ngIf="item.estado == 1">
