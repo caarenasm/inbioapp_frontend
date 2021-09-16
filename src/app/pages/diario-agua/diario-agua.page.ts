@@ -13,10 +13,10 @@ export interface Evento {
   templateUrl: './diario-agua.page.html',
   styleUrls: ['./diario-agua.page.scss'],
 })
-export class DiarioAguaPage implements OnInit {slideOpts = {
-  slidesPerView: 1.5,
-  freeMode: true
-};
+export class DiarioAguaPage implements OnInit {
+
+vaso = 0;
+menosVasoDisabled = false;
 
 evento: Evento[] = [
   {
@@ -44,6 +44,29 @@ constructor(
   @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit() {
+  }
+
+  masVaso() {
+    if( this.vaso >= 0){
+      this.menosVasoDisabled = false;
+    }
+    this.vaso += 1;
+  }
+
+  menosVaso() {
+
+    if( this.vaso < 1){
+      this.menosVasoDisabled = true;
+      return;
+    }else{
+      this.menosVasoDisabled = false;
+    }
+
+    this.vaso -= 1;
+  }
+
+  counter(i: number) {
+    return new Array(i);
   }
 
   cerrar() {

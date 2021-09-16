@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonSlides, ModalController } from '@ionic/angular';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
 import { DiarioSuenoPage } from '../diario-sueno/diario-sueno.page';
@@ -27,6 +27,11 @@ export interface Animo {
   styleUrls: ['./diario-nutricional-pregunta.page.scss'],
 })
 export class DiarioNutricionalPreguntaPage implements OnInit {
+
+  slideOpts = {
+    slidesPerView: 3,
+    freeMode: true
+  };
 
   fecha: any;
 
@@ -236,6 +241,9 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
   ) { }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit(){
     this.route.queryParams.subscribe(params => {

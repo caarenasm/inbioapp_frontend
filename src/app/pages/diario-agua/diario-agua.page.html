@@ -22,12 +22,12 @@
                 <ion-col size="12">
                     <ion-radio-group name="auto" value="opcion">
                         <ion-fab vertical="end" horizontal="start" slot="fixed">
-                            <ion-fab-button class="botones-flotantes posicion-menos" size="small">
+                            <ion-fab-button (click)="menosVaso()" class="botones-flotantes posicion-menos" size="small" disabled={{menosVasoDisabled}}>
                                 <ion-icon class="icon-menos"></ion-icon>
                             </ion-fab-button>
                         </ion-fab>
                         <ion-fab vertical="end" horizontal="end" slot="fixed">
-                            <ion-fab-button class="botones-flotantes posicion-max" size="small">
+                            <ion-fab-button (click)="masVaso()" class="botones-flotantes posicion-max" size="small">
                                 <ion-icon class="icon-plus"></ion-icon>
                             </ion-fab-button>
                         </ion-fab>
@@ -40,7 +40,7 @@
                 <ion-col size="5"></ion-col>
                 <ion-col size="3" class="ion-text-center">
                     <ion-button color='dark' expand="block" fill="outline" size='large' shape="round">
-                        4
+                        {{ vaso }}
                     </ion-button>
                 </ion-col>
                 <ion-col size="3"></ion-col>
@@ -48,11 +48,10 @@
             </ion-row>
             <div>
                 <ion-row class="tamaño">
-                    <ion-col size="3.5"></ion-col>
-                    <ion-icon class="icon-agua_2"></ion-icon>
-                    <ion-icon class="icon-agua_2"></ion-icon>
-                    <ion-icon class="icon-agua_2"></ion-icon>
-                    <ion-icon class="icon-agua_2"></ion-icon>
+                    <ion-col size="12"></ion-col>
+                    <ng-container *ngFor="let in of counter(vaso); let i = index">
+                        <ion-icon class="icon-agua_2"></ion-icon>
+                    </ng-container>
                 </ion-row>
             </div>
 
