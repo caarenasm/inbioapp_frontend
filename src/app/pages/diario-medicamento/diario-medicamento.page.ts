@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { Location } from '@angular/common';
 
 import { AlertService } from '../../services/alert.service';
 
@@ -17,6 +18,7 @@ export class DiarioMedicamentoPage implements OnInit {
     private formBuilder: FormBuilder,
     private alertServ: AlertService,
     private alertCtrl: AlertController,
+    private location: Location
   ) {
     this.datos = this.formBuilder.group({
       tipo: [ 3, Validators.required],
@@ -68,6 +70,10 @@ export class DiarioMedicamentoPage implements OnInit {
 
     await alert.present();
 
+  }
+
+  cerrar() {
+    this.location.back();
   }
 
 }

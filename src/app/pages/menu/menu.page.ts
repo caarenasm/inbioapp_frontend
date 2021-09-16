@@ -41,7 +41,7 @@ export class MenuPage implements OnInit {
       icono: 'icon-mis_estadisticas',
       texto: 'Mis Estadisticas',
       fondo: 'mis-estadisticas',
-      pagina: '',
+      pagina: 'mis-estadisticas',
     },
     {
       icono: 'icon-mis_bioproductos',

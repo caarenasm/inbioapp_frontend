@@ -175,7 +175,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       icono: 'icon-medicamentos-08',
       descripcion: '¿Que medicamentos tomaste?',
       estado: 3,
-      url: ''
+      url: 'diario-medicamento'
     },
     {
       id: 12,
