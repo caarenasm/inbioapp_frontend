@@ -85,6 +85,11 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       id: 10,
       icono: 'icon-ira',
       descripcion: 'Ira',
+    },
+    {
+      id: 11,
+      icono: 'icon-neutro',
+      descripcion: 'Normal'
     }
   ];
 
