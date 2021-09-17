@@ -159,7 +159,11 @@ const routes: Routes = [
   {
     path: 'diario-nutricional-pregunta',
     loadChildren: () => import('./pages/diario-nutricional-pregunta/diario-nutricional-pregunta.module').then( m => m.DiarioNutricionalPreguntaPageModule)
+  },  {
+    path: 'mis-estadisticas',
+    loadChildren: () => import('./pages/mis-estadisticas/mis-estadisticas.module').then( m => m.MisEstadisticasPageModule)
   },
+
   
 ];
 

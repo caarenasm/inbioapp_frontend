@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'inbioapp';
-  src:  url('/assets/font/inbioapp/inbioapp.eot?x4ajyh');
-  src:  url('/assets/font/inbioapp/inbioapp.eot?x4ajyh#iefix') format('embedded-opentype'),
-    url('/assets/font/inbioapp/inbioapp.ttf?x4ajyh') format('truetype'),
-    url('/assets/font/inbioapp/inbioapp.woff?x4ajyh') format('woff'),
-    url('/assets/font/inbioapp/inbioapp.svg?x4ajyh#inbioapp') format('svg');
+  src:  url('/assets/font/inbioapp/inbioapp.eot?3lbze9');
+  src:  url('/assets/font/inbioapp/inbioapp.eot?3lbze9#iefix') format('embedded-opentype'),
+    url('/assets/font/inbioapp/inbioapp.ttf?3lbze9') format('truetype'),
+    url('/assets/font/inbioapp/inbioapp.woff?3lbze9') format('woff'),
+    url('/assets/font/inbioapp/inbioapp.svg?3lbze9#inbioapp') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -662,122 +662,125 @@
 .icon-polen:before {
   content: "\e9b5";
 }
-.icon-problema_habla:before {
+.icon-preguntas-16:before {
   content: "\e9b6";
 }
-.icon-recetas_inbionova .path1:before {
+.icon-problema_habla:before {
   content: "\e9b7";
+}
+.icon-recetas_inbionova .path1:before {
+  content: "\e9b8";
   color: rgb(144, 168, 4);
 }
 .icon-recetas_inbionova .path2:before {
-  content: "\e9b8";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-recetas_inbionova .path3:before {
   content: "\e9b9";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-reflujo:before {
+.icon-recetas_inbionova .path3:before {
   content: "\e9ba";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
-.icon-regular-09:before {
+.icon-reflujo:before {
   content: "\e9bb";
 }
-.icon-reloj:before {
+.icon-regular-09:before {
   content: "\e9bc";
 }
-.icon-resequedad:before {
+.icon-reloj:before {
   content: "\e9bd";
 }
-.icon-rigidez:before {
+.icon-resequedad:before {
   content: "\e9be";
 }
-.icon-rinitis:before {
+.icon-rigidez:before {
   content: "\e9bf";
 }
-.icon-sangradp:before {
+.icon-rinitis:before {
   content: "\e9c0";
 }
-.icon-sarpullido:before {
+.icon-sangradp:before {
   content: "\e9c1";
 }
-.icon-sed:before {
+.icon-sarpullido:before {
   content: "\e9c2";
 }
-.icon-senales-13:before {
+.icon-sed:before {
   content: "\e9c3";
 }
-.icon-senderismo:before {
+.icon-senales-13:before {
   content: "\e9c4";
 }
-.icon-sensibilidad:before {
+.icon-senderismo:before {
   content: "\e9c5";
 }
-.icon-sentimiento-15:before {
+.icon-sensibilidad:before {
   content: "\e9c6";
 }
-.icon-sin_forma:before {
+.icon-sentimiento-15:before {
   content: "\e9c7";
 }
-.icon-stress:before {
+.icon-sin_forma:before {
   content: "\e9c8";
 }
-.icon-sudoracion_excesiva:before {
+.icon-stress:before {
   content: "\e9c9";
 }
-.icon-suplementos:before {
+.icon-sudoracion_excesiva:before {
   content: "\e9ca";
 }
-.icon-suscribirme:before {
+.icon-suplementos:before {
   content: "\e9cb";
 }
-.icon-telefono:before {
+.icon-suscribirme:before {
   content: "\e9cc";
 }
-.icon-temblores:before {
+.icon-telefono:before {
   content: "\e9cd";
 }
-.icon-tipos_Antojo:before {
+.icon-temblores:before {
   content: "\e9ce";
 }
-.icon-tos:before {
+.icon-tipos_Antojo:before {
   content: "\e9cf";
 }
-.icon-triste:before {
+.icon-tos:before {
   content: "\e9d0";
 }
-.icon-triste_2:before {
+.icon-triste:before {
   content: "\e9d1";
 }
-.icon-ulcera:before {
+.icon-triste_2:before {
   content: "\e9d2";
 }
-.icon-urticaria:before {
+.icon-ulcera:before {
   content: "\e9d3";
 }
-.icon-usuario:before {
+.icon-urticaria:before {
   content: "\e9d4";
 }
-.icon-vena_varice:before {
+.icon-usuario:before {
   content: "\e9d5";
 }
-.icon-viaje:before {
+.icon-vena_varice:before {
   content: "\e9d6";
 }
-.icon-vision_borrosa:before {
+.icon-viaje:before {
   content: "\e9d7";
 }
-.icon-vision-10:before {
+.icon-vision_borrosa:before {
   content: "\e9d8";
 }
-.icon-vomito:before {
+.icon-vision-10:before {
   content: "\e9d9";
 }
-.icon-whatsap:before {
+.icon-vomito:before {
   content: "\e9da";
 }
-.icon-yoga:before {
+.icon-whatsap:before {
   content: "\e9db";
+}
+.icon-yoga:before {
+  content: "\e9dc";
 }

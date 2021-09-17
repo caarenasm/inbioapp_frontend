@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonSlides, ModalController } from '@ionic/angular';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
 import { DiarioSuenoPage } from '../diario-sueno/diario-sueno.page';
@@ -27,6 +27,11 @@ export interface Animo {
   styleUrls: ['./diario-nutricional-pregunta.page.scss'],
 })
 export class DiarioNutricionalPreguntaPage implements OnInit {
+
+  slideOpts = {
+    slidesPerView: 3,
+    freeMode: true
+  };
 
   fecha: any;
 
@@ -80,6 +85,11 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       id: 10,
       icono: 'icon-ira',
       descripcion: 'Ira',
+    },
+    {
+      id: 11,
+      icono: 'icon-neutro',
+      descripcion: 'Normal'
     }
   ];
 
@@ -135,7 +145,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     {
       id: 7,
       tipo: 1,
-      icono: 'icon-suplementos',
+      icono: 'icon-preguntas-16',
       descripcion: '¿Ingeriste suplementos?',
       estado: 3,
       url: 'diario-suplementos'
@@ -166,15 +176,15 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 11,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-medicamentos-08',
       descripcion: '¿Que medicamentos tomaste?',
       estado: 3,
-      url: ''
+      url: 'diario-medicamento'
     },
     {
       id: 12,
-      tipo: 1,
+      tipo: 2,
       icono: ' icon-regular-09',
       descripcion: '¿Como regulas tu enfermedad?',
       estado: 3,
@@ -182,7 +192,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 13,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-vision-10',
       descripcion: '¿Tienes problemas con la visión?',
       estado: 3,
@@ -190,7 +200,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 14,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-gastrico-11',
       descripcion: '¿Tienes problemas gástricos?',
       estado: 3,
@@ -198,7 +208,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 15,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-dolencias-12',
       descripcion: '¿Presentas dolencias en tu cuerpo?',
       estado: 3,
@@ -206,7 +216,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 17,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-senales-13',
       descripcion: '¿Qué otras señales presentas en tu organismo?',
       estado: 3,
@@ -214,7 +224,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 12,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-alergias-14',
       descripcion: '¿Tienes alergias?',
       estado: 3,
@@ -222,11 +232,11 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     },
     {
       id: 12,
-      tipo: 1,
+      tipo: 2,
       icono: 'icon-sentimiento-15',
       descripcion: '¿Qué sentimientos a nivel psíquico?',
       estado: 3,
-      url: 'diario-deporte'
+      url: ''
     }
   ];
 
@@ -236,6 +246,9 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
   ) { }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit(){
     this.route.queryParams.subscribe(params => {

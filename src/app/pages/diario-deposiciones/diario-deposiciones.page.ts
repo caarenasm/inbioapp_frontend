@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AlertController, IonSlides } from '@ionic/angular';
+import { Location } from '@angular/common';
 
 import { AlertService } from '../../services/alert.service';
 
@@ -13,7 +14,7 @@ export interface TipoDeposicion {
 export interface Evento {
   id: number;
   descripcion: string;
-  icon: string;
+  img: string;
 }
 
 
@@ -72,33 +73,33 @@ export class DiarioDeposicionesPage implements OnInit {
   evento: Evento[] = [
     {
       id: 1,
-      descripcion: 'PURAFIB 1',
-      icon: 'icon-usuario'
+      descripcion: 'Purafib (Producto Inbionova)',
+      img: 'Purafib.jpg'
     },
     {
       id: 2,
-      descripcion: 'PURAFIB 2',
-      icon: 'icon-usuario'
+      descripcion: 'Medicamentos convencionales',
+      img: 'Medicamentos.jpg'
     },
     {
       id: 3,
-      descripcion: 'PURAFIB 3',
-      icon: 'icon-usuario'
+      descripcion: 'Medicamentos homeopaticos',
+      img: 'Medicamento_Homeopatico.jpg'
     },
     {
       id: 4,
-      descripcion: 'PURAFIB 4',
-      icon: 'icon-usuario'
+      descripcion: 'Infusiones',
+      img: 'infusion.jpg'
     },
     {
       id: 5,
-      descripcion: 'PURAFIB 5',
-      icon: 'icon-usuario'
+      descripcion: 'Prebioticos',
+      img: 'Prebioticos.jpg'
     },
     {
       id: 6,
-      descripcion: 'PURAFIB 6',
-      icon: 'icon-usuario'
+      descripcion: 'Laxantes naturales',
+      img: 'laxantes_naturales.jpg'
     }
   ];
 
@@ -106,6 +107,7 @@ export class DiarioDeposicionesPage implements OnInit {
     private formBuilder: FormBuilder,
     private alertServ: AlertService,
     private alertCtrl: AlertController,
+    private location: Location
   ) {
     this.datos = this.formBuilder.group({
       tipo: [ 5, Validators.required],
@@ -159,11 +161,15 @@ export class DiarioDeposicionesPage implements OnInit {
 
   icono(tipo){
     const filtro = this.evento.find(x => x.id = tipo);
-    return filtro.icon;
+    return filtro.img;
   }
 
   remover(control){
     this.arreglo.removeControl(control.key);
+  }
+
+  cerrar() {
+    this.location.back();
   }
 
   guardar(){

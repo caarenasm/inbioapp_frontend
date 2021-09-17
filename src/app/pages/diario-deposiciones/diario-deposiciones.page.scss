@@ -113,6 +113,10 @@
     
 }
 
+.none {
+    border: none;
+}
+
 .guardar {
     --background: #872a99;
     align-items: center;
@@ -169,10 +173,6 @@
     --border-color-checked: #fe8e0d;
 }
 
-.barra {
-    background-color: #f6f6f6;
-    border: none;
-}
 
 .texto-2 {
     position: relative;
@@ -333,4 +333,21 @@
     border-radius: 50px;
     width: 30px;
     height: 30px;
+}
+.posicion-boton {
+    align-items: center;
+    padding: 15px;
+    padding-left: 110px;
+} 
+
+.imagen {
+    margin-bottom: 200px;
+}
+
+.card img {
+    width: 100%;
+    height: 80px;
+    border-radius: 15px;
+    margin-top: -10px;
+    padding: 0px;
 }
