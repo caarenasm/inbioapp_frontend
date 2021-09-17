@@ -31,7 +31,7 @@
                                     <ion-slide *ngFor="let item of animo; ; let i = index">
                                             <ion-item class="opcion">
                                                 <label class="texto-estado">
-                                                    <ion-radio [value]=item.id></ion-radio>
+                                                    <ion-radio class="ion-radio" [value]=item.id></ion-radio>
                                                     <ion-icon class="{{ item.icono }} icono"></ion-icon>
                                                     <div class="item-content">
                                                         {{ item.descripcion }}
