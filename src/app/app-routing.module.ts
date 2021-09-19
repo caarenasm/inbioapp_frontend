@@ -47,14 +47,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/receta-detalle/receta-detalle.module').then( m => m.RecetaDetallePageModule)
   },
   {
-    path: 'blog-general',
-    loadChildren: () => import('./pages/blog-general/blog-general.module').then( m => m.BlogGeneralPageModule)
-  },
-  {
-    path: 'blog-unico',
-    loadChildren: () => import('./pages/blog-unico/blog-unico.module').then( m => m.BlogUnicoPageModule)
-  },
-  {
     path: 'producto-detalle',
     loadChildren: () => import('./pages/producto-detalle/producto-detalle.module').then( m => m.ProductoDetallePageModule)
   },
@@ -159,9 +151,18 @@ const routes: Routes = [
   {
     path: 'diario-nutricional-pregunta',
     loadChildren: () => import('./pages/diario-nutricional-pregunta/diario-nutricional-pregunta.module').then( m => m.DiarioNutricionalPreguntaPageModule)
-  },  {
+  },
+  {
     path: 'mis-estadisticas',
     loadChildren: () => import('./pages/mis-estadisticas/mis-estadisticas.module').then( m => m.MisEstadisticasPageModule)
+  },
+  {
+    path: 'blog',
+    loadChildren: () => import('./pages/blog/blog.module').then( m => m.BlogPageModule)
+  },
+  {
+    path: 'blog-detalle',
+    loadChildren: () => import('./pages/blog-detalle/blog-detalle.module').then( m => m.BlogDetallePageModule)
   },
 
   

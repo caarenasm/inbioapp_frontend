@@ -1,15 +1,16 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export interface Blogs {
     id: string;
     title: string;
     slug: string;
-    seoTitle: string;
-    seoDescription: string;
-    imageUrl: string;
+    image_url: string;
     content: string;
-    startDate: Date;
-    endDate: Date;
-    published: string;
-    userId: string;
-    createdAt: Date;
-    updatedAt: Date;
+    start_date: Date;
+    end_date: Date;
+    categoria: Categoria[];
+}
+
+export interface Categoria {
+    id: string;
+    name: string;
 }

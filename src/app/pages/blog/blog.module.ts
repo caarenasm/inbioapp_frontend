@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BlogGeneralPageRoutingModule } from './blog-general-routing.module';
+import { BlogPageRoutingModule } from './blog-routing.module';
 
-import { BlogGeneralPage } from './blog-general.page';
+import { BlogPage } from './blog.page';
 import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { ComponentsModule } from '../../components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    BlogGeneralPageRoutingModule,
+    BlogPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [BlogGeneralPage]
+  declarations: [BlogPage]
 })
-export class BlogGeneralPageModule {}
+export class BlogPageModule {}
