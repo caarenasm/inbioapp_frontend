@@ -97,11 +97,11 @@ export class RecetaPage implements OnInit {
     return options;
   }
 
-  async mostrarDetalle( datos?) {
+  async mostrarDetalle( info?) {
     const modal = await this.modalCtrl.create({
       component: RecetaDetallePage,
       componentProps: {
-        datos: datos
+        datos: info
       }
     });
     await modal.present();

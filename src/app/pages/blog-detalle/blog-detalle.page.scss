@@ -33,13 +33,33 @@
     margin-bottom: 0px;
 }
 
-.boton-receta-volver {
+.color-base {
+    --background: #f6f6f6 !important;
+}
+
+.boton-blog-volver {
     --background: #872a99;
     --border-radius: 50px;
     font-weight: bold;
     text-transform: capitalize;
 }
 
-.color-base {
-    --background: #f6f6f6 !important;
+.blog-titulo {
+    font-family: 'Poppins' !important;
+    font-size: 18px;
+    font-style: bold;
+    line-height: 18px;
+    padding-top: 30px;
+}
+
+.blog-contenido {
+    font-family: 'Poppins' !important;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 14px;
+    padding-bottom: 10px;
+}
+
+.cuerpo-receta {
+    padding-bottom: 100%;
 }
