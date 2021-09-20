@@ -21,6 +21,6 @@ import { ComponentsModule } from '../../components/components.module';
     CalendarModule
   ],
   declarations: [DiarioNutricionalPage],
-  providers: [{ provide: LOCALE_ID, useValue: 'zh-CN' }]
+  providers: []
 })
 export class DiarioNutricionalPageModule {}
