@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { PickerController } from '@ionic/angular';
 import { Chart } from 'chart.js';
 
 @Component({
@@ -7,6 +8,13 @@ import { Chart } from 'chart.js';
   styleUrls: ['./mis-estadisticas.page.scss'],
 })
 export class MisEstadisticasPage {
+
+  filtro = [
+    [
+      'Perdida de peso',
+      'Estado de animo'
+    ]
+  ];
 
   @ViewChild('barCanvas') barCanvas: ElementRef;
   @ViewChild('doughnutCanvas') doughnutCanvas: ElementRef;
@@ -20,113 +28,77 @@ export class MisEstadisticasPage {
 
   dataArray: any = [];
 
-  constructor() { }
+  constructor(
+    private pickerCtrl: PickerController,
+  ) { }
 
   ngAfterViewInit() {
-    this.doubleLineChartMethod();
     this.barChartMethod();
     this.doughnutChartMethod();
-    this.lineChartMethod();
 
   }
 
-  doubleLineChartMethod() {
-
-    this.doubleLineChart = new Chart(this.doubleLineCanvas.nativeElement, {
-      type: 'line',
-      data: {
-        labels: ["Facebook", "Instagram", "Mixed Technologies"],
-        datasets: [
-          {
-            label: "Facebook",
-            data: [150, 250, 145, 100],
-            backgroundColor: "rgba(40,125,200,.5)",
-            borderColor: "rgb(40,100,200)",
-            fill: true,
-            lineTension: 0,
-            radius: 5
-          },
-          {
-            label: "Instagram",
-            data: [30, 90, 151, 220],
-            backgroundColor: "rgba(240,78,71,.5)",
-            borderColor: "rgb(240,78,71)",
-            fill: true,
-            lineTension: 0.2,
-            radius: 5
-          }
-        ]
-      },
-
-      options: {
-        responsive: true,
-        title: {
-          display: true,
-          position: "top",
-          text: "Facebook to Instagram - Social Networking",
-          fontSize: 12,
-          fontColor: "#666"
+  async openPicker(numColumns = 1, numOptions = 5, columnOptions = this.filtro){
+    const picker = await this.pickerCtrl.create({
+      columns: this.getColumns(numColumns, numOptions, columnOptions),
+      cssClass: 'picker',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
         },
-        legend: {
-          display: true,
-          position: "bottom",
-          labels: {
-            fontColor: "#999",
-            fontSize: 14
+        {
+          text: 'Confirm',
+          handler: (value) => {
+            console.log(`Got Value ${value}`);
           }
         }
-      }
-    })
+      ]
+    });
+
+    await picker.present();
   }
 
-  lineChartMethod() {
-    this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-      type: 'line',
-      data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December'],
-        datasets: [
-          {
-            label: 'Sell per week',
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: 'rgba(75,192,192,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: 'rgba(75,192,192,1)',
-            pointBackgroundColor: '#fff',
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            pointHoverBorderColor: 'rgba(220,220,220,1)',
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: [65, 59, 80, 81, 56, 55, 40, 10, 5, 50, 10, 15],
-            spanGaps: false,
-          }
-        ]
-      }
-    });
+   getColumns(numColumns, numOptions, columnOptions) {
+    let columns = [];
+    for (let i = 0; i < numColumns; i++) {
+      columns.push({
+        name: `col-${i}`,
+        options: this.getColumnOptions(i, numOptions, columnOptions)
+      });
+    }
+
+    return columns;
+  }
+
+   getColumnOptions(columnIndex, numOptions, columnOptions) {
+    let options = [];
+    for (let i = 0; i < numOptions; i++) {
+      options.push({
+        text: columnOptions[columnIndex][i % numOptions],
+        value: i
+      })
+    }
+
+    return options;
   }
 
   barChartMethod() {
     this.barChart = new Chart(this.barCanvas.nativeElement, {
       type: 'bar',
       data: {
-        labels: ['BJP', 'INC', 'AAP', 'CPI', 'CPI-M', 'NCP'],
+        labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'],
         datasets: [{
-          label: '# of Votes',
-          data: [200, 50, 30, 15, 20, 34],
+          label: '# de Kilos',
+          data: [200, 50, 30, 15, 20, 34, 45],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
             'rgba(255, 206, 86, 0.2)',
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)'
           ],
           borderColor: [
             'rgba(255,99,132,1)',
@@ -134,7 +106,8 @@ export class MisEstadisticasPage {
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255, 159, 64, 1)',
+            'rgba(255,99,132,1)'
           ],
           borderWidth: 1
         }]
@@ -156,23 +129,35 @@ export class MisEstadisticasPage {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: 'doughnut',
       data: {
-        labels: ['BJP', 'Congress', 'AAP', 'CPM', 'SP'],
+        labels: ['Irritable', 'Feliz', 'Energetico', 'Asustado', 'Triste', 'Ansioso', 'Depresivo', 'Culpa', 'Pensamiento obsesivo', 'Ira', 'Normal'],
         datasets: [{
           label: '# of Votes',
-          data: [50, 29, 15, 10, 7],
+          data: [50, 29, 15, 10, 7, 40, 15, 65, 30, 25, 20],
           backgroundColor: [
             'rgba(255, 159, 64, 0.2)',
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
             'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)'
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
           ],
           hoverBackgroundColor: [
             '#FFCE56',
             '#FF6384',
             '#36A2EB',
             '#FFCE56',
-            '#FF6384'
+            '#FF6384',
+            '#FFCE56',
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56',
+            '#FF6384',
+            '#FFCE56'
           ]
         }]
       }
