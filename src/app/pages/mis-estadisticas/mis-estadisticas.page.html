@@ -11,13 +11,22 @@
     <div class="ion-padding">
       <ion-card>
         <ion-card-header>
+          Double Line Chart
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #doubleLineCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
           Bar Chart
         </ion-card-header>
         <ion-card-content>
-          <canvas #barCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+          <div id="bar-chart-container">
+            <canvas #barCanvas></canvas>
+          </div>
         </ion-card-content>
       </ion-card>
-  
       <ion-card>
         <ion-card-header>
           Doughnut Chart
@@ -26,7 +35,6 @@
           <canvas #doughnutCanvas style="position: relative; height:20vh; width:40vw"></canvas>
         </ion-card-content>
       </ion-card>
-   
       <ion-card>
         <ion-card-header>
           Line Chart
@@ -35,6 +43,7 @@
           <canvas #lineCanvas style="position: relative; height:20vh; width:40vw"></canvas>
         </ion-card-content>
       </ion-card>
+  
     </div>
   </ion-list>
   </ion-content>

@@ -17,7 +17,7 @@ import { ComponentsModule } from '../../components/components.module';
     ReactiveFormsModule,
     IonicModule,
     MisEstadisticasPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ],
   declarations: [MisEstadisticasPage]
 })
