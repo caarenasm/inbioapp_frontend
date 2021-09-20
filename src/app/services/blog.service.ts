@@ -35,6 +35,18 @@ export class BlogService {
     );
   }
 
+  getFiltro(): Observable<any[]> {
+
+    const httpOptions = new HttpHeaders({
+      'Authorization': this.token["token_type"] + " " + this.token["access_token"] 
+    });
+
+    return this.httpClient.get<any>(this.endpoint + '/blog/categoria', { headers: httpOptions })
+    .pipe(
+      catchError(this.handleError<any>('Error occured'))
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

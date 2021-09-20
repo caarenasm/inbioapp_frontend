@@ -14,3 +14,8 @@ export interface Categoria {
     id: string;
     name: string;
 }
+
+export interface Filtros {
+    value: number;
+    text: string;
+}
