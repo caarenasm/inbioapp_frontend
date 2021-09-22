@@ -1,4 +1,5 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { PickerController } from '@ionic/angular';
 import { Chart } from 'chart.js';
 
 @Component({
@@ -6,42 +7,98 @@ import { Chart } from 'chart.js';
   templateUrl: './mis-estadisticas.page.html',
   styleUrls: ['./mis-estadisticas.page.scss'],
 })
-export class MisEstadisticasPage implements OnInit {
+export class MisEstadisticasPage {
 
-  // Importing ViewChild. We need @ViewChild decorator to get a reference to the local variable 
-  // that we have added to the canvas element in the HTML template.
-  @ViewChild('barCanvas') private barCanvas: ElementRef;
-  @ViewChild('doughnutCanvas') private doughnutCanvas: ElementRef;
-  @ViewChild('lineCanvas') private lineCanvas: ElementRef;
-  
+  filtro = [
+    [
+      'Perdida de peso',
+      'Estado de animo'
+    ]
+  ];
+
+  @ViewChild('barCanvas') barCanvas: ElementRef;
+  @ViewChild('doughnutCanvas') doughnutCanvas: ElementRef;
+  @ViewChild('lineCanvas') lineCanvas: ElementRef;
+  @ViewChild('doubleLineCanvas') doubleLineCanvas: ElementRef;
+
   barChart: any;
   doughnutChart: any;
   lineChart: any;
-  
-  constructor() { }
+  doubleLineChart: any;
 
-  ngOnInit() {
+  dataArray: any = [];
+
+  constructor(
+    private pickerCtrl: PickerController,
+  ) { }
+
+  ngAfterViewInit() {
     this.barChartMethod();
     this.doughnutChartMethod();
-    this.lineChartMethod();
+
+  }
+
+  async openPicker(numColumns = 1, numOptions = 5, columnOptions = this.filtro){
+    const picker = await this.pickerCtrl.create({
+      columns: this.getColumns(numColumns, numOptions, columnOptions),
+      cssClass: 'picker',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Confirm',
+          handler: (value) => {
+            console.log(`Got Value ${value}`);
+          }
+        }
+      ]
+    });
+
+    await picker.present();
+  }
+
+   getColumns(numColumns, numOptions, columnOptions) {
+    let columns = [];
+    for (let i = 0; i < numColumns; i++) {
+      columns.push({
+        name: `col-${i}`,
+        options: this.getColumnOptions(i, numOptions, columnOptions)
+      });
+    }
+
+    return columns;
+  }
+
+   getColumnOptions(columnIndex, numOptions, columnOptions) {
+    let options = [];
+    for (let i = 0; i < numOptions; i++) {
+      options.push({
+        text: columnOptions[columnIndex][i % numOptions],
+        value: i
+      })
+    }
+
+    return options;
   }
 
   barChartMethod() {
-    // Now we need to supply a Chart element reference with an object that defines the type of chart we want to use, and the type of data we want to display.
     this.barChart = new Chart(this.barCanvas.nativeElement, {
       type: 'bar',
       data: {
-        labels: ['BJP', 'INC', 'AAP', 'CPI', 'CPI-M', 'NCP'],
+        labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'],
         datasets: [{
-          label: '# of Votes',
-          data: [200, 50, 30, 15, 20, 34],
+          label: '# de Kilos',
+          data: [200, 50, 30, 15, 20, 34, 45],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
             'rgba(255, 206, 86, 0.2)',
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(128, 128, 128, 0.2 )',
+            'rgba(221, 111, 0, 0.2)'
           ],
           borderColor: [
             'rgba(255,99,132,1)',
@@ -49,18 +106,20 @@ export class MisEstadisticasPage implements OnInit {
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(128, 128, 128, 1)',
+            'rgba(221, 111, 0, 1)'
           ],
           borderWidth: 1
         }]
       },
       options: {
+        responsive: true,
         scales: {
-          /*yAxes: [{
+          yAxes: [{
             ticks: {
               beginAtZero: true
             }
-          }]*/
+          }]
         }
       }
     });
@@ -70,58 +129,37 @@ export class MisEstadisticasPage implements OnInit {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: 'doughnut',
       data: {
-        labels: ['BJP', 'Congress', 'AAP', 'CPM', 'SP'],
+        labels: ['Irritable', 'Feliz', 'Energetico', 'Asustado', 'Triste', 'Ansioso', 'Depresivo', 'Culpa', 'Pensamiento obsesivo', 'Ira', 'Normal'],
         datasets: [{
           label: '# of Votes',
-          data: [50, 29, 15, 10, 7],
+          data: [50, 29, 15, 10, 7, 40, 15, 65, 30, 25, 20],
           backgroundColor: [
             'rgba(255, 159, 64, 0.2)',
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)'
+            'rgba(128, 128, 128, 0.2)',
+            'rgba(0, 166, 0, 0.2)',
+            'rgba(255, 255, 47, 0.2)',
+            'rgba(0, 0, 0, 0.2)',
+            'rgba(128, 0, 128, 0.2)',
+            'rgba(255, 119, 187, 0.2)',
+            'rgba(108, 255, 255, 0.2)',
+            'rgba(119, 0, 0, 0.2)'
           ],
           hoverBackgroundColor: [
             '#FFCE56',
             '#FF6384',
             '#36A2EB',
-            '#FFCE56',
-            '#FF6384'
+            '#808080',
+            '#00a600',
+            '#ffff2f',
+            '#000000',
+            '#800080',
+            '#ff77bb',
+            '#6cffff',
+            '#770000'
           ]
         }]
-      }
-    });
-  }
-
-  lineChartMethod() {
-    this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-      type: 'line',
-      data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December'],
-        datasets: [
-          {
-            label: 'Sell per week',
-            fill: false,
-            //lineTension: 0.1,
-            backgroundColor: 'rgba(75,192,192,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: 'rgba(75,192,192,1)',
-            pointBackgroundColor: '#fff',
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            pointHoverBorderColor: 'rgba(220,220,220,1)',
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: [65, 59, 80, 81, 56, 55, 40, 10, 5, 50, 10, 15],
-            spanGaps: false,
-          }
-        ]
       }
     });
   }
