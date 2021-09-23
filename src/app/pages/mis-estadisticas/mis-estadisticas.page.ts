@@ -2,6 +2,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 import { Chart } from 'chart.js';
 
+export interface Filtros {
+  value: number;
+  text: string;
+}
+
 @Component({
   selector: 'app-mis-estadisticas',
   templateUrl: './mis-estadisticas.page.html',
@@ -9,11 +14,15 @@ import { Chart } from 'chart.js';
 })
 export class MisEstadisticasPage {
 
-  filtro = [
-    [
-      'Perdida de peso',
-      'Estado de animo'
-    ]
+  filtro: Filtros[] = [
+    {
+      value: 1,
+      text: 'Perdida de Peso',
+    },
+    {
+      value: 2,
+      text: 'Estado de Animo',
+    }
   ];
 
   @ViewChild('barCanvas') barCanvas: ElementRef;
@@ -28,6 +37,9 @@ export class MisEstadisticasPage {
 
   dataArray: any = [];
 
+  grafica = 1;
+  fecha : Date = new Date();
+
   constructor(
     private pickerCtrl: PickerController,
   ) { }
@@ -38,49 +50,31 @@ export class MisEstadisticasPage {
 
   }
 
-  async openPicker(numColumns = 1, numOptions = 5, columnOptions = this.filtro){
+  async itemFiltro(numColumns = 1, numOptions = 5, columnOptions = this.filtro){
     const picker = await this.pickerCtrl.create({
-      columns: this.getColumns(numColumns, numOptions, columnOptions),
       cssClass: 'picker',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           role: 'cancel'
         },
         {
-          text: 'Confirm',
-          handler: (value) => {
-            console.log(`Got Value ${value}`);
+          text: 'Confirmar',
+          handler: (event) => {
+            //console.log(event.tipo.value);
+            this.grafica = event.tipo.value;
           }
+        }
+      ],
+      columns: [
+        {
+          name: 'tipo',
+          options: this.filtro
         }
       ]
     });
 
     await picker.present();
-  }
-
-   getColumns(numColumns, numOptions, columnOptions) {
-    let columns = [];
-    for (let i = 0; i < numColumns; i++) {
-      columns.push({
-        name: `col-${i}`,
-        options: this.getColumnOptions(i, numOptions, columnOptions)
-      });
-    }
-
-    return columns;
-  }
-
-   getColumnOptions(columnIndex, numOptions, columnOptions) {
-    let options = [];
-    for (let i = 0; i < numOptions; i++) {
-      options.push({
-        text: columnOptions[columnIndex][i % numOptions],
-        value: i
-      })
-    }
-
-    return options;
   }
 
   barChartMethod() {
@@ -132,7 +126,7 @@ export class MisEstadisticasPage {
         labels: ['Irritable', 'Feliz', 'Energetico', 'Asustado', 'Triste', 'Ansioso', 'Depresivo', 'Culpa', 'Pensamiento obsesivo', 'Ira', 'Normal'],
         datasets: [{
           label: '# of Votes',
-          data: [50, 29, 15, 10, 7, 40, 15, 65, 30, 25, 20],
+          data: [50, 29, 15, 10, 37, 40, 15, 65, 30, 25, 20],
           backgroundColor: [
             'rgba(255, 159, 64, 0.2)',
             'rgba(255, 99, 132, 0.2)',
@@ -162,6 +156,28 @@ export class MisEstadisticasPage {
         }]
       }
     });
+  }
+
+  semana(){
+
+  }
+
+  mes(){
+
+  }
+
+  anio(){
+
+  }
+
+  masDias(){
+    this.fecha.setDate( this.fecha.getDate() + 1);
+    console.log(this.fecha);
+  }
+
+  menosDias(){
+    this.fecha.setDate( this.fecha.getDate() - 1);
+    console.log(this.fecha);
   }
 
 }
