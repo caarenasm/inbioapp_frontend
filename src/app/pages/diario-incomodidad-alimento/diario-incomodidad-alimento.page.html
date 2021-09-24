@@ -1,0 +1,34 @@
+<ion-content>
+    <ion-list lines="none" class="fondo">
+
+        <ion-fab vertical="top" horizontal="end" slot="fixed">
+            <ion-fab-button class="botones-flotantes" size="small">
+                <ion-icon name="close-outline" (click)="cerrar()"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+
+        <form [formGroup]=datos>
+            <ion-grid class="grupo">
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-item class="titulo-evento">
+                            <a class="icono">
+                                <i class="icon-incomodidad-05"></i>
+                            </a>
+                            <ion-label class="texto">¿Te causo incomodidad algun alimento ingerido?</ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+
+        </form>
+    </ion-list>
+
+</ion-content>
+
+<ion-tab-bar slot="bottom" class="barra">
+    <ion-button expand="block" class="guardar" (click)="guardar()">
+        <ion-label class="texto">Guardar</ion-label>
+    </ion-button>
+</ion-tab-bar>

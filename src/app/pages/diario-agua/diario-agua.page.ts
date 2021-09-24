@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';3
+import { IonSlides } from '@ionic/angular';
 import { Location } from '@angular/common';
 
 export interface Evento {

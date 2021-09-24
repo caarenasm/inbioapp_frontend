@@ -164,6 +164,23 @@ const routes: Routes = [
     path: 'blog-detalle',
     loadChildren: () => import('./pages/blog-detalle/blog-detalle.module').then( m => m.BlogDetallePageModule)
   },
+  {
+    path: 'diario-peso',
+    loadChildren: () => import('./pages/diario-peso/diario-peso.module').then( m => m.DiarioPesoPageModule)
+  },
+  {
+    path: 'diario-comida',
+    loadChildren: () => import('./pages/diario-comida/diario-comida.module').then( m => m.DiarioComidaPageModule)
+  },
+  {
+    path: 'diario-incomodidad-alimento',
+    loadChildren: () => import('./pages/diario-incomodidad-alimento/diario-incomodidad-alimento.module').then( m => m.DiarioIncomodidadAlimentoPageModule)
+  },  {
+    path: 'diario-psiquico',
+    loadChildren: () => import('./pages/diario-psiquico/diario-psiquico.module').then( m => m.DiarioPsiquicoPageModule)
+  },
+
+
 
   
 ];
