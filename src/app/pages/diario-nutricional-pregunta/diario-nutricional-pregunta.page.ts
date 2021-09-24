@@ -108,7 +108,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       icono: 'icon-pesa',
       descripcion: '¿Cuanto pesaste?',
       estado: 2,
-      url: ''
+      url: 'diario-peso'
     },
     {
       id: 3,
@@ -124,7 +124,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       icono: 'icon-comida-04',
       descripcion: '¿Que comiste?',
       estado: 3,
-      url: ''
+      url: 'diario-comida'
     },
     {
       id: 5,
@@ -132,7 +132,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       icono: 'icon-incomodidad-05',
       descripcion: '¿Te causo incomodidad algun alimento ingerido?',
       estado: 3,
-      url: ''
+      url: 'diario-incomodidad-alimento'
     },
     {
       id: 6,
@@ -166,14 +166,14 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       estado: 3,
       url: 'diario-enfermedades-estacionales'
     },
-    {
+    /*{
       id: 10,
       tipo: 1,
       icono: 'icon-adicional-07',
       descripcion: '¿Te pasa algo adicional?',
       estado: 3,
       url: ''
-    },
+    },*/
     {
       id: 11,
       tipo: 2,
@@ -188,7 +188,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       icono: ' icon-regular-09',
       descripcion: '¿Como regulas tu enfermedad?',
       estado: 3,
-      url: ''
+      url: 'diario-enfermedad-detalle'
     },
     {
       id: 13,
@@ -236,7 +236,7 @@ export class DiarioNutricionalPreguntaPage implements OnInit {
       icono: 'icon-sentimiento-15',
       descripcion: '¿Qué sentimientos a nivel psíquico?',
       estado: 3,
-      url: ''
+      url: 'diario-psiquico'
     }
   ];
 

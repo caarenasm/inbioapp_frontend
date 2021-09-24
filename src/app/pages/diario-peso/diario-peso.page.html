@@ -1,0 +1,60 @@
+<ion-content>
+    <ion-list lines="none" class="fondo">
+
+        <ion-fab vertical="top" horizontal="end" slot="fixed">
+            <ion-fab-button class="botones-flotantes" size="small">
+                <ion-icon name="close-outline" (click)="cerrar()"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+
+        <form [formGroup]=datos>
+            <ion-grid class="grupo">
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-item class="titulo-evento">
+                            <a class="icono">
+                                <i class="icon-pesa"></i>
+                            </a>
+                            <ion-label class="texto">¿Cuanto pesaste?</ion-label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-radio-group name="auto" value="opcion">
+                            <ion-fab vertical="end" horizontal="start" slot="fixed">
+                                <ion-fab-button (click)="menosPeso()" class="botones-flotantes posicion-menos" size="small" disabled={{menosPesoDisabled}}>
+                                    <ion-icon class="icon-menos"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab>
+                            <ion-fab vertical="end" horizontal="end" slot="fixed">
+                                <ion-fab-button (click)="masPeso()" class="botones-flotantes posicion-max" size="small">
+                                    <ion-icon class="icon-plus"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab>
+                        </ion-radio-group>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="5"></ion-col>
+                    <ion-col size="3" class="ion-text-center">
+                        <ion-button color='dark' expand="block" fill="outline" size='large' shape="round">
+                            {{ peso }}
+                        </ion-button>
+                        <span>Kilogramos</span>
+                    </ion-col>
+                    <ion-col size="3"></ion-col>
+                </ion-row>
+
+            </ion-grid>
+
+        </form>
+    </ion-list>
+
+</ion-content>
+
+<ion-tab-bar slot="bottom" class="barra">
+    <ion-button expand="block" class="guardar" (click)="guardar()">
+        <ion-label class="texto">Guardar</ion-label>
+    </ion-button>
+</ion-tab-bar>
