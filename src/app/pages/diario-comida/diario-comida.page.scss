@@ -58,3 +58,103 @@
     z-index: 1;
     margin-top: -50px;
 }
+
+.grupo {
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+}
+
+.card {
+    --background: #fcf3eb !important;
+    border-radius: 25px;
+    padding: 0px;
+    margin: 0px;
+    width: 150px;
+    height: 150px;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta {
+    background: transparent;
+    border-radius: 25px;
+    width: 150px;
+    height: 150px;
+    padding: 0px;
+    margin: 0px;
+    /*.radio {
+        --color-checked: #fe8d0c;
+    }*/
+    .radio-checked {
+        --color-checked: #fe8d0c;
+    }
+    .texto {
+        position: absolute;
+        font-family: 'Poppins' !important;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: bold;
+        width: 130px;
+        white-space: normal !important;
+        text-align: left;
+        padding-top: 80px;
+    }
+    .icono {
+        position: absolute;
+        padding-top: 20px;
+        padding-left: 25px;
+        font-size: 50px;
+    }
+}
+
+.card img {
+    width: 100%;
+    height: 80px;
+    border-radius: 15px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.posicion {
+    margin-left: 90px;
+}
+
+.ion-radio {
+    --border-radius: 25px;
+    --color: #fe8e0d;
+    --color-checked: #fe8e0d;
+    --inner-border-radius: 25px
+}
+
+.divisor {
+    --background: transparent;
+    --inner-padding-bottom: 0px;
+    --inner-padding-end: 4px;
+    --inner-padding-start: 0px;
+    --inner-padding-top: 4px;
+    --padding-bottom: 0px;
+    --padding-end: 4px;
+    --padding-start: 0px;
+    --padding-top: 4px;
+    --color: #000;
+}
+
+.boton-receta {
+    --background: #872a99;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    --z-index: 1;
+    --border-radius: 25px;
+    text-transform: capitalize;
+    padding-top: 10px;
+    .texto {
+        padding-left: 25px;
+        padding-right: 25px;
+        font-family: 'Poppins' !important;
+        font-size: 12px;
+    }
+}
