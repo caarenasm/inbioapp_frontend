@@ -1,9 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertController, ModalController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AlertController, IonSlides, ModalController } from '@ionic/angular';
 import { Location } from '@angular/common';
 
 import { AlertService } from '../../services/alert.service';
+
+export interface Alimento {
+  id: number;
+  descripcion: string;
+  icon: string;
+}
 
 @Component({
   selector: 'app-diario-incomodidad-alimento',
@@ -13,6 +19,47 @@ import { AlertService } from '../../services/alert.service';
 export class DiarioIncomodidadAlimentoPage implements OnInit {
 
   datos: FormGroup;
+  arreglo: FormGroup;
+  checked = [];
+  cantidad = 0;
+
+  slideOptsDos = {
+    slidesPerView: 4.6,
+    freeMode: true
+  };
+
+  alimento: Alimento[] = [
+    {
+      id: 1,
+      descripcion: 'Cafe',
+      icon: 'icon-hambre'
+    },
+    {
+      id: 2,
+      descripcion: 'Coliflor',
+      icon: 'icon-hambre'
+    },
+    {
+      id: 3,
+      descripcion: 'Pan',
+      icon: ' icon-hambre'
+    },
+    {
+      id: 4,
+      descripcion: 'Leche',
+      icon: 'icon-hambre'
+    },
+    {
+      id: 5,
+      descripcion: 'Frutas',
+      icon: 'icon-hambre'
+    },
+    {
+      id: 6,
+      descripcion: 'Galletas',
+      icon: 'icon-hambre'
+    }
+  ];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,10 +70,16 @@ export class DiarioIncomodidadAlimentoPage implements OnInit {
   ) {
 
     this.datos = this.formBuilder.group({
-      tipo: [ 1, Validators.required],
+      tipo: [ 5, Validators.required],
+      opcion: ['', Validators.required],
+      lectura: ['', ],
     });
+    this.arreglo = this.formBuilder.group({});
 
-   }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  @ViewChild('miOpcion') slides: IonSlides;
 
   ngOnInit() {
   }
@@ -34,6 +87,35 @@ export class DiarioIncomodidadAlimentoPage implements OnInit {
   cerrar() {
     //this.modalCtrl.dismiss();
     this.location.back();
+  }
+
+   //Adds the checkedbox to the array and check if you unchecked it
+   addCheckbox(event, checkbox: number) {
+    if ( event.detail.checked ) {
+      this.checked.push(checkbox);
+    } else {
+      let index = this.removeCheckedFromArray(checkbox);
+      this.checked.splice(index,1);
+    }
+  }
+
+  //Removes checkbox from array when you uncheck it
+  removeCheckedFromArray(checkbox: number) {
+    return this.checked.findIndex((category)=>category === checkbox);
+  }
+
+  //Empties array with checkedboxes
+  emptyCheckedArray() {
+    this.checked = [];
+  }
+
+  agregar(){
+    const tipo = this.datos.get('opcion').value;
+    const filtro = this.alimento.find( datos => datos.id === tipo,);
+    this.arreglo.addControl('detalle[' + tipo + ']',
+      new FormControl( filtro.descripcion, Validators.required)
+    );
+    /*console.log(this.checked);*/
   }
 
 }

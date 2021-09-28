@@ -19,6 +19,109 @@
                         </ion-item>
                     </ion-col>
                 </ion-row>
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-radio-group>
+                            <ion-grid fixed>
+                                <ion-row>
+                                    <ion-col size="6" class="grid-card">
+                                        <ion-item class="titulo-evento posicion-radio-si">
+                                            <ion-label>Si</ion-label>
+                                            <ion-radio slot="start" value="1" class="ion-radio checkbox"></ion-radio>
+                                        </ion-item>
+                                    </ion-col>
+
+                                    <ion-col size="6" class="grid-card">
+                                        <ion-item class="titulo-evento posicion-radio-no">
+                                            <ion-label>No</ion-label>
+                                            <ion-radio slot="start" value="2" class="ion-radio checkbox"></ion-radio>
+                                        </ion-item>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-radio-group>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="12" style="padding-left: 20px;padding-right: 20px;">
+                        <ion-label>A continuación puedes ver los alimentos que has seleccionado.</ion-label>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="12">
+                        <form [formGroup]=arreglo>
+                            <ion-row *ngFor="let control of arreglo.controls | keyvalue">
+                                <ion-col size="9" style="padding-left: 20px;">
+                                    <ion-input type="text" class="campo" formControlName="{{control.key}}" placeholder="Seleccione..." readonly>
+                                        <ion-icon class="icon-nadar icono" item-right></ion-icon>
+                                    </ion-input>
+                                </ion-col>
+                                <ion-col size="3" style="padding-right: 20px;">
+                                    <ion-button class="guardar" (click)="remover(control)">
+                                        <ion-icon slot="icon-only" name="trash"></ion-icon>
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </form>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-radio-group name="auto" value="opcion" formControlName="opcion">
+
+                            <ion-slides #miOpcion [options]="slideOptsDos">
+                                <ion-slide style="height: 350px;" *ngFor="let item of alimento; let i=index">
+                                    <ion-grid *ngIf="i % 2 == 0" style="padding-left: 90px;">
+                                        <ion-row>
+                                            <ion-col>
+                                                <ion-item class="card">
+                                                    <ion-row class="tarjeta">
+                                                        <ion-radio class="radio posicion ion-radio" [value]=alimento[i].id></ion-radio>
+                                                        <span class="{{ alimento[i].icon }} icono"></span>
+                                                        <ion-label class="texto">{{ alimento[i].descripcion }}</ion-label>
+                                                    </ion-row>
+                                                </ion-item>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row *ngIf="alimento[i + 1]">
+                                            <ion-col>
+                                                <ion-item class="card">
+                                                    <ion-row class="tarjeta">
+                                                        <ion-radio class="radio posicion ion-radio" [value]=alimento[i+1].id></ion-radio>
+                                                        <span class="{{ alimento[i+1].icon }} icono"></span>
+                                                        <ion-label class="texto">{{ alimento[i+1].descripcion }}</ion-label>
+                                                    </ion-row>
+                                                </ion-item>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-grid>
+                                </ion-slide>
+                            </ion-slides>
+
+                            <ion-fab vertical="center" horizontal="start" slot="fixed" (click)="slides.slidePrev()">
+                                <ion-fab-button class="botones-flotantes" size="small">
+                                    <ion-icon class="icon-atras"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab>
+                            <ion-fab vertical="center" horizontal="end" slot="fixed" (click)="slides.slideNext()">
+                                <ion-fab-button class="botones-flotantes" size="small">
+                                    <ion-icon class="icon-adelante"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab>
+                        </ion-radio-group>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="4"></ion-col>
+                    <ion-col size="4">
+                        <ion-button expand="block" class="guardar" (click)="agregar()" (click)="agregar()">
+                            <ion-label class="texto">Agregar</ion-label>
+                        </ion-button>
+                    </ion-col>
+                    <ion-col size="4"></ion-col>
+                </ion-row>
 
             </ion-grid>
 
