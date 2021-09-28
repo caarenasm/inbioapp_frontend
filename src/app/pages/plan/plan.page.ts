@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController, NavController } from '@ionic/angular';
+import { LoadingService } from '../../services/loading.service';
+import { AlertService } from '../../services/alert.service';
 
 export interface Plans {
   img: string;
   texto: string;
   texto2: string;
-  titulo: string; 
-  subtitulo: string; 
+  titulo: string;
+  subtitulo: string;
 }
 
 @Component({
@@ -45,11 +48,53 @@ export class PlanPage implements OnInit {
       titulo: 'Plan Empoderado',
       subtitulo: 'Beneficios:',
     },
-  ]
+  ];
 
-  constructor() { }
+  constructor(
+    private alertCtrl: AlertController,
+    private loadingServ: LoadingService,
+    private alertServ: AlertService,
+    private navCtrl: NavController,
+  ) { }
 
   ngOnInit() {
+  }
+
+  async confirmar(data) {
+
+    const alert = await this.alertCtrl.create({
+      backdropDismiss: false,
+      header: '¿Estas seguro que deseas continuar?',
+      // eslint-disable-next-line max-len
+        message: '<b>Mi opcion seleccionada:</b> ' + data.titulo + '<p>¿Esta seguro de su opcion?.</p>',
+      cssClass:'alerta',
+      buttons: [
+        {
+          text: 'Volver',
+          role: 'cancel',
+        },
+        {
+          text: 'Continuar',
+          cssClass:'alerta-boton-aceptar',
+          handler: () => {
+            this.postDatos(data);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+
+  }
+
+  postDatos(data) {
+    /*this.loadingServ.cargando();
+
+    this.loadingServ.dismissLoader();*/
+    this.alertServ.presentAlert('Opcion Guardada con Exito!');
+    /*this.router.navigate(['/menu']);*/
+    //this.navCtrl.navigateRoot('/menu');
+    this.navCtrl.navigateRoot('/menu');
   }
 
 }
