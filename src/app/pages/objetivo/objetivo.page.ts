@@ -71,7 +71,8 @@ export class ObjetivoPage implements OnInit {
             this.loadingServ.dismissLoader();
             this.alertServ.presentAlert('Opcion Guardada con Exito!');
             /*this.router.navigate(['/menu']);*/
-            this.navCtrl.navigateRoot('/menu');
+            //this.navCtrl.navigateRoot('/menu');
+            this.navCtrl.navigateRoot('/plan');
           }else{
             this.loadingServ.dismissLoader();
             this.alertServ.presentAlert('Error al procesar datos, verifique el formulario!');
