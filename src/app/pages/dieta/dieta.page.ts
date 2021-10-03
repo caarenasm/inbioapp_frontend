@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides, ModalController, PickerController } from '@ionic/angular';
 
@@ -24,15 +25,16 @@ export interface Preparacion {
 }
 
 export interface Receta {
-  titulo: string; 
-  descripcion: string; 
+  titulo: string;
+  descripcion: string;
   img: string;
 }
 
 export interface Dieta {
+  tipo: number;
   descripcion: string;
-  icono: string; 
-  receta: Receta[]; 
+  icono: string;
+  receta: Receta[];
 }
 
 @Component({
@@ -45,20 +47,21 @@ export class DietaPage implements OnInit {
   dieta: Dieta [] = [
     {
       descripcion: 'Mis opciones Desayuno',
+      tipo: 1,
       icono: 'icon-mi_diario_nutricional',
       receta: [
       {
-        titulo: 'Receta 1', 
+        titulo: 'Receta 1',
         descripcion: 'Descripcion Receta 1',
         img: 'assets/img/producto.png',
       },
       {
-        titulo: 'Receta 2', 
+        titulo: 'Receta 2',
         descripcion: 'Descripcion Receta 1',
         img: 'assets/img/producto.png',
       },
       {
-        titulo: 'Receta 3', 
+        titulo: 'Receta 3',
         descripcion: 'Descripcion Receta 1',
         img: 'assets/img/producto.png',
       }
@@ -66,24 +69,33 @@ export class DietaPage implements OnInit {
     },
     {
       descripcion: 'Mis opciones Almuerzo',
+      tipo: 2,
       icono: 'icon-mi_dieta',
-      receta: [{
-        titulo: 'Receta 1', 
-        descripcion: 'Descripcion Receta 1',
-        img: 'assets/img/producto.png',
-      }]
+      receta: [
+        {
+          titulo: 'Almuerzo 1',
+          descripcion: 'Descripcion Receta 1',
+          img: 'assets/img/producto.png',
+        },
+        {
+          titulo: 'Almuerzo 2',
+          descripcion: 'Descripcion Receta 2',
+          img: 'assets/img/producto.png',
+        }
+      ]
     },
     {
       descripcion: 'Mis opciones Cena',
+      tipo: 3,
       icono: 'icon-mi_guia_nutricional',
       receta : [
         {
-        titulo: 'Receta 1', 
+        titulo: 'Cena 1',
         descripcion: 'Descripcion Receta 1',
         img: 'assets/img/producto.png',
         },
         {
-          titulo: 'Receta 2', 
+          titulo: 'Cena 2',
           descripcion: 'Descripcion Receta 1',
           img: 'assets/img/producto.png',
         },
@@ -98,13 +110,15 @@ export class DietaPage implements OnInit {
     ]
   ];
 
-  constructor( 
+  constructor(
     private pickerCtrl: PickerController,
     private modalCtrl: ModalController
     ) { }
 
     // eslint-disable-next-line @typescript-eslint/member-ordering
-    @ViewChild('miDieta') slides: IonSlides;
+    @ViewChild('miDietaDesayuno') slidesDesayuno: IonSlides;
+    @ViewChild('miDietaAlmuerzo') slidesAlmuerzo: IonSlides;
+    @ViewChild('miDietaCena') slidesCena: IonSlides;
 
   ngOnInit() {
   }
