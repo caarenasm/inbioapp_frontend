@@ -1,73 +1,60 @@
-
-ion-img {
-    height: 100%;
-    width: 100%;
-    border-radius: 50px;
-    padding: 0px;
-}s
-
-ion-list {
-    /*background-image: url('/assets/img/fondo_dos.png');
-    background-repeat: no-repeat;
-    background-size: 100%;*/
-    --offset-bottom: 0px;
-    --offset-top: 0px;
-    --padding-bottom: 0px;
-    --padding-end: 0px;
-    --padding-start: 0px;
-    --padding-top: 0px;
-    padding: 50px;
-}
-
-ion-item {
-    text-align: center;
-    --background: transparent;
-    --padding-bottom: 0px;
-    --padding-end: 4px;
-    --padding-top: 0px;
+.fuente {
+    font-size: 15px;
+    color: black;
+    font-family: 'Poppins' !important;
     font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    --webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    white-space: normal !important;
+    padding-right: 20px;
 }
 
-ion-card {
-    border-radius: 50px;
-    padding-bottom: 40px;
-    padding-inline: 0px;
-    margin-top: 10px;
-    margin-bottom: -40px;
-}
-
-ion-card ion-card-content.card-content-md ion-card {
-    border-radius: 15px;
-    padding-bottom: 40px;
-    padding-inline: 0px;
-    margin-top: 10px;
-    margin-bottom: -40px;
-}
-
-ion-card ion-card-content.card-content-ios ion-card {
-    border-radius: 15px;
-    padding-bottom: 40px;
-    padding-inline: 0px;
-    margin-top: 10px;
-    margin-bottom: -40px;
-}
-
-.item-interactive {
-    --border-color: #000000;
-    --border-radius: 25px;
-    --border-width: 0.5px;
-}
-
-.picker>ion-picker-column {
-    margin-left: 1px solid #eeeeee;
-}
-
-ion-button {
+.tarjeta-receta {
+    --background: #ffffff;
+    --color: #000000;
     --border-radius: 50px;
-    --padding-bottom: 4px;
-    --padding-end: 10px;
-    --padding-start: 10px;
-    --padding-top: 4px;
-    margin-top: 10px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     margin-bottom: 0px;
+    .contenido {
+        padding-bottom: 0px;
+        .imagen {
+            border-radius: 50px !important;
+            overflow: hidden;
+            padding-bottom: 0px;
+        }
+    }
+}
+
+.titulo {
+    font-family: 'Poppins' !important;
+    font-size: 24px;
+    font-style: bold;
+    line-height: 24px;
+    color: black;
+    font-weight: bold;
+    text-align: left !important;
+}
+
+.sub-titulo-2-1 {
+    font-family: 'Poppins' !important;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+    text-align: left !important;
+    color: black;
+}
+
+.boton {
+    --border-radius: 50px;
+    font-weight: bold;
+    //text-transform: capitalize;
+    --background: #872a99;
 }

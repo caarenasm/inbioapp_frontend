@@ -1,43 +1,31 @@
 <app-header></app-header>
 <app-menu-inicio></app-menu-inicio>
 <ion-content>
-
-    <ion-list lines="none">
-
-        <ion-item>
-            <ion-card-title>Elige tu objetivo para tener un plan diseñado únicamente para tí</ion-card-title>
+    <ion-list lines="none" class="fondo-dieta">
+        <ion-item class="titulo-cuerpo">
+            <ion-label class="fuente">Elige tu objetivo para tener un plan diseñado únicamente para tí</ion-label>
         </ion-item>
 
-        <div *ngFor="let objetivo of objetivos">
+        <ng-container *ngFor="let objetivo of objetivos">
 
-            <ion-card>
-
-                <ion-img [src]="objetivo.imagen_url"></ion-img>
-
-                <ion-card-header>
-                    <ion-card-title>{{ objetivo.nombre }}</ion-card-title>
-                    <ion-card-subtitle>{{ objetivo.descripcion }}</ion-card-subtitle>
+            <ion-card class="tarjeta-receta">
+                <ion-card-content class="contenido">
+                    <ion-img [src]="objetivo.imagen_url" class="imagen"></ion-img>
+                </ion-card-content>
+                <ion-card-header class="informacion">
+                    <ion-card-title class="titulo">{{ objetivo.nombre }}</ion-card-title>
+                    <ion-card-subtitle class="sub-titulo-2-1">{{ objetivo.descripcion }}</ion-card-subtitle>
                 </ion-card-header>
-
-
-
             </ion-card>
-
             <ion-grid>
-                <ion-row class="ion-align-items-center">
+                <ion-row class="ion-align-items-center" style="margin-top: -35px;">
                     <ion-col size="12" class="ion-text-center">
-
-                        <app-boton titulo='Este es mi objetivo' colorBtn='negro' (click)="confirmar(objetivo)"></app-boton>
-
-                        <!--<ion-button (click)="seleccionar(objetivo)" color="dark" edge>Este es mi objetivo</ion-button>-->
-
-
+                        <!--<app-boton titulo='Este es mi objetivo' colorBtn='negro' (click)="confirmar(objetivo)"></app-boton>-->
+                        <ion-button (click)="confirmar(objetivo)" class="boton">Este es mi objetivo</ion-button>
                     </ion-col>
                 </ion-row>
             </ion-grid>
 
-        </div>
-
+        </ng-container>
     </ion-list>
-
 </ion-content>
