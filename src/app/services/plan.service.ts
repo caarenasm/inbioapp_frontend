@@ -48,7 +48,7 @@ export class PlanService {
     });
 
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    return this.httpClient.post<any>(this.endpoint + '/plan/guardar', { objetivo_id: data.id }, { headers: httpOptions })
+    return this.httpClient.post<any>(this.endpoint + '/plan/guardar', { plan_id: data.id }, { headers: httpOptions })
       .pipe(
         catchError(this.handleError<any>('Error occured'))
       );

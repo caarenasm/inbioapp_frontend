@@ -18,8 +18,8 @@
 
                 <ion-card-header>
                     <ion-card-title class="titulo">{{ plans.titulo }}</ion-card-title>
-                    <ion-card-subtitle class="sub-titulo-2 titulo-plan-basico">Beneficios:</ion-card-subtitle>
 
+                    <!--<ion-card-subtitle class="sub-titulo-2 titulo-plan-basico">Beneficios:</ion-card-subtitle>
                     <ion-icon name="checkmark-outline" class="descripcion-basico sub-titulo"></ion-icon>
                     <label class="sub-titulo">Diario Nutricional<br></label>
                     <ion-icon class="titulo-plan-basico sub-titulo" name="checkmark-outline"></ion-icon>
@@ -33,7 +33,9 @@
                     <ion-icon class="titulo-plan-basico sub-titulo" name="checkmark-outline"></ion-icon>
                     <label class="sub-titulo">Descuentos en eventos<br></label>
                     <ion-icon class="titulo-plan-basico sub-titulo" name="checkmark-outline"></ion-icon>
-                    <label class="sub-titulo">Acceso al contenido actual de Inbionova<br></label>
+                    <label class="sub-titulo">Acceso al contenido actual de Inbionova<br></label>-->
+
+                    <div [innerHTML]=plans.descripcion></div>
                 </ion-card-header>
 
             </ion-card>
