@@ -1,0 +1,40 @@
+.title {
+    margin-bottom: 30px;
+}
+
+.title h4 {
+    color: black;
+}
+
+.title p {
+    margin-top: 0 !important;
+    color: #999999;
+    font-size: small;
+}
+
+.forget a {
+    font-size: small !important;
+}
+
+.primary-input {
+    background: aliceblue;
+    --padding-start: 10px !important;
+    color: #999999;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.btn-login {
+    --background: #9d259d;
+    --border-color: #9d259d;
+    --border-radius: 50px;
+    --border-style: solid;
+    --border-width: 0.5px;
+    margin-top: 20px;
+    //--box-shadow: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    --background-activated: #9d259d;
+    --background-activated-opacity: 1;
+    --transition: background-color 15ms linear;
+}

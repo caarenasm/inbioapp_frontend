@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { NavController } from '@ionic/angular';
-import { Usuario } from '../../interfaces/usuario';
-
-import { AuthService } from '../../services/auth.service';
-import { ToastService } from '../../services/toast.service';
+import { ModalController } from '@ionic/angular';
+import { LoginPagePage } from '../login-page/login-page.page';
 
 @Component({
   selector: 'app-login',
@@ -14,51 +9,23 @@ import { ToastService } from '../../services/toast.service';
 })
 export class LoginPage implements OnInit {
 
-  email: string;
-  password: string;
-  isLogged: boolean;
-  resp: any;
-
-  datos: FormGroup;
-
   constructor(
-    private formBuilder: FormBuilder,
-    private authServ: AuthService,
-    private toastServ: ToastService,
-    private navCtrl: NavController,
-  ) {
-
-    this.validar();
-
-   }
-
-   validar() {
-
-    this.datos = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-    });
-
-  }
+    private modalCtrl: ModalController,
+  ) { }
 
   ngOnInit() {
   }
 
-  login(){
+  async login() {
+    const modal = await this.modalCtrl.create({
+      component: LoginPagePage,
+      animated: true,
+      mode: 'ios',
+      backdropDismiss: false,
+      cssClass: 'login-modal',
+    });
 
-    this.authServ.login( this.datos.value ).subscribe(
-      response => {
-        this.toastServ.presentToast(response["message"]);
-      },
-      error => {
-        console.log(error.error);
-        this.toastServ.presentToast('Error: Verifique sus datos!');
-      },
-      () => {
-        this.navCtrl.navigateRoot('/objetivo');
-      }
-    );
-
+    return await modal.present();
   }
 
 }
