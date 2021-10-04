@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+
+import { PlanService } from '../../services/plan.service';
 import { LoadingService } from '../../services/loading.service';
 import { AlertService } from '../../services/alert.service';
+import { Router } from '@angular/router';
 
-export interface Plans {
-  img: string;
-  texto: string;
-  texto2: string;
-  titulo: string;
-  subtitulo: string;
-}
+import { Plans } from '../../interfaces/plan';
 
 @Component({
   selector: 'app-plan',
@@ -18,14 +15,16 @@ export interface Plans {
 })
 export class PlanPage implements OnInit {
 
-  plan: Plans[] = [
+  plan: Plans[];
+
+  /*plan: Plans[] = [
 
     {
       img: 'assets/img/plan_gratuito.png',
       texto: '',
       texto2: '',
       titulo: 'Plan Gratuito',
-      subtitulo: 'Beneficios:', 
+      subtitulo: 'Beneficios:',
     },
     {
       img: 'assets/img/plan-basico.png',
@@ -48,9 +47,10 @@ export class PlanPage implements OnInit {
       titulo: 'Plan Empoderado',
       subtitulo: 'Beneficios:',
     },
-  ];
+  ];*/
 
   constructor(
+    private planServ: PlanService,
     private alertCtrl: AlertController,
     private loadingServ: LoadingService,
     private alertServ: AlertService,
@@ -58,6 +58,11 @@ export class PlanPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.planServ.getLista().subscribe(
+      response => {
+        this.plan = response;
+      }
+    );
   }
 
   async confirmar(data) {
