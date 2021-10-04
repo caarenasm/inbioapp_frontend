@@ -590,3 +590,11 @@
     margin-bottom: -130px;
     margin-top: -60px;
 }
+
+.login-modal .modal-wrapper {
+    height: 50%;
+    top: 50%;
+    position: absolute;
+    display: block;
+    border-radius: 25px 25px 0 0;
+}

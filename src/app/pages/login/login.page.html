@@ -1,36 +1,12 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-back-button color="tertiary" defaultHref="/"></ion-back-button>
-        </ion-buttons>
-    </ion-toolbar>
-</ion-header>
-<ion-content fullscreen class="ion-no-padding">
-    <ion-card>
-        <ion-card-header>
-            <ion-card-title>Datos del usuario</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-            <form [formGroup]="datos" (ngSubmit)="login()">
+<ion-content class="ion-padding ion-text-center" color="dark">
+    <img src="/assets/img/inbioapp.png" class="logo" />
 
-                <ion-item>
-                    <ion-label position="floating">Correo Electrónico:</ion-label>
-                    <ion-input type="email" formControlName="email" placeholder="Correo Electronico"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label position="floating">Contraseña:</ion-label>
-                    <ion-input type="password" formControlName="password" placeholder="Contraseña"></ion-input>
-                </ion-item>
+    <div class="title">
+        <h2>Bienvenido</h2>
+    </div>
 
-                <ion-button expand="block" shape="round" (click)="login()">
-                    Ingresar
-                </ion-button>
-
-                <p text-right>Olvidaste la contraseña?</p>
-
-                <p text-center>No tienes cuenta?</p>
-                <ion-button expand="block" shape="round" color="danger" [routerLink]="['/registro']">Registrate</ion-button>
-            </form>
-        </ion-card-content>
-    </ion-card>
+    <div class="ion-margin-top">
+        <ion-button expand="block" class="btn-login" (click)="login()">Iniciar Sesion</ion-button>
+        <ion-button expand="block" class="btn-registrar" [routerLink]="['/quiz']">Registrarse</ion-button>
+    </div>
 </ion-content>

@@ -179,6 +179,10 @@ const routes: Routes = [
     path: 'diario-psiquico',
     loadChildren: () => import('./pages/diario-psiquico/diario-psiquico.module').then( m => m.DiarioPsiquicoPageModule)
   },
+  {
+    path: 'login-page',
+    loadChildren: () => import('./pages/login-page/login-page.module').then( m => m.LoginPagePageModule)
+  },
 
 
 

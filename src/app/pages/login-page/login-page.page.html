@@ -1,0 +1,33 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+    <div class="title">
+        <h4>Iniciar Sesion</h4>
+        <p>Comencemos!</p>
+    </div>
+
+    <form [formGroup]="datos" (ngSubmit)="login()">
+        <small *ngIf="usuarioNoValido">
+            <ion-label color="danger">Ingrese su Usuario.</ion-label>
+        </small>
+        <ion-input type="email" formControlName="email" placeholder="Correo Electronico" [class.is-invalid]="usuarioNoValido" class="primary-input"></ion-input>
+        <small *ngIf="passNoValido">
+            <ion-label color="danger">Ingrese su Contraseña.</ion-label>
+        </small>
+        <ion-input type="password" formControlName="password" placeholder="Contraseña" [class.is-invalid]="passNoValido" class="primary-input"></ion-input>
+
+        <!--<div class="ion-margin-top ion-text-right forget">
+          <a>Forgot Password?</a>
+      </div>-->
+
+        <div class="ion-margin-top">
+            <ion-button expand="block" (click)="login()" class="btn-login">Validar</ion-button>
+        </div>
+
+        <div class="ion-margin-top ion-text-center">
+            <a (click)="dismiss()" style="color: black;">Cerrar</a>
+        </div>
+    </form>
+</ion-content>
