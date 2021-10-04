@@ -93,13 +93,26 @@ export class PlanPage implements OnInit {
   }
 
   postDatos(data) {
-    /*this.loadingServ.cargando();
+    this.loadingServ.cargando();
 
-    this.loadingServ.dismissLoader();*/
-    this.alertServ.presentAlert('Opcion Guardada con Exito!');
-    /*this.router.navigate(['/menu']);*/
-    //this.navCtrl.navigateRoot('/menu');
-    this.navCtrl.navigateRoot('/menu');
+    this.planServ.guardar(data).subscribe(
+      response => {
+        if(response){
+          if(response.status === true){
+            this.loadingServ.dismissLoader();
+            this.alertServ.presentAlert('Opcion Guardada con Exito!');
+            this.navCtrl.navigateRoot('/menu');
+          }else{
+            this.loadingServ.dismissLoader();
+            this.alertServ.presentAlert('Error al procesar datos, verifique el formulario!');
+          }
+        }else{
+          this.loadingServ.dismissLoader();
+          this.alertServ.presentAlert('Error al procesar datos, verifique el formulario!');
+        }
+
+      }
+    );
   }
 
 }
