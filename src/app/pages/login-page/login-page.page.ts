@@ -80,6 +80,7 @@ export class LoginPagePage implements OnInit {
       },
       () => {
         this.navCtrl.navigateRoot('/objetivo');
+        this.dismiss();
       }
     );
 
