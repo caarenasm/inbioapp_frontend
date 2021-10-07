@@ -71,7 +71,7 @@ export class QuizPage implements OnInit {
         this.quiz = this.resp.data;
 
         for (let i = 0; i < this.quiz.length; i++) {
-          if (this.quiz[i].tipo_respuestas === 1) {
+          if (this.quiz[i].tipo_respuestas === '1') {
             this.todo.addControl('respuesta[' + i + ']', new FormControl('', Validators.required));
             this.quiz[i].respuestas.forEach(element => {
               if (element.otro) {
@@ -79,7 +79,7 @@ export class QuizPage implements OnInit {
               }
             });
           }
-          if(this.quiz[i].tipo_respuestas === 2){
+          if(this.quiz[i].tipo_respuestas === '2'){
             this.todo.addControl('respuesta[' + i + ']', new FormArray([], [Validators.required]));
           }
         }

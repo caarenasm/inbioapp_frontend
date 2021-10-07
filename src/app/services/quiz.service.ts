@@ -43,7 +43,7 @@ export class QuizService {
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
     /*this.toastServ.presentToast(`Error: ${message}`);*/
-    this.toastServ.presentToast('Error en Servidor!');
+    this.toastServ.presentToast('Error en conexion!');
   }
   // #enddocregion log
 

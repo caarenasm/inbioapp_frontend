@@ -11,6 +11,6 @@ export interface Quiz {
     icono: string;
     descripcion: string;
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    tipo_respuestas: number;
+    tipo_respuestas: string;
     respuestas: Respuesta[];
 }
