@@ -230,3 +230,11 @@ ion-grid {
 .item-has-focus {
     --highlight-background: #f08532;
 }
+
+.progreso {
+    --background: #d3d3d3;
+    --buffer-background: #f9e6fd;
+    --progress-background: #fe8d0c;
+    height: 10px;
+    border-radius: 9px;
+}
