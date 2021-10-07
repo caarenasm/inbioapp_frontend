@@ -66,10 +66,9 @@ export class RegistroPage implements OnInit {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.quiz = this.router.getCurrentNavigation().extras.state.quiz;
+        this.crearFormulario(this.quiz);
       }
     });
-
-    this.crearFormulario();
 
     if(!this.quiz){
       this.router.navigate(['quiz']);
@@ -120,7 +119,7 @@ export class RegistroPage implements OnInit {
     return this.todo.get('peso_deseado').invalid && this.todo.get('peso_deseado').touched;
   }
 
-  crearFormulario() {
+  crearFormulario(respuesta) {
 
     this.todo = this.formBuilder.group({
       sexo: ['', Validators.required],
@@ -139,7 +138,7 @@ export class RegistroPage implements OnInit {
       estatura: ['0', Validators.required],
       peso_actual: ['0', Validators.required],
       peso_deseado: ['0', Validators.required],
-      respuestas: [this.quiz],
+      respuestas: [respuesta],
     });
 
   }
