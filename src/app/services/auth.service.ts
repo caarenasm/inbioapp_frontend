@@ -100,7 +100,7 @@ export class AuthService {
   }
 
   validateEmail(data){
-    return this.httpClient.post<any>(this.endpoint + '/email/', {email: data}).pipe(
+    return this.httpClient.post<any>(this.endpoint + '/email', {email: data}, this.httpOptions).pipe(
       tap(res => res)
     );
   }
