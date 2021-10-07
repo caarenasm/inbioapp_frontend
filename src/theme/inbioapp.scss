@@ -504,7 +504,7 @@
         -webkit-box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
         box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
         padding: 10px;
-        padding-top: 30px;
+        padding-top: 50px;
         min-width: 350px;
         .alert-head {
             &::before {
@@ -519,7 +519,7 @@
                 top: 10px;
                 z-index: 20004;
             }
-            padding-bottom: 30px;
+            padding-bottom: 20px;
         }
     }
     .alert-title.sc-ion-alert-md,
@@ -536,7 +536,7 @@
         color: rgb(0, 0, 0);
         text-align: center;
         text-transform: capitalize;
-        font-weight: bold;
+        font-weight: normal;
     }
     .alert-button.sc-ion-alert-md,
     .alert-button.sc-ion-alert-ios {
@@ -604,4 +604,8 @@
 
 .picker-wrapper.sc-ion-picker-ios {
     border-radius: 25px 25px 0 0;
+}
+
+.popover-content.sc-ion-popover-md {
+    border-radius: 20px;
 }

@@ -132,7 +132,8 @@ export class QuizPage implements OnInit {
         msg: message
       },
       translucent: true,
-      backdropDismiss: true
+      backdropDismiss: true,
+      mode: 'md',
     });
 
     await popover.present();
@@ -209,7 +210,7 @@ export class QuizPage implements OnInit {
 
   mostrar(i: any, otro: any) {
 
-    if (otro === 1) {
+    if (otro === '1') {
       this.ocultar[i] = true;
     }else{
       this.ocultar[i] = false;
