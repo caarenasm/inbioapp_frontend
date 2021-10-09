@@ -12,7 +12,7 @@
 
                             <ion-list lines="none" [ngClass]="( item.tipo_respuestas === '1' ) ? 'ion-list-checkbox': 'ion-list-radio' ">
 
-                                <ion-fab vertical="top" horizontal="center" slot="fixed" class="ion-no-padding">
+                                <ion-fab vertical="top" class="logo-center" slot="fixed">
                                     <ion-fab-button class="icono-encabezado">
                                         <ion-icon class="{{ item.icono }}" color="dark"></ion-icon>
                                     </ion-fab-button>
@@ -100,7 +100,7 @@
 
                             <ion-list lines="none" class="ion-list-checkbox">
 
-                                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                                <ion-fab vertical="top" class="logo-center" slot="fixed">
                                     <ion-fab-button class="icono-encabezado">
                                         <ion-skeleton-text animated style="width: 50px; height: 50px"></ion-skeleton-text>
                                     </ion-fab-button>
@@ -152,7 +152,7 @@
     </form>
 
     <ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf="mostrarAnterior">
-        <ion-fab-button size="small" class="ion-fab-atras" routerDirection="forward" data-desc="Aterior" (click)="slides.slidePrev()">
+        <ion-fab-button size="small" class="ion-fab-atras" routerDirection="forward" data-desc="Aterior" (click)="atras()">
             <ion-icon class="icon-atras"></ion-icon>
         </ion-fab-button>
         <ion-label class="texto-boton-atras">Anterior</ion-label>
