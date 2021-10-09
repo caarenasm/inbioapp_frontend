@@ -60,6 +60,20 @@ ion-card {
     font-size: 30px;
 }
 
+.logo-center {
+    margin-inline-start: -10%;
+}
+
+.icono-encabezado {
+    --background: #ffffff;
+    --border-radius: 50px;
+    --border-style: solid;
+    --border-width: 0.5px;
+    margin-top: 40px;
+    width: 80px !important;
+    height: 80px !important;
+}
+
 .titulo {
     text-align: center;
     padding-bottom: 10px;

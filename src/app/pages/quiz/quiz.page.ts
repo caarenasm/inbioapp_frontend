@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlertController, IonSlides, NavController, PopoverController } from '@ionic/angular';
+import { AlertController, IonSlides, NavController, PopoverController, IonContent } from '@ionic/angular';
 import { InfoAyudaComponent } from '../../components/info-ayuda/info-ayuda.component';
 import { Validators, FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
@@ -60,6 +60,8 @@ export class QuizPage implements OnInit {
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('miQuiz') slides: IonSlides;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  @ViewChild(IonContent) content: IonContent;
 
   //onViewWillEnter() {
   armarQuiz() {
@@ -175,6 +177,11 @@ export class QuizPage implements OnInit {
     });
 }
 
+  atras() {
+    this.slides.slidePrev();
+    this.content.scrollToTop(300);
+  }
+
   siguiente() {
 
     this.slides.getActiveIndex().then(index => {
@@ -189,6 +196,7 @@ export class QuizPage implements OnInit {
         });
 
         this.slides.slideNext();
+        this.content.scrollToTop(300);
 
       }
    });
