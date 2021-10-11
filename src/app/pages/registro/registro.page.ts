@@ -136,7 +136,9 @@ export class RegistroPage implements OnInit {
       ],
       terminos: [false, Validators.pattern('true')],
       estatura: ['0', Validators.required],
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       peso_actual: ['0', Validators.required],
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       peso_deseado: ['0', Validators.required],
       respuestas: [respuesta],
     });
@@ -214,7 +216,7 @@ export class RegistroPage implements OnInit {
 
     if( this.pesoDeseado < 1){
       this.menosPesoDeseadoaDisabled = true;
-      return
+      return;
     }else{
       this.menosPesoDeseadoaDisabled = false;
     }
@@ -224,7 +226,7 @@ export class RegistroPage implements OnInit {
 
   async presentToast(msg) {
 
-    let toast = await this.toastCtrl.create({
+    const toast = await this.toastCtrl.create({
       message: msg,
       position: 'top',
       duration: 2000,
@@ -298,11 +300,11 @@ export class RegistroPage implements OnInit {
 
       this.presentToast('Por Favor, verifique datos del formulario!');
 
-      return Object.values( this.todo.controls ).forEach( control => {
-        if ( control instanceof FormGroup ) {
-          Object.values( control.controls ).forEach( control => control.markAsTouched() );
+      return Object.values( this.todo.controls ).forEach( cntrl => {
+        if ( cntrl instanceof FormGroup ) {
+          Object.values( cntrl.controls ).forEach( control => control.markAsTouched() );
         } else {
-          control.markAsTouched();
+          cntrl.markAsTouched();
         }
       });
     }
