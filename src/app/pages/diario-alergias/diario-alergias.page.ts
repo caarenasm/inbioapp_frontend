@@ -82,7 +82,7 @@ export class DiarioAlergiasPage implements OnInit {
     if ( event.detail.checked ) {
       this.checked.push(checkbox);
     } else {
-      let index = this.removeCheckedFromArray(checkbox);
+      const index = this.removeCheckedFromArray(checkbox);
       this.checked.splice(index,1);
     }
   }
@@ -121,11 +121,11 @@ export class DiarioAlergiasPage implements OnInit {
     if ( this.datos.invalid ){
       this.alertServ.presentAlert('Datos Requeridos, verifique el formulario!');
 
-      return Object.values( this.datos.controls ).forEach( control => {
-        if ( control instanceof FormGroup ) {
-          Object.values( control.controls ).forEach( control => control.markAsTouched() );
+      return Object.values( this.datos.controls ).forEach( cntrl => {
+        if ( cntrl instanceof FormGroup ) {
+          Object.values( cntrl.controls ).forEach( control => control.markAsTouched() );
         } else {
-          control.markAsTouched();
+          cntrl.markAsTouched();
         }
       });
 

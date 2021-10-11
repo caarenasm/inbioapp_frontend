@@ -60,6 +60,20 @@ ion-card {
     font-size: 30px;
 }
 
+.logo-center {
+    margin-inline-start: -10%;
+}
+
+.icono-encabezado {
+    --background: #ffffff;
+    --border-radius: 50px;
+    --border-style: solid;
+    --border-width: 0.5px;
+    margin-top: 40px;
+    width: 80px !important;
+    height: 80px !important;
+}
+
 .titulo {
     text-align: center;
     padding-bottom: 10px;
@@ -95,6 +109,7 @@ ion-card {
     font-size: 14px;
     font-style: bold;
     text-align: left;
+    margin-left: 0px;
 }
 
 .ion-radio {
@@ -105,18 +120,11 @@ ion-card {
 }
 
 .ion-checkbox {
-    background: #FFFFFF;
-    border-width: 1px !important;
-    border-style: solid !important;
-    border-radius: 4px;
-    border-color: #fe8e0d !important;
     --height: 25px;
     --width: 25px;
-    --checkmark-color: #FFFFFF;
-    --border-color: #FFFFFF;
     --background-checked: #fe8e0d;
-    --border-color: #fe8e0d;
     --border-color-checked: #fe8e0d;
+    --border-color: #fe8e0d;
 }
 
 .grid-card {
@@ -207,4 +215,9 @@ input:focus {
     margin-top: 20px;
     --box-shadow: none;
     padding: 0px;
+}
+
+.radio-sexo {
+    --padding-start: 0px;
+    --inner-padding-end: 0px;
 }

@@ -7,6 +7,8 @@ import { Usuario } from '../../interfaces/usuario';
 
 import { AuthService } from '../../services/auth.service';
 import { ToastService } from '../../services/toast.service';
+import { LoadingService } from '../../services/loading.service';
+import { extractErrorMessagesFromErrorResponse } from '../../services/helper.service';
 
 @Component({
   selector: 'app-login-page',
@@ -28,7 +30,8 @@ export class LoginPagePage implements OnInit {
     private toastServ: ToastService,
     private navCtrl: NavController,
     public modalCtrl: ModalController,
-  ) { 
+    private loadingServ: LoadingService,
+  ) {
     this.validar();
   }
 
@@ -70,15 +73,25 @@ export class LoginPagePage implements OnInit {
       });
     }
 
+    this.loadingServ.cargando();
+
     this.authServ.login( this.datos.value ).subscribe(
       response => {
         this.toastServ.presentToast(response["message"]);
+        this.loadingServ.dismissLoader();
       },
       error => {
-        console.log(error.error);
-        this.toastServ.presentToast('Error: Verifique sus datos!');
+        //console.log(error.error);
+        // Extract form error messages from API  <------ HERE!!!
+        this.loadingServ.dismissLoader();
+        const messages = extractErrorMessagesFromErrorResponse(error);
+        messages.forEach((res) => {
+          this.toastServ.presentToast(res);
+       });
+        //this.toastServ.presentToast('Error: Verifique sus datos!');
       },
       () => {
+        this.loadingServ.dismissLoader();
         this.navCtrl.navigateRoot('/objetivo');
         this.dismiss();
       }

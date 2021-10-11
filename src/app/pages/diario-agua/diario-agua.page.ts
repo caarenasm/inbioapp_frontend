@@ -46,7 +46,7 @@ constructor(
   private alertCtrl: AlertController,
   private modalCtrl: ModalController,
   private location: Location
-) { 
+) {
   this.datos = this.formBuilder.group({
     tipo: [ 1, Validators.required],
     opcion: ['', Validators.required],

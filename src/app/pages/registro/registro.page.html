@@ -5,7 +5,7 @@
         <ion-list lines="none" class="fondo-mis-bioproductos">
 
             <ion-fab vertical="top" horizontal="center" slot="fixed">
-                <ion-fab-button class="tarjeta-formulario-logo">
+                <ion-fab-button class="icono-encabezado">
                     <ion-icon class="icon-usuario ion-icon-icono"></ion-icon>
                 </ion-fab-button>
             </ion-fab>
@@ -33,14 +33,14 @@
                                     <ion-grid fixed>
                                         <ion-row>
                                             <ion-col size="6" class="grid-card">
-                                                <ion-item>
+                                                <ion-item class="radio-sexo">
                                                     <ion-label class="label-sexo">Masculino</ion-label>
                                                     <ion-radio slot="start" value="1" class="ion-radio"></ion-radio>
                                                 </ion-item>
                                             </ion-col>
 
                                             <ion-col size="6" class="grid-card">
-                                                <ion-item>
+                                                <ion-item class="radio-sexo">
                                                     <ion-label class="label-sexo">Femenino</ion-label>
                                                     <ion-radio slot="start" value="2" class="ion-radio"></ion-radio>
                                                 </ion-item>
@@ -72,7 +72,7 @@
                                             </small>
                                         </ion-col>
 
-                                        <ion-col size="3" class="grid-card">
+                                        <ion-col size="5" class="grid-card">
                                             <ion-label position="stacked">Mes</ion-label>
                                             <ion-datetime mode="ios" display-format="MMMM" placeholder="MM" pickerFormat="MM" formControlName="mes" [class.is-invalid]="mesNoValido" cancelText="Cancelar" doneText="Hecho" (ionChange)="getMes($event)"></ion-datetime>
                                             <small *ngIf="mesNoValido">
@@ -80,7 +80,7 @@
                                             </small>
                                         </ion-col>
 
-                                        <ion-col size="6" class="grid-card">
+                                        <ion-col size="4" class="grid-card">
                                             <ion-label position="stacked">Año</ion-label>
                                             <ion-datetime mode="ios" display-format="YYYY" placeholder="YYYY" pickerFormat="YYYY" min="1900" max="2050" formControlName="anio" [class.is-invalid]="anioNoValido" cancelText="Cancelar" doneText="Hecho" (ionChange)="getAnio($event)"></ion-datetime>
                                             <small *ngIf="anioNoValido">
