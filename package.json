@@ -1,7 +1,7 @@
 {
   "name": "inbioapp",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -19,8 +19,8 @@
     "@angular/platform-browser": "~11.2.0",
     "@angular/platform-browser-dynamic": "~11.2.0",
     "@angular/router": "~11.2.0",
-    "@capacitor/android": "^2.4.7",
-    "@capacitor/core": "2.4.7",
+    "@capacitor/android": "^2.5.0",
+    "@capacitor/core": "2.5.0",
     "@ionic/angular": "^5.8.0",
     "@ionic/storage-angular": "^3.0.6",
     "chart.js": "^2.9.4",
@@ -51,7 +51,7 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-prefer-arrow": "1.2.2",
-    "jasmine-core": "~3.7.1",
+    "jasmine-core": "^3.8.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.2.0",
     "karma-chrome-launcher": "~3.1.0",
