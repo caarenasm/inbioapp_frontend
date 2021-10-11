@@ -226,7 +226,7 @@ export class RegistroPage implements OnInit {
 
     let toast = await this.toastCtrl.create({
       message: msg,
-      position: 'bottom',
+      position: 'top',
       duration: 2000,
       //color:'light',
       cssClass: 'ion-toast'
