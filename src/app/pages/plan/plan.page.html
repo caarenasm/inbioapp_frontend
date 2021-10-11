@@ -1,24 +1,17 @@
 <app-header></app-header>
-
-
 <ion-content>
-
-
     <ion-list lines="none" class="card-plan-basico">
 
-        <div *ngFor="let plans of plan">
+        <ng-container *ngFor="let plans of plan">
 
-            <ion-card>
-
+            <ion-card class="animate__animated animate__fadeIn animate__faster">
                 <div class="contenedor">
                     <img [src]="plans.imagen_url" />
                     <div class="texto-encima" *ngIf="plans.precio > 1">{{ plans.precio | currency:"USD" }} x {{ plans.texto_tiempo }}</div>
                     <div class="texto-precio">{{ plans.texto_anual }}</div>
                 </div>
-
                 <ion-card-header>
                     <ion-card-title class="titulo">{{ plans.titulo }}</ion-card-title>
-
                     <!--<ion-card-subtitle class="sub-titulo-2 titulo-plan-basico">Beneficios:</ion-card-subtitle>
                     <ion-icon name="checkmark-outline" class="descripcion-basico sub-titulo"></ion-icon>
                     <label class="sub-titulo">Diario Nutricional<br></label>
@@ -34,12 +27,9 @@
                     <label class="sub-titulo">Descuentos en eventos<br></label>
                     <ion-icon class="titulo-plan-basico sub-titulo" name="checkmark-outline"></ion-icon>
                     <label class="sub-titulo">Acceso al contenido actual de Inbionova<br></label>-->
-
                     <div [innerHTML]=plans.descripcion></div>
                 </ion-card-header>
-
             </ion-card>
-
             <ion-grid>
                 <ion-row class="ion-align-items-center">
                     <ion-col size="12" class="ion-text-center">
@@ -47,11 +37,39 @@
                     </ion-col>
                 </ion-row>
             </ion-grid>
+        </ng-container>
 
-        </div>
+        <ng-container *ngIf="!plan">
 
+            <ion-card class="animate__animated animate__fadeIn animate__faster" *ngFor="let item of [1,1,1]">
+                <div class="contenedor">
+                    <ion-skeleton-text animated class="imagen" style="width: 323.2px; height: 161.6px"></ion-skeleton-text>
+                    <div class="texto-encima">
+                        <ion-skeleton-text animated></ion-skeleton-text> x
+                        <ion-skeleton-text animated></ion-skeleton-text>
+                    </div>
+                    <div class="texto-precio">
+                        <ion-skeleton-text animated></ion-skeleton-text>
+                    </div>
+                </div>
+                <ion-card-header>
+                    <ion-card-title class="titulo">
+                        <ion-skeleton-text animated></ion-skeleton-text>
+                    </ion-card-title>
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                </ion-card-header>
+            </ion-card>
+            <ion-grid>
+                <ion-row class="ion-align-items-center">
+                    <ion-col size="12" class="ion-text-center">
+                        <ion-button class="button" edge>
+                            <ion-skeleton-text animated></ion-skeleton-text>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ng-container>
     </ion-list>
-
 </ion-content>
 
 <app-tab class="card-plan-basico"></app-tab>
