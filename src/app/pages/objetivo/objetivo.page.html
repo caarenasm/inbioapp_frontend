@@ -8,7 +8,7 @@
 
         <ng-container *ngFor="let objetivo of objetivos">
 
-            <ion-card class="tarjeta-receta">
+            <ion-card class="tarjeta-receta animate__animated animate__fadeIn animate__faster">
                 <ion-card-content class="contenido">
                     <ion-img [src]="objetivo.imagen_url" class="imagen"></ion-img>
                 </ion-card-content>
@@ -27,5 +27,31 @@
             </ion-grid>
 
         </ng-container>
+
+        <ng-container *ngIf="!objetivos">
+            <ion-card class="tarjeta-receta animate__animated animate__fadeIn animate__faster" *ngFor="let item of [1,1,1]">
+                <ion-card-content class="contenido">
+                    <ion-skeleton-text animated class="imagen" style="width: 391.2px; height: 260.9px"></ion-skeleton-text>
+                </ion-card-content>
+                <ion-card-header class="informacion">
+                    <ion-card-title class="titulo">
+                        <ion-skeleton-text animated></ion-skeleton-text>
+                    </ion-card-title>
+                    <ion-card-subtitle class="sub-titulo-2-1">
+                        <ion-skeleton-text animated></ion-skeleton-text>
+                    </ion-card-subtitle>
+                </ion-card-header>
+            </ion-card>
+            <ion-grid>
+                <ion-row class="ion-align-items-center" style="margin-top: -35px;">
+                    <ion-col size="12" class="ion-text-center">
+                        <ion-button class="boton">
+                            <ion-skeleton-text animated></ion-skeleton-text>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ng-container>
+
     </ion-list>
 </ion-content>
