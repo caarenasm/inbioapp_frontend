@@ -1,9 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { IonSlides } from '@ionic/angular';
 
 import { AuthService } from '../../services/auth.service';
-
 import { Inicio } from '../../interfaces/inicio';
 
 @Component({
@@ -13,17 +11,15 @@ import { Inicio } from '../../interfaces/inicio';
 })
 export class InicioPage implements OnInit {
 
-  @ViewChild('slideWithNav', { static: false }) slideWithNav: IonSlides;
-
   //Cube
   slideOpts = {
     grabCursor: true,
-    /*cubeEffect: {
+    cubeEffect: {
       shadow: true,
       slideShadows: true,
       shadowOffset: 20,
       shadowScale: 0.94,
-    },*/
+    },
     on: {
       beforeInit: function() {
         const swiper = this;
@@ -202,9 +198,7 @@ export class InicioPage implements OnInit {
   }
 
   onClick() {
-
-    this.navCtrl.navigateBack('/');
-
+    this.navCtrl.navigateRoot('/quiz');
   }
 
   ionViewWillEnter() {

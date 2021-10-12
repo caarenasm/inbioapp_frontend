@@ -1,5 +1,5 @@
 <ion-content [fullscreen]="true" class="ion-no-padding">
-    <ion-slides pager="ios" [options]="slideOpts" #slideWithNav>
+    <ion-slides pager="ios">
 
         <ion-slide *ngFor="let slide of slides" [style]=slide.color>
             <ion-card class="ion-no-border" style="background-color:transparent">
@@ -7,11 +7,6 @@
                 <ion-card-header>
                     <ion-card-title class="titulo">{{ slide.titulo }}</ion-card-title>
                 </ion-card-header>
-                <!--<ion-button class="button" *ngIf="slide.entrar == true" shape="round">
-                    Empezar Ahora
-                </ion-button>
-                <p *ngIf="slide.entrar == true"><b>Una app de:</b></p>
-                <img src="/assets/img/inbionova.png" class="slide-image" *ngIf="slide.entrar == true" />-->
             </ion-card>
         </ion-slide>
 
