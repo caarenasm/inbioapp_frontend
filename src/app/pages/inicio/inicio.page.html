@@ -1,54 +1,29 @@
-<ion-content fullscreen class="ion-no-padding">
-
-    <ion-slides pager="ios" class="slide-full">
+<ion-content [fullscreen]="true" class="ion-no-padding">
+    <ion-slides pager="ios">
 
         <ion-slide *ngFor="let slide of slides" [style]=slide.color>
-
             <ion-card class="ion-no-border" style="background-color:transparent">
-
                 <ion-img [src]="slide.img" class="imagen"></ion-img>
-
                 <ion-card-header>
                     <ion-card-title class="titulo">{{ slide.titulo }}</ion-card-title>
                 </ion-card-header>
-
-                <!--<ion-button class="button" *ngIf="slide.entrar == true" shape="round">
-                    Empezar Ahora
-                </ion-button>
-
-                <p *ngIf="slide.entrar == true"><b>Una app de:</b></p>
-                <img src="/assets/img/inbionova.png" class="slide-image" *ngIf="slide.entrar == true" />-->
-
-
             </ion-card>
-
         </ion-slide>
 
         <ion-slide style="background-color:black">
-
             <ion-card style="background-color:transparent">
-
                 <ion-card-header>
                     <ion-img src="/assets/img/inbioapp.png" class="imagen-final"></ion-img>
                 </ion-card-header>
-
                 <ion-card-content>
-
                     <ion-button class="btn-empezar" [routerLink]="['/quiz']">
                         Empezar Ahora
                     </ion-button>
-
                     <ion-card-title class="class-tittle" style="padding-top: 100px; color:white">Una app de:</ion-card-title>
-
                     <ion-img src="/assets/img/inbionova.png" class="imagen-app"></ion-img>
-
-
                 </ion-card-content>
-
             </ion-card>
-
         </ion-slide>
 
     </ion-slides>
-
 </ion-content>
