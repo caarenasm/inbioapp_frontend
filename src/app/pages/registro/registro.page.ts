@@ -16,6 +16,7 @@ import { AlertService } from '../../services/alert.service';
 })
 export class RegistroPage implements OnInit {
 
+  password: string;
   estaturaActual = 0;
   pesoActual = 0;
   pesoDeseado = 0;
@@ -103,6 +104,14 @@ export class RegistroPage implements OnInit {
     return this.todo.get('email').invalid && this.todo.get('email').touched;
   }
 
+  get contraseniaNoValido() {
+    return this.todo.get('contrasenia').invalid && this.todo.get('contrasenia').touched;
+  }
+
+  get passNoValido() {
+    return this.todo.get('password').invalid && this.todo.get('password').touched;
+  }
+
   get terminosNoValido() {
     return this.todo.get('terminos').invalid && this.todo.get('terminos').touched;
   }
@@ -134,6 +143,13 @@ export class RegistroPage implements OnInit {
       ]),
         [this.emailValidator.checkEmail.bind(this.emailValidator)]
       ],
+      contrasenia: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ]),
+        [this.emailValidator.checkEmail.bind(this.emailValidator)]
+      ],
+      password: ['', Validators.required],
       terminos: [false, Validators.pattern('true')],
       estatura: ['0', Validators.required],
       peso_actual: ['0', Validators.required],

@@ -142,6 +142,15 @@
 
                         <ion-row>
                             <ion-col size="12" class="grid-card">
+                                <ion-label class="titulo-input">Ingrese una Contraseña. <span>Requerido</span></ion-label>
+                                <small *ngIf="passNoValido"></small>
+                                <ion-input type="password" formControlName="password" placeholder="Contraseña" [class.is-invalid]="passNoValido" class="primary-input"></ion-input>
+                            </ion-col>
+                        </ion-row>
+
+
+                        <ion-row>
+                            <ion-col size="12" class="grid-card">
                                 <ion-item>
                                     <ion-checkbox slot="start" class="ion-checkbox" formControlName="terminos" [class.is-invalid]="terminosNoValido"></ion-checkbox>
                                     <ion-text> Acepto términos y condiciones de privacidad.</ion-text>
