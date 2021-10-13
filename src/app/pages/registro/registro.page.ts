@@ -104,10 +104,6 @@ export class RegistroPage implements OnInit {
     return this.todo.get('email').invalid && this.todo.get('email').touched;
   }
 
-  get contraseniaNoValido() {
-    return this.todo.get('contrasenia').invalid && this.todo.get('contrasenia').touched;
-  }
-
   get passNoValido() {
     return this.todo.get('password').invalid && this.todo.get('password').touched;
   }
@@ -138,12 +134,6 @@ export class RegistroPage implements OnInit {
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
       email: ['', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ]),
-        [this.emailValidator.checkEmail.bind(this.emailValidator)]
-      ],
-      contrasenia: ['', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ]),
